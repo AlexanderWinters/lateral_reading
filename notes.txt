@@ -1,0 +1,28 @@
+1. fixing landing page. Intro for the player.
+2. live meters: Cred and pop. add tooltips. (shouldn't be gauge, we need totals)
+3. fix a lot of images
+4. image selections (maximum selection options)
+5. text search: show additional info (scroll rect)
+6. make text selector like the image selector
+7. add image subtext (more cryptic clues, not so obvious)
+
+
+
+Practise lateral reading on text: Scroll past the top/most affective hits, open multiple sources in parallel, prioritise official/local outlets, and corroborate before deciding.
+Practise lateral reading on images: Use reverse image search to recover original date, place, and context, spot reused and manipulated media, and compare angles/wide shots vs. cropped/dramatic frames.
+Apply click restraint: Prefer “show additional posts”/more results over immediate judgment; avoid sensational headlines and ad-like items. (System reinforces this with Credibility↑ for scrolling; small Popularity↓ for time.)
+Justify decisions with evidence: Mark specific items (sources/images) that support the final call; correct calls without evidence earn less—players must produce a verifiable trail.
+Discriminate truth states: Correctly label tips as true, false, or misleading/halfs-true (e.g., real event + old footage), and select only current, authoritative evidence as support.
+Recognise manipulation tactics: Identify miscaptioning, selective editing, synthetic composites, and emotionally charged wording as reliability risks.
+Balance speed vs. accuracy: Understand (through meters/feedback) that verification builds Credibility while haste can boost Popularity but risks penalties for errors.
+Transfer the routine: Consistently choose “Review” (image or text module) before publish/flag, then decide and explain briefly how the evidence leads to the conclusion.
+Also please try to implement the following nudges for reflective thinking (perhaps voice over by the mentor), make the player think about five things:
+Alternatives? I have formulated at least two plausible alternative explanations.
+
+Counterevidence? I have actively looked for information that could falsify the claim.
+
+Explanation? I can briefly explain how the evidence leads to the conclusion.
+
+Norm? Here in the newsroom, it is standard practice to do this before publishing.
+
+Accuracy? I am confident it is correct before sharing.
