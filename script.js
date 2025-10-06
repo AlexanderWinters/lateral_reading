@@ -1,3 +1,1108 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f718c2ec82c7d289836de6a98524d711d184fb84f01164a9bee27ef8f923c3e2
-size 55376
+function translateKey(key) {
+    return languageData[currentLanguage][key] || key;
+}
+
+// Updated posts data structure that works with the existing code
+const postsData = [
+    {
+        id: 1,
+        title: "burnalertTitle",
+        thumbnail: "img/burnalert.png",
+        image: "img/burnalert.png",
+        description: "burnalertDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
+        searchResults: [
+            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true },
+            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true },
+            { title: "burnalerttitle3", description: "burnalertdescription3", isAd: true },
+            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false },
+            { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false },
+            { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false },
+            { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false },
+            { title: "burnalerttitle8", description: "burnalertdescription8", isAd: true },
+            { title: "burnalerttitle9", description: "burnalertdescription9", isAd: false },
+            { title: "burnalerttitle10", description: "burnalertdescription10", isAd: false },
+            { title: "burnalerttitle11", description: "burnalertdescription11", isAd: true },
+            { title: "burnalerttitle12", description: "burnalertdescription12", isAd: false },
+            { title: "burnalerttitle13", description: "burnalertdescription13", isAd: false },
+            { title: "burnalerttitle14", description: "burnalertdescription14", isAd: true },
+            { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/burnalert1.png", location: "burnalertlocation1", date: "burnalertdate1" },
+            { src: "img/burnalert2.png", location: "burnalertlocation2", date: "burnalertdate2" },
+            { src: "img/burnalert3.png", location: "burnalertlocation3", date: "burnalertdate3" },
+            { src: "img/burnalert4.png", location: "burnalertlocation4", date: "burnalertdate4" }
+        ]
+    },
+    {
+        id: 2,
+        title: "libraryTitle",
+        thumbnail: "img/libraryalert.png",
+        image: "img/libraryalert.png",
+        description: "libraryDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
+        searchResults: [
+            { title: "librarytitle1", description: "librarydescription1", isAd: true },
+            { title: "librarytitle2", description: "librarydescription2", isAd: true },
+            { title: "librarytitle3", description: "librarydescription3", isAd: true },
+            { title: "librarytitle4", description: "librarydescription4", isAd: false },
+            { title: "librarytitle5", description: "librarydescription5", isAd: false },
+            { title: "librarytitle6", description: "librarydescription6", isAd: false },
+            { title: "librarytitle7", description: "librarydescription7", isAd: false },
+            { title: "librarytitle8", description: "librarydescription8", isAd: true },
+            { title: "librarytitle9", description: "librarydescription9", isAd: false },
+            { title: "librarytitle10", description: "librarydescription10", isAd: false },
+            { title: "librarytitle11", description: "librarydescription11", isAd: true },
+            { title: "librarytitle12", description: "librarydescription12", isAd: false },
+            { title: "librarytitle13", description: "librarydescription13", isAd: false },
+            { title: "librarytitle14", description: "librarydescription14", isAd: true },
+            { title: "librarytitle15", description: "librarydescription15", isAd: false },
+            { title: "librarytitle16", description: "librarydescription16", isAd: false },
+            { title: "librarytitle17", description: "librarydescription17", isAd: true },
+            { title: "librarytitle18", description: "librarydescription18", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/library1.png", location: "librarylocation1", date: "librarydate1" },
+            { src: "img/library2.png", location: "librarylocation2", date: "librarydate2" },
+            { src: "img/library3.png", location: "librarylocation3", date: "librarydate3" },
+            { src: "img/library4.png", location: "librarylocation4", date: "librarydate4" }
+        ]
+    },
+    {
+        id: 3,
+        title: "extrimistalertTitle",
+        thumbnail: "img/extrimistalert.png",
+        image: "img/extrimistalert.png",
+        description: "extrimistalertDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        searchTerms: ["extrimistalertsearchTerms1", "extrimistalertsearchTerms2", "extrimistalertsearchTerms3", "extrimistalertsearchTerms4"],
+        searchResults: [
+            { title: "extrimistalerttitle1", description: "extrimistalertdescription1", isAd: true },
+            { title: "extrimistalerttitle2", description: "extrimistalertdescription2", isAd: true },
+            { title: "extrimistalerttitle3", description: "extrimistalertdescription3", isAd: true },
+            { title: "extrimistalerttitle4", description: "extrimistalertdescription4", isAd: false },
+            { title: "extrimistalerttitle5", description: "extrimistalertdescription5", isAd: false },
+            { title: "extrimistalerttitle6", description: "extrimistalertdescription6", isAd: false },
+            { title: "extrimistalerttitle7", description: "extrimistalertdescription7", isAd: false },
+            { title: "extrimistalerttitle8", description: "extrimistalertdescription8", isAd: true },
+            { title: "extrimistalerttitle9", description: "extrimistalertdescription9", isAd: false },
+            { title: "extrimistalerttitle10", description: "extrimistalertdescription10", isAd: false },
+            { title: "extrimistalerttitle11", description: "extrimistalertdescription11", isAd: true },
+            { title: "extrimistalerttitle12", description: "extrimistalertdescription12", isAd: false },
+            { title: "extrimistalerttitle13", description: "extrimistalertdescription13", isAd: false },
+            { title: "extrimistalerttitle14", description: "extrimistalertdescription14", isAd: true },
+            { title: "extrimistalerttitle15", description: "extrimistalertdescription15", isAd: false },
+            { title: "extrimistalerttitle16", description: "extrimistalertdescription16", isAd: false },
+            { title: "extrimistalerttitle17", description: "extrimistalertdescription17", isAd: true },
+            { title: "extrimistalerttitle18", description: "extrimistalertdescription18", isAd: false },
+            { title: "extrimistalerttitle19", description: "extrimistalertdescription19", isAd: false },
+            { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: true }
+        ],
+        imageResults: [
+            { src: "img/extrimistalert1.png", location: "extrimistalertlocation1", date: "extrimistalertdate1" },
+            { src: "img/extrimistalert2.png", location: "extrimistalertlocation2", date: "extrimistalertdate2" },
+            { src: "img/extrimistalert3.png", location: "extrimistalertlocation3", date: "extrimistalertdate3" },
+            { src: "img/extrimistalert4.png", location: "extrimistalertlocation4", date: "extrimistalertdate4" }
+        ]
+    },
+    {
+        id: 4,
+        title: "waterpoisoningTitle",
+        thumbnail: "img/waterpoisoning.png",
+        image: "img/waterpoisoning.png",
+        description: "waterpoisoningDescription",
+        unread: false,
+        processed: false,
+        status: null,
+        searchTerms: ["waterpoisoningsearchTerms1", "waterpoisoningsearchTerms2", "waterpoisoningsearchTerms3", "waterpoisoningsearchTerms4"],
+        searchResults: [
+            { title: "waterpoisoningtitle1", description: "waterpoisoningdescription1", isAd: true },
+            { title: "waterpoisoningtitle2", description: "waterpoisoningdescription2", isAd: true },
+            { title: "waterpoisoningtitle3", description: "waterpoisoningdescription3", isAd: true },
+            { title: "waterpoisoningtitle4", description: "waterpoisoningdescription4", isAd: false },
+            { title: "waterpoisoningtitle5", description: "waterpoisoningdescription5", isAd: false },
+            { title: "waterpoisoningtitle6", description: "waterpoisoningdescription6", isAd: false },
+            { title: "waterpoisoningtitle7", description: "waterpoisoningdescription7", isAd: false },
+            { title: "waterpoisoningtitle8", description: "waterpoisoningdescription8", isAd: true },
+            { title: "waterpoisoningtitle9", description: "waterpoisoningdescription9", isAd: false },
+            { title: "waterpoisoningtitle10", description: "waterpoisoningdescription10", isAd: false },
+            { title: "waterpoisoningtitle11", description: "waterpoisoningdescription11", isAd: true },
+            { title: "waterpoisoningtitle12", description: "waterpoisoningdescription12", isAd: false },
+            { title: "waterpoisoningtitle13", description: "waterpoisoningdescription13", isAd: false },
+            { title: "waterpoisoningtitle14", description: "waterpoisoningdescription14", isAd: true },
+            { title: "waterpoisoningtitle15", description: "waterpoisoningdescription15", isAd: false },
+            { title: "waterpoisoningtitle16", description: "waterpoisoningdescription16", isAd: false },
+            { title: "waterpoisoningtitle17", description: "waterpoisoningdescription17", isAd: true },
+            { title: "waterpoisoningtitle18", description: "waterpoisoningdescription18", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/waterpoisoning1.png", location: "waterpoisoninglocation1", date: "waterpoisoningdate1" },
+            { src: "img/waterpoisoning2.png", location: "waterpoisoninglocation2", date: "waterpoisoningdate2" },
+            { src: "img/waterpoisoning3.png", location: "waterpoisoninglocation3", date: "waterpoisoningdate3" },
+            { src: "img/waterpoisoning4.png", location: "waterpoisoninglocation4", date: "waterpoisoningdate4" }
+        ]
+    },
+    {
+        id: 5,
+        title: "petsTitle",
+        thumbnail: "img/pets.png",
+        image: "img/pets.png",
+        description: "petsDescription",
+        unread: false,
+        processed: false,
+        status: null,
+        searchTerms: ["petssearchTerms1", "petssearchTerms2", "petssearchTerms3", "petssearchTerms4"],
+        searchResults: [
+            { title: "petstitle1", description: "petsdescription1", isAd: true },
+            { title: "petstitle2", description: "petsdescription2", isAd: true },
+            { title: "petstitle3", description: "petsdescription3", isAd: true },
+            { title: "petstitle4", description: "petsdescription4", isAd: false },
+            { title: "petstitle5", description: "petsdescription5", isAd: false },
+            { title: "petstitle6", description: "petsdescription6", isAd: false },
+            { title: "petstitle7", description: "petsdescription7", isAd: false },
+            { title: "petstitle8", description: "petsdescription8", isAd: true },
+            { title: "petstitle9", description: "petsdescription9", isAd: false },
+            { title: "petstitle10", description: "petsdescription10", isAd: false },
+            { title: "petstitle11", description: "petsdescription11", isAd: true },
+            { title: "petstitle12", description: "petsdescription12", isAd: false },
+            { title: "petstitle13", description: "petsdescription13", isAd: false },
+            { title: "petstitle14", description: "petsdescription14", isAd: true },
+            { title: "petstitle15", description: "petsdescription15", isAd: false },
+            { title: "petstitle16", description: "petsdescription16", isAd: false },
+            { title: "petstitle17", description: "petsdescription17", isAd: true },
+            { title: "petstitle18", description: "petsdescription18", isAd: false },
+            { title: "petstitle19", description: "petsdescription19", isAd: false },
+            { title: "petstitle20", description: "petsdescription20", isAd: true },
+            { title: "petstitle21", description: "petsdescription21", isAd: false },
+            { title: "petstitle22", description: "petsdescription22", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/pets1.png", location: "petslocation1", date: "petsdate1" },
+            { src: "img/pets2.png", location: "petslocation2", date: "petsdate2" },
+            { src: "img/pets3.png", location: "petslocation3", date: "petsdate3" },
+            { src: "img/pets4.png", location: "petslocation4", date: "petsdate4" }
+        ]
+    }
+];
+
+        // DOM elements
+        const languageSelector = document.getElementById('languageSelector');
+        const homeButton = document.getElementById('homeButton');
+        const sidebarPosts = document.getElementById('sidebarPosts');
+        const topMenu = document.getElementById('topMenu');
+        const postActionButtons = document.getElementById('postActionButtons');
+        const postStatusMessage = document.getElementById('postStatusMessage');
+        const backButton = document.getElementById('backButton');
+        const contentArea = document.getElementById('contentArea');
+        const publishButton = document.getElementById('publishButton');
+        const imageSearchButton = document.getElementById('imageSearchButton');
+        const textSearchButton = document.getElementById('textSearchButton');
+        const flagButton = document.getElementById('flagButton');
+        const tipTrueButton = document.getElementById('tipTrueButton');
+        const tipFalseButton = document.getElementById('tipFalseButton');
+
+        // Page elements
+        const videoInstructionsPage = document.getElementById('videoInstructionsPage');
+        const postViewPage = document.getElementById('postViewPage');
+        const textSearchOptionsPage = document.getElementById('textSearchOptionsPage');
+        const textSearchResultsPage = document.getElementById('textSearchResultsPage');
+        const imageSearchResultsPage = document.getElementById('imageSearchResultsPage');
+        const feedbackPage = document.getElementById('feedbackPage');
+
+        // Content elements
+        const postImage = document.getElementById('postImage');
+        const postTitle = document.getElementById('postTitle');
+        const postDescription = document.getElementById('postDescription');
+        const searchButtons = document.getElementById('searchButtons');
+        const searchResults = document.getElementById('searchResults');
+        const imageGrid = document.getElementById('imageGrid');
+        const feedbackMessage = document.getElementById('feedbackMessage');
+        const feedbackVideo = document.getElementById('feedbackVideo');
+
+class MeterSystem {
+    constructor() {
+        this.credibility = parseInt(localStorage.getItem('credibility') || '100');
+        this.popularity = parseInt(localStorage.getItem('popularity') || '50');
+        this.updateDisplay();
+    }
+
+    updateCredibility(change, reason = '') {
+        this.credibility = Math.max(0, Math.min(200, this.credibility + change));
+        localStorage.setItem('credibility', this.credibility.toString());
+        this.showChange('credibility', change, reason);
+        this.updateDisplay();
+    }
+
+    updatePopularity(change, reason = '') {
+        this.popularity = Math.max(0, Math.min(200, this.popularity + change));
+        localStorage.setItem('popularity', this.popularity.toString());
+        this.showChange('popularity', change, reason);
+        this.updateDisplay();
+    }
+
+    showChange(type, change, reason) {
+        const changeElement = document.getElementById(`${type}-change`);
+        if (!changeElement) return;
+
+        const sign = change > 0 ? '+' : '';
+        const changeText = reason ? `${sign}${change} ${reason}` : `${sign}${change}`;
+
+        changeElement.textContent = changeText;
+        changeElement.className = `meter-change show ${change > 0 ? 'positive' : 'negative'}`;
+
+        setTimeout(() => {
+            changeElement.classList.remove('show');
+        }, 2000);
+    }
+
+    updateDisplay() {
+        const credibilityElement = document.getElementById('credibility-value');
+        const popularityElement = document.getElementById('popularity-value');
+
+        if (credibilityElement) credibilityElement.textContent = this.credibility;
+        if (popularityElement) popularityElement.textContent = this.popularity;
+    }
+
+    reset() {
+        this.credibility = 100;
+        this.popularity = 50;
+        localStorage.removeItem('credibility');
+        localStorage.removeItem('popularity');
+        this.updateDisplay();
+    }
+}
+
+// Initialize meter system
+const meterSystem = new MeterSystem();
+
+        // Current state
+        let currentLanguage = 'en';
+        let currentPostId = null;
+        let selectedImages = [];
+        let usedEvidenceCount = 0; // Track how many results have been used as evidence
+        const MAX_EVIDENCE_PER_STORY = 2; // Maximum evidence items per story
+
+        // Initialize the application
+        function init() {
+            // Set up language switching
+            languageSelector.addEventListener('change', function() {
+                currentLanguage = this.value;
+                updateLanguage();
+            });
+
+            // Generate posts in sidebar
+            generatePosts();
+
+            // Set up event listeners
+            setupEventListeners();
+
+            // Set initial language
+            updateLanguage();
+
+            // Show landing page
+            showPage(videoInstructionsPage);
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Home button
+            homeButton.addEventListener('click', function() {
+                showPage(videoInstructionsPage);
+                hideTopMenu();
+            });
+
+            // Post actions
+            publishButton.addEventListener('click', function() {
+                processPost('published');
+            });
+
+            flagButton.addEventListener('click', function() {
+                processPost('flagged');
+            });
+
+            imageSearchButton.addEventListener('click', function() {
+                if (currentPostId) {
+                    showImageSearchResults();
+                }
+            });
+
+            textSearchButton.addEventListener('click', function() {
+                if (currentPostId) {
+                    showTextSearchOptions();
+                }
+            });
+
+            // Back button
+            backButton.addEventListener('click', function() {
+                loadPost(currentPostId);
+            });
+
+            // Image verification
+            document.getElementById('tipTrueButton').addEventListener('click', () => verifyTip(true));
+            document.getElementById('tipFalseButton').addEventListener('click', () => verifyTip(false));
+
+        }
+
+        // Generate posts in sidebar
+        function generatePosts() {
+            sidebarPosts.innerHTML = '';
+            
+            postsData.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = `post-item${post.unread ? ' unread' : ''}${post.processed ? ' processed' : ''}`;
+                postElement.dataset.postId = post.id;
+                
+                let statusHTML = '';
+                if (post.status === 'published') {
+                    statusHTML = `
+                        <div class="post-status">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span data-lang-key="published">Suggested to be published</span>
+                        </div>
+                    `;
+                } else if (post.status === 'flagged') {
+                    statusHTML = `
+                        <div class="post-status flagged">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span data-lang-key="flagged">Flagged as false</span>
+                        </div>
+                    `;
+                }
+                
+                postElement.innerHTML = `
+                    <img src="${post.thumbnail}" alt="" class="post-thumbnail">
+                    <div class="post-info">
+                        <div class="post-title">${translateKey(post.title)}</div>
+                        ${statusHTML}
+                    </div>
+                `;
+                
+                postElement.addEventListener('click', function() {
+                    loadPost(post.id);
+                });
+                
+                sidebarPosts.appendChild(postElement);
+            });
+        }
+
+        // Load a post
+        function loadPost(postId) {
+            currentPostId = postId;
+            const post = postsData.find(p => p.id === postId);
+            
+            if (post) {
+                // Update post content
+                postImage.src = post.image;
+                postTitle.textContent = translateKey(post.title);
+                postDescription.textContent = translateKey(post.description);
+                
+                // Show post view
+                showPage(postViewPage);
+                
+                // Update top menu
+                showTopMenu();
+                
+                // Mark as read
+                if (post.unread) {
+                    post.unread = false;
+                    generatePosts(); // Refresh sidebar
+                }
+            }
+        }
+
+        // Process a post (publish or flag)
+        function processPost(status) {
+            if (currentPostId) {
+                const post = postsData.find(p => p.id === currentPostId);
+                
+                if (post) {
+                    post.processed = true;
+                    post.status = status;
+                    
+                    // Update sidebar
+                    generatePosts();
+                    
+                    // Show feedback
+                    showFeedback(status);
+                }
+            }
+        }
+
+function verifyTip(isTrue) {
+    const action = isTrue ? 'verified' : 'debunked';
+    const status = isTrue ? 'published' : 'flagged';
+
+    // Find the current post using currentPostId
+    const post = postsData.find(p => p.id === currentPostId);
+    if (!post) return;
+
+    // Update post status
+    post.processed = true;
+    post.status = status;
+
+    // Meter updates based on decision
+    if (isTrue) {
+        meterSystem.updatePopularity(6, '(verified)');
+        meterSystem.updateCredibility(3, '(evidence)');
+    } else {
+        meterSystem.updateCredibility(8, '(debunked)');
+        meterSystem.updatePopularity(-2, '(careful)');
+    }
+
+    // Additional bonus for selecting evidence
+    if (selectedImages.length > 0) {
+        meterSystem.updateCredibility(2, '(evidence)');
+    }
+
+    // Reset evidence counter for next story
+    usedEvidenceCount = 0;
+
+    // Update sidebar to reflect changes
+    generatePosts();
+
+    // Show feedback popup instead of navigating away
+    showVerificationPopup(isTrue, post, selectedImages);
+}
+
+function showVerificationPopup(isTrue, post, selectedImages) {
+    const decision = isTrue ? 'TRUE' : 'FALSE';
+    const decisionClass = isTrue ? 'verified' : 'debunked';
+
+    // Generate explanation based on the decision and evidence
+    const explanation = generateVerificationExplanation(post, isTrue, selectedImages);
+
+    const popupHTML = `
+        <div class="verification-popup-overlay" id="verificationPopupOverlay">
+            <div class="verification-popup">
+                <div class="popup-header">
+                    <h3>Verification Complete</h3>
+                    <button class="popup-close" onclick="closeVerificationPopup()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="popup-content">
+                    <div class="decision-result ${decisionClass}">
+                        <div class="decision-icon">
+                            ${isTrue ?
+        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>' :
+        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L6 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H20L18 12L20 18H6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    }
+                        </div>
+                        <div class="decision-text">
+                            <h4>You marked this tip as: <span class="decision-label">${decision}</span></h4>
+                            <p class="post-title-ref">"${translateKey(post.title)}"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="verification-analysis">
+                        <h4>Your Analysis:</h4>
+                        <div class="analysis-content">
+                            ${explanation.reasoning}
+                        </div>
+                        
+                        ${selectedImages.length > 0 ? `
+                            <div class="evidence-used">
+                                <h5>Evidence Selected:</h5>
+                                <p>You selected ${selectedImages.length} image(s) as supporting evidence, which ${explanation.evidenceQuality}</p>
+                            </div>
+                        ` : `
+                            <div class="no-evidence-warning">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>No supporting evidence selected. Consider gathering evidence before making decisions.</span>
+                            </div>
+                        `}
+                        
+                        <div class="meter-impact">
+                            <h5>Impact on Your Metrics:</h5>
+                            <div class="metric-changes">
+                                <div class="metric-change credibility">
+                                    <span class="metric-name">Credibility:</span>
+                                    <span class="change-value ${isTrue ? 'positive' : 'positive'}">
+                                        ${isTrue ? '+5' : '+8'} 
+                                        (${isTrue ? 'verified content' : 'caught misinformation'})
+                                    </span>
+                                </div>
+                                <div class="metric-change popularity">
+                                    <span class="metric-name">Popularity:</span>
+                                    <span class="change-value ${isTrue ? 'positive' : 'negative'}">
+                                        ${isTrue ? '+6' : '-2'} 
+                                        (${isTrue ? 'sharing accurate info' : 'being cautious'})
+                                    </span>
+                                </div>
+                                ${selectedImages.length > 0 ? `
+                                    <div class="metric-change credibility-bonus">
+                                        <span class="metric-name">Evidence Bonus:</span>
+                                        <span class="change-value positive">+2 (used supporting evidence)</span>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-actions">
+                    <button class="action-btn secondary" onclick="closeVerificationPopup(); loadPost(${currentPostId});">Review Again</button>
+                    <button class="action-btn primary" onclick="closeVerificationPopup(); goHome();">Continue</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+// Generate explanation based on the verification decision
+function generateVerificationExplanation(post, isTrue, selectedImages) {
+    const explanations = {
+        1: { // Fire alert post
+            true: {
+                reasoning: "You correctly identified this as a legitimate emergency situation. The evidence shows official sources confirming an actual fire incident with proper emergency response protocols in place.",
+                evidenceQuality: "supports the official narrative and emergency response documentation."
+            },
+            false: {
+                reasoning: "You correctly identified this as misinformation. The dramatic language, lack of official sources, and manipulated imagery are classic signs of false emergency alerts designed to spread panic.",
+                evidenceQuality: "helped you spot the manipulated content and lack of credible sources."
+            }
+        },
+        2: { // Library attack post
+            true: {
+                reasoning: "You determined this threat has credible elements. However, be cautious - even when some elements may be true, the presentation and sources matter significantly in threat assessment.",
+                evidenceQuality: "shows concerning patterns that warrant official attention."
+            },
+            false: {
+                reasoning: "You correctly identified this as unsubstantiated fear-mongering. The vague threats, dramatic language, and lack of credible sources are typical of posts designed to spread anxiety rather than inform.",
+                evidenceQuality: "revealed the manipulated nature of the claims and unreliable sources."
+            }
+        },
+        3: { // Extremist post
+            true: {
+                reasoning: "You found elements of truth in this post. While the military vehicles may be real, the context and interpretation require careful verification of official sources.",
+                evidenceQuality: "helps distinguish between actual events and their misrepresentation."
+            },
+            false: {
+                reasoning: "You correctly identified this as misleading content. The sensationalized presentation of routine military exercises as threatening events is a common misinformation tactic.",
+                evidenceQuality: "helped you see past the dramatic framing to the actual facts."
+            }
+        }
+    };
+
+    const postExplanation = explanations[post.id];
+    if (postExplanation) {
+        return isTrue ? postExplanation.true : postExplanation.false;
+    }
+
+    // Default explanation for other posts
+    return {
+        reasoning: isTrue ?
+            "You determined this information has credible elements. Remember to always verify with official sources and cross-reference multiple reliable outlets." :
+            "You identified potential issues with this information. Good fact-checking involves looking for credible sources, checking for sensationalized language, and verifying claims through official channels.",
+        evidenceQuality: selectedImages.length > 0 ?
+            "provides valuable context for your decision-making process." :
+            "would have strengthened your analysis."
+    };
+}
+
+// Close verification popup
+function closeVerificationPopup() {
+    const popup = document.getElementById('verificationPopupOverlay');
+    if (popup) {
+        popup.remove();
+    }
+}
+
+// Show feedback after processing a post
+function showFeedback(status) {
+    const messageKey = status === 'published' ? 'feedbackPublished' : 'feedbackFlagged';
+    feedbackMessage.textContent = getLanguageText(messageKey);
+    feedbackMessage.className = `feedback-message ${status === 'flagged' ? 'error' : ''}`;
+
+    showPage(feedbackPage);
+    hideTopMenu();
+
+    // Auto return to home after 3 seconds instead of waiting for video
+    setTimeout(() => {
+        showPage(videoInstructionsPage);
+    }, 3000);
+}
+
+        // Show text search options
+        function showTextSearchOptions() {
+            if (currentPostId) {
+                const post = postsData.find(p => p.id === currentPostId);
+                
+                if (post && post.searchTerms) {
+                    // Generate search buttons
+                    searchButtons.innerHTML = '';
+                    
+                    post.searchTerms.forEach(term => {
+                        const button = document.createElement('button');
+                        button.className = 'search-button';
+                        button.textContent = translateKey(term);
+                        
+                        button.addEventListener('click', function() {
+                            showTextSearchResults();
+                        });
+                        
+                        searchButtons.appendChild(button);
+                    });
+                    
+                    // Show search options page
+                    showPage(textSearchOptionsPage);
+                    
+                    // Update top menu
+                    updateTopMenu('textSearch');
+                }
+            }
+        }
+
+
+// Show text search results
+function showTextSearchResults() {
+    if (currentPostId) {
+        const post = postsData.find(p => p.id === currentPostId);
+
+        if (post && post.searchResults) {
+            // Generate search results
+            searchResults.innerHTML = '';
+
+            post.searchResults.forEach((result, index) => {
+                const resultElement = document.createElement('div');
+                resultElement.className = `search-result-item${result.isAd ? ' ad' : ''} clickable`;
+
+                if (result.isAd) {
+                    resultElement.dataset.adText = getLanguageText('advertisement');
+                }
+
+                resultElement.innerHTML = `
+                            <h3>${translateKey(result.title)}</h3>
+                            <p>${translateKey(result.description)}</p>
+                        `;
+
+                // Make results clickable
+                resultElement.addEventListener('click', function() {
+                    showSearchResultPopup(result, index);
+                });
+
+                searchResults.appendChild(resultElement);
+            });
+
+            // Show search results page
+            showPage(textSearchResultsPage);
+
+            // Update top menu
+            updateTopMenu('textSearch');
+        }
+    }
+}
+
+// Show popup for search result with reasoning
+function showSearchResultPopup(result, index) {
+    // Update meters based on result type
+    if (result.isAd) {
+        meterSystem.updateCredibility(-3, '(clicked ad)');
+        meterSystem.updatePopularity(-2, '(distraction)');
+    } else {
+        meterSystem.updateCredibility(2, '(checked source)');
+        meterSystem.updatePopularity(-1, '(research)');
+    }
+
+    // Generate reasoning based on result type and content
+    const reasoning = generateRelevanceReasoning(result, index);
+
+    // Check if evidence limit has been reached
+    const evidenceLimitReached = usedEvidenceCount >= MAX_EVIDENCE_PER_STORY;
+
+    // Create popup HTML
+    const popupHTML = `
+                <div class="search-popup-overlay" id="searchPopupOverlay">
+                    <div class="search-popup">
+                        <div class="popup-header">
+                            <h3>${translateKey(result.title)}</h3>
+                            <button class="popup-close" onclick="closeSearchPopup()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="popup-content">
+                            <div class="source-description">
+                                <p>${translateKey(result.description)}</p>
+                            </div>
+                            <div class="relevance-analysis">
+                                <h4>Relevance Analysis:</h4>
+                                <div class="reasoning-content ${result.isAd ? 'warning' : 'neutral'}">
+                                    ${reasoning.text}
+                                </div>
+                                <div class="relevance-score">
+                                    <span class="score-label">Relevance Score:</span>
+                                    <span class="score-value ${reasoning.scoreClass}">${reasoning.score}/10</span>
+                                </div>
+                            </div>
+                            ${result.isAd ? `
+                                <div class="ad-warning">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>This is a sponsored result - be cautious of bias</span>
+                                </div>
+                            ` : ''}
+                            ${evidenceLimitReached ? `
+                                <div class="evidence-limit-warning">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Evidence limit reached (${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}). Quality over quantity!</span>
+                                </div>
+                            ` : `
+                                <div class="evidence-counter">
+                                    <span>Evidence used: ${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}</span>
+                                </div>
+                            `}
+                        </div>
+                        <div class="popup-actions">
+                            <button class="action-btn secondary" onclick="closeSearchPopup()">Close</button>
+                            <button class="action-btn primary ${evidenceLimitReached ? 'disabled' : ''}" 
+                                    onclick="markAsUsed(${index})" 
+                                    ${evidenceLimitReached ? 'disabled' : ''}>
+                                ${evidenceLimitReached ? 'Evidence Limit Reached' : 'Use as Evidence'}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+    // Add popup to page
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+// Generate reasoning for why a result is relevant or not
+function generateRelevanceReasoning(result, index) {
+    const currentPost = postsData.find(p => p.id === currentPostId);
+
+    if (result.isAd) {
+        return {
+            text: `This is a sponsored advertisement, not an editorial source. Ads are designed to capture attention and may present biased or sensational information to drive clicks. For fact-checking, prioritize official sources, established news outlets, or government statements over promotional content.`,
+            score: 2,
+            scoreClass: 'low'
+        };
+    }
+
+    // Generate different reasoning based on result position and content
+    const reasoningOptions = [
+        {
+            text: `This appears to be from an official source providing factual updates. The language is measured and includes specific details without sensational claims. Official sources are generally more reliable for fact-checking as they have institutional accountability.`,
+            score: 8,
+            scoreClass: 'high'
+        },
+        {
+            text: `This source provides a brief but official update. While the information is limited, it comes from an authoritative source. Consider cross-referencing with additional sources for a complete picture.`,
+            score: 7,
+            scoreClass: 'medium-high'
+        },
+        {
+            text: `This appears to be a legitimate news report, but consider the timing and source credibility. Look for corroboration from other established outlets before relying on this information.`,
+            score: 6,
+            scoreClass: 'medium'
+        },
+        {
+            text: `While this may contain relevant information, the source or presentation raises some concerns. Cross-check with more established sources before using as evidence.`,
+            score: 4,
+            scoreClass: 'medium-low'
+        }
+    ];
+
+    // Select reasoning based on result position (first few are usually more relevant)
+    if (index < 2 && !result.isAd) {
+        return reasoningOptions[0];
+    } else if (index < 4 && !result.isAd) {
+        return reasoningOptions[1];
+    } else if (!result.isAd) {
+        return reasoningOptions[Math.floor(Math.random() * 2) + 2];
+    }
+
+    return reasoningOptions[0]; // fallback
+}
+
+// Close search result popup
+function closeSearchPopup() {
+    const popup = document.getElementById('searchPopupOverlay');
+    if (popup) {
+        popup.remove();
+    }
+}
+
+// Mark a search result as used for evidence
+function markAsUsed(resultIndex) {
+    // Check if evidence limit reached
+    if (usedEvidenceCount >= MAX_EVIDENCE_PER_STORY) {
+        return; // Don't allow more evidence
+    }
+
+    const post = postsData.find(p => p.id === currentPostId);
+    if (post && post.searchResults[resultIndex]) {
+        const result = post.searchResults[resultIndex];
+
+        // Update meters based on evidence quality
+        if (!result.isAd) {
+            meterSystem.updateCredibility(4, '(evidence)');
+            meterSystem.updatePopularity(-1, '(thorough)');
+        } else {
+            meterSystem.updateCredibility(-2, '(poor evidence)');
+        }
+
+        // Increment evidence counter
+        usedEvidenceCount++;
+        post.usedEvidenceCount = usedEvidenceCount;
+
+        // Mark result as used (could add visual indicator)
+        const resultElements = document.querySelectorAll('.search-result-item');
+        if (resultElements[resultIndex]) {
+            resultElements[resultIndex].classList.add('used-evidence');
+        }
+
+        // Add evidence tracking to the result element
+        if (resultElements[resultIndex]) {
+            const evidenceNumber = resultElements[resultIndex].querySelector('.evidence-number');
+            if (!evidenceNumber) {
+                const numberElement = document.createElement('div');
+                numberElement.className = 'evidence-number';
+                numberElement.textContent = `Evidence #${usedEvidenceCount}`;
+                resultElements[resultIndex].appendChild(numberElement);
+            }
+        }
+
+        closeSearchPopup();
+
+        // Show completion message if limit reached
+        if (usedEvidenceCount >= MAX_EVIDENCE_PER_STORY) {
+            showEvidenceLimitReached();
+        }
+    }
+}
+
+function showEvidenceLimitReached() {
+    const message = document.createElement('div');
+    message.className = 'evidence-limit-notification';
+    message.innerHTML = `
+                <div class="notification-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="notification-text">
+                        <strong>Evidence Collection Complete</strong>
+                        <p>You've gathered ${MAX_EVIDENCE_PER_STORY} pieces of evidence. Quality fact-checking focuses on the most credible sources rather than quantity.</p>
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="notification-close">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            `;
+
+    document.body.appendChild(message);
+
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (message.parentElement) {
+            message.remove();
+        }
+    }, 5000);
+
+    // Update credibility for completing evidence gathering
+    meterSystem.updateCredibility(3, '(complete research)');
+}
+
+
+        // Show image search results
+        function showImageSearchResults() {
+            if (currentPostId) {
+                const post = postsData.find(p => p.id === currentPostId);
+                
+                if (post && post.imageResults) {
+                    // Reset selected images
+                    selectedImages = [];
+                    
+                    // Generate image grid
+                    imageGrid.innerHTML = '';
+                    
+                    post.imageResults.forEach((image, index) => {
+                        const imageElement = document.createElement('div');
+                        imageElement.className = 'image-item';
+                        imageElement.dataset.index = index;
+                        
+                        imageElement.innerHTML = `
+                            <img src="${image.src}" alt="Search result image">
+                            <div class="image-info">
+                                <div>${getLanguageText(image.location)}</div>
+                                <div>${getLanguageText(image.date)}</div>
+                            </div>
+                        `;
+                        
+                        imageElement.addEventListener('click', function() {
+                            toggleImageSelection(this);
+                        });
+                        
+                        imageGrid.appendChild(imageElement);
+                    });
+                    
+                    // Show image search results page
+                    showPage(imageSearchResultsPage);
+                    
+                    // Update top menu
+                    updateTopMenu('imageSearch');
+                }
+            }
+        }
+
+        // Toggle image selection
+        function toggleImageSelection(imageElement) {
+            const index = parseInt(imageElement.dataset.index);
+            
+            if (imageElement.classList.contains('selected')) {
+                imageElement.classList.remove('selected');
+                selectedImages = selectedImages.filter(i => i !== index);
+            } else {
+                imageElement.classList.add('selected');
+                selectedImages.push(index);
+            }
+        }
+
+        // Show a specific page
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => {
+                p.classList.remove('active');
+            });
+            
+            // Show the requested page
+            page.classList.add('active');
+        }
+
+        // Show top menu
+        function showTopMenu() {
+            topMenu.style.display = 'block';
+            
+            const post = postsData.find(p => p.id === currentPostId);
+            
+            if (post && post.processed) {
+                postActionButtons.style.display = 'none';
+                postStatusMessage.style.display = 'block';
+                
+                const statusKey = post.status === 'published' ? 'published' : 'flagged';
+                postStatusMessage.textContent = getLanguageText(statusKey);
+                postStatusMessage.className = `post-status-message ${post.status === 'flagged' ? 'error' : ''}`;
+            } else {
+                postActionButtons.style.display = 'flex';
+                postStatusMessage.style.display = 'none';
+            }
+            
+            backButton.style.display = 'none';
+        }
+
+        // Hide top menu
+        function hideTopMenu() {
+            topMenu.style.display = 'none';
+        }
+
+        // Update top menu based on context
+        function updateTopMenu(context) {
+            topMenu.style.display = 'block';
+            postActionButtons.style.display = 'none';
+            postStatusMessage.style.display = 'none';
+            backButton.style.display = 'block';
+        }
+
+        // Update language
+        function updateLanguage() {
+            // Update all text elements with data-lang-key attribute
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (languageData[currentLanguage][key]) {
+                    element.textContent = languageData[currentLanguage][key];
+                }
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLanguage;
+            
+            // Refresh posts to update status messages
+            generatePosts();
+        }
+
+        // Get text in current language
+        function getLanguageText(key) {
+            return languageData[currentLanguage][key] || key;
+        }
+
+        // Function to add a new post
+        function addPost(post) {
+            // Generate unique ID
+            post.id = Math.max(...postsData.map(p => p.id)) + 1;
+            post.unread = true;
+            post.processed = false;
+            post.status = null;
+            
+            // Add to data
+            postsData.unshift(post);
+            
+            // Regenerate posts
+            generatePosts();
+        }
+
+        function setupCustomSelect() {
+        const customSelect = document.getElementById('languageSelectorCustom');
+        const selected = customSelect.querySelector('.selected');
+        const options = customSelect.querySelectorAll('.options li');
+
+        selected.addEventListener('click', () => {
+            customSelect.classList.toggle('open');
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                const value = option.getAttribute('data-value');
+                currentLanguage = value;
+                selected.textContent = option.textContent;
+                customSelect.classList.remove('open');
+                updateLanguage();
+            });
+        });
+
+        // Close menu if clicked outside
+        document.addEventListener('click', (e) => {
+            if (!customSelect.contains(e.target)) {
+                customSelect.classList.remove('open');
+            }
+        });
+    }
+
+    setupCustomSelect();
+
+    // Initialize the app when document is loaded
+    init();
