@@ -35,7 +35,7 @@ const postsData = [
             { src: "img/burnalert1.png", location: "burnalertlocation1", date: "burnalertdate1" },
             { src: "img/burnalert2.png", location: "burnalertlocation2", date: "burnalertdate2" },
             { src: "img/burnalert3.png", location: "burnalertlocation3", date: "burnalertdate3" },
-            { src: "img/burnalert4.png", location: "burnalertlocation4", date: "burnalertdate4" }
+            { src: "img/library1.png", location: "burnalertlocation4", date: "burnalertdate4" }
         ]
     },
     {
@@ -78,8 +78,8 @@ const postsData = [
     {
         id: 3,
         title: "extrimistalertTitle",
-        thumbnail: "img/extrimistalert.png",
-        image: "img/extrimistalert.png",
+        thumbnail: "img/military_convoy.png",
+        image: "img/military_convoy.png",
         description: "extrimistalertDescription",
         unread: true,
         processed: false,
@@ -108,10 +108,10 @@ const postsData = [
             { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: true }
         ],
         imageResults: [
-            { src: "img/extrimistalert1.png", location: "extrimistalertlocation1", date: "extrimistalertdate1" },
-            { src: "img/extrimistalert2.png", location: "extrimistalertlocation2", date: "extrimistalertdate2" },
+            { src: "img/military_convoy_day.png", location: "extrimistalertlocation1", date: "extrimistalertdate1" },
+            { src: "img/military_exercise.png", location: "extrimistalertlocation2", date: "extrimistalertdate2" },
             { src: "img/extrimistalert3.png", location: "extrimistalertlocation3", date: "extrimistalertdate3" },
-            { src: "img/extrimistalert4.png", location: "extrimistalertlocation4", date: "extrimistalertdate4" }
+            { src: "img/military_coup.png", location: "extrimistalertlocation4", date: "extrimistalertdate4" }
         ]
     },
     {
@@ -190,6 +190,66 @@ const postsData = [
             { src: "img/pets2.png", location: "petslocation2", date: "petsdate2" },
             { src: "img/pets3.png", location: "petslocation3", date: "petsdate3" },
             { src: "img/pets4.png", location: "petslocation4", date: "petsdate4" }
+        ]
+    },
+    {
+        id: 6,
+        title: "celebrityDeathTitle",
+        thumbnail: "img/memorial.png",
+        image: "img/memorial.png",
+        description: "celebrityDeathDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        searchTerms: ["celebrityDeathSearchTerms1", "celebrityDeathSearchTerms2", "celebrityDeathSearchTerms3", "celebrityDeathSearchTerms4"],
+        searchResults: [
+            { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", isAd: true },
+            { title: "celebrityDeathtitle2", description: "celebrityDeathdescription2", isAd: true },
+            { title: "celebrityDeathtitle3", description: "celebrityDeathdescription3", isAd: false },
+            { title: "celebrityDeathtitle4", description: "celebrityDeathdescription4", isAd: false },
+            { title: "celebrityDeathtitle5", description: "celebrityDeathdescription5", isAd: false },
+            { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: true },
+            { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", isAd: false },
+            { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", isAd: false },
+            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: true },
+            { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/celeb1.png", location: "celebrityDeathlocation1", date: "celebrityDeathdate1" },
+            { src: "img/celeb2.png", location: "celebrityDeathlocation2", date: "celebrityDeathdate2" },
+            { src: "img/celeb3.png", location: "celebrityDeathlocation3", date: "celebrityDeathdate3" },
+            { src: "img/celeb4.png", location: "celebrityDeathlocation4", date: "celebrityDeathdate4" }
+        ]
+    },
+    {
+        id: 7,
+        title: "weatherAlertTitle",
+        thumbnail: "img/storm.png",
+        image: "img/storm.png",
+        description: "weatherAlertDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        searchTerms: ["weatherAlertsearchTerms1", "weatherAlertsearchTerms2", "weatherAlertsearchTerms3", "weatherAlertsearchTerms4"],
+        searchResults: [
+            { title: "weatherAlerttitle1", description: "weatherAlertdescription1", isAd: true },
+            { title: "weatherAlerttitle2", description: "weatherAlertdescription2", isAd: false },
+            { title: "weatherAlerttitle3", description: "weatherAlertdescription3", isAd: false },
+            { title: "weatherAlerttitle4", description: "weatherAlertdescription4", isAd: true },
+            { title: "weatherAlerttitle5", description: "weatherAlertdescription5", isAd: false },
+            { title: "weatherAlerttitle6", description: "weatherAlertdescription6", isAd: false },
+            { title: "weatherAlerttitle7", description: "weatherAlertdescription7", isAd: true },
+            { title: "weatherAlerttitle8", description: "weatherAlertdescription8", isAd: false },
+            { title: "weatherAlerttitle9", description: "weatherAlertdescription9", isAd: false },
+            { title: "weatherAlerttitle10", description: "weatherAlertdescription10", isAd: true },
+            { title: "weatherAlerttitle11", description: "weatherAlertdescription11", isAd: false },
+            { title: "weatherAlerttitle12", description: "weatherAlertdescription12", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/storm2.png", location: "weatherAlertlocation1", date: "weatherAlertdate1" },
+            { src: "img/storm1.png", location: "weatherAlertlocation2", date: "weatherAlertdate2" },
+            { src: "img/storm3.png", location: "weatherAlertlocation3", date: "weatherAlertdate3" },
+            { src: "img/storm4.png", location: "weatherAlertlocation4", date: "weatherAlertdate4" }
         ]
     }
 ];
