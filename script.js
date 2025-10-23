@@ -41,8 +41,8 @@ const postsData = [
     {
         id: 2,
         title: "libraryTitle",
-        thumbnail: "img/libraryalert.png",
-        image: "img/libraryalert.png",
+        thumbnail: "img/extrimistalert.png",
+        image: "img/extrimistalert.png",
         description: "libraryDescription",
         unread: true,
         processed: false,
@@ -463,19 +463,22 @@ const meterSystem = new MeterSystem();
         function loadPost(postId) {
             currentPostId = postId;
             const post = postsData.find(p => p.id === postId);
-            
+
             if (post) {
+                // Reset evidence count when loading a different post
+                usedEvidenceCount = post.usedEvidenceCount || 0;
+
                 // Update post content
                 postImage.src = post.image;
                 postTitle.textContent = translateKey(post.title);
                 postDescription.textContent = translateKey(post.description);
-                
+
                 // Show post view
                 showPage(postViewPage);
-                
+
                 // Update top menu
                 showTopMenu();
-                
+
                 // Mark as read
                 if (post.unread) {
                     post.unread = false;
@@ -527,6 +530,9 @@ function verifyTip(isTrue) {
     if (selectedImages.length > 0) {
         meterSystem.updateCredibility(2, '(evidence)');
     }
+
+    // Save the evidence count to the post before resetting
+    post.usedEvidenceCount = usedEvidenceCount;
 
     // Reset evidence counter for next story
     usedEvidenceCount = 0;
@@ -917,9 +923,9 @@ function closeSearchPopup() {
 
 // Mark a search result as used for evidence
 function markAsUsed(resultIndex) {
-    // Check if evidence limit reached
+    // Check if evidence limit reached for current story
     if (usedEvidenceCount >= MAX_EVIDENCE_PER_STORY) {
-        return; // Don't allow more evidence
+        return; // Don't allow more evidence for this story
     }
 
     const post = postsData.find(p => p.id === currentPostId);
@@ -934,8 +940,10 @@ function markAsUsed(resultIndex) {
             meterSystem.updateCredibility(-2, '(poor evidence)');
         }
 
-        // Increment evidence counter
+        // Increment evidence counter for current story
         usedEvidenceCount++;
+
+        // Save evidence count to the post
         post.usedEvidenceCount = usedEvidenceCount;
 
         // Mark result as used (could add visual indicator)
@@ -957,7 +965,7 @@ function markAsUsed(resultIndex) {
 
         closeSearchPopup();
 
-        // Show completion message if limit reached
+        // Show completion message if limit reached for this story
         if (usedEvidenceCount >= MAX_EVIDENCE_PER_STORY) {
             showEvidenceLimitReached();
         }
