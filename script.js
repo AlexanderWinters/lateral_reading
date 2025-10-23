@@ -13,6 +13,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
             { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true },
@@ -47,6 +48,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
         searchResults: [
             { title: "librarytitle1", description: "librarydescription1", isAd: true },
@@ -84,6 +86,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["extrimistalertsearchTerms1", "extrimistalertsearchTerms2", "extrimistalertsearchTerms3", "extrimistalertsearchTerms4"],
         searchResults: [
             { title: "extrimistalerttitle1", description: "extrimistalertdescription1", isAd: true },
@@ -123,6 +126,7 @@ const postsData = [
         unread: false,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["waterpoisoningsearchTerms1", "waterpoisoningsearchTerms2", "waterpoisoningsearchTerms3", "waterpoisoningsearchTerms4"],
         searchResults: [
             { title: "waterpoisoningtitle1", description: "waterpoisoningdescription1", isAd: true },
@@ -160,6 +164,7 @@ const postsData = [
         unread: false,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["petssearchTerms1", "petssearchTerms2", "petssearchTerms3", "petssearchTerms4"],
         searchResults: [
             { title: "petstitle1", description: "petsdescription1", isAd: true },
@@ -201,6 +206,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
+        correctAnswer: false,
         searchTerms: ["celebrityDeathSearchTerms1", "celebrityDeathSearchTerms2", "celebrityDeathSearchTerms3", "celebrityDeathSearchTerms4"],
         searchResults: [
             { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", isAd: true },
@@ -230,6 +236,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
+        correctAnswer: true,
         searchTerms: ["weatherAlertsearchTerms1", "weatherAlertsearchTerms2", "weatherAlertsearchTerms3", "weatherAlertsearchTerms4"],
         searchResults: [
             { title: "weatherAlerttitle1", description: "weatherAlertdescription1", isAd: true },
@@ -488,22 +495,250 @@ const meterSystem = new MeterSystem();
         }
 
         // Process a post (publish or flag)
-        function processPost(status) {
-            if (currentPostId) {
-                const post = postsData.find(p => p.id === currentPostId);
-                
-                if (post) {
-                    post.processed = true;
-                    post.status = status;
-                    
-                    // Update sidebar
-                    generatePosts();
-                    
-                    // Show feedback
-                    showFeedback(status);
+    function processPost(status) {
+        if (currentPostId) {
+            const post = postsData.find(p => p.id === currentPostId);
+
+            if (post) {
+                // Determine if the user's decision is correct
+                const userDecision = status === 'published'; // true if published, false if flagged
+                const isCorrect = userDecision === post.correctAnswer;
+
+                // Update post status
+                post.processed = true;
+                post.status = status;
+
+                // Update meters based on correctness
+                if (isCorrect) {
+                    // Correct decision
+                    if (userDecision) {
+                        meterSystem.updateCredibility(8, '(correct: published true story)');
+                        meterSystem.updatePopularity(5, '(shared accurate info)');
+                    } else {
+                        meterSystem.updateCredibility(10, '(correct: flagged false story)');
+                        meterSystem.updatePopularity(2, '(prevented misinformation)');
+                    }
+                } else {
+                    // Incorrect decision
+                    if (userDecision) {
+                        meterSystem.updateCredibility(-8, '(incorrect: published false story)');
+                        meterSystem.updatePopularity(-5, '(spread misinformation)');
+                    } else {
+                        meterSystem.updateCredibility(-5, '(incorrect: flagged true story)');
+                        meterSystem.updatePopularity(-3, '(suppressed accurate info)');
+                    }
                 }
+
+                // Update sidebar
+                generatePosts();
+
+                // Show decision feedback popup
+                showDecisionFeedback(post, status, isCorrect);
             }
         }
+    }
+
+function showDecisionFeedback(post, userDecision, isCorrect) {
+    const decisionText = userDecision === 'published' ? 'PUBLISH' : 'FLAG AS FALSE';
+    const decisionClass = isCorrect ? 'correct' : 'incorrect';
+    const correctDecisionText = post.correctAnswer ? 'PUBLISH' : 'FLAG AS FALSE';
+
+    // Generate explanation based on the post and correctness
+    const explanation = generateDecisionExplanation(post, userDecision, isCorrect);
+
+    const popupHTML = `
+        <div class="decision-popup-overlay" id="decisionPopupOverlay">
+            <div class="decision-popup">
+                <div class="popup-header">
+                    <h3>Decision Complete</h3>
+                    <button class="popup-close" onclick="closeDecisionPopup()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="popup-content">
+                    <div class="decision-result ${decisionClass}">
+                        <div class="decision-icon">
+                            ${isCorrect ?
+        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>' :
+        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/><path d="M15 9L9 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9L15 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    }
+                        </div>
+                        <div class="decision-text">
+                            <h4 class="${isCorrect ? 'correct' : 'incorrect'}">
+                                ${isCorrect ? '✓ Correct Decision' : '✗ Incorrect Decision'}
+                            </h4>
+                            <p class="decision-details">You chose to: <strong>${decisionText}</strong></p>
+                            ${!isCorrect ? `<p class="correct-choice">Correct choice was: <strong>${correctDecisionText}</strong></p>` : ''}
+                            <p class="post-title-ref">"${translateKey(post.title)}"</p>
+                        </div>
+                    </div>
+                
+                    <div class="decision-analysis">
+                        <h4>Analysis:</h4>
+                        <div class="analysis-content">
+                            ${explanation.reasoning}
+                        </div>
+                        
+                        <div class="meter-impact">
+                            <h5>Impact on Your Metrics:</h5>
+                            <div class="metric-changes">
+                                <div class="metric-change credibility">
+                                    <span class="metric-name">Credibility:</span>
+                                    <span class="change-value ${explanation.credibilityChange > 0 ? 'positive' : 'negative'}">
+                                        ${explanation.credibilityChange > 0 ? '+' : ''}${explanation.credibilityChange}
+                                        ${explanation.credibilityReason}
+                                    </span>
+                                </div>
+                                <div class="metric-change popularity">
+                                    <span class="metric-name">Popularity:</span>
+                                    <span class="change-value ${explanation.popularityChange > 0 ? 'positive' : 'negative'}">
+                                        ${explanation.popularityChange > 0 ? '+' : ''}${explanation.popularityChange}
+                                        ${explanation.popularityReason}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        ${!isCorrect ? `
+                            <div class="learning-tip">
+                                <h5>💡 Learning Tip:</h5>
+                                <p>${explanation.learningTip}</p>
+                            </div>
+                        ` : `
+                            <div class="success-message">
+                                <h5>🎯 Well Done!</h5>
+                                <p>Your fact-checking skills are improving. Keep using evidence to make informed decisions!</p>
+                            </div>
+                        `}
+                    </div>
+                </div>
+                <div class="popup-actions">
+                    <button class="action-btn secondary" onclick="closeDecisionPopup(); loadPost(${currentPostId});">Review Again</button>
+                    <button class="action-btn primary" onclick="closeDecisionPopup(); goHome();">Continue</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+function generateDecisionExplanation(post, userDecision, isCorrect) {
+    const userChosePublish = userDecision === 'published';
+
+    // Define explanations for each post
+    const explanations = {
+        1: { // Fire alert post - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This post should have been flagged as false. The sensationalized language, conspiracy claims about authorities 'covering up' information, and emotional manipulation are classic signs of misinformation designed to spread panic rather than provide factual emergency information." :
+                    "This should not happen with current post setup",
+                learningTip: "Look for official sources when dealing with emergency information. Legitimate emergency alerts come through official channels with clear, factual language rather than conspiracy theories about cover-ups."
+            }
+        },
+        2: { // Library attack post - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This post should have been flagged. It spreads unverified threats that could cause public panic. Legitimate security threats are handled by official law enforcement channels, not through social media posts with vague claims and dramatic language." :
+                    "This should not happen with current post setup",
+                learningTip: "When encountering posts about security threats, always look for official law enforcement sources and concrete evidence. Vague threats with dramatic language are often designed to spread fear rather than inform."
+            }
+        },
+        3: { // Military vehicles post - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This should have been flagged as misleading. The post takes routine military exercises and frames them as threatening 'takeovers.' The sensationalized interpretation misrepresents normal defense training activities." :
+                    "This should not happen with current post setup",
+                learningTip: "Military exercises are routine and publicly announced. Always check official defense department sources before sharing posts that claim normal military activities are threats to civilian government."
+            }
+        },
+        7: { // Weather alert post - SHOULD BE PUBLISHED
+            correct: {
+                reasoning: userChosePublish ?
+                    "Correct! This appears to be a legitimate weather alert with appropriate urgency. While the language is strong, it's proportionate to a genuine severe weather event. Official meteorological sources would support publishing accurate weather warnings to help public safety." :
+                    "Good instincts to be cautious, but this appears to be a legitimate severe weather alert. The language, while urgent, is appropriate for a genuine emergency situation and would be supported by official meteorological sources.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This should not happen with current post setup" :
+                    "This post should have been published as it appears to be a legitimate weather emergency. While it's good to be cautious about sensationalized content, genuine emergency alerts often use urgent language to ensure public safety.",
+                learningTip: "Distinguish between sensationalized misinformation and legitimate emergency warnings. Check official weather services to verify severe weather alerts - urgent language can be appropriate when public safety is at risk."
+            }
+        }
+        // Add explanations for other posts...
+    };
+
+    const postExplanation = explanations[post.id];
+    const explanation = isCorrect ? postExplanation.correct : postExplanation.incorrect;
+
+    // Calculate meter changes (these should match what was actually applied in processPost)
+    let credibilityChange, credibilityReason, popularityChange, popularityReason;
+
+    if (isCorrect) {
+        if (userChosePublish) {
+            credibilityChange = 8;
+            credibilityReason = '(correctly published true story)';
+            popularityChange = 5;
+            popularityReason = '(shared accurate information)';
+        } else {
+            credibilityChange = 10;
+            credibilityReason = '(correctly flagged false story)';
+            popularityChange = 2;
+            popularityReason = '(prevented misinformation)';
+        }
+    } else {
+        if (userChosePublish) {
+            credibilityChange = -8;
+            credibilityReason = '(incorrectly published false story)';
+            popularityChange = -5;
+            popularityReason = '(spread misinformation)';
+        } else {
+            credibilityChange = -5;
+            credibilityReason = '(incorrectly flagged true story)';
+            popularityChange = -3;
+            popularityReason = '(suppressed accurate information)';
+        }
+    }
+
+    return {
+        reasoning: explanation.reasoning,
+        learningTip: explanation.learningTip,
+        credibilityChange,
+        credibilityReason,
+        popularityChange,
+        popularityReason
+    };
+}
+
+// Close decision feedback popup
+function closeDecisionPopup() {
+    const popup = document.getElementById('decisionPopupOverlay');
+    if (popup) {
+        popup.remove();
+    }
+}
+
+// Function to go back to home page
+function goHome() {
+    showPage(videoInstructionsPage);
+    hideTopMenu();
+}
 
 function verifyTip(isTrue) {
     const action = isTrue ? 'verified' : 'debunked';
