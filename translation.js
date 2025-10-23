@@ -386,7 +386,63 @@ const languageData = {
     weatherAlertdate1: "Updated 1 hour ago",
     weatherAlertdate2: "Taken this morning",
     weatherAlertdate3: "September 2023",
-    weatherAlertdate4: "Published today"
+    weatherAlertdate4: "Published today",
+
+
+    dogfluencerTitle: "EXPOSED: Popular dog influencer caught buying fake followers",
+    dogfluencerDescription: "Investigation reveals @PuppyPrincessLola has purchased over 100K fake followers while partnering with major pet brands. Followers noticed suspicious spikes in follower count overnight.",
+
+
+    dogfluencersearchTerms1: "Influencer fake followers",
+    dogfluencersearchTerms2: "Social media bot accounts",
+    dogfluencersearchTerms3: "Instagram fraud investigation",
+    dogfluencersearchTerms4: "Pet brand partnerships",
+
+
+    dogfluencertitle1: "BREAKING: Major pet influencer scandal rocks social media",
+    dogfluencertitle2: "Social Media Analytics: How to spot fake followers",
+    dogfluencertitle3: "Industry Report: 40% of pet influencers use fake engagement",
+    dogfluencertitle4: "BOOST YOUR FOLLOWERS NOW: Get 10K followers for $49!",
+    dogfluencertitle5: "Brand Partnership Investigation: Are companies being deceived?",
+    dogfluencertitle6: "Instagram's crackdown on fake accounts shows results",
+    dogfluencertitle7: "BUY INSTAGRAM LIKES: Instant delivery, real-looking accounts!",
+    dogfluencertitle8: "Pet industry marketing: The authenticity problem",
+    dogfluencertitle9: "Data analysis reveals suspicious follower patterns",
+    dogfluencertitle10: "Former employee speaks out about follower-buying services",
+    dogfluencertitle11: "PREMIUM FOLLOWERS: Lifetime guarantee, looks 100% real!",
+    dogfluencertitle12: "Federal Trade Commission guidelines on influencer disclosure",
+    dogfluencertitle13: "Marketing agencies demand transparency from influencers",
+    dogfluencertitle14: "SOCIAL MEDIA GROWTH HACK: Secret method influencers don't want you to know!",
+    dogfluencertitle15: "Consumer protection: How fake influencers harm small businesses",
+
+
+    dogfluencerdescription1: "Multiple sources confirm the investigation into fraudulent follower purchases",
+    dogfluencerdescription2: "Technical analysis explaining methods to identify purchased followers",
+    dogfluencerdescription3: "Comprehensive study by digital marketing firm reveals widespread fraud",
+    dogfluencerdescription4: "Commercial service offering instant follower increases for social media accounts",
+    dogfluencerdescription5: "Legal implications for brands unknowingly partnering with fraudulent accounts",
+    dogfluencerdescription6: "Platform's official statement on removing millions of fake accounts monthly",
+    dogfluencerdescription7: "Advertisement for engagement manipulation services targeting influencers",
+    dogfluencerdescription8: "Industry analysis of authenticity challenges in pet influencer marketing",
+    dogfluencerdescription9: "Statistical evidence showing unusual growth patterns in follower acquisition",
+    dogfluencerdescription10: "Whistleblower testimony about the fake follower industry operations",
+    dogfluencerdescription11: "Premium bot service advertising undetectable fake follower generation",
+    dogfluencerdescription12: "Official regulatory guidelines requiring honest disclosure of partnerships",
+    dogfluencerdescription13: "Professional marketing firms implementing stricter vetting procedures",
+    dogfluencerdescription14: "Misleading advertisement promising unrealistic social media growth",
+    dogfluencerdescription15: "Economic impact study on how fraud affects legitimate content creators",
+
+
+    dogfluencerlocation1: "Screenshot of follower analytics showing suspicious overnight spike",
+    dogfluencerlocation2: "Data visualization chart from social media monitoring tool",
+    dogfluencerlocation3: "Email correspondence between influencer and follower-buying service",
+    dogfluencerlocation4: "Comparison of engagement rates before and after follower purchase",
+
+
+    dogfluencerdate1: "Captured last week",
+    dogfluencerdate2: "Generated yesterday",
+    dogfluencerdate3: "Leaked 3 days ago",
+    dogfluencerdate4: "Analysis from this month"
 
   },
 

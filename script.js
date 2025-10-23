@@ -258,6 +258,41 @@ const postsData = [
             { src: "img/storm3.png", location: "weatherAlertlocation3", date: "weatherAlertdate3" },
             { src: "img/storm4.png", location: "weatherAlertlocation4", date: "weatherAlertdate4" }
         ]
+    },
+    {
+        id: 8,
+        title: "dogfluencerTitle",
+        thumbnail: "img/pets.png",
+        image: "img/pets.png",
+        description: "dogfluencerDescription",
+        unread: false,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        searchTerms: ["dogfluencersearchTerms1", "dogfluencersearchTerms2", "dogfluencersearchTerms3", "dogfluencersearchTerms4"],
+        searchResults: [
+            { title: "dogfluencertitle1", description: "dogfluencerdescription1", isAd: true },
+            { title: "dogfluencertitle2", description: "dogfluencerdescription2", isAd: true },
+            { title: "dogfluencertitle3", description: "dogfluencerdescription3", isAd: true },
+            { title: "dogfluencertitle4", description: "dogfluencerdescription4", isAd: false },
+            { title: "dogfluencertitle5", description: "dogfluencerdescription5", isAd: false },
+            { title: "dogfluencertitle6", description: "dogfluencerdescription6", isAd: false },
+            { title: "dogfluencertitle7", description: "dogfluencerdescription7", isAd: false },
+            { title: "dogfluencertitle8", description: "dogfluencerdescription8", isAd: true },
+            { title: "dogfluencertitle9", description: "dogfluencerdescription9", isAd: false },
+            { title: "dogfluencertitle10", description: "dogfluencerdescription10", isAd: false },
+            { title: "dogfluencertitle11", description: "dogfluencerdescription11", isAd: true },
+            { title: "dogfluencertitle12", description: "dogfluencerdescription12", isAd: false },
+            { title: "dogfluencertitle13", description: "dogfluencerdescription13", isAd: false },
+            { title: "dogfluencertitle14", description: "dogfluencerdescription14", isAd: true },
+            { title: "dogfluencertitle15", description: "dogfluencerdescription15", isAd: false }
+        ],
+        imageResults: [
+            { src: "img/pets1.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
+            { src: "img/pets2.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
+            { src: "img/pets3.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
+            { src: "img/pets4.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
+        ]
     }
 ];
 
@@ -679,6 +714,21 @@ function generateDecisionExplanation(post, userDecision, isCorrect) {
                     "This should not happen with current post setup" :
                     "This post should have been published as it appears to be a legitimate weather emergency. While it's good to be cautious about sensationalized content, genuine emergency alerts often use urgent language to ensure public safety.",
                 learningTip: "Distinguish between sensationalized misinformation and legitimate emergency warnings. Check official weather services to verify severe weather alerts - urgent language can be appropriate when public safety is at risk."
+            }
+        },
+
+        8: { // Dogfluencer post - SHOULD BE PUBLISHED (true story)
+            correct: {
+                reasoning: userChosePublish ?
+                    "Excellent decision! This is a legitimate investigative story about social media fraud that affects consumers and businesses. The evidence includes verifiable data analytics, documented communication, and follows established patterns of influencer fraud that regulatory bodies actively monitor. This type of investigative journalism serves the public interest by exposing deceptive practices in digital marketing." :
+                    "Good instincts to investigate thoroughly, but this appears to be a credible investigative report. While social media can contain false accusations, this story presents verifiable evidence including analytics data, communication records, and fits documented patterns of influencer fraud that affect real businesses and consumers.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This should not happen with current post setup" :
+                    "This story should have been published as it represents legitimate investigative journalism. The evidence presented - including analytics data, communication records, and industry context - supports the claims. Influencer fraud is a real, documented problem that affects consumers and businesses, making this newsworthy content that serves the public interest.",
+                learningTip: "Distinguish between personal attacks and legitimate investigations. Look for verifiable evidence like data analytics, documented communications, and broader industry context. Real investigative stories about fraud typically include multiple sources of evidence and address issues that affect consumers or the public interest."
             }
         }
         // Add explanations for other posts...
