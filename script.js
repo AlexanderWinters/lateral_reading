@@ -449,10 +449,11 @@ const meterSystem = new MeterSystem();
             });
 
             // Image verification
-            document.getElementById('tipTrueButton').addEventListener('click', () => verifyTip(true));
-            document.getElementById('tipFalseButton').addEventListener('click', () => verifyTip(false));
+            document.getElementById('tipTrueButton').addEventListener('click', () => processPost('published'));
+            document.getElementById('tipFalseButton').addEventListener('click', () => processPost('flagged'));
 
         }
+
 
         // Generate posts in sidebar
         function generatePosts() {
@@ -790,212 +791,6 @@ function goHome() {
     hideTopMenu();
 }
 
-function verifyTip(isTrue) {
-    const action = isTrue ? 'verified' : 'debunked';
-    const status = isTrue ? 'published' : 'flagged';
-
-    // Find the current post using currentPostId
-    const post = postsData.find(p => p.id === currentPostId);
-    if (!post) return;
-
-    // Update post status
-    post.processed = true;
-    post.status = status;
-
-    // Meter updates based on decision
-    if (isTrue) {
-        meterSystem.updatePopularity(6, '(verified)');
-        meterSystem.updateCredibility(3, '(evidence)');
-    } else {
-        meterSystem.updateCredibility(8, '(debunked)');
-        meterSystem.updatePopularity(-2, '(careful)');
-    }
-
-    // Additional bonus for selecting evidence
-    if (selectedImages.length > 0) {
-        meterSystem.updateCredibility(2, '(evidence)');
-    }
-
-    // Save the evidence count to the post before resetting
-    post.usedEvidenceCount = usedEvidenceCount;
-
-    // Reset evidence counter for next story
-    usedEvidenceCount = 0;
-
-    // Update sidebar to reflect changes
-    generatePosts();
-
-    // Show feedback popup instead of navigating away
-    showVerificationPopup(isTrue, post, selectedImages);
-}
-
-function showVerificationPopup(isTrue, post, selectedImages) {
-    const decision = isTrue ? 'TRUE' : 'FALSE';
-    const decisionClass = isTrue ? 'verified' : 'debunked';
-
-    // Generate explanation based on the decision and evidence
-    const explanation = generateVerificationExplanation(post, isTrue, selectedImages);
-
-    const popupHTML = `
-        <div class="verification-popup-overlay" id="verificationPopupOverlay">
-            <div class="verification-popup">
-                <div class="popup-header">
-                    <h3>Verification Complete</h3>
-                    <button class="popup-close" onclick="closeVerificationPopup()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                </div>
-                <div class="popup-content">
-                    <div class="decision-result ${decisionClass}">
-                        <div class="decision-icon">
-                            ${isTrue ?
-        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>' :
-        '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L6 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6H20L18 12L20 18H6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-    }
-                        </div>
-                        <div class="decision-text">
-                            <h4>You marked this tip as: <span class="decision-label">${decision}</span></h4>
-                            <p class="post-title-ref">"${translateKey(post.title)}"</p>
-                        </div>
-                    </div>
-                    
-                    <div class="verification-analysis">
-                        <h4>Your Analysis:</h4>
-                        <div class="analysis-content">
-                            ${explanation.reasoning}
-                        </div>
-                        
-                        ${selectedImages.length > 0 ? `
-                            <div class="evidence-used">
-                                <h5>Evidence Selected:</h5>
-                                <p>You selected ${selectedImages.length} image(s) as supporting evidence, which ${explanation.evidenceQuality}</p>
-                            </div>
-                        ` : `
-                            <div class="no-evidence-warning">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <span>No supporting evidence selected. Consider gathering evidence before making decisions.</span>
-                            </div>
-                        `}
-                        
-                        <div class="meter-impact">
-                            <h5>Impact on Your Metrics:</h5>
-                            <div class="metric-changes">
-                                <div class="metric-change credibility">
-                                    <span class="metric-name">Credibility:</span>
-                                    <span class="change-value ${isTrue ? 'positive' : 'positive'}">
-                                        ${isTrue ? '+5' : '+8'} 
-                                        (${isTrue ? 'verified content' : 'caught misinformation'})
-                                    </span>
-                                </div>
-                                <div class="metric-change popularity">
-                                    <span class="metric-name">Popularity:</span>
-                                    <span class="change-value ${isTrue ? 'positive' : 'negative'}">
-                                        ${isTrue ? '+6' : '-2'} 
-                                        (${isTrue ? 'sharing accurate info' : 'being cautious'})
-                                    </span>
-                                </div>
-                                ${selectedImages.length > 0 ? `
-                                    <div class="metric-change credibility-bonus">
-                                        <span class="metric-name">Evidence Bonus:</span>
-                                        <span class="change-value positive">+2 (used supporting evidence)</span>
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="popup-actions">
-                    <button class="action-btn secondary" onclick="closeVerificationPopup(); loadPost(${currentPostId});">Review Again</button>
-                    <button class="action-btn primary" onclick="closeVerificationPopup(); goHome();">Continue</button>
-                </div>
-            </div>
-        </div>
-    `;
-
-    document.body.insertAdjacentHTML('beforeend', popupHTML);
-}
-
-// Generate explanation based on the verification decision
-function generateVerificationExplanation(post, isTrue, selectedImages) {
-    const explanations = {
-        1: { // Fire alert post
-            true: {
-                reasoning: "You correctly identified this as a legitimate emergency situation. The evidence shows official sources confirming an actual fire incident with proper emergency response protocols in place.",
-                evidenceQuality: "supports the official narrative and emergency response documentation."
-            },
-            false: {
-                reasoning: "You correctly identified this as misinformation. The dramatic language, lack of official sources, and manipulated imagery are classic signs of false emergency alerts designed to spread panic.",
-                evidenceQuality: "helped you spot the manipulated content and lack of credible sources."
-            }
-        },
-        2: { // Library attack post
-            true: {
-                reasoning: "You determined this threat has credible elements. However, be cautious - even when some elements may be true, the presentation and sources matter significantly in threat assessment.",
-                evidenceQuality: "shows concerning patterns that warrant official attention."
-            },
-            false: {
-                reasoning: "You correctly identified this as unsubstantiated fear-mongering. The vague threats, dramatic language, and lack of credible sources are typical of posts designed to spread anxiety rather than inform.",
-                evidenceQuality: "revealed the manipulated nature of the claims and unreliable sources."
-            }
-        },
-        3: { // Extremist post
-            true: {
-                reasoning: "You found elements of truth in this post. While the military vehicles may be real, the context and interpretation require careful verification of official sources.",
-                evidenceQuality: "helps distinguish between actual events and their misrepresentation."
-            },
-            false: {
-                reasoning: "You correctly identified this as misleading content. The sensationalized presentation of routine military exercises as threatening events is a common misinformation tactic.",
-                evidenceQuality: "helped you see past the dramatic framing to the actual facts."
-            }
-        }
-    };
-
-    const postExplanation = explanations[post.id];
-    if (postExplanation) {
-        return isTrue ? postExplanation.true : postExplanation.false;
-    }
-
-    // Default explanation for other posts
-    return {
-        reasoning: isTrue ?
-            "You determined this information has credible elements. Remember to always verify with official sources and cross-reference multiple reliable outlets." :
-            "You identified potential issues with this information. Good fact-checking involves looking for credible sources, checking for sensationalized language, and verifying claims through official channels.",
-        evidenceQuality: selectedImages.length > 0 ?
-            "provides valuable context for your decision-making process." :
-            "would have strengthened your analysis."
-    };
-}
-
-// Close verification popup
-function closeVerificationPopup() {
-    const popup = document.getElementById('verificationPopupOverlay');
-    if (popup) {
-        popup.remove();
-    }
-}
-
-// Show feedback after processing a post
-function showFeedback(status) {
-    const messageKey = status === 'published' ? 'feedbackPublished' : 'feedbackFlagged';
-    feedbackMessage.textContent = getLanguageText(messageKey);
-    feedbackMessage.className = `feedback-message ${status === 'flagged' ? 'error' : ''}`;
-
-    showPage(feedbackPage);
-    hideTopMenu();
-
-    // Auto return to home after 3 seconds instead of waiting for video
-    setTimeout(() => {
-        showPage(videoInstructionsPage);
-    }, 3000);
-}
-
         // Show text search options
         function showTextSearchOptions() {
             if (currentPostId) {
@@ -1066,7 +861,6 @@ function showTextSearchResults() {
     }
 }
 
-// Show popup for search result with reasoning
 function showSearchResultPopup(result, index) {
     // Update meters based on result type
     if (result.isAd) {
