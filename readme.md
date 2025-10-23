@@ -156,8 +156,14 @@ The app encourages users to consider five key questions:
 
 ## Development Notes
 
+### Creating a story
+- In the `script.js` under `postsData`, add a new entry and follow the pattern of the existing stories. 
+- Also in the `script.js` under `generateDecisionExplanation`, add the entries for the correct and incorrect answers with explanations. 
+- Add the texts and descriptions in the `translation.js`, and use the tags from there instead of hard-coding text in `script.js`.
+- Add the new images in the `img` folder and follow the naming convention.
+
 ### Current Implementation Status
-- ✅ Core navigation and post system
+- ✅ Core navigation and post-system
 - ✅ Multi-language support
 - ✅ Basic fact-checking tools
 - 🔄 Image selection improvements needed
@@ -171,16 +177,25 @@ The app encourages users to consider five key questions:
 4. **Cryptic Image Clues**: More sophisticated image metadata
 5. **Landing Page Improvements**: Better onboarding experience
 
-## Browser Compatibility
+### Browser Compatibility
 
 - **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
 - **HTML5 Features**: Video playback, semantic elements
 - **CSS3 Features**: Flexbox, CSS Grid, custom properties
 - **JavaScript**: ES6+ features (arrow functions, const/let, template literals)
 
-## Performance Considerations
+### Performance Considerations
 
 - **Asset Loading**: Optimized image sizes and formats
 - **JavaScript**: Single-threaded, event-driven architecture
 - **Memory Management**: Efficient DOM manipulation
 - **Video Streaming**: Local video files for consistent playback
+
+
+### Next steps
+- Publishing/scraping should follow the player in the page.
+- add second page/more results in text searches. (it could be fake, but gives easy points) 
+- ~~Fix the text limit. Now is pegged to one story.~~
+- add effects to cred/pop meters. 
+- Curate images.
+- Teenage story: true story; frauds about concerts tickets.
