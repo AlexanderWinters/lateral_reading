@@ -262,8 +262,8 @@ const postsData = [
     {
         id: 8,
         title: "dogfluencerTitle",
-        thumbnail: "img/pets.png",
-        image: "img/pets.png",
+        thumbnail: "img/dogfluencer.png",
+        image: "img/dogfluencer.png",
         description: "dogfluencerDescription",
         unread: false,
         processed: false,
@@ -288,10 +288,10 @@ const postsData = [
             { title: "dogfluencertitle15", description: "dogfluencerdescription15", isAd: false }
         ],
         imageResults: [
-            { src: "img/pets1.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
-            { src: "img/pets2.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
-            { src: "img/pets3.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
-            { src: "img/pets4.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
+            { src: "img/dogfluencer3.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
+            { src: "img/dogfluencer2.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
+            { src: "img/dogfluencer1.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
+            { src: "img/dogfluencer4.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
         ]
     }
 ];
