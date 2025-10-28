@@ -587,12 +587,12 @@ function showDecisionFeedback(post, userDecision, isCorrect) {
             <div class="decision-popup">
                 <div class="popup-header">
                     <h3>Decision Complete</h3>
-                    <button class="popup-close" onclick="closeDecisionPopup()">
+                    <!--<button class="popup-close" onclick="closeDecisionPopup()">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                    </button>
+                    </button>-->
                 </div>
                 <div class="popup-content">
                     <div class="decision-result ${decisionClass}">
@@ -701,6 +701,42 @@ function generateDecisionExplanation(post, userDecision, isCorrect) {
                     "This should have been flagged as misleading. The post takes routine military exercises and frames them as threatening 'takeovers.' The sensationalized interpretation misrepresents normal defense training activities." :
                     "This should not happen with current post setup",
                 learningTip: "Military exercises are routine and publicly announced. Always check official defense department sources before sharing posts that claim normal military activities are threats to civilian government."
+            }
+        },
+        4: { // Water poisoning post - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This post should have been flagged as health misinformation. It makes alarming claims about water contamination based on anecdotal reports without official verification. Real water safety issues involve immediate official testing, public health warnings, and clear guidance - not mysterious 'chemical smells' with implied cover-ups." :
+                    "This should not happen with current post setup",
+                learningTip: "Always verify health claims through official public health agencies. Water quality is heavily regulated and monitored - legitimate contamination events trigger immediate official responses with testing data, not vague social media rumors about chemical odors."
+            }
+        },
+        5: { // Pet infection post - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This should have been flagged as animal health misinformation. It uses fear tactics and vague claims about pet diseases without credible veterinary sources. Real pet health emergencies are reported through official veterinary channels with specific symptoms, affected areas, and clear prevention guidance - not mysterious 'new infections' with implied cover-ups." :
+                    "This should not happen with current post setup",
+                learningTip: "Verify pet health claims through official veterinary associations and animal health departments. Legitimate disease outbreaks involve specific symptoms, geographic patterns, and official health guidance rather than vague social media warnings with alarming images."
+            }
+        },
+        6: { // Celebrity death hoax - SHOULD BE FLAGGED
+            correct: {
+                reasoning: "Excellent detection of a celebrity death hoax! These false death announcements spread rapidly on social media and cause real emotional distress to fans while generating clicks for unscrupulous sites. The post likely lacks official confirmation from representatives, family, or credible news sources. Real celebrity deaths are confirmed through multiple official channels simultaneously, not through single viral social media posts.",
+                learningTip: ""
+            },
+            incorrect: {
+                reasoning: userChosePublish ?
+                    "This should have been flagged as a celebrity death hoax. These false announcements are common social media phenomena that spread emotional misinformation for clicks and engagement. Legitimate celebrity deaths are confirmed through multiple official sources - management, family statements, and established news outlets - not single viral posts with dramatic language." :
+                    "This should not happen with current post setup",
+                learningTip: "Always verify celebrity death claims through official representatives, family statements, or established entertainment news sources. Death hoaxes are unfortunately common and cause real distress. Look for confirmation across multiple credible sources before sharing such sensitive information."
             }
         },
         7: { // Weather alert post - SHOULD BE PUBLISHED

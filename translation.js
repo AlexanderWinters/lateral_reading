@@ -24,7 +24,9 @@ const languageData = {
 
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
-    introDescription: "This is an interactive media literacy training game that simulates a newsroom environment. You'll practice fact-checking skills by reviewing social media posts that may contain misinformation.",
+    introDescription: "Hello and welcome to the newsroom! Everyone new to the newsroom must undergo our training in reviewing news on social media before publication. We know from experience that many people struggle to remain factual and objective, so you will have the opportunity to test and practice this skill. It is important to double-check information before it is published to ensure that it is correct. Of course, we want to get the latest news out to our readers and viewers quickly, but we can't get it wrong because our reputation as a news channel is extremely important! \n" +
+        "Some common beginner mistakes are only seeing and hearing what you want to see and hear and are used to. There is a risk that you are interpreting everything as support for what you already believe. Having trouble explaining your assessments when someone asks why you think something is another problem. Not being open to alternative explanations is also problematic, as well as only looking for evidence to support what you already believe, and ignoring anything that contradicts this. \n" +
+        "Here in the newsroom, we work actively to assess information in an objective and comprehensive manner. It is not about being skeptical of everything and everyone, but about assessing information in a critical and constructive way. It is about actively seeking different explanations, being aware that one may be overconfident, and striving to find good factual support for one's conclusions. When we publish something, it should be readable and accurate, and we must know that the stories we put out into society have been properly fact-checked.  ",
     howToPlay: "How to Play:",
     step1: "📱 Review Posts: Click on posts in the left sidebar to examine suspicious content",
     step2: "🔍 Fact-Check: Use text search and reverse image search tools to verify information",
@@ -468,6 +470,10 @@ const languageData = {
     feedbackFlagged: "Innehållet har flaggats som falskt !",
     loadMore: "Ladda mer",
     noResults: "Inga resultat hittades",
+
+    introDescription:"Hej och välkommen till nyhetsstudion! Alla som är nya här på nyheterna får genomgå vår övning i att granska nyheter på sociala medier inför eventuell publicering. Vi vet sedan tidigare att många har problem med att vara sakliga och objektiva och därför kommer du att få chansen att testa och träna detta. Det är viktigt att dubbelkolla information innan den publiceras så att den är korrekt. Vi vill så klart snabbt komma ut med det senaste till våra läsare och tittare, men det får inte bli fel eftersom vårt rykte som nyhetskanal är superviktigt! \n" +
+        "Några vanliga nybörjarfel är att man bara ser och hör det man vill och är van vid. Tolkar allt som stöd för det man redan tror på. Har problem att förklara sina bedömningar när någon frågar varför man tycker något. Inte är öppen för alternativa förklaringar. Bara letar efter bevis för det som man redan tycker – och struntar i det som motsäger detta. \n" +
+        "Här jobbar vi aktivt med att bedöma informationen på ett sakligt och allsidigt sätt. Det handlar inte om att vara skeptisk till allt och alla utan att bedöma informationen på ett kritiskt och konstruktivt sätt. Detta handlar om att aktivt söka efter olika förklaringar, vara medveten om att man ofta fastnar i ett överdrivet självförtroende och hitta bra stöd i fakta för sina slutsatser. När vi publicerar något ska det vara läsvärt och korrekt, och vi måste veta att det är faktagranskade historier som vi för ut i samhället.   ",
 
     burnalertTitle: "HUS I BRAND -- myndigheterna TÄCKER ÖVER DETTA!",
     burnalertDescription: "Bilderna visar ett brinnande område i staden. Kommentarer är upprörda: 'Varför rapporterar ingen om detta?' 'Vi har rätt att få veta sanningen!'",
