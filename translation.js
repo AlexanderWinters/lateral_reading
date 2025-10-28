@@ -37,6 +37,12 @@ const languageData = {
     skillsList: "You'll practice lateral reading, image verification, source evaluation, and critical thinking",
     getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training!",
 
+    noFactCheckingWarning: "Publishing without fact-checking is risky journalism",
+    noFactCheckingPenalty: "(published without verification)",
+    noFactCheckingPenaltyFlag: "(flagged without verification)",
+    insufficientResearch: "Insufficient research conducted",
+    factCheckingRequired: "Professional journalism requires thorough fact-checking before making publication decisions. Always verify information through multiple sources.",
+
     burnalertTitle: "HOUSES ON FIRE -- authorities COVERING THIS UP!",
     burnalertDescription: "The images show a burning area in the city. Comments are upset: 'Why is no one reporting this?' 'We deserve to know the truth!'",
     burnalertsearchTerms1: "Fire in the city",
@@ -475,6 +481,12 @@ const languageData = {
         "Några vanliga nybörjarfel är att man bara ser och hör det man vill och är van vid. Tolkar allt som stöd för det man redan tror på. Har problem att förklara sina bedömningar när någon frågar varför man tycker något. Inte är öppen för alternativa förklaringar. Bara letar efter bevis för det som man redan tycker – och struntar i det som motsäger detta. \n" +
         "Här jobbar vi aktivt med att bedöma informationen på ett sakligt och allsidigt sätt. Det handlar inte om att vara skeptisk till allt och alla utan att bedöma informationen på ett kritiskt och konstruktivt sätt. Detta handlar om att aktivt söka efter olika förklaringar, vara medveten om att man ofta fastnar i ett överdrivet självförtroende och hitta bra stöd i fakta för sina slutsatser. När vi publicerar något ska det vara läsvärt och korrekt, och vi måste veta att det är faktagranskade historier som vi för ut i samhället.   ",
 
+    noFactCheckingWarning: "Att publicera utan faktakoll är riskabel journalistik",
+    noFactCheckingPenalty: "(publicerad utan verifiering)",
+    noFactCheckingPenaltyFlag: "(flaggad utan verifiering)",
+    insufficientResearch: "Otillräcklig research genomförd",
+    factCheckingRequired: "Professionell journalistik kräver grundlig faktakoll innan publikationsbeslut fattas. Verifiera alltid information genom flera källor.",
+
     burnalertTitle: "HUS I BRAND -- myndigheterna TÄCKER ÖVER DETTA!",
     burnalertDescription: "Bilderna visar ett brinnande område i staden. Kommentarer är upprörda: 'Varför rapporterar ingen om detta?' 'Vi har rätt att få veta sanningen!'",
     burnalertsearchTerms1: "Brand i staden",
@@ -633,6 +645,12 @@ const languageData = {
     feedbackFlagged: "Le contenu a été signalé comme faux !",
     loadMore: "Charger plus",
     noResults: "Aucun résultat trouvé",
+
+    noFactCheckingWarning: "Publier sans vérification des faits est un journalisme risqué",
+    noFactCheckingPenalty: "(publié sans vérification)",
+    noFactCheckingPenaltyFlag: "(signalé sans vérification)",
+    insufficientResearch: "Recherche insuffisante effectuée",
+    factCheckingRequired: "Le journalisme professionnel exige une vérification approfondie des faits avant de prendre des décisions de publication. Toujours vérifier les informations par plusieurs sources.",
 
     burnalertTitle: "MAISONS EN FEU – les autorités ÉTOUFFENT L’AFFAIRE !",
     burnalertDescription: "Les images montrent une zone en feu dans la ville. Les commentaires sont indignés : 'Pourquoi personne n’en parle ?' 'Nous avons le droit de connaître la vérité !'",

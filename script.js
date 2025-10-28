@@ -503,96 +503,145 @@ const meterSystem = new MeterSystem();
         }
 
         // Load a post
-        function loadPost(postId) {
-            currentPostId = postId;
-            const post = postsData.find(p => p.id === postId);
+function loadPost(postId) {
+    currentPostId = postId;
+    const post = postsData.find(p => p.id === postId);
 
-            if (post) {
-                // Reset evidence count when loading a different post
-                usedEvidenceCount = post.usedEvidenceCount || 0;
+    if (post) {
+        // Reset evidence count when loading a different post
+        usedEvidenceCount = post.usedEvidenceCount || 0;
 
-                // Update post content
-                postImage.src = post.image;
-                postTitle.textContent = translateKey(post.title);
-                postDescription.textContent = translateKey(post.description);
+        // Reset fact-checking tracking for fresh start
+        post.performedTextSearch = false;
+        post.performedImageSearch = false;
 
-                // Show post view
-                showPage(postViewPage);
+        // Update post content
+        postImage.src = post.image;
+        postTitle.textContent = translateKey(post.title);
+        postDescription.textContent = translateKey(post.description);
 
-                // Update top menu
-                showTopMenu();
+        // Show post view
+        showPage(postViewPage);
 
-                // Mark as read
-                if (post.unread) {
-                    post.unread = false;
-                    generatePosts(); // Refresh sidebar
-                }
-            }
-        }
+        // Update top menu
+        showTopMenu();
 
-        // Process a post (publish or flag)
-    function processPost(status) {
-        if (currentPostId) {
-            const post = postsData.find(p => p.id === currentPostId);
-
-            if (post) {
-                // Determine if the user's decision is correct
-                const userDecision = status === 'published'; // true if published, false if flagged
-                const isCorrect = userDecision === post.correctAnswer;
-
-                // Update post status
-                post.processed = true;
-                post.status = status;
-
-                // Update meters based on correctness
-                if (isCorrect) {
-                    // Correct decision
-                    if (userDecision) {
-                        meterSystem.updateCredibility(8, '(correct: published true story)');
-                        meterSystem.updatePopularity(5, '(shared accurate info)');
-                    } else {
-                        meterSystem.updateCredibility(10, '(correct: flagged false story)');
-                        meterSystem.updatePopularity(2, '(prevented misinformation)');
-                    }
-                } else {
-                    // Incorrect decision
-                    if (userDecision) {
-                        meterSystem.updateCredibility(-8, '(incorrect: published false story)');
-                        meterSystem.updatePopularity(-5, '(spread misinformation)');
-                    } else {
-                        meterSystem.updateCredibility(-5, '(incorrect: flagged true story)');
-                        meterSystem.updatePopularity(-3, '(suppressed accurate info)');
-                    }
-                }
-
-                // Update sidebar
-                generatePosts();
-
-                // Show decision feedback popup
-                showDecisionFeedback(post, status, isCorrect);
-            }
+        // Mark as read
+        if (post.unread) {
+            post.unread = false;
+            generatePosts(); // Refresh sidebar
         }
     }
+}
 
-function showDecisionFeedback(post, userDecision, isCorrect) {
+// Process a post (publish or flag)
+function processPost(status) {
+    if (currentPostId) {
+        const post = postsData.find(p => p.id === currentPostId);
+
+        if (post) {
+            // Check if user performed any fact-checking
+            const performedTextSearch = post.performedTextSearch || false;
+            const performedImageSearch = post.performedImageSearch || false;
+            const hasPerformedFactChecking = performedTextSearch || performedImageSearch;
+
+            // Determine if the user's decision is correct
+            const userDecision = status === 'published'; // true if published, false if flagged
+            const isCorrect = userDecision === post.correctAnswer;
+
+            // Update post status
+            post.processed = true;
+            post.status = status;
+
+            let credibilityChange, credibilityReason, popularityChange, popularityReason;
+
+            // Apply penalties/rewards based on fact-checking and correctness
+            if (hasPerformedFactChecking) {
+                // Normal scoring with fact-checking performed
+                if (isCorrect) {
+                    // Correct decision with fact-checking
+                    if (userDecision) {
+                        credibilityChange = 8;
+                        credibilityReason = '(correct: published true story)';
+                        popularityChange = 5;
+                        popularityReason = '(shared accurate info)';
+                    } else {
+                        credibilityChange = 10;
+                        credibilityReason = '(correct: flagged false story)';
+                        popularityChange = 2;
+                        popularityReason = '(prevented misinformation)';
+                    }
+                } else {
+                    // Incorrect decision even with fact-checking
+                    if (userDecision) {
+                        credibilityChange = -8;
+                        credibilityReason = '(incorrect: published false story)';
+                        popularityChange = -5;
+                        popularityReason = '(spread misinformation)';
+                    } else {
+                        credibilityChange = -5;
+                        credibilityReason = '(incorrect: flagged true story)';
+                        popularityChange = -3;
+                        popularityReason = '(suppressed accurate info)';
+                    }
+                }
+            } else {
+                // No fact-checking performed - apply penalties
+                if (isCorrect) {
+                    // Correct decision but without proper fact-checking - reduced rewards
+                    if (userDecision) {
+                        credibilityChange = Math.floor(8 * 0.25); // Quarter of normal reward
+                        credibilityReason = '(correct but no verification)';
+                        popularityChange = Math.floor(5 * 0.25);
+                        popularityReason = '(lucky guess)';
+                    } else {
+                        credibilityChange = Math.floor(10 * 0.25); // Quarter of normal reward
+                        credibilityReason = '(correct but no verification)';
+                        popularityChange = Math.floor(2 * 0.25);
+                        popularityReason = '(unverified decision)';
+                    }
+                } else {
+                    // Incorrect decision without fact-checking - double penalty
+                    if (userDecision) {
+                        credibilityChange = Math.floor(-8 * 2); // Double penalty
+                        credibilityReason = '(published false story without verification)';
+                        popularityChange = Math.floor(-5 * 2);
+                        popularityReason = '(reckless journalism)';
+                    } else {
+                        credibilityChange = Math.floor(-5 * 2); // Double penalty
+                        credibilityReason = '(flagged true story without verification)';
+                        popularityChange = Math.floor(-3 * 2);
+                        popularityReason = '(censorship without research)';
+                    }
+                }
+            }
+
+            // Apply the meter changes
+            meterSystem.updateCredibility(credibilityChange, credibilityReason);
+            meterSystem.updatePopularity(popularityChange, popularityReason);
+
+            // Update sidebar
+            generatePosts();
+
+            // Show decision feedback popup
+            showDecisionFeedback(post, status, isCorrect, hasPerformedFactChecking);
+        }
+    }
+}
+
+function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChecking) {
     const decisionText = userDecision === 'published' ? 'PUBLISH' : 'FLAG AS FALSE';
     const decisionClass = isCorrect ? 'correct' : 'incorrect';
     const correctDecisionText = post.correctAnswer ? 'PUBLISH' : 'FLAG AS FALSE';
 
     // Generate explanation based on the post and correctness
-    const explanation = generateDecisionExplanation(post, userDecision, isCorrect);
+    const explanation = generateDecisionExplanation(post, userDecision, isCorrect, hasPerformedFactChecking);
 
     const popupHTML = `
         <div class="decision-popup-overlay" id="decisionPopupOverlay">
             <div class="decision-popup">
                 <div class="popup-header">
                     <h3>Decision Complete</h3>
-                    <!--<button class="popup-close" onclick="closeDecisionPopup()">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>-->
                 </div>
                 <div class="popup-content">
                     <div class="decision-result ${decisionClass}">
@@ -611,13 +660,27 @@ function showDecisionFeedback(post, userDecision, isCorrect) {
                             <p class="post-title-ref">"${translateKey(post.title)}"</p>
                         </div>
                     </div>
-                
+            
+                    ${!hasPerformedFactChecking ? `
+                        <div class="fact-check-warning">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div class="warning-content">
+                                <h5>⚠️ ${getLanguageText('noFactCheckingWarning')}</h5>
+                                <p>${getLanguageText('factCheckingRequired')}</p>
+                            </div>
+                        </div>
+                    ` : ''}
+            
                     <div class="decision-analysis">
                         <h4>Analysis:</h4>
                         <div class="analysis-content">
                             ${explanation.reasoning}
                         </div>
-                        
+                    
                         <div class="meter-impact">
                             <h5>Impact on Your Metrics:</h5>
                             <div class="metric-changes">
@@ -637,8 +700,8 @@ function showDecisionFeedback(post, userDecision, isCorrect) {
                                 </div>
                             </div>
                         </div>
-                        
-                        ${!isCorrect ? `
+                    
+                        ${!isCorrect || !hasPerformedFactChecking ? `
                             <div class="learning-tip">
                                 <h5>💡 Learning Tip:</h5>
                                 <p>${explanation.learningTip}</p>
@@ -662,7 +725,7 @@ function showDecisionFeedback(post, userDecision, isCorrect) {
     document.body.insertAdjacentHTML('beforeend', popupHTML);
 }
 
-function generateDecisionExplanation(post, userDecision, isCorrect) {
+function generateDecisionExplanation(post, userDecision, isCorrect, hasPerformedFactChecking) {
     const userChosePublish = userDecision === 'published';
 
     // Define explanations for each post
@@ -772,40 +835,81 @@ function generateDecisionExplanation(post, userDecision, isCorrect) {
     };
 
     const postExplanation = explanations[post.id];
-    const explanation = isCorrect ? postExplanation.correct : postExplanation.incorrect;
+    let explanation = isCorrect ? postExplanation.correct : postExplanation.incorrect;
 
-    // Calculate meter changes (these should match what was actually applied in processPost)
+    // Calculate meter changes and add fact-checking context
     let credibilityChange, credibilityReason, popularityChange, popularityReason;
+    let learningTip = explanation.learningTip;
 
-    if (isCorrect) {
-        if (userChosePublish) {
-            credibilityChange = 8;
-            credibilityReason = '(correctly published true story)';
-            popularityChange = 5;
-            popularityReason = '(shared accurate information)';
+    if (hasPerformedFactChecking) {
+        // Normal scoring with fact-checking performed
+        if (isCorrect) {
+            if (userChosePublish) {
+                credibilityChange = 8;
+                credibilityReason = '(correctly published true story)';
+                popularityChange = 5;
+                popularityReason = '(shared accurate information)';
+            } else {
+                credibilityChange = 10;
+                credibilityReason = '(correctly flagged false story)';
+                popularityChange = 2;
+                popularityReason = '(prevented misinformation)';
+            }
         } else {
-            credibilityChange = 10;
-            credibilityReason = '(correctly flagged false story)';
-            popularityChange = 2;
-            popularityReason = '(prevented misinformation)';
+            if (userChosePublish) {
+                credibilityChange = -8;
+                credibilityReason = '(incorrectly published false story)';
+                popularityChange = -5;
+                popularityReason = '(spread misinformation)';
+            } else {
+                credibilityChange = -5;
+                credibilityReason = '(incorrectly flagged true story)';
+                popularityChange = -3;
+                popularityReason = '(suppressed accurate information)';
+            }
         }
     } else {
-        if (userChosePublish) {
-            credibilityChange = -8;
-            credibilityReason = '(incorrectly published false story)';
-            popularityChange = -5;
-            popularityReason = '(spread misinformation)';
+        // No fact-checking performed - apply penalties and modify explanations
+        if (isCorrect) {
+            // Correct decision but without proper fact-checking - reduced rewards
+            if (userChosePublish) {
+                credibilityChange = Math.floor(8 * 0.25);
+                credibilityReason = '(correct but no verification)';
+                popularityChange = Math.floor(5 * 0.25);
+                popularityReason = '(lucky guess)';
+            } else {
+                credibilityChange = Math.floor(10 * 0.25);
+                credibilityReason = '(correct but no verification)';
+                popularityChange = Math.floor(2 * 0.25);
+                popularityReason = '(unverified decision)';
+            }
+
+            // Override reasoning to include fact-checking context
+            explanation.reasoning = `While your decision was correct, you made it without conducting proper fact-checking research. ${explanation.reasoning} Professional journalism requires verification through multiple sources before making publication decisions, even when your instincts prove right.`;
+            learningTip = "Always perform fact-checking before making editorial decisions. Even correct decisions made without proper verification damage your credibility as a journalist. Use text search and image verification tools to build a solid evidence base.";
         } else {
-            credibilityChange = -5;
-            credibilityReason = '(incorrectly flagged true story)';
-            popularityChange = -3;
-            popularityReason = '(suppressed accurate information)';
+            // Incorrect decision without fact-checking - double penalty
+            if (userChosePublish) {
+                credibilityChange = Math.floor(-8 * 2);
+                credibilityReason = '(published false story without verification)';
+                popularityChange = Math.floor(-5 * 2);
+                popularityReason = '(reckless journalism)';
+            } else {
+                credibilityChange = Math.floor(-5 * 2);
+                credibilityReason = '(flagged true story without verification)';
+                popularityChange = Math.floor(-3 * 2);
+                popularityReason = '(censorship without research)';
+            }
+
+            // Override reasoning to emphasize the lack of fact-checking
+            explanation.reasoning = `Your decision was incorrect AND you failed to conduct any fact-checking research. ${explanation.reasoning} This represents a fundamental failure of journalistic practice - making editorial decisions without verification is professionally unacceptable.`;
+            learningTip = "Never make editorial decisions without fact-checking! The combination of being wrong AND not researching is the worst possible outcome for a journalist. Always use available verification tools - text search to check claims and sources, image search to verify visual content.";
         }
     }
 
     return {
         reasoning: explanation.reasoning,
-        learningTip: explanation.learningTip,
+        learningTip,
         credibilityChange,
         credibilityReason,
         popularityChange,
@@ -864,6 +968,9 @@ function showTextSearchResults() {
         const post = postsData.find(p => p.id === currentPostId);
 
         if (post && post.searchResults) {
+            // Mark that text search was performed
+            post.performedTextSearch = true;
+
             // Generate search results
             searchResults.innerHTML = '';
 
@@ -888,12 +995,55 @@ function showTextSearchResults() {
                 searchResults.appendChild(resultElement);
             });
 
+            // Add action buttons to the text search results page
+            addActionButtonsToSearchPage();
+
             // Show search results page
             showPage(textSearchResultsPage);
 
             // Update top menu
             updateTopMenu('textSearch');
         }
+    }
+}
+
+function addActionButtonsToSearchPage() {
+    // Check if buttons already exist to avoid duplication
+    const existingButtons = document.querySelector('.search-action-buttons');
+    if (existingButtons) {
+        existingButtons.remove();
+    }
+
+    // Create action buttons container
+    const actionButtonsContainer = document.createElement('div');
+    actionButtonsContainer.className = 'search-action-buttons';
+    actionButtonsContainer.innerHTML = `
+        <div class="search-decision-section">
+            <h3>Ready to make your decision?</h3>
+            <p>Based on your research, what should we do with this post?</p>
+            <div class="search-buttons-container">
+                <button class="action-btn publish-btn" onclick="processPost('published')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-lang-key="publish">${getLanguageText('publish')}</span>
+                </button>
+                <button class="action-btn flag-btn" onclick="processPost('flagged')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span data-lang-key="flag">${getLanguageText('flag')}</span>
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Find the text search results page and prepend the buttons (add to top)
+    const textSearchPage = document.getElementById('textSearchResultsPage');
+    if (textSearchPage) {
+        // Insert as first child to put it at the top
+        textSearchPage.insertBefore(actionButtonsContainer, textSearchPage.firstChild);
     }
 }
 
@@ -1123,45 +1273,48 @@ function showEvidenceLimitReached() {
 
 
         // Show image search results
-        function showImageSearchResults() {
-            if (currentPostId) {
-                const post = postsData.find(p => p.id === currentPostId);
-                
-                if (post && post.imageResults) {
-                    // Reset selected images
-                    selectedImages = [];
-                    
-                    // Generate image grid
-                    imageGrid.innerHTML = '';
-                    
-                    post.imageResults.forEach((image, index) => {
-                        const imageElement = document.createElement('div');
-                        imageElement.className = 'image-item';
-                        imageElement.dataset.index = index;
-                        
-                        imageElement.innerHTML = `
-                            <img src="${image.src}" alt="Search result image">
-                            <div class="image-info">
-                                <div>${getLanguageText(image.location)}</div>
-                                <div>${getLanguageText(image.date)}</div>
-                            </div>
-                        `;
-                        
-                        imageElement.addEventListener('click', function() {
-                            toggleImageSelection(this);
-                        });
-                        
-                        imageGrid.appendChild(imageElement);
-                    });
-                    
-                    // Show image search results page
-                    showPage(imageSearchResultsPage);
-                    
-                    // Update top menu
-                    updateTopMenu('imageSearch');
-                }
-            }
+function showImageSearchResults() {
+    if (currentPostId) {
+        const post = postsData.find(p => p.id === currentPostId);
+
+        if (post && post.imageResults) {
+            // Mark that image search was performed
+            post.performedImageSearch = true;
+
+            // Reset selected images
+            selectedImages = [];
+
+            // Generate image grid
+            imageGrid.innerHTML = '';
+
+            post.imageResults.forEach((image, index) => {
+                const imageElement = document.createElement('div');
+                imageElement.className = 'image-item';
+                imageElement.dataset.index = index;
+
+                imageElement.innerHTML = `
+                    <img src="${image.src}" alt="Search result image">
+                    <div class="image-info">
+                        <div>${getLanguageText(image.location)}</div>
+                        <div>${getLanguageText(image.date)}</div>
+                    </div>
+                `;
+
+                imageElement.addEventListener('click', function() {
+                    toggleImageSelection(this);
+                });
+
+                imageGrid.appendChild(imageElement);
+            });
+
+            // Show image search results page
+            showPage(imageSearchResultsPage);
+
+            // Update top menu
+            updateTopMenu('imageSearch');
         }
+    }
+}
 
         // Toggle image selection
         function toggleImageSelection(imageElement) {
