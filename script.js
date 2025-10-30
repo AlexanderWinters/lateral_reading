@@ -7,8 +7,8 @@ const postsData = [
     {
         id: 1,
         title: "burnalertTitle",
-        thumbnail: "img/burnalert.png",
-        image: "img/burnalert.png",
+        thumbnail: "img/burn_intro.png",
+        image: "img/burn_intro.png",
         description: "burnalertDescription",
         unread: true,
         processed: false,
@@ -33,17 +33,17 @@ const postsData = [
             { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false }
         ],
         imageResults: [
-            { src: "img/burnalert1.png", location: "burnalertlocation1", date: "burnalertdate1" },
-            { src: "img/burnalert2.png", location: "burnalertlocation2", date: "burnalertdate2" },
-            { src: "img/burnalert3.png", location: "burnalertlocation3", date: "burnalertdate3" },
-            { src: "img/library1.png", location: "burnalertlocation4", date: "burnalertdate4" }
+            { src: "img/burn1.png", location: "burnalertlocation1", date: "burnalertdate1" },
+            { src: "img/burn2.png", location: "burnalertlocation2", date: "burnalertdate2" },
+            { src: "img/burn3.png", location: "burnalertlocation3", date: "burnalertdate3" },
+            { src: "img/burn4.png", location: "burnalertlocation4", date: "burnalertdate4" }
         ]
     },
     {
         id: 2,
         title: "libraryTitle",
-        thumbnail: "img/extrimistalert.png",
-        image: "img/extrimistalert.png",
+        thumbnail: "img/library_intro.png",
+        image: "img/library_intro.png",
         description: "libraryDescription",
         unread: true,
         processed: false,
