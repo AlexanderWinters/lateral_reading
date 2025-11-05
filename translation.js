@@ -24,9 +24,20 @@ const languageData = {
 
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
-    introDescription: "Hello and welcome to the newsroom! Everyone new to the newsroom must undergo our training in reviewing news on social media before publication. We know from experience that many people struggle to remain factual and objective, so you will have the opportunity to test and practice this skill. It is important to double-check information before it is published to ensure that it is correct. Of course, we want to get the latest news out to our readers and viewers quickly, but we can't get it wrong because our reputation as a news channel is extremely important! \n" +
-        "Some common beginner mistakes are only seeing and hearing what you want to see and hear and are used to. There is a risk that you are interpreting everything as support for what you already believe. Having trouble explaining your assessments when someone asks why you think something is another problem. Not being open to alternative explanations is also problematic, as well as only looking for evidence to support what you already believe, and ignoring anything that contradicts this. \n" +
-        "Here in the newsroom, we work actively to assess information in an objective and comprehensive manner. It is not about being skeptical of everything and everyone, but about assessing information in a critical and constructive way. It is about actively seeking different explanations, being aware that one may be overconfident, and striving to find good factual support for one's conclusions. When we publish something, it should be readable and accurate, and we must know that the stories we put out into society have been properly fact-checked.  ",
+    introDescription: "Hello and welcome to the newsroom! " +
+        "Everyone new to the newsroom must undergo our training in reviewing news on social media before publication. " +
+        "We know from experience that many people struggle to remain factual and objective, so you will have the opportunity to test and practice this skill. " +
+        "It is important to double-check information before it is published to ensure that it is correct. Of course, we want to get the latest news out to our readers and viewers quickly, " +
+        "but we can't get it wrong because our reputation as a news channel is extremely important!",
+    intro2: "Some common beginner mistakes are only seeing and hearing what you want to see and hear " +
+        "and are used to. There is a risk that you are interpreting everything as support for what you already believe. " +
+        "Having trouble explaining your assessments when someone asks why you think something is another problem. " +
+        "Not being open to alternative explanations is also problematic, as well as only looking for evidence to support what you already believe, and ignoring anything that contradicts this." ,
+    intro3: "Here in the newsroom, we work actively to assess information in an objective and comprehensive manner. " +
+        "It is not about being skeptical of everything and everyone, but about assessing information in a critical and constructive way. " +
+        "It is about actively seeking different explanations, being aware that one may be overconfident, and striving to find good factual support for one's conclusions. " +
+        "When we publish something, it should be readable and accurate, and we must know that the stories we put out into society have been properly fact-checked. ",
+
     howToPlay: "How to Play:",
     step1: "📱 Review Posts: Click on posts in the left sidebar to examine suspicious content",
     step2: "🔍 Fact-Check: Use text search and reverse image search tools to verify information",
