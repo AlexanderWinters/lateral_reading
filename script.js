@@ -387,11 +387,24 @@ class MeterSystem {
 const meterSystem = new MeterSystem();
 
         // Current state
-        let currentLanguage = 'en';
-        let currentPostId = null;
-        let selectedImages = [];
-        let usedEvidenceCount = 0; // Track how many results have been used as evidence
-        const MAX_EVIDENCE_PER_STORY = 2; // Maximum evidence items per story
+let currentLanguage = 'en';
+let currentPostId = null;
+let selectedImages = [];
+let usedEvidenceCount = 0; // Track how many results have been used as evidence
+const MAX_EVIDENCE_PER_STORY = 2; // Maximum evidence items per story
+
+let correctDecisions = parseInt(localStorage.getItem('correctDecisions') || '0');
+let totalProcessed = parseInt(localStorage.getItem('totalProcessed') || '0');
+const TOTAL_STORIES = 8;
+const WIN_THRESHOLD = 7;
+
+function updateCompletionCounter() {
+    const completionValue = document.getElementById('completion-value');
+    if (completionValue) {
+        completionValue.textContent = `${correctDecisions}/${TOTAL_STORIES}`;
+    }
+}
+
 
         // Initialize the application
         function init() {
@@ -406,6 +419,19 @@ const meterSystem = new MeterSystem();
 
             // Set up event listeners
             setupEventListeners();
+
+            const metersContainer = document.querySelector('.meters-container');
+            if (metersContainer) {
+                const completionCounter = document.createElement('div');
+                completionCounter.className = 'meter completion-counter';
+                completionCounter.innerHTML = `
+                    <div class="meter-label" data-lang-key="storiesCorrect">Stories Correct</div>
+                    <div class="meter-value" id="completion-value">${correctDecisions}/${TOTAL_STORIES}</div>
+                    <div class="meter-tooltip">Complete ${WIN_THRESHOLD} of ${TOTAL_STORIES} stories to win.</div>
+                `;
+                metersContainer.prepend(completionCounter);
+            }
+            updateCompletionCounter();
 
             // Set initial language
             updateLanguage();
@@ -539,7 +565,7 @@ function processPost(status) {
     if (currentPostId) {
         const post = postsData.find(p => p.id === currentPostId);
 
-        if (post) {
+        if (post && !post.processed) {
             // Check if user performed any fact-checking
             const performedTextSearch = post.performedTextSearch || false;
             const performedImageSearch = post.performedImageSearch || false;
@@ -619,6 +645,14 @@ function processPost(status) {
             // Apply the meter changes
             meterSystem.updateCredibility(credibilityChange, credibilityReason);
             meterSystem.updatePopularity(popularityChange, popularityReason);
+
+            totalProcessed++;
+            localStorage.setItem('totalProcessed', totalProcessed.toString());
+            if (isCorrect) {
+                correctDecisions++;
+                localStorage.setItem('correctDecisions', correctDecisions.toString());
+            }
+            updateCompletionCounter();
 
             // Update sidebar
             generatePosts();
@@ -716,7 +750,7 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
                 </div>
                 <div class="popup-actions">
                     <button class="action-btn secondary" onclick="closeDecisionPopup(); loadPost(${currentPostId});">Review Again</button>
-                    <button class="action-btn primary" onclick="closeDecisionPopup(); goHome();">Continue</button>
+                    <button class="action-btn primary" onclick="closeDecisionPopupAndCheckWin()">Continue</button>
                 </div>
             </div>
         </div>
@@ -923,6 +957,48 @@ function closeDecisionPopup() {
     if (popup) {
         popup.remove();
     }
+}
+
+function closeDecisionPopupAndCheckWin() {
+    closeDecisionPopup();
+    if (correctDecisions >= WIN_THRESHOLD) {
+        showWinPopup();
+    } else {
+        goHome();
+    }
+}
+
+function showWinPopup() {
+    const popupHTML = `
+    <div class="decision-popup-overlay" id="winPopupOverlay">
+        <div class="decision-popup">
+            <div class="popup-header">
+                <h3>Congratulations! You've Won!</h3>
+            </div>
+            <div class="popup-content" style="text-align: center;">
+                <div class="decision-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--success-color);">
+                        <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.056 14.28l-3.23-3.23 1.414-1.414 1.816 1.817 4.242-4.243 1.414 1.414-5.656 5.656z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h4 style="margin-top: 1rem;">You have a sharp eye for the truth!</h4>
+                <p>You correctly handled ${WIN_THRESHOLD} out of ${TOTAL_STORIES} stories and have proven yourself as a reliable source of information.</p>
+                <p>Great job fighting misinformation!</p>
+            </div>
+            <div class="popup-actions">
+                <button class="action-btn primary" onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+function restartGame() {
+    meterSystem.reset();
+    localStorage.removeItem('correctDecisions');
+    localStorage.removeItem('totalProcessed');
+    window.location.reload();
 }
 
 // Function to go back to home page

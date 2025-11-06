@@ -482,6 +482,11 @@ list-style: none;
     color: #E65100;
 }
 
+.completion-counter {
+    border-color: #007bff;
+    color: #004085;
+}
+
 .meter-label {
     font-size: 12px;
     font-weight: bold;
