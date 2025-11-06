@@ -393,6 +393,9 @@ let selectedImages = [];
 let usedEvidenceCount = 0; // Track how many results have been used as evidence
 const MAX_EVIDENCE_PER_STORY = 2; // Maximum evidence items per story
 
+localStorage.removeItem('correctDecisions');
+localStorage.removeItem('totalProcessed');
+
 let correctDecisions = parseInt(localStorage.getItem('correctDecisions') || '0');
 let totalProcessed = parseInt(localStorage.getItem('totalProcessed') || '0');
 const TOTAL_STORIES = 8;
@@ -401,7 +404,7 @@ const WIN_THRESHOLD = 7;
 function updateCompletionCounter() {
     const completionValue = document.getElementById('completion-value');
     if (completionValue) {
-        completionValue.textContent = `${correctDecisions}/${TOTAL_STORIES}`;
+        completionValue.textContent = `${correctDecisions}/${WIN_THRESHOLD}`;
     }
 }
 
@@ -421,16 +424,7 @@ function updateCompletionCounter() {
             setupEventListeners();
 
             const metersContainer = document.querySelector('.meters-container');
-            if (metersContainer) {
-                const completionCounter = document.createElement('div');
-                completionCounter.className = 'meter completion-counter';
-                completionCounter.innerHTML = `
-                    <div class="meter-label" data-lang-key="storiesCorrect">Stories Correct</div>
-                    <div class="meter-value" id="completion-value">${correctDecisions}/${TOTAL_STORIES}</div>
-                    <div class="meter-tooltip">Complete ${WIN_THRESHOLD} of ${TOTAL_STORIES} stories to win.</div>
-                `;
-                metersContainer.prepend(completionCounter);
-            }
+
             updateCompletionCounter();
 
             // Set initial language
