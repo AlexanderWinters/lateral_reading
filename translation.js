@@ -24,19 +24,16 @@ const languageData = {
 
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
-    introDescription: "Hello and welcome to the newsroom! " +
-        "Everyone new to the newsroom must undergo our training in reviewing news on social media before publication. " +
-        "We know from experience that many people struggle to remain factual and objective, so you will have the opportunity to test and practice this skill. " +
-        "It is important to double-check information before it is published to ensure that it is correct. Of course, we want to get the latest news out to our readers and viewers quickly, " +
-        "but we can't get it wrong because our reputation as a news channel is extremely important!",
-    intro2: "Some common beginner mistakes are only seeing and hearing what you want to see and hear " +
-        "and are used to. There is a risk that you are interpreting everything as support for what you already believe. " +
-        "Having trouble explaining your assessments when someone asks why you think something is another problem. " +
-        "Not being open to alternative explanations is also problematic, as well as only looking for evidence to support what you already believe, and ignoring anything that contradicts this." ,
-    intro3: "Here in the newsroom, we work actively to assess information in an objective and comprehensive manner. " +
-        "It is not about being skeptical of everything and everyone, but about assessing information in a critical and constructive way. " +
-        "It is about actively seeking different explanations, being aware that one may be overconfident, and striving to find good factual support for one's conclusions. " +
-        "When we publish something, it should be readable and accurate, and we must know that the stories we put out into society have been properly fact-checked. ",
+    introDescription: "In this newsroom, everyone begins with a short training session: a review of 10 viral tips before publication. " +
+        "Your task is not only to find what supports a claim, but to actively look for alternatives and disconfirming evidence." +
+        " Many people—especially under time pressure—fall into confirmation bias (seeing what fits prior beliefs) and overconfidence (feeling surer than the evidence allows). " +
+        "Here, we practice slowing down, double-checking, and having solid evidence to support our reasons for publishing or not." +
+        "We want news out fast, but our reputation depends on being accurate and fair.",
+    intro1: "Consider an alternative: “What else could explain this?”",
+    intro2: "Seek a disconfirming source: “What would show a tip is wrong?”",
+    intro3: "Seek confirming sources: “What would show a spectacular tip is correct?”",
+    intro4: "Check originals: date, place, and source of images/text.",
+    intro5: "Be ready to revise when evidence goes against your gut feeling.",
 
     howToPlay: "How to Play:",
     step1: "📱 Review Posts: Click on posts in the left sidebar to examine suspicious content",
@@ -46,7 +43,7 @@ const languageData = {
     step5: "🎯 Learn: Receive feedback on your decisions and improve your skills",
     keySkills: "Key Skills You'll Practice:",
     skillsList: "You'll practice lateral reading, image verification, source evaluation, and critical thinking",
-    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training!",
+    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training! Try to get 7 out 8 stories correct!",
 
     noFactCheckingWarning: "Publishing without fact-checking is risky journalism",
     noFactCheckingPenalty: "(published without verification)",
