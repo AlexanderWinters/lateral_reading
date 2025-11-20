@@ -42,8 +42,8 @@ const postsData = [
     {
         id: 2,
         title: "libraryTitle",
-        thumbnail: "img/library_intro.png",
-        image: "img/library_intro.png",
+        thumbnail: "img/extrimistalert.png",
+        image: "img/extrimistalert.png",
         description: "libraryDescription",
         unread: true,
         processed: false,
@@ -71,10 +71,10 @@ const postsData = [
             { title: "librarytitle18", description: "librarydescription18", isAd: false }
         ],
         imageResults: [
-            { src: "img/library1.png", location: "librarylocation1", date: "librarydate1" },
-            { src: "img/library2.png", location: "librarylocation2", date: "librarydate2" },
-            { src: "img/library3.png", location: "librarylocation3", date: "librarydate3" },
-            { src: "img/library4.png", location: "librarylocation4", date: "librarydate4" }
+            { src: "img/lib1.png", location: "librarylocation1", date: "librarydate1" },
+            { src: "img/lib2.png", location: "librarylocation2", date: "librarydate2" },
+            { src: "img/lib3.png", location: "librarylocation3", date: "librarydate3" },
+            { src: "img/lib4.png", location: "librarylocation4", date: "librarydate4" }
         ]
     },
     {
