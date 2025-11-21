@@ -332,20 +332,20 @@ const postsData = [
 
 class MeterSystem {
     constructor() {
-        this.credibility = parseInt(localStorage.getItem('credibility') || '100');
-        this.popularity = parseInt(localStorage.getItem('popularity') || '50');
+        this.credibility = parseInt(localStorage.getItem('credibility') || '0');
+        this.popularity = parseInt(localStorage.getItem('popularity') || '0');
         this.updateDisplay();
     }
 
     updateCredibility(change, reason = '') {
-        this.credibility = Math.max(0, Math.min(200, this.credibility + change));
+        this.credibility = Math.min(200, this.credibility + change);
         localStorage.setItem('credibility', this.credibility.toString());
         this.showChange('credibility', change, reason);
         this.updateDisplay();
     }
 
     updatePopularity(change, reason = '') {
-        this.popularity = Math.max(0, Math.min(200, this.popularity + change));
+        this.popularity = Math.min(200, this.popularity + change);
         localStorage.setItem('popularity', this.popularity.toString());
         this.showChange('popularity', change, reason);
         this.updateDisplay();
@@ -375,8 +375,8 @@ class MeterSystem {
     }
 
     reset() {
-        this.credibility = 100;
-        this.popularity = 50;
+        this.credibility = 0;
+        this.popularity = 0;
         localStorage.removeItem('credibility');
         localStorage.removeItem('popularity');
         this.updateDisplay();
@@ -385,6 +385,7 @@ class MeterSystem {
 
 // Initialize meter system
 const meterSystem = new MeterSystem();
+meterSystem.reset();
 
         // Current state
 let currentLanguage = 'en';
@@ -411,6 +412,7 @@ function updateCompletionCounter() {
 
         // Initialize the application
         function init() {
+
             // Set up language switching
             languageSelector.addEventListener('change', function() {
                 currentLanguage = this.value;

@@ -24,11 +24,12 @@ const languageData = {
 
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
-    introDescription: "In this newsroom, everyone begins with a short training session: a review of 10 viral tips before publication. " +
+    introDescription: "In this newsroom, everyone begins with a short training session: a review of 8 viral tips before publication. " +
         "Your task is not only to find what supports a claim, but to actively look for alternatives and disconfirming evidence." +
         " Many people—especially under time pressure—fall into confirmation bias (seeing what fits prior beliefs) and overconfidence (feeling surer than the evidence allows). " +
-        "Here, we practice slowing down, double-checking, and having solid evidence to support our reasons for publishing or not." +
+        "Here, we practice slowing down, double-checking, and having solid evidence to support our reasons for publishing or not. " +
         "We want news out fast, but our reputation depends on being accurate and fair.",
+    intro0: "Think about the following: ",
     intro1: "Consider an alternative: “What else could explain this?”",
     intro2: "Seek a disconfirming source: “What would show a tip is wrong?”",
     intro3: "Seek confirming sources: “What would show a spectacular tip is correct?”",
