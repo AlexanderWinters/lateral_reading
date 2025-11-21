@@ -25,10 +25,10 @@ const languageData = {
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
     introDescription: "In this newsroom, everyone begins with a short training session: a review of 8 viral tips before publication. " +
-        "Your task is not only to find what supports a claim, but to actively look for alternatives and disconfirming evidence." +
-        " Many people—especially under time pressure—fall into confirmation bias (seeing what fits prior beliefs) and overconfidence (feeling surer than the evidence allows). " +
-        "Here, we practice slowing down, double-checking, and having solid evidence to support our reasons for publishing or not. " +
-        "We want news out fast, but our reputation depends on being accurate and fair.",
+        "Your task is not only to find what supports a claim, but to actively look for alternatives and disconfirming evidence.",
+    introd2: "Many people—especially under time pressure—fall into confirmation bias (seeing what fits prior beliefs) and overconfidence (feeling surer than the evidence allows). " +
+        "Here, we practice slowing down, double-checking, and having solid evidence to support our reasons for publishing or not. ",
+    introd3:  "We want news out fast, but our reputation depends on being accurate and fair.",
     intro0: "Think about the following: ",
     intro1: "Consider an alternative: “What else could explain this?”",
     intro2: "Seek a disconfirming source: “What would show a tip is wrong?”",
@@ -487,18 +487,20 @@ const languageData = {
         noResults: "Inga resultat hittades",
 
         welcomeTitle: "Välkommen till redaktionen",
-        whatIsThis: "Vad är detta?",
-        introDescription: "I denna redaktion börjar alla med en kort träningssession: en genomgång av 8 virala tips före publicering. " +
-            "Din uppgift är inte bara att hitta det som stödjer ett påstående, utan att aktivt leta efter alternativ och motbevisande information." +
-            " Många människor — särskilt under tidspress — faller i bekräftelsebias (att se det som stämmer med tidigare uppfattningar) och överdriven självsäkerhet (att känna sig säkrare än bevisen tillåter). " +
-            "Här övar vi på att sakta ner, dubbelkolla och ha ordentliga bevis för våra beslut om att publicera eller inte. " +
-            "Vi vill få ut nyheter snabbt, men vårt rykte beror på att vi är korrekta och rättvisa.",
+        whatIsThis: " ",
+        introDescription: "Här på redaktionen börjar alla med en kort träningssession: en genomgång av 8 virala tips före publicering. " +
+            "Din uppgift är inte bara att hitta det som stödjer ett påstående, utan att aktivt leta efter alternativ och motbevisande information. " +
+            "Vi vill få ut nyheter snabbt, men vårt rykte beror på att vi är korrekta och rättvisa. ",
+        introd2: "Många människor - särskilt under tidspress - faller in i bekräftelsebias (att bara se det som stämmer med tidigare uppfattningar) " +
+            "och överdriven självsäkerhet (att känna sig säkrare än bevisen tillåter). " +
+            "Här övar vi på att sakta ner, dubbelkolla och ha ordentliga bevis för våra beslut om att publicera eller inte. ",
+        introd3: "Vi vill få ut nyheter snabbt, men vårt rykte hänger på att vi är korrekta.",
         intro0: "Tänk på följande:",
         intro1: "Överväg ett alternativ: ”Vad mer skulle kunna förklara detta?”",
         intro2: "Sök en motbevisande källa: ”Vad skulle visa att ett tips är fel?”",
         intro3: "Sök bekräftande källor: ”Vad skulle visa att ett spektakulärt tips är korrekt?”",
         intro4: "Kontrollera original: datum, plats och källor för bilder/text.",
-        intro5: "Var redo att ändra dig när bevisen går emot din magkänsla.",
+        intro5: "Var beredd på att ändra dig när bevisen går emot din magkänsla.",
 
         howToPlay: "Hur du spelar:",
         step1: "📱 Granska inlägg: Klicka på inlägg i sidomenyn för att undersöka misstänkt innehåll",
