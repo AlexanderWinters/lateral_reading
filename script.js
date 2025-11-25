@@ -16,21 +16,21 @@ const postsData = [
         correctAnswer: false,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
-            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true },
-            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true },
-            { title: "burnalerttitle3", description: "burnalertdescription3", isAd: true },
-            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false },
-            { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false },
-            { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false },
-            { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false },
-            { title: "burnalerttitle8", description: "burnalertdescription8", isAd: true },
-            { title: "burnalerttitle9", description: "burnalertdescription9", isAd: false },
-            { title: "burnalerttitle10", description: "burnalertdescription10", isAd: false },
-            { title: "burnalerttitle11", description: "burnalertdescription11", isAd: true },
-            { title: "burnalerttitle12", description: "burnalertdescription12", isAd: false },
-            { title: "burnalerttitle13", description: "burnalertdescription13", isAd: false },
-            { title: "burnalerttitle14", description: "burnalertdescription14", isAd: true },
-            { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false }
+            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0 },
+            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0 },
+            { title: "burnalerttitle3", description: "burnalertdescription3", isAd: false, reasoningIndex: 1 },
+            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4 },
+            { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0 },
+            { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0 },
+            { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false, reasoningIndex: 1 },
+            { title: "burnalerttitle8", description: "burnalertdescription8", isAd: false, reasoningIndex: 5 },
+            { title: "burnalerttitle9", description: "burnalertdescription9", isAd: false, reasoningIndex: 2 },
+            { title: "burnalerttitle10", description: "burnalertdescription10", isAd: false, reasoningIndex: 2 },
+            { title: "burnalerttitle11", description: "burnalertdescription11", isAd: false, reasoningIndex: 6 },
+            { title: "burnalerttitle12", description: "burnalertdescription12", isAd: false, reasoningIndex: 3 },
+            { title: "burnalerttitle13", description: "burnalertdescription13", isAd: false, reasoningIndex: 2 },
+            { title: "burnalerttitle14", description: "burnalertdescription14", isAd: false, reasoningIndex: 6 },
+            { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1 }
         ],
         imageResults: [
             { src: "img/burn1.png", location: "burnalertlocation1", date: "burnalertdate1" },
@@ -53,21 +53,21 @@ const postsData = [
         searchResults: [
             { title: "librarytitle1", description: "librarydescription1", isAd: true },
             { title: "librarytitle2", description: "librarydescription2", isAd: true },
-            { title: "librarytitle3", description: "librarydescription3", isAd: true },
+            { title: "librarytitle3", description: "librarydescription3", isAd: false },
             { title: "librarytitle4", description: "librarydescription4", isAd: false },
             { title: "librarytitle5", description: "librarydescription5", isAd: false },
             { title: "librarytitle6", description: "librarydescription6", isAd: false },
             { title: "librarytitle7", description: "librarydescription7", isAd: false },
-            { title: "librarytitle8", description: "librarydescription8", isAd: true },
+            { title: "librarytitle8", description: "librarydescription8", isAd: false },
             { title: "librarytitle9", description: "librarydescription9", isAd: false },
             { title: "librarytitle10", description: "librarydescription10", isAd: false },
-            { title: "librarytitle11", description: "librarydescription11", isAd: true },
+            { title: "librarytitle11", description: "librarydescription11", isAd: false },
             { title: "librarytitle12", description: "librarydescription12", isAd: false },
             { title: "librarytitle13", description: "librarydescription13", isAd: false },
-            { title: "librarytitle14", description: "librarydescription14", isAd: true },
+            { title: "librarytitle14", description: "librarydescription14", isAd: false },
             { title: "librarytitle15", description: "librarydescription15", isAd: false },
             { title: "librarytitle16", description: "librarydescription16", isAd: false },
-            { title: "librarytitle17", description: "librarydescription17", isAd: true },
+            { title: "librarytitle17", description: "librarydescription17", isAd: false },
             { title: "librarytitle18", description: "librarydescription18", isAd: false }
         ],
         imageResults: [
@@ -90,25 +90,25 @@ const postsData = [
         searchTerms: ["extrimistalertsearchTerms1", "extrimistalertsearchTerms2", "extrimistalertsearchTerms3", "extrimistalertsearchTerms4"],
         searchResults: [
             { title: "extrimistalerttitle1", description: "extrimistalertdescription1", isAd: true },
-            { title: "extrimistalerttitle2", description: "extrimistalertdescription2", isAd: true },
-            { title: "extrimistalerttitle3", description: "extrimistalertdescription3", isAd: true },
+            { title: "extrimistalerttitle2", description: "extrimistalertdescription2", isAd: false },
+            { title: "extrimistalerttitle3", description: "extrimistalertdescription3", isAd: false },
             { title: "extrimistalerttitle4", description: "extrimistalertdescription4", isAd: false },
             { title: "extrimistalerttitle5", description: "extrimistalertdescription5", isAd: false },
             { title: "extrimistalerttitle6", description: "extrimistalertdescription6", isAd: false },
             { title: "extrimistalerttitle7", description: "extrimistalertdescription7", isAd: false },
-            { title: "extrimistalerttitle8", description: "extrimistalertdescription8", isAd: true },
+            { title: "extrimistalerttitle8", description: "extrimistalertdescription8", isAd: false },
             { title: "extrimistalerttitle9", description: "extrimistalertdescription9", isAd: false },
             { title: "extrimistalerttitle10", description: "extrimistalertdescription10", isAd: false },
-            { title: "extrimistalerttitle11", description: "extrimistalertdescription11", isAd: true },
+            { title: "extrimistalerttitle11", description: "extrimistalertdescription11", isAd: false },
             { title: "extrimistalerttitle12", description: "extrimistalertdescription12", isAd: false },
             { title: "extrimistalerttitle13", description: "extrimistalertdescription13", isAd: false },
-            { title: "extrimistalerttitle14", description: "extrimistalertdescription14", isAd: true },
+            { title: "extrimistalerttitle14", description: "extrimistalertdescription14", isAd: false },
             { title: "extrimistalerttitle15", description: "extrimistalertdescription15", isAd: false },
             { title: "extrimistalerttitle16", description: "extrimistalertdescription16", isAd: false },
-            { title: "extrimistalerttitle17", description: "extrimistalertdescription17", isAd: true },
+            { title: "extrimistalerttitle17", description: "extrimistalertdescription17", isAd: false },
             { title: "extrimistalerttitle18", description: "extrimistalertdescription18", isAd: false },
             { title: "extrimistalerttitle19", description: "extrimistalertdescription19", isAd: false },
-            { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: true }
+            { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: false }
         ],
         imageResults: [
             { src: "img/military_convoy_day.png", location: "extrimistalertlocation1", date: "extrimistalertdate1" },
@@ -131,21 +131,21 @@ const postsData = [
         searchResults: [
             { title: "waterpoisoningtitle1", description: "waterpoisoningdescription1", isAd: true },
             { title: "waterpoisoningtitle2", description: "waterpoisoningdescription2", isAd: true },
-            { title: "waterpoisoningtitle3", description: "waterpoisoningdescription3", isAd: true },
+            { title: "waterpoisoningtitle3", description: "waterpoisoningdescription3", isAd: false },
             { title: "waterpoisoningtitle4", description: "waterpoisoningdescription4", isAd: false },
             { title: "waterpoisoningtitle5", description: "waterpoisoningdescription5", isAd: false },
             { title: "waterpoisoningtitle6", description: "waterpoisoningdescription6", isAd: false },
             { title: "waterpoisoningtitle7", description: "waterpoisoningdescription7", isAd: false },
-            { title: "waterpoisoningtitle8", description: "waterpoisoningdescription8", isAd: true },
+            { title: "waterpoisoningtitle8", description: "waterpoisoningdescription8", isAd: false },
             { title: "waterpoisoningtitle9", description: "waterpoisoningdescription9", isAd: false },
             { title: "waterpoisoningtitle10", description: "waterpoisoningdescription10", isAd: false },
-            { title: "waterpoisoningtitle11", description: "waterpoisoningdescription11", isAd: true },
+            { title: "waterpoisoningtitle11", description: "waterpoisoningdescription11", isAd: false },
             { title: "waterpoisoningtitle12", description: "waterpoisoningdescription12", isAd: false },
             { title: "waterpoisoningtitle13", description: "waterpoisoningdescription13", isAd: false },
-            { title: "waterpoisoningtitle14", description: "waterpoisoningdescription14", isAd: true },
+            { title: "waterpoisoningtitle14", description: "waterpoisoningdescription14", isAd: false },
             { title: "waterpoisoningtitle15", description: "waterpoisoningdescription15", isAd: false },
             { title: "waterpoisoningtitle16", description: "waterpoisoningdescription16", isAd: false },
-            { title: "waterpoisoningtitle17", description: "waterpoisoningdescription17", isAd: true },
+            { title: "waterpoisoningtitle17", description: "waterpoisoningdescription17", isAd: false },
             { title: "waterpoisoningtitle18", description: "waterpoisoningdescription18", isAd: false }
         ],
         imageResults: [
@@ -169,24 +169,24 @@ const postsData = [
         searchResults: [
             { title: "petstitle1", description: "petsdescription1", isAd: true },
             { title: "petstitle2", description: "petsdescription2", isAd: true },
-            { title: "petstitle3", description: "petsdescription3", isAd: true },
+            { title: "petstitle3", description: "petsdescription3", isAd: false },
             { title: "petstitle4", description: "petsdescription4", isAd: false },
             { title: "petstitle5", description: "petsdescription5", isAd: false },
             { title: "petstitle6", description: "petsdescription6", isAd: false },
             { title: "petstitle7", description: "petsdescription7", isAd: false },
-            { title: "petstitle8", description: "petsdescription8", isAd: true },
+            { title: "petstitle8", description: "petsdescription8", isAd: false },
             { title: "petstitle9", description: "petsdescription9", isAd: false },
             { title: "petstitle10", description: "petsdescription10", isAd: false },
-            { title: "petstitle11", description: "petsdescription11", isAd: true },
+            { title: "petstitle11", description: "petsdescription11", isAd: false },
             { title: "petstitle12", description: "petsdescription12", isAd: false },
             { title: "petstitle13", description: "petsdescription13", isAd: false },
-            { title: "petstitle14", description: "petsdescription14", isAd: true },
+            { title: "petstitle14", description: "petsdescription14", isAd: false },
             { title: "petstitle15", description: "petsdescription15", isAd: false },
             { title: "petstitle16", description: "petsdescription16", isAd: false },
-            { title: "petstitle17", description: "petsdescription17", isAd: true },
+            { title: "petstitle17", description: "petsdescription17", isAd: false },
             { title: "petstitle18", description: "petsdescription18", isAd: false },
             { title: "petstitle19", description: "petsdescription19", isAd: false },
-            { title: "petstitle20", description: "petsdescription20", isAd: true },
+            { title: "petstitle20", description: "petsdescription20", isAd: false },
             { title: "petstitle21", description: "petsdescription21", isAd: false },
             { title: "petstitle22", description: "petsdescription22", isAd: false }
         ],
@@ -214,10 +214,10 @@ const postsData = [
             { title: "celebrityDeathtitle3", description: "celebrityDeathdescription3", isAd: false },
             { title: "celebrityDeathtitle4", description: "celebrityDeathdescription4", isAd: false },
             { title: "celebrityDeathtitle5", description: "celebrityDeathdescription5", isAd: false },
-            { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: true },
+            { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: false },
             { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", isAd: false },
             { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", isAd: false },
-            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: true },
+            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: false },
             { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false }
         ],
         imageResults: [
@@ -240,15 +240,15 @@ const postsData = [
         searchTerms: ["weatherAlertsearchTerms1", "weatherAlertsearchTerms2", "weatherAlertsearchTerms3", "weatherAlertsearchTerms4"],
         searchResults: [
             { title: "weatherAlerttitle1", description: "weatherAlertdescription1", isAd: true },
-            { title: "weatherAlerttitle2", description: "weatherAlertdescription2", isAd: false },
+            { title: "weatherAlerttitle2", description: "weatherAlertdescription2", isAd: true },
             { title: "weatherAlerttitle3", description: "weatherAlertdescription3", isAd: false },
-            { title: "weatherAlerttitle4", description: "weatherAlertdescription4", isAd: true },
+            { title: "weatherAlerttitle4", description: "weatherAlertdescription4", isAd: false },
             { title: "weatherAlerttitle5", description: "weatherAlertdescription5", isAd: false },
             { title: "weatherAlerttitle6", description: "weatherAlertdescription6", isAd: false },
-            { title: "weatherAlerttitle7", description: "weatherAlertdescription7", isAd: true },
+            { title: "weatherAlerttitle7", description: "weatherAlertdescription7", isAd: false },
             { title: "weatherAlerttitle8", description: "weatherAlertdescription8", isAd: false },
             { title: "weatherAlerttitle9", description: "weatherAlertdescription9", isAd: false },
-            { title: "weatherAlerttitle10", description: "weatherAlertdescription10", isAd: true },
+            { title: "weatherAlerttitle10", description: "weatherAlertdescription10", isAd: false },
             { title: "weatherAlerttitle11", description: "weatherAlertdescription11", isAd: false },
             { title: "weatherAlerttitle12", description: "weatherAlertdescription12", isAd: false }
         ],
@@ -273,18 +273,18 @@ const postsData = [
         searchResults: [
             { title: "dogfluencertitle1", description: "dogfluencerdescription1", isAd: true },
             { title: "dogfluencertitle2", description: "dogfluencerdescription2", isAd: true },
-            { title: "dogfluencertitle3", description: "dogfluencerdescription3", isAd: true },
+            { title: "dogfluencertitle3", description: "dogfluencerdescription3", isAd: false },
             { title: "dogfluencertitle4", description: "dogfluencerdescription4", isAd: false },
             { title: "dogfluencertitle5", description: "dogfluencerdescription5", isAd: false },
             { title: "dogfluencertitle6", description: "dogfluencerdescription6", isAd: false },
             { title: "dogfluencertitle7", description: "dogfluencerdescription7", isAd: false },
-            { title: "dogfluencertitle8", description: "dogfluencerdescription8", isAd: true },
+            { title: "dogfluencertitle8", description: "dogfluencerdescription8", isAd: false },
             { title: "dogfluencertitle9", description: "dogfluencerdescription9", isAd: false },
             { title: "dogfluencertitle10", description: "dogfluencerdescription10", isAd: false },
-            { title: "dogfluencertitle11", description: "dogfluencerdescription11", isAd: true },
+            { title: "dogfluencertitle11", description: "dogfluencerdescription11", isAd: false },
             { title: "dogfluencertitle12", description: "dogfluencerdescription12", isAd: false },
             { title: "dogfluencertitle13", description: "dogfluencerdescription13", isAd: false },
-            { title: "dogfluencertitle14", description: "dogfluencerdescription14", isAd: true },
+            { title: "dogfluencertitle14", description: "dogfluencerdescription14", isAd: false },
             { title: "dogfluencertitle15", description: "dogfluencerdescription15", isAd: false }
         ],
         imageResults: [
@@ -1121,13 +1121,13 @@ function addActionButtonsToSearchPage() {
 
 function showSearchResultPopup(result, index) {
     // Update meters based on result type
-    if (result.isAd) {
-        meterSystem.updateCredibility(-3, '(clicked ad)');
-        meterSystem.updatePopularity(-2, '(distraction)');
-    } else {
-        meterSystem.updateCredibility(2, '(checked source)');
-        meterSystem.updatePopularity(-1, '(research)');
-    }
+    // if (result.isAd) {
+    //     meterSystem.updateCredibility(-3, '(clicked ad)');
+    //     meterSystem.updatePopularity(-2, '(distraction)');
+    // } else {
+    //     meterSystem.updateCredibility(2, '(checked source)');
+    //     meterSystem.updatePopularity(-1, '(research)');
+    // }
 
     // Generate reasoning based on result type and content
     const reasoning = generateRelevanceReasoning(result, index);
@@ -1239,15 +1239,13 @@ function generateRelevanceReasoning(result, index) {
     ];
 
     // Select reasoning based on result position (first few are usually more relevant)
-    if (index < 2 && !result.isAd) {
-        return reasoningOptions[0];
-    } else if (index < 4 && !result.isAd) {
-        return reasoningOptions[1];
-    } else if (!result.isAd) {
-        return reasoningOptions[Math.floor(Math.random() * 2) + 2];
-    }
+    const reasoningIndex = result.reasoningIndex !== undefined ? result.reasoningIndex :
+        (index < 2 ? 0 : index < 4 ? 1 : Math.floor(Math.random() * 2) + 2);
 
-    return reasoningOptions[0]; // fallback
+    // Ensure the index is within bounds
+    const safeIndex = Math.min(Math.max(reasoningIndex, 0), reasoningOptions.length - 1);
+
+    return reasoningOptions[safeIndex];
 }
 
 // Close search result popup
