@@ -1067,6 +1067,23 @@ function showTextSearchResults() {
                 searchResults.appendChild(resultElement);
             });
 
+            // Add pagination at the end of results
+            const paginationContainer = document.createElement('div');
+            paginationContainer.className = 'pagination-container';
+            paginationContainer.innerHTML = `
+                <span class="page-number active">1</span>
+                <a href="#" class="page-number">2</a>
+                <a href="#" class="page-number">3</a>
+            `;
+            searchResults.appendChild(paginationContainer);
+
+            paginationContainer.querySelectorAll('a.page-number').forEach(pageLink => {
+                pageLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showSecondPagePopup();
+                });
+            });
+
             // Add action buttons to the text search results page
             addActionButtonsToSearchPage();
 
@@ -1077,6 +1094,40 @@ function showTextSearchResults() {
             updateTopMenu('textSearch');
         }
     }
+}
+
+function showSecondPagePopup() {
+    // Award points for going beyond the first page
+    meterSystem.updateCredibility(2, '(thorough research)');
+
+    const popupHTML = `
+        <div class="search-popup-overlay" id="searchPopupOverlay">
+            <div class="search-popup">
+                <div class="popup-header">
+                    <h3>Beyond the First Page</h3>
+                    <button class="popup-close" onclick="closeSearchPopup()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="popup-content">
+                    <div class="relevance-analysis">
+                        <h4>Relevance Analysis:</h4>
+                        <div class="reasoning-content neutral">
+                            <p>Excellent! You're looking beyond the first page of results. Misinformation and biased content are often promoted to appear high in search rankings.</p><p>Skilled fact-checkers always dig deeper to find more reliable and diverse sources. Your thoroughness is a great journalistic habit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-actions">
+                    <button class="action-btn primary" onclick="closeSearchPopup()">Continue Research</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
 }
 
 function addActionButtonsToSearchPage() {
