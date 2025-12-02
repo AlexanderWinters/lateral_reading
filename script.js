@@ -409,9 +409,36 @@ function updateCompletionCounter() {
     }
 }
 
+function injectCustomStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .prominent-pagination {
+            text-align: center;
+            margin: 40px 0 20px 0;
+        }
+        .prominent-pagination .page-number {
+            font-size: 1.2rem;
+            margin: 0 8px;
+            text-decoration: none;
+            color: var(--primary-color, #1a0dab);
+            padding: 8px 12px;
+        }
+        .prominent-pagination a.page-number:hover {
+            text-decoration: underline;
+        }
+        .prominent-pagination .page-number.active {
+            font-weight: bold;
+            color: #000;
+            cursor: default;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
 
         // Initialize the application
         function init() {
+            injectCustomStyles();
 
             // Set up language switching
             languageSelector.addEventListener('change', function() {
@@ -1069,17 +1096,23 @@ function showTextSearchResults() {
 
             // Add pagination at the end of results
             const paginationContainer = document.createElement('div');
-            paginationContainer.className = 'pagination-container';
-            paginationContainer.innerHTML = `
-                <span class="page-number active">1</span>
-                <a href="#" class="page-number">2</a>
-                <a href="#" class="page-number">3</a>
-            `;
+            paginationContainer.className = 'pagination-container prominent-pagination';
+
+            let pagesHTML = '<span class="page-number active">1</span>';
+            for (let i = 2; i <= 10; i++) {
+                pagesHTML += `<a href="#" class="page-number">${i}</a>`;
+            }
+            paginationContainer.innerHTML = pagesHTML;
             searchResults.appendChild(paginationContainer);
 
             paginationContainer.querySelectorAll('a.page-number').forEach(pageLink => {
                 pageLink.addEventListener('click', function(e) {
                     e.preventDefault();
+                    const post = postsData.find(p => p.id === currentPostId);
+                    if (post && !post.clickedExtraPages) {
+                        post.clickedExtraPages = true;
+                        meterSystem.updateCredibility(2, '(thorough research)');
+                    }
                     showSecondPagePopup();
                 });
             });
@@ -1097,9 +1130,6 @@ function showTextSearchResults() {
 }
 
 function showSecondPagePopup() {
-    // Award points for going beyond the first page
-    meterSystem.updateCredibility(2, '(thorough research)');
-
     const popupHTML = `
         <div class="search-popup-overlay" id="searchPopupOverlay">
             <div class="search-popup">
