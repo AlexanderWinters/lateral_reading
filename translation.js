@@ -22,6 +22,131 @@ const languageData = {
     loadMore: "Load more",
     noResults: "No results found",
 
+    // UI - Decision/Research Popups
+    researchFirst: "Research First!",
+    decisionPaused: "Decision Paused",
+    researchInstruction: "Good journalism requires research. Use the Text Search or Image Search tools to investigate this story before you decide to publish or flag it.",
+    proTip: "Pro Tip:",
+    evidenceRiskTip: "Making decisions without evidence is risky. Fact-checking builds your credibility and helps you avoid spreading misinformation.",
+    backToResearch: "Back to Research",
+
+    decisionPublish: "PUBLISH",
+    decisionFlag: "FLAG AS FALSE",
+    decisionComplete: "Decision Complete",
+    correctDecision: "✓ Correct Decision",
+    incorrectDecision: "✗ Incorrect Decision",
+    youChoseTo: "You chose to:",
+    correctChoiceWas: "Correct choice was:",
+    analysis: "Analysis:",
+    impactOnMetrics: "Impact on Your Metrics:",
+    credibilityLabel: "Credibility:",
+    popularityLabel: "Popularity:",
+    learningTip: "Learning Tip:",
+    wellDone: "Well Done!",
+    skillsImproving: "Your fact-checking skills are improving. Keep using evidence to make informed decisions!",
+    reviewAgain: "Review Again",
+    continue: "Continue",
+
+    // Decision Explanations — Reasoning + Learning Tips
+    // Post 1 (Fire alert) — should be FLAGGED
+    decisionReasoning_1_correct_publish: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
+    decisionReasoning_1_correct_flag: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
+    decisionReasoning_1_incorrect_publish: "This post should have been flagged as false. The sensationalized language, conspiracy claims about authorities 'covering up' information, and emotional manipulation are classic signs of misinformation designed to spread panic rather than provide factual emergency information.",
+    decisionReasoning_1_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_1_correct: "",
+    decisionLearningTip_1_incorrect: "Look for official sources when dealing with emergency information. Legitimate emergency alerts come through official channels with clear, factual language rather than conspiracy theories about cover-ups.",
+
+    // Post 2 (Library attack) — should be FLAGGED
+    decisionReasoning_2_correct_publish: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
+    decisionReasoning_2_correct_flag: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
+    decisionReasoning_2_incorrect_publish: "This post should have been flagged. It spreads unverified threats that could cause public panic. Legitimate security threats are handled by official law enforcement channels, not through social media posts with vague claims and dramatic language.",
+    decisionReasoning_2_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_2_correct: "",
+    decisionLearningTip_2_incorrect: "When encountering posts about security threats, always look for official law enforcement sources and concrete evidence. Vague threats with dramatic language are often designed to spread fear rather than inform.",
+
+    // Post 3 (Military vehicles) — should be FLAGGED
+    decisionReasoning_3_correct_publish: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
+    decisionReasoning_3_correct_flag: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
+    decisionReasoning_3_incorrect_publish: "This should have been flagged as misleading. The post takes routine military exercises and frames them as threatening 'takeovers.' The sensationalized interpretation misrepresents normal defense training activities.",
+    decisionReasoning_3_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_3_correct: "",
+    decisionLearningTip_3_incorrect: "Military exercises are routine and publicly announced. Always check official defense department sources before sharing posts that claim normal military activities are threats to civilian government.",
+
+    // Post 4 (Water poisoning) — should be FLAGGED
+    decisionReasoning_4_correct_publish: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
+    decisionReasoning_4_correct_flag: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
+    decisionReasoning_4_incorrect_publish: "This post should have been flagged as health misinformation. It makes alarming claims about water contamination based on anecdotal reports without official verification. Real water safety issues involve immediate official testing, public health warnings, and clear guidance - not mysterious 'chemical smells' with implied cover-ups.",
+    decisionReasoning_4_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_4_correct: "",
+    decisionLearningTip_4_incorrect: "Always verify health claims through official public health agencies. Water quality is heavily regulated and monitored - legitimate contamination events trigger immediate official responses with testing data, not vague social media rumors about chemical odors.",
+
+    // Post 5 (Pet infection) — should be FLAGGED
+    decisionReasoning_5_correct_publish: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
+    decisionReasoning_5_correct_flag: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
+    decisionReasoning_5_incorrect_publish: "This should have been flagged as animal health misinformation. It uses fear tactics and vague claims about pet diseases without credible veterinary sources. Real pet health emergencies are reported through official veterinary channels with specific symptoms, affected areas, and clear prevention guidance - not mysterious 'new infections' with implied cover-ups.",
+    decisionReasoning_5_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_5_correct: "",
+    decisionLearningTip_5_incorrect: "Verify pet health claims through official veterinary associations and animal health departments. Legitimate disease outbreaks involve specific symptoms, geographic patterns, and official health guidance rather than vague social media warnings with alarming images.",
+
+    // Post 6 (Celebrity death hoax) — should be FLAGGED
+    decisionReasoning_6_correct_publish: "Excellent detection of a celebrity death hoax! These false death announcements spread rapidly on social media and cause real emotional distress to fans while generating clicks for unscrupulous sites. The post likely lacks official confirmation from representatives, family, or credible news sources. Real celebrity deaths are confirmed through multiple official channels simultaneously, not through single viral social media posts.",
+    decisionReasoning_6_correct_flag: "Excellent detection of a celebrity death hoax! These false death announcements spread rapidly on social media and cause real emotional distress to fans while generating clicks for unscrupulous sites. The post likely lacks official confirmation from representatives, family, or credible news sources. Real celebrity deaths are confirmed through multiple official channels simultaneously, not through single viral social media posts.",
+    decisionReasoning_6_incorrect_publish: "This should have been flagged as a celebrity death hoax. These false announcements are common social media phenomena that spread emotional misinformation for clicks and engagement. Legitimate celebrity deaths are confirmed through multiple official sources - management, family statements, and established news outlets - not single viral posts with dramatic language.",
+    decisionReasoning_6_incorrect_flag: "This should not happen with current post setup",
+    decisionLearningTip_6_correct: "",
+    decisionLearningTip_6_incorrect: "Always verify celebrity death claims through official representatives, family statements, or established entertainment news sources. Death hoaxes are unfortunately common and cause real distress. Look for confirmation across multiple credible sources before sharing such sensitive information.",
+
+    // Post 7 (Weather alert) — should be PUBLISHED
+    decisionReasoning_7_correct_publish: "Correct! This appears to be a legitimate weather alert with appropriate urgency. While the language is strong, it's proportionate to a genuine severe weather event. Official meteorological sources would support publishing accurate weather warnings to help public safety.",
+    decisionReasoning_7_correct_flag: "Good instincts to be cautious, but this appears to be a legitimate severe weather alert. The language, while urgent, is appropriate for a genuine emergency situation and would be supported by official meteorological sources.",
+    decisionReasoning_7_incorrect_publish: "This should not happen with current post setup",
+    decisionReasoning_7_incorrect_flag: "This post should have been published as it appears to be a legitimate weather emergency. While it's good to be cautious about sensationalized content, genuine emergency alerts often use urgent language to ensure public safety.",
+    decisionLearningTip_7_correct: "",
+    decisionLearningTip_7_incorrect: "Distinguish between sensationalized misinformation and legitimate emergency warnings. Check official weather services to verify severe weather alerts - urgent language can be appropriate when public safety is at risk.",
+
+    // Post 8 (Dogfluencer) — should be PUBLISHED
+    decisionReasoning_8_correct_publish: "Excellent decision! This is a legitimate investigative story about social media fraud that affects consumers and businesses. The evidence includes verifiable data analytics, documented communication, and follows established patterns of influencer fraud that regulatory bodies actively monitor. This type of investigative journalism serves the public interest by exposing deceptive practices in digital marketing.",
+    decisionReasoning_8_correct_flag: "Good instincts to investigate thoroughly, but this appears to be a credible investigative report. While social media can contain false accusations, this story presents verifiable evidence including analytics data, communication records, and fits documented patterns of influencer fraud that affect real businesses and consumers.",
+    decisionReasoning_8_incorrect_publish: "This should not happen with current post setup",
+    decisionReasoning_8_incorrect_flag: "This story should have been published as it represents legitimate investigative journalism. The evidence presented - including analytics data, communication records, and industry context - supports the claims. Influencer fraud is a real, documented problem that affects consumers and businesses, making this newsworthy content that serves the public interest.",
+    decisionLearningTip_8_correct: "",
+    decisionLearningTip_8_incorrect: "Distinguish between personal attacks and legitimate investigations. Look for verifiable evidence like data analytics, documented communications, and broader industry context. Real investigative stories about fraud typically include multiple sources of evidence and address issues that affect consumers or the public interest.",
+
+    // UI - Search Popup
+    relevanceAnalysis: "Relevance Analysis:",
+    relevanceScore: "Relevance Score:",
+    sponsoredResultWarning: "This is a sponsored result - be cautious of bias",
+    evidenceLimitReached: "Evidence limit reached",
+    qualityOverQuantity: "Quality over quantity!",
+    evidenceUsed: "Evidence used:",
+    close: "Close",
+    evidenceLimitReachedBtn: "Evidence Limit Reached",
+    useAsEvidence: "Use as Evidence",
+    
+    // Search second-page popup
+    beyondFirstPageTitle: "Beyond the First Page",
+    beyondFirstPageP1: "Excellent! You're looking beyond the first page of results. Misinformation and biased content are often promoted to appear high in search rankings.",
+    beyondFirstPageP2: "Skilled fact-checkers always dig deeper to find more reliable and diverse sources. Your thoroughness is a great journalistic habit.",
+    continueResearch: "Continue Research",
+
+    // Search results decision section
+    searchDecisionTitle: "Ready to make your decision?",
+    searchDecisionPrompt: "Based on your research, what should we do with this post?",
+
+    // Relevance reasoning texts
+    relevanceReasoning_ad: "This is a sponsored advertisement, not an editorial source. Ads are designed to capture attention and may present biased or sensational information to drive clicks. For fact-checking, prioritize official sources, established news outlets, or government statements over promotional content.",
+    relevanceReasoning_1: "This appears to be from an official source providing factual updates. The language is measured and includes specific details without sensational claims. Official sources are generally more reliable for fact-checking as they have institutional accountability.",
+    relevanceReasoning_2: "This source provides a brief but official update. While the information is limited, it comes from an authoritative source. Consider cross-referencing with additional sources for a complete picture.",
+    relevanceReasoning_3: "This appears to be a legitimate news report, but consider the timing and source credibility. Look for corroboration from other established outlets before relying on this information.",
+    relevanceReasoning_4: "While this may contain relevant information, the source or presentation raises some concerns. Cross-check with more established sources before using as evidence.",
+    evidenceNumberPrefix: "Evidence #",
+
+    // UI - Evidence Notifications
+    evidenceCollectionComplete: "Evidence Collection Complete",
+    youHaveGathered: "You've gathered",
+    piecesOfEvidence: "pieces of evidence",
+    qualityFactChecking: "Quality fact-checking focuses on the most credible sources rather than quantity.",
+
     welcomeTitle: "Welcome to the Newsroom",
     whatIsThis: "What is this?",
     introDescription: "In this newsroom, everyone begins with a short training session: a review of 8 viral tips before publication. " +
@@ -485,6 +610,131 @@ const languageData = {
         feedbackFlagged: "Innehållet har markerats som falskt!",
         loadMore: "Ladda mer",
         noResults: "Inga resultat hittades",
+
+        // UI - Decision/Research Popups
+        researchFirst: "Gör research först!",
+        decisionPaused: "Beslut pausat",
+        researchInstruction: "God journalistik kräver research. Använd Textsök eller Bildsök för att undersöka denna story innan du väljer att publicera eller markera som falsk.",
+        proTip: "Proffstips:",
+        evidenceRiskTip: "Att fatta beslut utan bevis är riskabelt. Faktagranskning bygger din trovärdighet och hjälper dig undvika att sprida desinformation.",
+        backToResearch: "Tillbaka till research",
+
+        decisionPublish: "PUBLICERA",
+        decisionFlag: "FLAGGA SOM FALSKT",
+        decisionComplete: "Beslut klart",
+        correctDecision: "✓ Korrekt beslut",
+        incorrectDecision: "✗ Felaktigt beslut",
+        youChoseTo: "Du valde att:",
+        correctChoiceWas: "Korrekt val var:",
+        analysis: "Analys:",
+        impactOnMetrics: "Påverkan på dina mätvärden:",
+        credibilityLabel: "Trovärdighet:",
+        popularityLabel: "Popularitet:",
+        learningTip: "Lärande tips:",
+        wellDone: "Bra jobbat!",
+        skillsImproving: "Dina faktagranskningskunskaper blir bättre. Fortsätt använda bevis för att fatta informerade beslut!",
+        reviewAgain: "Granska igen",
+        continue: "Fortsätt",
+
+        // Beslutsförklaringar — Resonemang + Lärandetips
+        // Inlägg 1 (Brandvarning) — ska FLAGGAS
+        decisionReasoning_1_correct_publish: "Utmärkt beslut! Inlägget har klassiska kännetecken för desinformation: sensationslyrligt språk (\"DÖLJER DETTA!\"), känslomässig manipulation och brist på trovärdiga källor. Den dramatiska presentationen och konspiratoriska inramningen är varningsflaggor för falska nödlarm avsedda att skapa panik snarare än att informera.",
+        decisionReasoning_1_correct_flag: "Utmärkt beslut! Inlägget har klassiska kännetecken för desinformation: sensationslyrligt språk (\"DÖLJER DETTA!\"), känslomässig manipulation och brist på trovärdiga källor. Den dramatiska presentationen och konspiratoriska inramningen är varningsflaggor för falska nödlarm avsedda att skapa panik snarare än att informera.",
+        decisionReasoning_1_incorrect_publish: "Detta inlägg borde ha flaggats som falskt. Det sensationslyrliga språket, konspirationspåståenden om att myndigheter \"döljer\" information och känslomässig manipulation är klassiska tecken på desinformation som sprider panik snarare än faktabaserad nödinformation.",
+        decisionReasoning_1_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_1_correct: "",
+        decisionLearningTip_1_incorrect: "Sök officiella källor vid nödinformation. Legitima nödlarm kommer via officiella kanaler med tydligt, sakligt språk – inte via konspirationsteorier om mörkläggning.",
+
+        // Inlägg 2 (Biblioteksattack) — ska FLAGGAS
+        decisionReasoning_2_correct_publish: "Korrekt val! Inlägget sprider ogrundad rädsla för terrorhot utan trovärdiga bevis. Det vaga, hotfulla språket i kombination med uppmaningar till omedelbar handling är typiskt för inlägg som vill skapa oro och i värsta fall hetsa till panik eller självtäkt snarare än att informera om verkliga hot.",
+        decisionReasoning_2_correct_flag: "Korrekt val! Inlägget sprider ogrundad rädsla för terrorhot utan trovärdiga bevis. Det vaga, hotfulla språket i kombination med uppmaningar till omedelbar handling är typiskt för inlägg som vill skapa oro och i värsta fall hetsa till panik eller självtäkt snarare än att informera om verkliga hot.",
+        decisionReasoning_2_incorrect_publish: "Detta inlägg borde ha flaggats. Det sprider overifierade hot som kan skapa allmän panik. Legitim säkerhetsinformation hanteras av myndigheter, inte via sociala medier med vaga påståenden och dramatisk ton.",
+        decisionReasoning_2_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_2_correct: "",
+        decisionLearningTip_2_incorrect: "När du stöter på påståenden om säkerhetshot – leta efter officiella källor och konkreta bevis. Vaga hot med dramatisk ton är ofta avsedda att sprida rädsla snarare än att informera.",
+
+        // Inlägg 3 (Militärfordon) — ska FLAGGAS
+        decisionReasoning_3_correct_publish: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
+        decisionReasoning_3_correct_flag: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
+        decisionReasoning_3_incorrect_publish: "Detta borde ha flaggats som vilseledande. Inlägget tar rutinmässiga militärövningar och framställer dem som hotfulla \"övertaganden\". Den sensationslystna tolkningen förvanskar normala försvarsaktiviteter.",
+        decisionReasoning_3_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_3_correct: "",
+        decisionLearningTip_3_incorrect: "Militärövningar är rutin och offentliggörs i förväg. Kontrollera alltid officiella källor innan du delar påståenden om att normala militäraktiviteter hotar civilt styre.",
+
+        // Inlägg 4 (Vattenförgiftning) — ska FLAGGAS
+        decisionReasoning_4_correct_publish: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
+        decisionReasoning_4_correct_flag: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
+        decisionReasoning_4_incorrect_publish: "Detta inlägg borde ha flaggats som hälsodesinformation. Det larmar om vattenförorening utifrån anekdotiska uppgifter utan officiell verifiering. Riktiga vattenproblem innebär omedelbara tester, varningar och tydliga råd – inte mystiska \"kemiska lukter\" med antydda mörkläggningar.",
+        decisionReasoning_4_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_4_correct: "",
+        decisionLearningTip_4_incorrect: "Verifiera alltid hälsopåståenden via offentliga hälsomyndigheter. Vattenkvalitet övervakas noggrant – legitima händelser ger snabb officiell information med testdata, inte vaga rykten i sociala medier.",
+
+        // Inlägg 5 (Djursmitta) — ska FLAGGAS
+        decisionReasoning_5_correct_publish: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
+        decisionReasoning_5_correct_flag: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
+        decisionReasoning_5_incorrect_publish: "Detta borde ha flaggats som djurhälsodesinformation. Det använder skrämseltaktik och vaga påståenden utan trovärdiga veterinärkällor. Riktiga nödlägen rapporteras via officiella kanaler med specifika symtom, drabbade områden och förebyggande råd – inte mystiska \"nya infektioner\".",
+        decisionReasoning_5_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_5_correct: "",
+        decisionLearningTip_5_incorrect: "Verifiera djurhälsopåståenden via veterinärförbund och djurhälso­myndigheter. Legitimt utbrott kännetecknas av specifika symtom, geografiska mönster och officiell vägledning – inte vaga varningar.",
+
+        // Inlägg 6 (Kändisdöd-bluff) — ska FLAGGAS
+        decisionReasoning_6_correct_publish: "Utmärkt upptäckt av en bluff om kändisdöd! Sådana falska meddelanden sprids snabbt i sociala medier och orsakar verklig oro samtidigt som klick genereras. Inlägget saknar sannolikt officiell bekräftelse från representanter, familj eller trovärdiga nyhetskällor. Riktiga dödsfall bekräftas via flera officiella kanaler, inte enstaka virala inlägg.",
+        decisionReasoning_6_correct_flag: "Utmärkt upptäckt av en bluff om kändisdöd! Sådana falska meddelanden sprids snabbt i sociala medier och orsakar verklig oro samtidigt som klick genereras. Inlägget saknar sannolikt officiell bekräftelse från representanter, familj eller trovärdiga nyhetskällor. Riktiga dödsfall bekräftas via flera officiella kanaler, inte enstaka virala inlägg.",
+        decisionReasoning_6_incorrect_publish: "Detta borde ha flaggats som en bluff om kändisdöd. Sådana falska utrop är vanliga i sociala medier och sprider känslomässig desinformation för engagemang. Riktiga dödsfall bekräftas via flera officiella källor – inte ett enskilt viralt inlägg med dramatisk ton.",
+        decisionReasoning_6_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionLearningTip_6_correct: "",
+        decisionLearningTip_6_incorrect: "Verifiera alltid uppgifter om kändisdöd via officiella representanter, familjeuttalanden eller etablerade nyhetskällor. Bluffar är tyvärr vanliga – sök bekräftelse från flera trovärdiga källor.",
+
+        // Inlägg 7 (Vädervarning) — ska PUBLICERAS
+        decisionReasoning_7_correct_publish: "Korrekt! Detta verkar vara en legitim vädervarning med rimlig skärpa i tonen. Språket är starkt men proportionerligt för ett allvarligt oväder. Officiella meteorologiska källor skulle stödja publicering av korrekta varningar för allmän säkerhet.",
+        decisionReasoning_7_correct_flag: "Goda instinkter att vara försiktig, men detta verkar vara en legitim vädervarning. Den brådskande tonen är rimlig i en verklig nödsituation och skulle stödjas av officiella källor.",
+        decisionReasoning_7_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionReasoning_7_incorrect_flag: "Detta inlägg borde ha publicerats då det verkar röra ett verkligt väderläge. Det är bra att vara skeptisk till sensationslystet innehåll, men äkta varningar använder ofta starkt språk för att skydda allmänheten.",
+        decisionLearningTip_7_correct: "",
+        decisionLearningTip_7_incorrect: "Skilj på sensationslystna falska larm och legitima varningar. Kontrollera alltid officiella vädertjänster – brådskande språk kan vara motiverat när säkerheten står på spel.",
+
+        // Inlägg 8 (Dogfluencer) — ska PUBLICERAS
+        decisionReasoning_8_correct_publish: "Utmärkt beslut! Detta är en legitim granskande artikel om sociala mediers bluffmetoder som påverkar konsumenter och företag. Bevisen omfattar verifierbar dataanalys, dokumenterad kommunikation och kända mönster av influencer-bedrägeri som myndigheter bevakar. Denna typ av journalistik ligger i allmänhetens intresse.",
+        decisionReasoning_8_correct_flag: "Bra att du undersöker noggrant, men detta framstår som en trovärdig granskande artikel. Trots att sociala medier kan innehålla falska anklagelser presenterar denna story verifierbar bevisning – analysdata, korrespondens och mönster som överensstämmer med kända fall.",
+        decisionReasoning_8_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionReasoning_8_incorrect_flag: "Denna story borde ha publicerats då den är legitim granskande journalistik. Bevisen – dataanalys, kommunikation och branschkontext – stödjer påståendena. Influencer-bedrägeri är ett dokumenterat problem som drabbar konsumenter och företag och är därmed av allmänt intresse.",
+        decisionLearningTip_8_correct: "",
+        decisionLearningTip_8_incorrect: "Skilj på personangrepp och legitim granskning. Leta efter verifierbar bevisning såsom data, dokumenterad kommunikation och bredare branschkontext. Seriösa granskningar bygger på flera källor och berör allmänintresset.",
+
+        // UI - Search Popup
+        relevanceAnalysis: "Relevansanalys:",
+        relevanceScore: "Relevanspoäng:",
+        sponsoredResultWarning: "Detta är ett sponsrat resultat – var uppmärksam på bias",
+        evidenceLimitReached: "Bevisgräns uppnådd",
+        qualityOverQuantity: "Kvalitet före kvantitet!",
+        evidenceUsed: "Bevis använda:",
+        close: "Stäng",
+        evidenceLimitReachedBtn: "Bevisgräns uppnådd",
+        useAsEvidence: "Använd som bevis",
+
+        // Sökpopup för sida 2
+        beyondFirstPageTitle: "Bortom första sidan",
+        beyondFirstPageP1: "Utmärkt! Du tittar bortom den första resultatsidan. Desinformation och partiskt innehåll lyfts ofta upp i sökrankningen.",
+        beyondFirstPageP2: "Skickliga faktagranskare gräver alltid djupare för att hitta mer tillförlitliga och varierade källor. Din noggrannhet är en god journalistisk vana.",
+        continueResearch: "Fortsätt att undersöka",
+
+        // Beslutssektion i sökresultat
+        searchDecisionTitle: "Redo att fatta ditt beslut?",
+        searchDecisionPrompt: "Baserat på din research – vad bör vi göra med detta inlägg?",
+
+        // Relevansresonemang
+        relevanceReasoning_ad: "Detta är en sponsrad annons, inte en redaktionell källa. Annonser är skapade för att fånga uppmärksamhet och kan vara partiska eller sensationslystna för att driva klick. För faktagranskning – prioritera officiella källor, etablerade nyhetsmedier eller myndighetsuttalanden framför reklam.",
+        relevanceReasoning_1: "Detta verkar komma från en officiell källa med sakliga uppdateringar. Språket är balanserat och innehåller specifika detaljer utan sensationspåståenden. Officiella källor är generellt mer tillförlitliga då de har institutionellt ansvar.",
+        relevanceReasoning_2: "Källan ger en kort men officiell uppdatering. Även om informationen är begränsad kommer den från en auktoritativ källa. Korsreferera gärna med fler källor för en komplett bild.",
+        relevanceReasoning_3: "Detta verkar vara en legitim nyhetsrapport, men beakta timing och källans trovärdighet. Sök bekräftelse från andra etablerade medier innan du förlitar dig på detta.",
+        relevanceReasoning_4: "Även om detta kan innehålla relevant information väcker källan eller presentationen vissa frågor. Jämför med mer etablerade källor innan du använder detta som bevis.",
+        evidenceNumberPrefix: "Bevis #",
+
+        // UI - Evidence Notifications
+        evidenceCollectionComplete: "Insamling av bevis klar",
+        youHaveGathered: "Du har samlat",
+        piecesOfEvidence: "stycken bevis",
+        qualityFactChecking: "Kvalitativ faktagranskning fokuserar på de mest trovärdiga källorna snarare än mängden.",
 
         welcomeTitle: "Välkommen till redaktionen",
         whatIsThis: " ",

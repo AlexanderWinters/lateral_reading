@@ -664,7 +664,7 @@ function showNoResearchPopup() {
         <div class="decision-popup-overlay" id="noResearchPopupOverlay">
             <div class="decision-popup">
                 <div class="popup-header">
-                    <h3>Research First!</h3>
+                    <h3>${getLanguageText('researchFirst')}</h3>
                 </div>
                 <div class="popup-content">
                     <div class="fact-check-warning">
@@ -674,17 +674,17 @@ function showNoResearchPopup() {
                             <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         <div class="warning-content">
-                            <h5>Decision Paused</h5>
-                            <p>Good journalism requires research. Use the Text Search or Image Search tools to investigate this story before you decide to publish or flag it.</p>
+                            <h5>${getLanguageText('decisionPaused')}</h5>
+                            <p>${getLanguageText('researchInstruction')}</p>
                         </div>
                     </div>
                      <div class="learning-tip">
-                        <h5> Pro Tip:</h5>
-                        <p>Making decisions without evidence is risky. Fact-checking builds your credibility and helps you avoid spreading misinformation.</p>
+                        <h5> ${getLanguageText('proTip')}</h5>
+                        <p>${getLanguageText('evidenceRiskTip')}</p>
                     </div>
                 </div>
                 <div class="popup-actions">
-                    <button class="action-btn primary" onclick="closeNoResearchPopup()">Back to Research</button>
+                    <button class="action-btn primary" onclick="closeNoResearchPopup()">${getLanguageText('backToResearch')}</button>
                 </div>
             </div>
         </div>
@@ -700,9 +700,9 @@ function closeNoResearchPopup() {
 }
 
 function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChecking) {
-    const decisionText = userDecision === 'published' ? 'PUBLISH' : 'FLAG AS FALSE';
+    const decisionText = userDecision === 'published' ? getLanguageText('decisionPublish') : getLanguageText('decisionFlag');
     const decisionClass = isCorrect ? 'correct' : 'incorrect';
-    const correctDecisionText = post.correctAnswer ? 'PUBLISH' : 'FLAG AS FALSE';
+    const correctDecisionText = post.correctAnswer ? getLanguageText('decisionPublish') : getLanguageText('decisionFlag');
 
     // Generate explanation based on the post and correctness
     const explanation = generateDecisionExplanation(post, userDecision, isCorrect, hasPerformedFactChecking);
@@ -711,7 +711,7 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
         <div class="decision-popup-overlay" id="decisionPopupOverlay">
             <div class="decision-popup">
                 <div class="popup-header">
-                    <h3>Decision Complete</h3>
+                    <h3>${getLanguageText('decisionComplete')}</h3>
                 </div>
                 <div class="popup-content">
                     <div class="decision-result ${decisionClass}">
@@ -723,10 +723,10 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
                         </div>
                         <div class="decision-text">
                             <h4 class="${isCorrect ? 'correct' : 'incorrect'}">
-                                ${isCorrect ? '✓ Correct Decision' : '✗ Incorrect Decision'}
+                                ${isCorrect ? getLanguageText('correctDecision') : getLanguageText('incorrectDecision')}
                             </h4>
-                            <p class="decision-details">You chose to: <strong>${decisionText}</strong></p>
-                            ${!isCorrect ? `<p class="correct-choice">Correct choice was: <strong>${correctDecisionText}</strong></p>` : ''}
+                            <p class="decision-details">${getLanguageText('youChoseTo')} <strong>${decisionText}</strong></p>
+                            ${!isCorrect ? `<p class="correct-choice">${getLanguageText('correctChoiceWas')} <strong>${correctDecisionText}</strong></p>` : ''}
                             <p class="post-title-ref">"${translateKey(post.title)}"</p>
                         </div>
                     </div>
@@ -746,23 +746,23 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
                     ` : ''}
             
                     <div class="decision-analysis">
-                        <h4>Analysis:</h4>
+                        <h4>${getLanguageText('analysis')}</h4>
                         <div class="analysis-content">
                             ${explanation.reasoning}
                         </div>
                     
                         <div class="meter-impact">
-                            <h5>Impact on Your Metrics:</h5>
+                            <h5>${getLanguageText('impactOnMetrics')}</h5>
                             <div class="metric-changes">
                                 <div class="metric-change credibility">
-                                    <span class="metric-name">Credibility:</span>
+                                    <span class="metric-name">${getLanguageText('credibilityLabel')}</span>
                                     <span class="change-value ${explanation.credibilityChange > 0 ? 'positive' : 'negative'}">
                                         ${explanation.credibilityChange > 0 ? '+' : ''}${explanation.credibilityChange}
                                         ${explanation.credibilityReason}
                                     </span>
                                 </div>
                                 <div class="metric-change popularity">
-                                    <span class="metric-name">Popularity:</span>
+                                    <span class="metric-name">${getLanguageText('popularityLabel')}</span>
                                     <span class="change-value ${explanation.popularityChange > 0 ? 'positive' : 'negative'}">
                                         ${explanation.popularityChange > 0 ? '+' : ''}${explanation.popularityChange}
                                         ${explanation.popularityReason}
@@ -773,20 +773,20 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
                     
                         ${!isCorrect || !hasPerformedFactChecking ? `
                             <div class="learning-tip">
-                                <h5>💡 Learning Tip:</h5>
+                                <h5>💡 ${getLanguageText('learningTip')}</h5>
                                 <p>${explanation.learningTip}</p>
                             </div>
                         ` : `
                             <div class="success-message">
-                                <h5>🎯 Well Done!</h5>
-                                <p>Your fact-checking skills are improving. Keep using evidence to make informed decisions!</p>
+                                <h5>🎯 ${getLanguageText('wellDone')}</h5>
+                                <p>${getLanguageText('skillsImproving')}</p>
                             </div>
                         `}
                     </div>
                 </div>
                 <div class="popup-actions">
-                    <button class="action-btn secondary" onclick="closeDecisionPopup(); loadPost(${currentPostId});">Review Again</button>
-                    <button class="action-btn primary" onclick="closeDecisionPopupAndCheckWin()">Continue</button>
+                    <button class="action-btn secondary" onclick="closeDecisionPopup(); loadPost(${currentPostId});">${getLanguageText('reviewAgain')}</button>
+                    <button class="action-btn primary" onclick="closeDecisionPopupAndCheckWin()">${getLanguageText('continue')}</button>
                 </div>
             </div>
         </div>
@@ -798,114 +798,17 @@ function showDecisionFeedback(post, userDecision, isCorrect, hasPerformedFactChe
 function generateDecisionExplanation(post, userDecision, isCorrect, hasPerformedFactChecking) {
     const userChosePublish = userDecision === 'published';
 
-    // Define explanations for each post
-    const explanations = {
-        1: { // Fire alert post - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This post should have been flagged as false. The sensationalized language, conspiracy claims about authorities 'covering up' information, and emotional manipulation are classic signs of misinformation designed to spread panic rather than provide factual emergency information." :
-                    "This should not happen with current post setup",
-                learningTip: "Look for official sources when dealing with emergency information. Legitimate emergency alerts come through official channels with clear, factual language rather than conspiracy theories about cover-ups."
-            }
-        },
-        2: { // Library attack post - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This post should have been flagged. It spreads unverified threats that could cause public panic. Legitimate security threats are handled by official law enforcement channels, not through social media posts with vague claims and dramatic language." :
-                    "This should not happen with current post setup",
-                learningTip: "When encountering posts about security threats, always look for official law enforcement sources and concrete evidence. Vague threats with dramatic language are often designed to spread fear rather than inform."
-            }
-        },
-        3: { // Military vehicles post - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This should have been flagged as misleading. The post takes routine military exercises and frames them as threatening 'takeovers.' The sensationalized interpretation misrepresents normal defense training activities." :
-                    "This should not happen with current post setup",
-                learningTip: "Military exercises are routine and publicly announced. Always check official defense department sources before sharing posts that claim normal military activities are threats to civilian government."
-            }
-        },
-        4: { // Water poisoning post - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This post should have been flagged as health misinformation. It makes alarming claims about water contamination based on anecdotal reports without official verification. Real water safety issues involve immediate official testing, public health warnings, and clear guidance - not mysterious 'chemical smells' with implied cover-ups." :
-                    "This should not happen with current post setup",
-                learningTip: "Always verify health claims through official public health agencies. Water quality is heavily regulated and monitored - legitimate contamination events trigger immediate official responses with testing data, not vague social media rumors about chemical odors."
-            }
-        },
-        5: { // Pet infection post - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This should have been flagged as animal health misinformation. It uses fear tactics and vague claims about pet diseases without credible veterinary sources. Real pet health emergencies are reported through official veterinary channels with specific symptoms, affected areas, and clear prevention guidance - not mysterious 'new infections' with implied cover-ups." :
-                    "This should not happen with current post setup",
-                learningTip: "Verify pet health claims through official veterinary associations and animal health departments. Legitimate disease outbreaks involve specific symptoms, geographic patterns, and official health guidance rather than vague social media warnings with alarming images."
-            }
-        },
-        6: { // Celebrity death hoax - SHOULD BE FLAGGED
-            correct: {
-                reasoning: "Excellent detection of a celebrity death hoax! These false death announcements spread rapidly on social media and cause real emotional distress to fans while generating clicks for unscrupulous sites. The post likely lacks official confirmation from representatives, family, or credible news sources. Real celebrity deaths are confirmed through multiple official channels simultaneously, not through single viral social media posts.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This should have been flagged as a celebrity death hoax. These false announcements are common social media phenomena that spread emotional misinformation for clicks and engagement. Legitimate celebrity deaths are confirmed through multiple official sources - management, family statements, and established news outlets - not single viral posts with dramatic language." :
-                    "This should not happen with current post setup",
-                learningTip: "Always verify celebrity death claims through official representatives, family statements, or established entertainment news sources. Death hoaxes are unfortunately common and cause real distress. Look for confirmation across multiple credible sources before sharing such sensitive information."
-            }
-        },
-        7: { // Weather alert post - SHOULD BE PUBLISHED
-            correct: {
-                reasoning: userChosePublish ?
-                    "Correct! This appears to be a legitimate weather alert with appropriate urgency. While the language is strong, it's proportionate to a genuine severe weather event. Official meteorological sources would support publishing accurate weather warnings to help public safety." :
-                    "Good instincts to be cautious, but this appears to be a legitimate severe weather alert. The language, while urgent, is appropriate for a genuine emergency situation and would be supported by official meteorological sources.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This should not happen with current post setup" :
-                    "This post should have been published as it appears to be a legitimate weather emergency. While it's good to be cautious about sensationalized content, genuine emergency alerts often use urgent language to ensure public safety.",
-                learningTip: "Distinguish between sensationalized misinformation and legitimate emergency warnings. Check official weather services to verify severe weather alerts - urgent language can be appropriate when public safety is at risk."
-            }
-        },
+    // Build translation keys based on post id, correctness and action
+    const correctness = isCorrect ? 'correct' : 'incorrect';
+    const action = userChosePublish ? 'publish' : 'flag';
 
-        8: { // Dogfluencer post - SHOULD BE PUBLISHED (true story)
-            correct: {
-                reasoning: userChosePublish ?
-                    "Excellent decision! This is a legitimate investigative story about social media fraud that affects consumers and businesses. The evidence includes verifiable data analytics, documented communication, and follows established patterns of influencer fraud that regulatory bodies actively monitor. This type of investigative journalism serves the public interest by exposing deceptive practices in digital marketing." :
-                    "Good instincts to investigate thoroughly, but this appears to be a credible investigative report. While social media can contain false accusations, this story presents verifiable evidence including analytics data, communication records, and fits documented patterns of influencer fraud that affect real businesses and consumers.",
-                learningTip: ""
-            },
-            incorrect: {
-                reasoning: userChosePublish ?
-                    "This should not happen with current post setup" :
-                    "This story should have been published as it represents legitimate investigative journalism. The evidence presented - including analytics data, communication records, and industry context - supports the claims. Influencer fraud is a real, documented problem that affects consumers and businesses, making this newsworthy content that serves the public interest.",
-                learningTip: "Distinguish between personal attacks and legitimate investigations. Look for verifiable evidence like data analytics, documented communications, and broader industry context. Real investigative stories about fraud typically include multiple sources of evidence and address issues that affect consumers or the public interest."
-            }
-        }
-        // Add explanations for other posts...
+    const reasoningKey = `decisionReasoning_${post.id}_${correctness}_${action}`;
+    const learningKey = `decisionLearningTip_${post.id}_${correctness}`;
+
+    const explanation = {
+        reasoning: getLanguageText(reasoningKey),
+        learningTip: getLanguageText(learningKey)
     };
-
-    const postExplanation = explanations[post.id];
-    let explanation = isCorrect ? postExplanation.correct : postExplanation.incorrect;
 
     // Calculate meter changes and add fact-checking context
     let credibilityChange, credibilityReason, popularityChange, popularityReason;
@@ -1108,7 +1011,7 @@ function showSecondPagePopup() {
         <div class="search-popup-overlay" id="searchPopupOverlay">
             <div class="search-popup">
                 <div class="popup-header">
-                    <h3>Beyond the First Page</h3>
+                    <h3>${getLanguageText('beyondFirstPageTitle')}</h3>
                     <button class="popup-close" onclick="closeSearchPopup()">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1118,14 +1021,14 @@ function showSecondPagePopup() {
                 </div>
                 <div class="popup-content">
                     <div class="relevance-analysis">
-                        <h4>Relevance Analysis:</h4>
+                        <h4>${getLanguageText('relevanceAnalysis')}</h4>
                         <div class="reasoning-content neutral">
-                            <p>Excellent! You're looking beyond the first page of results. Misinformation and biased content are often promoted to appear high in search rankings.</p><p>Skilled fact-checkers always dig deeper to find more reliable and diverse sources. Your thoroughness is a great journalistic habit.</p>
+                            <p>${getLanguageText('beyondFirstPageP1')}</p><p>${getLanguageText('beyondFirstPageP2')}</p>
                         </div>
                     </div>
                 </div>
                 <div class="popup-actions">
-                    <button class="action-btn primary" onclick="closeSearchPopup()">Continue Research</button>
+                    <button class="action-btn primary" onclick="closeSearchPopup()">${getLanguageText('continueResearch')}</button>
                 </div>
             </div>
         </div>
@@ -1146,8 +1049,8 @@ function addActionButtonsToSearchPage() {
     actionButtonsContainer.className = 'search-action-buttons';
     actionButtonsContainer.innerHTML = `
         <div class="search-decision-section">
-            <h3>Ready to make your decision?</h3>
-            <p>Based on your research, what should we do with this post?</p>
+            <h3>${getLanguageText('searchDecisionTitle')}</h3>
+            <p>${getLanguageText('searchDecisionPrompt')}</p>
             <div class="search-buttons-container">
                 <button class="action-btn publish-btn" onclick="processPost('published')">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1208,12 +1111,12 @@ function showSearchResultPopup(result, index) {
                                 <p>${translateKey(result.description)}</p>
                             </div>
                             <div class="relevance-analysis">
-                                <h4>Relevance Analysis:</h4>
+                                <h4>${getLanguageText('relevanceAnalysis')}</h4>
                                 <div class="reasoning-content ${result.isAd ? 'warning' : 'neutral'}">
                                     ${reasoning.text}
                                 </div>
                                 <div class="relevance-score">
-                                    <span class="score-label">Relevance Score:</span>
+                                    <span class="score-label">${getLanguageText('relevanceScore')}</span>
                                     <span class="score-value ${reasoning.scoreClass}">${reasoning.score}/10</span>
                                 </div>
                             </div>
@@ -1224,7 +1127,7 @@ function showSearchResultPopup(result, index) {
                                         <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                         <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <span>This is a sponsored result - be cautious of bias</span>
+                                    <span>${getLanguageText('sponsoredResultWarning')}</span>
                                 </div>
                             ` : ''}
                             ${evidenceLimitReached ? `
@@ -1233,20 +1136,20 @@ function showSearchResultPopup(result, index) {
                                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
                                         <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                    <span>Evidence limit reached (${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}). Quality over quantity!</span>
+                                    <span>${getLanguageText('evidenceLimitReached')} (${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}). ${getLanguageText('qualityOverQuantity')}</span>
                                 </div>
                             ` : `
                                 <div class="evidence-counter">
-                                    <span>Evidence used: ${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}</span>
+                                    <span>${getLanguageText('evidenceUsed')} ${usedEvidenceCount}/${MAX_EVIDENCE_PER_STORY}</span>
                                 </div>
                             `}
                         </div>
                         <div class="popup-actions">
-                            <button class="action-btn secondary" onclick="closeSearchPopup()">Close</button>
+                            <button class="action-btn secondary" onclick="closeSearchPopup()">${getLanguageText('close')}</button>
                             <button class="action-btn primary ${evidenceLimitReached ? 'disabled' : ''}" 
                                     onclick="markAsUsed(${index})" 
                                     ${evidenceLimitReached ? 'disabled' : ''}>
-                                ${evidenceLimitReached ? 'Evidence Limit Reached' : 'Use as Evidence'}
+                                ${evidenceLimitReached ? getLanguageText('evidenceLimitReachedBtn') : getLanguageText('useAsEvidence')}
                             </button>
                         </div>
                     </div>
@@ -1263,7 +1166,7 @@ function generateRelevanceReasoning(result, index) {
 
     if (result.isAd) {
         return {
-            text: `This is a sponsored advertisement, not an editorial source. Ads are designed to capture attention and may present biased or sensational information to drive clicks. For fact-checking, prioritize official sources, established news outlets, or government statements over promotional content.`,
+            text: getLanguageText('relevanceReasoning_ad'),
             score: 2,
             scoreClass: 'low'
         };
@@ -1272,22 +1175,22 @@ function generateRelevanceReasoning(result, index) {
     // Generate different reasoning based on result position and content
     const reasoningOptions = [
         {
-            text: `This appears to be from an official source providing factual updates. The language is measured and includes specific details without sensational claims. Official sources are generally more reliable for fact-checking as they have institutional accountability.`,
+            text: getLanguageText('relevanceReasoning_1'),
             score: 8,
             scoreClass: 'high'
         },
         {
-            text: `This source provides a brief but official update. While the information is limited, it comes from an authoritative source. Consider cross-referencing with additional sources for a complete picture.`,
+            text: getLanguageText('relevanceReasoning_2'),
             score: 7,
             scoreClass: 'medium-high'
         },
         {
-            text: `This appears to be a legitimate news report, but consider the timing and source credibility. Look for corroboration from other established outlets before relying on this information.`,
+            text: getLanguageText('relevanceReasoning_3'),
             score: 6,
             scoreClass: 'medium'
         },
         {
-            text: `While this may contain relevant information, the source or presentation raises some concerns. Cross-check with more established sources before using as evidence.`,
+            text: getLanguageText('relevanceReasoning_4'),
             score: 4,
             scoreClass: 'medium-low'
         }
@@ -1348,7 +1251,7 @@ function markAsUsed(resultIndex) {
             if (!evidenceNumber) {
                 const numberElement = document.createElement('div');
                 numberElement.className = 'evidence-number';
-                numberElement.textContent = `Evidence #${usedEvidenceCount}`;
+                numberElement.textContent = `${getLanguageText('evidenceNumberPrefix')}${usedEvidenceCount}`;
                 resultElements[resultIndex].appendChild(numberElement);
             }
         }
@@ -1371,8 +1274,8 @@ function showEvidenceLimitReached() {
                         <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <div class="notification-text">
-                        <strong>Evidence Collection Complete</strong>
-                        <p>You've gathered ${MAX_EVIDENCE_PER_STORY} pieces of evidence. Quality fact-checking focuses on the most credible sources rather than quantity.</p>
+                        <strong>${getLanguageText('evidenceCollectionComplete')}</strong>
+                        <p>${getLanguageText('youHaveGathered')} ${MAX_EVIDENCE_PER_STORY} ${getLanguageText('piecesOfEvidence')}. ${getLanguageText('qualityFactChecking')}</p>
                     </div>
                     <button onclick="this.parentElement.parentElement.remove()" class="notification-close">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
