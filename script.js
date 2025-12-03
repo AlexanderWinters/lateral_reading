@@ -594,6 +594,11 @@ function processPost(status) {
             const performedImageSearch = post.performedImageSearch || false;
             const hasPerformedFactChecking = performedTextSearch || performedImageSearch;
 
+            if (!hasPerformedFactChecking) {
+                showNoResearchPopup();
+                return;
+            }
+
             // Determine if the user's decision is correct
             const userDecision = status === 'published'; // true if published, false if flagged
             const isCorrect = userDecision === post.correctAnswer;
@@ -605,63 +610,31 @@ function processPost(status) {
             let credibilityChange, credibilityReason, popularityChange, popularityReason;
 
             // Apply penalties/rewards based on fact-checking and correctness
-            if (hasPerformedFactChecking) {
-                // Normal scoring with fact-checking performed
-                if (isCorrect) {
-                    // Correct decision with fact-checking
-                    if (userDecision) {
-                        credibilityChange = 8;
-                        credibilityReason = '(correct: published true story)';
-                        popularityChange = 5;
-                        popularityReason = '(shared accurate info)';
-                    } else {
-                        credibilityChange = 10;
-                        credibilityReason = '(correct: flagged false story)';
-                        popularityChange = 2;
-                        popularityReason = '(prevented misinformation)';
-                    }
+            if (isCorrect) {
+                // Correct decision with fact-checking
+                if (userDecision) {
+                    credibilityChange = 8;
+                    credibilityReason = '(correct: published true story)';
+                    popularityChange = 5;
+                    popularityReason = '(shared accurate info)';
                 } else {
-                    // Incorrect decision even with fact-checking
-                    if (userDecision) {
-                        credibilityChange = -8;
-                        credibilityReason = '(incorrect: published false story)';
-                        popularityChange = -5;
-                        popularityReason = '(spread misinformation)';
-                    } else {
-                        credibilityChange = -5;
-                        credibilityReason = '(incorrect: flagged true story)';
-                        popularityChange = -3;
-                        popularityReason = '(suppressed accurate info)';
-                    }
+                    credibilityChange = 10;
+                    credibilityReason = '(correct: flagged false story)';
+                    popularityChange = 2;
+                    popularityReason = '(prevented misinformation)';
                 }
             } else {
-                // No fact-checking performed - apply penalties
-                if (isCorrect) {
-                    // Correct decision but without proper fact-checking - reduced rewards
-                    if (userDecision) {
-                        credibilityChange = Math.floor(8 * 0.25); // Quarter of normal reward
-                        credibilityReason = '(correct but no verification)';
-                        popularityChange = Math.floor(5 * 0.25);
-                        popularityReason = '(lucky guess)';
-                    } else {
-                        credibilityChange = Math.floor(10 * 0.25); // Quarter of normal reward
-                        credibilityReason = '(correct but no verification)';
-                        popularityChange = Math.floor(2 * 0.25);
-                        popularityReason = '(unverified decision)';
-                    }
+                // Incorrect decision even with fact-checking
+                if (userDecision) {
+                    credibilityChange = -8;
+                    credibilityReason = '(incorrect: published false story)';
+                    popularityChange = -5;
+                    popularityReason = '(spread misinformation)';
                 } else {
-                    // Incorrect decision without fact-checking - double penalty
-                    if (userDecision) {
-                        credibilityChange = Math.floor(-8 * 2); // Double penalty
-                        credibilityReason = '(published false story without verification)';
-                        popularityChange = Math.floor(-5 * 2);
-                        popularityReason = '(reckless journalism)';
-                    } else {
-                        credibilityChange = Math.floor(-5 * 2); // Double penalty
-                        credibilityReason = '(flagged true story without verification)';
-                        popularityChange = Math.floor(-3 * 2);
-                        popularityReason = '(censorship without research)';
-                    }
+                    credibilityChange = -5;
+                    credibilityReason = '(incorrect: flagged true story)';
+                    popularityChange = -3;
+                    popularityReason = '(suppressed accurate info)';
                 }
             }
 
@@ -683,6 +656,46 @@ function processPost(status) {
             // Show decision feedback popup
             showDecisionFeedback(post, status, isCorrect, hasPerformedFactChecking);
         }
+    }
+}
+
+function showNoResearchPopup() {
+    const popupHTML = `
+        <div class="decision-popup-overlay" id="noResearchPopupOverlay">
+            <div class="decision-popup">
+                <div class="popup-header">
+                    <h3>Research First!</h3>
+                </div>
+                <div class="popup-content">
+                    <div class="fact-check-warning">
+                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <div class="warning-content">
+                            <h5>Decision Paused</h5>
+                            <p>Good journalism requires research. Use the Text Search or Image Search tools to investigate this story before you decide to publish or flag it.</p>
+                        </div>
+                    </div>
+                     <div class="learning-tip">
+                        <h5> Pro Tip:</h5>
+                        <p>Making decisions without evidence is risky. Fact-checking builds your credibility and helps you avoid spreading misinformation.</p>
+                    </div>
+                </div>
+                <div class="popup-actions">
+                    <button class="action-btn primary" onclick="closeNoResearchPopup()">Back to Research</button>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+function closeNoResearchPopup() {
+    const popup = document.getElementById('noResearchPopupOverlay');
+    if (popup) {
+        popup.remove();
     }
 }
 
@@ -898,69 +911,30 @@ function generateDecisionExplanation(post, userDecision, isCorrect, hasPerformed
     let credibilityChange, credibilityReason, popularityChange, popularityReason;
     let learningTip = explanation.learningTip;
 
-    if (hasPerformedFactChecking) {
-        // Normal scoring with fact-checking performed
-        if (isCorrect) {
-            if (userChosePublish) {
-                credibilityChange = 8;
-                credibilityReason = '(correctly published true story)';
-                popularityChange = 5;
-                popularityReason = '(shared accurate information)';
-            } else {
-                credibilityChange = 10;
-                credibilityReason = '(correctly flagged false story)';
-                popularityChange = 2;
-                popularityReason = '(prevented misinformation)';
-            }
+    // Normal scoring with fact-checking performed
+    if (isCorrect) {
+        if (userChosePublish) {
+            credibilityChange = 8;
+            credibilityReason = '(correctly published true story)';
+            popularityChange = 5;
+            popularityReason = '(shared accurate information)';
         } else {
-            if (userChosePublish) {
-                credibilityChange = -8;
-                credibilityReason = '(incorrectly published false story)';
-                popularityChange = -5;
-                popularityReason = '(spread misinformation)';
-            } else {
-                credibilityChange = -5;
-                credibilityReason = '(incorrectly flagged true story)';
-                popularityChange = -3;
-                popularityReason = '(suppressed accurate information)';
-            }
+            credibilityChange = 10;
+            credibilityReason = '(correctly flagged false story)';
+            popularityChange = 2;
+            popularityReason = '(prevented misinformation)';
         }
     } else {
-        // No fact-checking performed - apply penalties and modify explanations
-        if (isCorrect) {
-            // Correct decision but without proper fact-checking - reduced rewards
-            if (userChosePublish) {
-                credibilityChange = Math.floor(8 * 0.25);
-                credibilityReason = '(correct but no verification)';
-                popularityChange = Math.floor(5 * 0.25);
-                popularityReason = '(lucky guess)';
-            } else {
-                credibilityChange = Math.floor(10 * 0.25);
-                credibilityReason = '(correct but no verification)';
-                popularityChange = Math.floor(2 * 0.25);
-                popularityReason = '(unverified decision)';
-            }
-
-            // Override reasoning to include fact-checking context
-            explanation.reasoning = `While your decision was correct, you made it without conducting proper fact-checking research. ${explanation.reasoning} Professional journalism requires verification through multiple sources before making publication decisions, even when your instincts prove right.`;
-            learningTip = "Always perform fact-checking before making editorial decisions. Even correct decisions made without proper verification damage your credibility as a journalist. Use text search and image verification tools to build a solid evidence base.";
+        if (userChosePublish) {
+            credibilityChange = -8;
+            credibilityReason = '(incorrectly published false story)';
+            popularityChange = -5;
+            popularityReason = '(spread misinformation)';
         } else {
-            // Incorrect decision without fact-checking - double penalty
-            if (userChosePublish) {
-                credibilityChange = Math.floor(-8 * 2);
-                credibilityReason = '(published false story without verification)';
-                popularityChange = Math.floor(-5 * 2);
-                popularityReason = '(reckless journalism)';
-            } else {
-                credibilityChange = Math.floor(-5 * 2);
-                credibilityReason = '(flagged true story without verification)';
-                popularityChange = Math.floor(-3 * 2);
-                popularityReason = '(censorship without research)';
-            }
-
-            // Override reasoning to emphasize the lack of fact-checking
-            explanation.reasoning = `Your decision was incorrect AND you failed to conduct any fact-checking research. ${explanation.reasoning} This represents a fundamental failure of journalistic practice - making editorial decisions without verification is professionally unacceptable.`;
-            learningTip = "Never make editorial decisions without fact-checking! The combination of being wrong AND not researching is the worst possible outcome for a journalist. Always use available verification tools - text search to check claims and sources, image search to verify visual content.";
+            credibilityChange = -5;
+            credibilityReason = '(incorrectly flagged true story)';
+            popularityChange = -3;
+            popularityReason = '(suppressed accurate information)';
         }
     }
 
