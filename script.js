@@ -18,7 +18,6 @@ const postsData = [
         searchResults: [
             { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0 },
             { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0 },
-            { title: "burnalerttitle3", description: "burnalertdescription3", isAd: false, reasoningIndex: 1 },
             { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4 },
             { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0 },
             { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0 },
@@ -1319,13 +1318,12 @@ function showImageSearchResults() {
                 const imageElement = document.createElement('div');
                 imageElement.className = 'image-item';
                 imageElement.dataset.index = index;
-
+                // <div>${getLanguageText(image.location)}</div>
                 imageElement.innerHTML = `
                     <img src="${image.src}" alt="Search result image">
                     <div class="image-info">
-                        <div>${getLanguageText(image.location)}</div>
-                        <div>${getLanguageText(image.date)}</div>
                     </div>
+                    <div>${getLanguageText(image.date)}</div>
                 `;
 
                 imageElement.addEventListener('click', function() {
