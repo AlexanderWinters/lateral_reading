@@ -459,8 +459,8 @@ list-style: none;
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #ddd;
     border-radius: 8px;
-    padding: 8px 12px;
-    min-width: 120px;
+    padding: 12px 17px;
+    min-width: 180px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     cursor: help;
@@ -488,14 +488,14 @@ list-style: none;
 }
 
 .meter-label {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 2px;
 }
 
 .meter-value {
-    font-size: 18px;
+    font-size: 26px;
     font-weight: bold;
 }
 
