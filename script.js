@@ -211,13 +211,18 @@ const postsData = [
             { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", isAd: true, reasoningIndex: 2 },
             { title: "celebrityDeathtitle2", description: "celebrityDeathdescription2", isAd: true, reasoningIndex: 2 },
             { title: "celebrityDeathtitle3", description: "celebrityDeathdescription3", isAd: false, reasoningIndex: 0 },
+            { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false, reasoningIndex: 2 },
             { title: "celebrityDeathtitle4", description: "celebrityDeathdescription4", isAd: false, reasoningIndex: 1 },
             { title: "celebrityDeathtitle5", description: "celebrityDeathdescription5", isAd: false, reasoningIndex: 0 },
             { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: false, reasoningIndex: 3 },
+            { title: "celebrityDeathtitle14", description: "celebrityDeathdescription14", isAd: false, reasoningIndex: 2 },
             { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", isAd: false, reasoningIndex: 2 },
             { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", isAd: false, reasoningIndex: 1 },
+            { title: "celebrityDeathtitle13", description: "celebrityDeathdescription13", isAd: false, reasoningIndex: 3 },
             { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false, reasoningIndex: 1 }
+            { title: "celebrityDeathtitle11", description: "celebrityDeathdescription11", isAd: false, reasoningIndex: 3 },
+            { title: "celebrityDeathtitle12", description: "celebrityDeathdescription12", isAd: false, reasoningIndex: 3 },
+            { title: "celebrityDeathtitle15", description: "celebrityDeathdescription15", isAd: false, reasoningIndex: 5 }
         ],
         imageResults: [
             { src: "img/celeb1.png", location: "celebrityDeathlocation1", date: "celebrityDeathdate1" },

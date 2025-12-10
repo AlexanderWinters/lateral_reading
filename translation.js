@@ -450,7 +450,7 @@ const languageData = {
 
 // Celebrity Death Hoax Post (Post 6)
     celebrityDeathTitle: "BREAKING: Beloved actor found dead at home - family confirms tragic news",
-    celebrityDeathDescription: "Social media explodes with tributes as fans share photos and memories. But something doesn't add up about the timeline and sources.",
+    celebrityDeathDescription: " ", //"Social media explodes with tributes as fans share photos and memories. But something doesn't add up about the timeline and sources.",
     celebrityDeathSearchTerms1: "Actor death confirmed",
     celebrityDeathSearchTerms2: "Celebrity death hoax",
     celebrityDeathSearchTerms3: "Official statement family",
@@ -477,6 +477,17 @@ const languageData = {
     celebrityDeathdescription8: "Confirmed public commitments and appearances scheduled prove death claims false",
     celebrityDeathdescription9: "Viral misinformation campaign generates massive engagement despite false premise",
     celebrityDeathdescription10: "Investigation reveals death hoax originated from known fake news source",
+    // Added additional text search results (11–15)
+    celebrityDeathtitle11: "Fans in Tears as Tributes Pour In for Beloved Star",
+    celebrityDeathdescription11: "Global outpouring of grief with candles, flowers, and montage videos shared by fans and colleagues.",
+    celebrityDeathtitle12: "The Last Interview: Actor Reflects on Life, Fame, and the Future",
+    celebrityDeathdescription12: "Recently aired sit‑down where the actor discusses upcoming projects and personal goals, challenging the death narrative.",
+    celebrityDeathtitle13: "Actor Was ‘Not Seen for Days’",
+    celebrityDeathdescription13: "Speculative blog post citing unnamed sources about a supposed disappearance; no corroboration from verified outlets.",
+    celebrityDeathtitle14: "Remembering a Legend: The Legacy That Shaped a Generation",
+    celebrityDeathdescription14: "Long‑form retrospective on the actor’s most influential roles and cultural impact across decades.",
+    celebrityDeathtitle15: "Social Media Erupts: ‘Is This the End of EVERYTHING?’",
+    celebrityDeathdescription15: "Sensational thread amplifying unverified claims and doomsday reactions; heavy on virality, light on sources.",
 
     celebrityDeathlocation1: "Recent photo from movie premiere last week",
     celebrityDeathlocation2: "Old photo from 2019 charity event",
@@ -1040,7 +1051,7 @@ const languageData = {
         petsdate4: "Skapad igår",
 
         celebrityDeathTitle: "BREAKING: Älskad skådespelare hittad död i hemmet — familjen bekräftar tragiska nyheter",
-        celebrityDeathDescription: "Sociala medier exploderar av hyllningar när fans delar bilder och minnen. Men tidslinjen och källorna verkar inte stämma.",
+        celebrityDeathDescription: " ", //"Sociala medier exploderar av hyllningar när fans delar bilder och minnen. Men tidslinjen och källorna verkar inte stämma.",
         celebrityDeathSearchTerms1: "Skådespelare död bekräftad",
         celebrityDeathSearchTerms2: "Kändisdöd bluff",
         celebrityDeathSearchTerms3: "Officiellt uttalande familj",
@@ -1056,6 +1067,17 @@ const languageData = {
         celebrityDeathtitle8: "Planerat framträdande motbevisar rykten",
         celebrityDeathtitle9: "TRENDAR: Kändisdödsbluff når miljoner",
         celebrityDeathtitle10: "Faktagranskning: Rykten kommer från satirsida",
+
+        celebrityDeathtitle11: "Fansen i tårar när hyllningar strömmar in för älskad stjärna",
+        celebrityDeathdescription11: "Globalt flöde av sorg med ljus, blommor och montagevideor delade av fans och kollegor.",
+        celebrityDeathtitle12: "Sista intervjun: Skådespelaren reflekterar över livet, berömmelsen och framtiden",
+        celebrityDeathdescription12: "Nyligen sänd intervju där skådespelaren talar om kommande projekt och personliga mål, vilket utmanar dödsnarrativet.",
+        celebrityDeathtitle13: "Skådespelaren ‘sågs inte på flera dagar’",
+        celebrityDeathdescription13: "Spekulativ bloggpost med anonyma källor om ett påstått försvinnande; ingen bekräftelse från verifierade källor.",
+        celebrityDeathtitle14: "Minns en legend: Arvet som formade en generation",
+        celebrityDeathdescription14: "Lång artikel som sammanfattar skådespelarens mest inflytelserika roller och kulturella genomslag under decennier.",
+        celebrityDeathtitle15: "Sociala medier exploderar: ‘Är detta slutet på ALLT?’",
+        celebrityDeathdescription15: "Sensationstråd som förstärker obekräftade påståenden och domedagsreaktioner; mycket viralt, lite källor.",
 
         celebrityDeathdescription1: "Emotionella hyllningar sprids när nyheten chockar världen",
         celebrityDeathdescription2: "Tidigare osedda bilder visar sista offentliga framträdandet",
