@@ -155,6 +155,41 @@ const postsData = [
         ]
     },
     {
+        // New TRUE story inserted as the fifth item (after water poisoning)
+        id: 9,
+        title: "fireincidentTitle",
+        thumbnail: "img/fire_intro.png",
+        image: "img/fire_intro.png",
+        description: "fireincidentDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        searchTerms: ["fireincidentsearchTerms1", "fireincidentsearchTerms2", "fireincidentsearchTerms3", "fireincidentsearchTerms4"],
+        searchResults: [
+            { title: "fireincidenttitle1", description: "fireincidentdescription1", isAd: true, reasoningIndex: 2 },
+            { title: "fireincidenttitle2", description: "fireincidentdescription2", isAd: true, reasoningIndex: 2 },
+            { title: "fireincidenttitle3", description: "fireincidentdescription3", isAd: false, reasoningIndex: 1 },
+            { title: "fireincidenttitle4", description: "fireincidentdescription4", isAd: false, reasoningIndex: 3 },
+            { title: "fireincidenttitle5", description: "fireincidentdescription5", isAd: false, reasoningIndex: 2 },
+            { title: "fireincidenttitle6", description: "fireincidentdescription6", isAd: false, reasoningIndex: 1 },
+            { title: "fireincidenttitle7", description: "fireincidentdescription7", isAd: false, reasoningIndex: 1 },
+            { title: "fireincidenttitle8", description: "fireincidentdescription8", isAd: false, reasoningIndex: 4 },
+            { title: "fireincidenttitle9", description: "fireincidentdescription9", isAd: false, reasoningIndex: 0 },
+            { title: "fireincidenttitle10", description: "fireincidentdescription10", isAd: false, reasoningIndex: 2 },
+            { title: "fireincidenttitle11", description: "fireincidentdescription11", isAd: false, reasoningIndex: 3 },
+            { title: "fireincidenttitle12", description: "fireincidentdescription12", isAd: false, reasoningIndex: 1 },
+            { title: "fireincidenttitle13", description: "fireincidentdescription13", isAd: false, reasoningIndex: 2 },
+            { title: "fireincidenttitle14", description: "fireincidentdescription14", isAd: false, reasoningIndex: 4 }
+        ],
+        imageResults: [
+            { src: "img/fire1.png", location: "fireincidentlocation1", date: "fireincidentdate1" },
+            { src: "img/fire2.png", location: "fireincidentlocation2", date: "fireincidentdate2" },
+            { src: "img/fire3.png", location: "fireincidentlocation3", date: "fireincidentdate3" },
+            { src: "img/fire4.png", location: "fireincidentlocation4", date: "fireincidentdate4" }
+        ]
+    },
+    {
         id: 5,
         title: "petsTitle",
         thumbnail: "img/pets.png",

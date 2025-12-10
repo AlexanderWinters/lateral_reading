@@ -595,7 +595,66 @@ const languageData = {
     dogfluencerdate1: "Captured last week",
     dogfluencerdate2: "Generated yesterday",
     dogfluencerdate3: "Leaked 3 days ago",
-    dogfluencerdate4: "Analysis from this month"
+    dogfluencerdate4: "Analysis from this month",
+
+    // —— New Story 5 in list (True downtown fire incident) — English ——
+    fireincidentTitle: "Fire in central downtown district",
+    fireincidentDescription: "A large building in the central part of the city is on fire. Emergency services are on site and urge the public to avoid the area while firefighting is underway.",
+
+    // Text search — search terms
+    fireincidentsearchTerms1: "downtown building fire",
+    fireincidentsearchTerms2: "fire department press release city fire",
+    fireincidentsearchTerms3: "road closures downtown fire",
+    fireincidentsearchTerms4: "live update city fire",
+
+    // Text search — results (14 items; first two are advertisements)
+    fireincidenttitle1: "Business fire safety bundle",
+    fireincidentdescription1: "Ad: Professional fire protection equipment and service contracts.",
+    fireincidenttitle2: "Home alarm with smoke detectors",
+    fireincidentdescription2: "Ad: Smart smoke alarms connected to monitoring center.",
+    fireincidenttitle3: "Fire department: Major fire downtown — avoid the area",
+    fireincidentdescription3: "Official notice about active response and cordons.",
+    fireincidenttitle4: "Police reroute traffic after building fire",
+    fireincidentdescription4: "Current detours and public transit impacts.",
+    fireincidenttitle5: "Eyewitnesses report heavy smoke",
+    fireincidentdescription5: "Multiple witnesses share photos and video from the scene.",
+    fireincidenttitle6: "Utility: Temporary power outages nearby",
+    fireincidentdescription6: "Technicians are working to secure the grid during the response.",
+    fireincidenttitle7: "City opens temporary assistance center",
+    fireincidentdescription7: "Nearby residents offered support and information.",
+    fireincidenttitle8: "Cause under investigation — no signs of sabotage",
+    fireincidentdescription8: "Technical investigation begins once the building is safe.",
+    fireincidenttitle9: "Health services: A few minor injuries treated",
+    fireincidentdescription9: "No serious injuries reported at this time.",
+    fireincidenttitle10: "Map: Here are the downtown cordons",
+    fireincidentdescription10: "Interactive overview of closed blocks and routes.",
+    fireincidenttitle11: "Property owner: Building evacuated safely",
+    fireincidentdescription11: "All occupants are believed to have exited in time.",
+    fireincidenttitle12: "Environmental office measuring air quality after fire",
+    fireincidentdescription12: "Recommendation: Keep windows closed until further notice.",
+    fireincidenttitle13: "Train service affected — delays possible",
+    fireincidentdescription13: "Some lines are being rerouted this evening.",
+    fireincidenttitle14: "Aftercare expected to continue overnight",
+    fireincidentdescription14: "Extinguishing hotspots and monitoring continue.",
+
+    // Image search — captions and dates
+    fireincidentlocation1: "Photo: Office building fire, city",
+    fireincidentlocation2: "Emergency vehicles at cordoned area",
+    fireincidentlocation3: "Smoke plume seen from main downtown street",
+    fireincidentlocation4: "Firefighters on the roof during overhaul",
+
+    fireincidentdate1: "2017",
+    fireincidentdate2: "2017",
+    fireincidentdate3: "20 minutes ago",
+    fireincidentdate4: "20 minutes ago",
+
+    // Decision Explanations — Post 9 (Downtown fire) — should be PUBLISHED
+    decisionReasoning_9_correct_publish: "Correct! This is a verified, ongoing building fire. Multiple official sources (fire department, police, utilities) confirm the event, and the post uses factual, non-sensational language appropriate for public safety. Publishing helps inform the public to avoid the area.",
+    decisionReasoning_9_correct_flag: "Good to be cautious, but in this case the story is true. Official communications and on-scene images corroborate the incident. Urgent but factual language is appropriate for a public safety event.",
+    decisionReasoning_9_incorrect_publish: "This should not happen with current post setup",
+    decisionReasoning_9_incorrect_flag: "This post should have been published. It reports a real, ongoing emergency confirmed by multiple official sources. While the language is urgent, it is appropriate for a public safety alert and helps people avoid danger.",
+    decisionLearningTip_9_correct: "",
+    decisionLearningTip_9_incorrect: "For emergencies, look for confirmation from official sources: fire department, police, city channels, and utilities. Urgent but specific, factual language plus corroborating images/maps usually indicates a legitimate public safety alert."
 
   },
 
@@ -687,6 +746,65 @@ const languageData = {
         decisionReasoning_5_incorrect_flag: "Detta bör inte inträffa med nuvarande inläggsinställning",
         decisionLearningTip_5_correct: "",
         decisionLearningTip_5_incorrect: "Verifiera djurhälsopåståenden via veterinärförbund och djurhälso­myndigheter. Legitimt utbrott kännetecknas av specifika symtom, geografiska mönster och officiell vägledning – inte vaga varningar.",
+
+        // —— Ny Story 5 i listan (Sann brandhändelse i citykärnan) ——
+        fireincidentTitle: "Brand i centrala citykärnan",
+        fireincidentDescription: "En större byggnad i centrala delen av staden står i brand. Räddningstjänsten är på plats och uppmanar allmänheten att undvika området medan släckningsarbetet pågår.",
+
+        // Textsök — söktermer
+        fireincidentsearchTerms1: "brand centrala staden",
+        fireincidentsearchTerms2: "räddningstjänsten pressmeddelande brand",
+        fireincidentsearchTerms3: "trafikavstängningar city brand",
+        fireincidentsearchTerms4: "liveuppdatering stadsbrand",
+
+        // Textsök — resultat (14 st; de två första är annonser)
+        fireincidenttitle1: "Brandsäkerhetspaket för företag",
+        fireincidentdescription1: "Annons: Professionell brandskyddsutrustning och serviceavtal.",
+        fireincidenttitle2: "Hemlarm med brandvarnare",
+        fireincidentdescription2: "Annons: Smarta brandvarnare kopplade till larmcentral.",
+        fireincidenttitle3: "Räddningstjänsten: Stor brand i city – undvik området",
+        fireincidentdescription3: "Officiellt meddelande om pågående insats och avspärrningar.",
+        fireincidenttitle4: "Polisen dirigerar om trafiken efter byggnadsbrand",
+        fireincidentdescription4: "Aktuella vägomläggningar och kollektivtrafikpåverkan.",
+        fireincidenttitle5: "Ögonvittnen rapporterar kraftig rökutveckling",
+        fireincidentdescription5: "Flera vittnen delar bilder och video från platsen.",
+        fireincidenttitle6: "Elbolag: Tillfälliga strömavbrott i närområdet",
+        fireincidentdescription6: "Tekniker arbetar med att säkra elnätet under insatsen.",
+        fireincidenttitle7: "Kommunen öppnar tillfälligt samlingscenter",
+        fireincidentdescription7: "Boende i närheten erbjuds stöd och information.",
+        fireincidenttitle8: "Brandorsak utreds – inga uppgifter om sabotage",
+        fireincidentdescription8: "Teknisk undersökning inleds när byggnaden är säker.",
+        fireincidenttitle9: "Sjukvården: Få lindriga skador behandlade",
+        fireincidentdescription9: "Inga allvarliga personskador rapporterade i nuläget.",
+        fireincidenttitle10: "Karta: Här är avspärrningarna i innerstaden",
+        fireincidentdescription10: "Interaktiv översikt över avstängda kvarter och rutter.",
+        fireincidenttitle11: "Fastighetsägare: Byggnaden evakuerades säkert",
+        fireincidentdescription11: "Samtliga personer ska ha lämnat lokalerna i tid.",
+        fireincidenttitle12: "Miljökontoret mäter luftkvalitet efter branden",
+        fireincidentdescription12: "Rekommendation: Håll fönster stängda tills vidare.",
+        fireincidenttitle13: "Tågtrafik påverkas – förseningar kan förekomma",
+        fireincidentdescription13: "Vissa linjer leds om under kvällen.",
+        fireincidenttitle14: "Efterarbete väntas pågå under natten",
+        fireincidentdescription14: "Släckning av glödbränder och bevakning fortsätter.",
+
+        // Bildsök — bildtexter och datum
+        fireincidentlocation1: "Foto: Brand i kontorsbyggnad, city",
+        fireincidentlocation2: "Räddningsfordon på plats vid avspärrning",
+        fireincidentlocation3: "Rökpelare sedd från innerstadens huvudgata",
+        fireincidentlocation4: "Brandpersonal på taket under eftersläckning",
+
+        fireincidentdate1: "10 december 2025",
+        fireincidentdate2: "10 december 2025",
+        fireincidentdate3: "10 december 2025",
+        fireincidentdate4: "10 december 2025",
+
+        // Beslutsförklaringar — Inlägg 9 (Brand i city) — ska PUBLICERAS
+        decisionReasoning_9_correct_publish: "Korrekt! Detta är en bekräftad pågående byggnadsbrand. Flera officiella källor (räddningstjänst, polis, elbolag) styrker händelsen och inlägget använder saklig, icke-sensationell information som är lämplig för allmän säkerhet. Publicering hjälper allmänheten att undvika området.",
+        decisionReasoning_9_correct_flag: "Bra att vara försiktig, men i detta fall är storyn sann. Officiella meddelanden och bilder från platsen bekräftar händelsen. Brådskande men sakligt språk är rimligt vid en händelse som rör allmän säkerhet.",
+        decisionReasoning_9_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
+        decisionReasoning_9_incorrect_flag: "Detta inlägg borde ha publicerats. Det beskriver ett verkligt, pågående nödläge som bekräftas av flera officiella källor. Även om tonen är akut är den lämplig för ett säkerhetsmeddelande som hjälper människor att undvika fara.",
+        decisionLearningTip_9_correct: "",
+        decisionLearningTip_9_incorrect: "Vid nödlägen – sök bekräftelse från officiella kanaler: räddningstjänst, polis, kommun och el-/infrastrukturbolag. Brådskande men specifik och saklig information tillsammans med kartor/bilder tyder ofta på ett legitimt säkerhetsmeddelande.",
 
         // Inlägg 6 (Kändisdöd-bluff) — ska FLAGGAS
         decisionReasoning_6_correct_publish: "Utmärkt upptäckt av en bluff om kändisdöd! Sådana falska meddelanden sprids snabbt i sociala medier och orsakar verklig oro samtidigt som klick genereras. Inlägget saknar sannolikt officiell bekräftelse från representanter, familj eller trovärdiga nyhetskällor. Riktiga dödsfall bekräftas via flera officiella kanaler, inte enstaka virala inlägg.",
