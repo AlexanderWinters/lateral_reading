@@ -169,7 +169,7 @@ const languageData = {
     step5: "🎯 Learn: Receive feedback on your decisions and improve your skills",
     keySkills: "Key Skills You'll Practice:",
     skillsList: "You'll practice lateral reading, image verification, source evaluation, and critical thinking",
-    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training! Try to get 7 out 8 stories correct!",
+    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training! Try to get 7 out 9 stories correct!",
 
     noFactCheckingWarning: "Publishing without fact-checking is risky journalism",
     noFactCheckingPenalty: "(published without verification)",
@@ -889,7 +889,7 @@ const languageData = {
         step5: "🎯 Lär dig: Få återkoppling på dina beslut och förbättra dina färdigheter",
         keySkills: "Nyckelfärdigheter du kommer träna:",
         skillsList: "Du kommer att träna lateral läsning, bildverifiering, källutvärdering och kritiskt tänkande",
-        getStarted: "Redo att börja? Klicka på ett oläst inlägg i sidomenyn för att starta din faktagranskningsutbildning! Försök få 7 av 8 rätt!",
+        getStarted: "Redo att börja? Klicka på ett oläst inlägg i sidomenyn för att starta din faktagranskningsutbildning! Försök få 7 av 9 rätt!",
 
         noFactCheckingWarning: "Att publicera utan faktagranskning är riskabel journalistik",
         noFactCheckingPenalty: "(publicerad utan verifiering)",
