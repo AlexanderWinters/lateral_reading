@@ -360,6 +360,34 @@ const postsData = [
             { src: "img/toxic3.png", location: "toxicleaklocation3", date: "toxicleakdate3" },
             { src: "img/toxic4.png", location: "toxicleaklocation4", date: "toxicleakdate4" }
         ]
+    },
+    {
+        id: 11,
+        title: "sportspulseTitle",
+        thumbnail: "img/celeb1.png",
+        image: "img/celeb1.png",
+        description: "sportspulseDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        searchTerms: ["sportspulsesearchTerms1", "sportspulsesearchTerms2", "sportspulsesearchTerms3", "sportspulsesearchTerms4"],
+        searchResults: [
+            { title: "sportspulsetitle1", description: "sportspulsedescription1", isAd: true, reasoningIndex: 2 },
+            { title: "sportspulsetitle2", description: "sportspulsedescription2", isAd: true, reasoningIndex: 2 },
+            { title: "sportspulsetitle3", description: "sportspulsedescription3", isAd: false, reasoningIndex: 2 },
+            { title: "sportspulsetitle4", description: "sportspulsedescription4", isAd: false, reasoningIndex: 1 },
+            { title: "sportspulsetitle5", description: "sportspulsedescription5", isAd: false, reasoningIndex: 1 },
+            { title: "sportspulsetitle6", description: "sportspulsedescription6", isAd: false, reasoningIndex: 2 },
+            { title: "sportspulsetitle7", description: "sportspulsedescription7", isAd: false, reasoningIndex: 3 },
+            { title: "sportspulsetitle8", description: "sportspulsedescription8", isAd: false, reasoningIndex: 1 }
+        ],
+        imageResults: [
+            { src: "img/celeb1.png", location: "sportspulselocation1", date: "sportspulsedate1" },
+            { src: "img/celeb2.png", location: "sportspulselocation2", date: "sportspulsedate2" },
+            { src: "img/celeb3.png", location: "sportspulselocation3", date: "sportspulsedate3" },
+            { src: "img/celeb4.png", location: "sportspulselocation4", date: "sportspulsedate4" }
+        ]
     }
 ];
 
