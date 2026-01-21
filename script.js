@@ -332,6 +332,34 @@ const postsData = [
             { src: "img/dogfluencer1.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
             { src: "img/dogfluencer4.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
         ]
+    },
+    {
+        id: 10,
+        title: "toxicleakTitle",
+        thumbnail: "img/toxic_intro.png",
+        image: "img/toxic_intro.png",
+        description: "toxicleakDescription",
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        searchTerms: ["toxicleaksearchTerms1", "toxicleaksearchTerms2", "toxicleaksearchTerms3", "toxicleaksearchTerms4"],
+        searchResults: [
+            { title: "toxicleaktitle1", description: "toxicleakdescription1", isAd: true, reasoningIndex: 2 },
+            { title: "toxicleaktitle2", description: "toxicleakdescription2", isAd: true, reasoningIndex: 2 },
+            { title: "toxicleaktitle3", description: "toxicleakdescription3", isAd: false, reasoningIndex: 2 },
+            { title: "toxicleaktitle4", description: "toxicleakdescription4", isAd: false, reasoningIndex: 1 },
+            { title: "toxicleaktitle5", description: "toxicleakdescription5", isAd: false, reasoningIndex: 1 },
+            { title: "toxicleaktitle6", description: "toxicleakdescription6", isAd: false, reasoningIndex: 2 },
+            { title: "toxicleaktitle7", description: "toxicleakdescription7", isAd: false, reasoningIndex: 3 },
+            { title: "toxicleaktitle8", description: "toxicleakdescription8", isAd: false, reasoningIndex: 1 }
+        ],
+        imageResults: [
+            { src: "img/toxic1.png", location: "toxicleaklocation1", date: "toxicleakdate1" },
+            { src: "img/toxic2.png", location: "toxicleaklocation2", date: "toxicleakdate2" },
+            { src: "img/toxic3.png", location: "toxicleaklocation3", date: "toxicleakdate3" },
+            { src: "img/toxic4.png", location: "toxicleaklocation4", date: "toxicleakdate4" }
+        ]
     }
 ];
 

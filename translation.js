@@ -169,7 +169,7 @@ const languageData = {
     step5: "🎯 Learn: Receive feedback on your decisions and improve your skills",
     keySkills: "Key Skills You'll Practice:",
     skillsList: "You'll practice lateral reading, image verification, source evaluation, and critical thinking",
-    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training! Try to get 7 out 9 stories correct!",
+    getStarted: "Ready to start? Click on any unread post in the sidebar to begin your fact-checking training! Try to get 8 out 10 stories correct!",
 
     noFactCheckingWarning: "Publishing without fact-checking is risky journalism",
     noFactCheckingPenalty: "(published without verification)",
@@ -654,7 +654,51 @@ const languageData = {
     decisionReasoning_9_incorrect_publish: "This should not happen with current post setup",
     decisionReasoning_9_incorrect_flag: "This post should have been published. It reports a real, ongoing emergency confirmed by multiple official sources. While the language is urgent, it is appropriate for a public safety alert and helps people avoid danger.",
     decisionLearningTip_9_correct: "",
-    decisionLearningTip_9_incorrect: "For emergencies, look for confirmation from official sources: fire department, police, city channels, and utilities. Urgent but specific, factual language plus corroborating images/maps usually indicates a legitimate public safety alert."
+    decisionLearningTip_9_incorrect: "For emergencies, look for confirmation from official sources: fire department, police, city channels, and utilities. Urgent but specific, factual language plus corroborating images/maps usually indicates a legitimate public safety alert.",
+
+    // Post 10 (Toxic leak) — should be PUBLISHED
+    toxicleakTitle: "Toxic release in the industrial area – but no one wants to talk about it!",
+    toxicleakDescription: "People are feeling dizzy and nauseous near industryroad. An odorless gas is leaking from the factory, but the fire brigade isn’t saying anything. They’re trying to cover it up! Look at the photo – staff in masks outside the area.",
+    toxicleaksearchTerms1: "toxic leak industryroad",
+    toxicleaksearchTerms2: "fire brigade statement odorless gas",
+    toxicleaksearchTerms3: "factory alarm today",
+    toxicleaksearchTerms4: "odorless gas leak symptoms",
+    
+    // Text search results
+    toxicleaktitle1: "CleanAir Pro™ – Detect Hidden Chemicals Instantly",
+    toxicleakdescription1: "Worried about toxic leaks? Our handheld detector claims to identify dangerous chemicals in seconds. No lab tests needed.",
+    toxicleaktitle2: "PureShield Chemicals",
+    toxicleakdescription2: "Our modern industrial chemicals are engineered to be odorless, ensuring a safer environment for workers and nearby communities.",
+    toxicleaktitle3: "They’re lying – toxic gas in the air! - secretsxposed.com",
+    toxicleakdescription3: "25 minutes ago — People are collapsing! Authorities are silent but the truth is out there.",
+    toxicleaktitle4: "Fire brigade investigating technical irregularity at Industrivägen - municipality",
+    toxicleakdescription4: "10 minutes ago — Press release: 'No immediate danger, an odorless gas may have leaked in small amounts. Measurements are ongoing.'",
+    toxicleaktitle5: "Factory sensors triggered alarm – staff evacuated - Localnewsroom.com",
+    toxicleakdescription5: "8 minutes ago — Confirmation: staff has left the building, no injuries. Fire services on site.",
+    toxicleaktitle6: "This is what they’re hiding about the chemicals around us - truthteller.com",
+    toxicleakdescription6: "45 minutes ago — Hidden dangers in our industrial zones. What you aren't being told.",
+    toxicleaktitle7: "Researchers: How odorless gas behaves in a leak - chemistry.org",
+    toxicleakdescription7: "3 days ago — Toxic substances may lack smell but can cause symptoms. Relevant background on chemical safety.",
+    toxicleaktitle8: "Emergency alarm confirmed – no spread outside the area - Governmentinfo",
+    toxicleakdescription8: "5 minutes ago — Measurements are being taken outside the factory. Current data shows no risk to the public.",
+
+    // Image search results
+    toxicleaklocation1: "A news photo shows a training exercise at a chemical lab in a neighboring city last week.",
+    toxicleaklocation2: "A broader photo shows fire trucks further away and staff without masks at the same factory today.",
+    toxicleaklocation3: "Factory website press photo from an annual safety drill showing same mask model.",
+    toxicleaklocation4: "Social media video: Fire brigade cordoned off area. 'Technical inspection underway – no danger.'",
+    toxicleakdate1: "Last week",
+    toxicleakdate2: "Today, 12:14",
+    toxicleakdate3: "1 year ago",
+    toxicleakdate4: "Today, 12:14",
+
+    // Decision Feedback
+    decisionReasoning_10_correct_publish: "Correct decision! Good job! The text evidence confirms the tip is partly true and supported by official sources. This is publishable news and an important update for the public, even though details are still developing. Report only what is confirmed, clearly state what is still unknown, cite official sources, and label the story as an ongoing situation that may be updated.",
+    decisionReasoning_10_correct_flag: "While the initial image was misleading, the event itself is actually happening. Official sources confirmed a small leak and investigation. In this case, the tip was partly true and newsworthy.",
+    decisionReasoning_10_incorrect_publish: "This should not happen with current post setup",
+    decisionReasoning_10_incorrect_flag: "This story should have been published. Although the image provided was not strong evidence, text searches from official and local news sources confirmed that an actual incident was taking place.",
+    decisionLearningTip_10_correct: "",
+    decisionLearningTip_10_incorrect: "Sometimes the evidence provided in a tip (like an image) is weak or reused, but the underlying event is still real. Always cross-reference with multiple sources, especially official ones, to get the full picture."
 
   },
 
@@ -806,6 +850,50 @@ const languageData = {
         decisionLearningTip_9_correct: "",
         decisionLearningTip_9_incorrect: "Vid nödlägen – sök bekräftelse från officiella kanaler: räddningstjänst, polis, kommun och el-/infrastrukturbolag. Brådskande men specifik och saklig information tillsammans med kartor/bilder tyder ofta på ett legitimt säkerhetsmeddelande.",
 
+        // Inlägg 10 (Kemikalieläcka) — ska PUBLICERAS
+        toxicleakTitle: "Giftutsläpp i industriområdet – men ingen vill prata om det!",
+        toxicleakDescription: "Människor känner sig yrsliga och illamående nära Industrivägen. En luktfri gas läcker från fabriken, men brandkåren säger ingenting. De försöker mörka det! Titta på bilden – personal i masker utanför området.",
+        toxicleaksearchTerms1: "giftutsläpp industrivägen",
+        toxicleaksearchTerms2: "brandkåren uttalande luktfri gas",
+        toxicleaksearchTerms3: "fabrikslarm idag",
+        toxicleaksearchTerms4: "luktfri gasläcka symptom",
+        
+        // Textsökresultat
+        toxicleaktitle1: "CleanAir Pro™ – Upptäck dolda kemikalier direkt",
+        toxicleakdescription1: "Orolig för giftiga läckor? Vår handhållna detektor påstås identifiera farliga kemikalier på sekunder. Inga laboratorietester behövs.",
+        toxicleaktitle2: "PureShield Chemicals",
+        toxicleakdescription2: "Våra moderna industrikemikalier är konstruerade för att vara luktfria, vilket säkerställer en säkrare miljö för arbetare och närliggande samhällen.",
+        toxicleaktitle3: "De ljuger – giftgas i luften! - secretsxposed.com",
+        toxicleakdescription3: "25 minuter sedan — Folk kollapsar! Myndigheterna tiger men sanningen är där ute.",
+        toxicleaktitle4: "Räddningstjänsten undersöker teknisk oregelbundenhet på Industrivägen - kommunen",
+        toxicleakdescription4: "10 minuter sedan — Pressmeddelande: 'Ingen omedelbar fara, en luktfri gas kan ha läckt ut i små mängder. Mätningar pågår.'",
+        toxicleaktitle5: "Fabrikens sensorer utlöste larm – personal evakuerad - Localnewsroom.com",
+        toxicleakdescription5: "8 minuter sedan — Bekräftelse: personal har lämnat byggnaden, inga skador. Räddningstjänst på plats.",
+        toxicleaktitle6: "Detta är vad de döljer om kemikalierna runt oss - truthteller.com",
+        toxicleakdescription6: "45 minuter sedan — Dolda faror i våra industrizoner. Vad du inte får veta.",
+        toxicleaktitle7: "Forskare: Hur luktfri gas beter sig vid en läcka - chemistry.org",
+        toxicleakdescription7: "3 dagar sedan — Toxiska ämnen kan sakna lukt men orsaka symptom. Relevant bakgrund om kemikaliesäkerhet.",
+        toxicleaktitle8: "Nödlarm bekräftat – ingen spridning utanför området - Governmentinfo",
+        toxicleakdescription8: "5 minuter sedan — Mätningar utförs utanför fabriken. Nuvarande data visar ingen risk för allmänheten.",
+
+        // Bildsökresultat
+        toxicleaklocation1: "Ett nyhetsfoto visar en övning vid ett kemiskt laboratorium i en grannstad förra veckan.",
+        toxicleaklocation2: "En bredare bild visar brandbilar längre bort och personal utan masker vid samma fabrik idag.",
+        toxicleaklocation3: "Pressbild från fabrikens webbplats från en årlig säkerhetsövning som visar samma maskmodell.",
+        toxicleaklocation4: "Sociala medier-video: Brandkåren har spärrat av området. 'Teknisk inspektion pågår – ingen fara.'",
+        toxicleakdate1: "Förra veckan",
+        toxicleakdate2: "Idag, 12:14",
+        toxicleakdate3: "1 år sedan",
+        toxicleakdate4: "Idag, 12:14",
+
+        // Beslutsåterkoppling
+        decisionReasoning_10_correct_publish: "Rätt beslut! Bra jobbat! Bevisen i texten bekräftar att tipset delvis är sant och stöds av officiella källor. Detta är publicerbara nyheter och en viktig uppdatering för allmänheten, även om detaljerna fortfarande utvecklas. Rapportera endast det som är bekräftat, ange tydligt vad som fortfarande är okänt, citera officiella källor och markera storyn som en pågående händelse som kan komma att uppdateras.",
+        decisionReasoning_10_correct_flag: "Även om den ursprungliga bilden var vilseledande, så pågår händelsen faktiskt. Officiella källor bekräftade en mindre läcka och undersökning. I det här fallet var tipset delvis sant och hade nyhetsvärde.",
+        decisionReasoning_10_incorrect_publish: "Detta bör inte hända med nuvarande inläggsinställningar",
+        decisionReasoning_10_incorrect_flag: "Denna story borde ha publicerats. Även om bilden som skickades med inte var ett starkt bevis, bekräftade textsökningar från officiella och lokala nyhetskällor att en faktisk incident ägde rum.",
+        decisionLearningTip_10_correct: "",
+        decisionLearningTip_10_incorrect: "Ibland är bevisen i ett tips (som en bild) svaga eller återanvända, men den underliggande händelsen är ändå verklig. Korsreferera alltid med flera källor, särskilt officiella, för att få hela bilden.",
+
         // Inlägg 6 (Kändisdöd-bluff) — ska FLAGGAS
         decisionReasoning_6_correct_publish: "Utmärkt upptäckt av en bluff om kändisdöd! Sådana falska meddelanden sprids snabbt i sociala medier och orsakar verklig oro samtidigt som klick genereras. Inlägget saknar sannolikt officiell bekräftelse från representanter, familj eller trovärdiga nyhetskällor. Riktiga dödsfall bekräftas via flera officiella kanaler, inte enstaka virala inlägg.",
         decisionReasoning_6_correct_flag: "Utmärkt upptäckt av en bluff om kändisdöd! Sådana falska meddelanden sprids snabbt i sociala medier och orsakar verklig oro samtidigt som klick genereras. Inlägget saknar sannolikt officiell bekräftelse från representanter, familj eller trovärdiga nyhetskällor. Riktiga dödsfall bekräftas via flera officiella kanaler, inte enstaka virala inlägg.",
@@ -889,7 +977,7 @@ const languageData = {
         step5: "🎯 Lär dig: Få återkoppling på dina beslut och förbättra dina färdigheter",
         keySkills: "Nyckelfärdigheter du kommer träna:",
         skillsList: "Du kommer att träna lateral läsning, bildverifiering, källutvärdering och kritiskt tänkande",
-        getStarted: "Redo att börja? Klicka på ett oläst inlägg i sidomenyn för att starta din faktagranskningsutbildning! Försök få 7 av 9 rätt!",
+        getStarted: "Redo att börja? Klicka på ett oläst inlägg i sidomenyn för att starta din faktagranskningsutbildning! Försök få 8 av 10 rätt!",
 
         noFactCheckingWarning: "Att publicera utan faktagranskning är riskabel journalistik",
         noFactCheckingPenalty: "(publicerad utan verifiering)",
