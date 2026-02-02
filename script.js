@@ -704,6 +704,12 @@ function processPost(status) {
                 return;
             }
 
+            // Check if forced text search is required and not performed
+            if (post.forceTextSearchAfterImage && !post.performedTextSearch) {
+                showNoResearchPopup('forcedTextSearch');
+                return;
+            }
+
             // Determine if the user's decision is correct
             const userDecision = status === 'published'; // true if published, false if flagged
             const isCorrect = userDecision === post.correctAnswer;
@@ -764,12 +770,22 @@ function processPost(status) {
     }
 }
 
-function showNoResearchPopup() {
+function showNoResearchPopup(type = 'general') {
+    let title = getLanguageText('researchFirst');
+    let subtitle = getLanguageText('decisionPaused');
+    let instruction = getLanguageText('researchInstruction');
+
+    if (type === 'forcedTextSearch') {
+        title = getLanguageText('insufficientResearch');
+        subtitle = getLanguageText('imageSearchLackluster');
+        instruction = getLanguageText('imageSearchLacklusterInstruction');
+    }
+
     const popupHTML = `
         <div class="decision-popup-overlay" id="noResearchPopupOverlay">
             <div class="decision-popup">
                 <div class="popup-header">
-                    <h3>${getLanguageText('researchFirst')}</h3>
+                    <h3>${title}</h3>
                 </div>
                 <div class="popup-content">
                     <div class="fact-check-warning">
@@ -779,8 +795,8 @@ function showNoResearchPopup() {
                             <line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                         <div class="warning-content">
-                            <h5>${getLanguageText('decisionPaused')}</h5>
-                            <p>${getLanguageText('researchInstruction')}</p>
+                            <h5>${subtitle}</h5>
+                            <p>${instruction}</p>
                         </div>
                     </div>
                      <div class="learning-tip">
@@ -1440,15 +1456,9 @@ function showImageSearchResults() {
             const tipFalseButton = document.getElementById('tipFalseButton');
             const imageToTextSearchButton = document.getElementById('imageToTextSearchButton');
 
-            if (post.forceTextSearchAfterImage) {
-                tipTrueButton.style.display = 'none';
-                tipFalseButton.style.display = 'none';
-                imageToTextSearchButton.style.display = 'inline-block';
-            } else {
-                tipTrueButton.style.display = 'inline-block';
-                tipFalseButton.style.display = 'inline-block';
-                imageToTextSearchButton.style.display = 'inline-block';
-            }
+            tipTrueButton.style.display = 'inline-block';
+            tipFalseButton.style.display = 'inline-block';
+            imageToTextSearchButton.style.display = 'inline-block';
         }
     }
 }

@@ -19,9 +19,9 @@ The Content Review System is an educational web application designed to teach me
 - Added a "Perform text search" button to the image search results page.
 - This allows players to further investigate a story after doing an image search.
 - Supported by a new flag `forceTextSearchAfterImage` in the `postsData` configuration:
-    - If `true`, the "The tip is true" and "The tip is false" buttons are hidden after an image search, forcing the player to perform a text search to proceed.
-    - If `false` (default), all three options are available.
-- Updated `translation.js` with `performTextSearch` key for multi-language support.
+    - If `true`, a popup informs the player that an image search is insufficient and they should also perform a text search when they try to publish or flag the post from the image results page.
+    - If `false` (default), the player can proceed with either search type.
+- Updated `translation.js` with `performTextSearch`, `imageSearchLackluster`, and `imageSearchLacklusterInstruction` keys for multi-language support.
 
 ### Project Structure
 ```
