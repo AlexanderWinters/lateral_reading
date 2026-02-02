@@ -188,18 +188,27 @@
     <div class="meters-container">
         <div class="meter completion-counter" data-meter="completion-counter">
             <div class="meter-label" data-lang-key="storiesCorrect">Stories Correct</div>
+            <div class="meter-progress-container">
+                <div class="meter-progress-bar" id="completion-progress" style="width: 0%"></div>
+            </div>
             <div class="meter-value" id="completion-value">0/7</div>
             <div class="meter-tooltip">Complete 7 of 8 stories to win.</div>
         </div>
         <div class="meter credibility-meter" data-meter="credibility">
             <div class="meter-tooltip" data-translate="credibilityTooltip">Track your reputation for accuracy and thorough fact-checking</div>
             <div class="meter-label" data-translate="credibility">Credibility</div>
+            <div class="meter-progress-container">
+                <div class="meter-progress-bar" id="credibility-progress" style="width: 0%"></div>
+            </div>
             <div class="meter-value" id="credibility-value">0</div>
             <div class="meter-change" id="credibility-change"></div>
         </div>
         <div class="meter popularity-meter" data-meter="popularity">
             <div class="meter-tooltip" data-translate="popularityTooltip">Track your speed and engagement, but don't sacrifice accuracy</div>
             <div class="meter-label" data-translate="popularity">Popularity</div>
+            <div class="meter-progress-container">
+                <div class="meter-progress-bar" id="popularity-progress" style="width: 0%"></div>
+            </div>
             <div class="meter-value" id="popularity-value">0</div>
             <div class="meter-change" id="popularity-change"></div>
         </div>

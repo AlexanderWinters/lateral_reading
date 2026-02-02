@@ -475,9 +475,24 @@ class MeterSystem {
     updateDisplay() {
         const credibilityElement = document.getElementById('credibility-value');
         const popularityElement = document.getElementById('popularity-value');
+        const credibilityProgress = document.getElementById('credibility-progress');
+        const popularityProgress = document.getElementById('popularity-progress');
 
         if (credibilityElement) credibilityElement.textContent = this.credibility;
         if (popularityElement) popularityElement.textContent = this.popularity;
+
+        // Using a reasonable max value for progress bars.
+        const maxCred = 200;
+        const maxPop = 200;
+
+        if (credibilityProgress) {
+            const percentage = Math.min(Math.max((this.credibility / maxCred) * 100, 0), 100);
+            credibilityProgress.style.width = `${percentage}%`;
+        }
+        if (popularityProgress) {
+            const percentage = Math.min(Math.max((this.popularity / maxPop) * 100, 0), 100);
+            popularityProgress.style.width = `${percentage}%`;
+        }
     }
 
     reset() {
@@ -509,8 +524,13 @@ const WIN_THRESHOLD = 7;
 
 function updateCompletionCounter() {
     const completionValue = document.getElementById('completion-value');
+    const completionProgress = document.getElementById('completion-progress');
     if (completionValue) {
         completionValue.textContent = `${correctDecisions}/${WIN_THRESHOLD}`;
+    }
+    if (completionProgress) {
+        const percentage = Math.min((correctDecisions / WIN_THRESHOLD) * 100, 100);
+        completionProgress.style.width = `${percentage}%`;
     }
 }
 
