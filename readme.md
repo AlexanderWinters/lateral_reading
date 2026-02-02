@@ -13,6 +13,16 @@ The Content Review System is an educational web application designed to teach me
 - **Media**: WebM video format, PNG images
 - **Internationalization**: Custom JSON-based translation system
 
+## Features Added
+
+### Image to Text Search Transition
+- Added a "Perform text search" button to the image search results page.
+- This allows players to further investigate a story after doing an image search.
+- Supported by a new flag `forceTextSearchAfterImage` in the `postsData` configuration:
+    - If `true`, the "The tip is true" and "The tip is false" buttons are hidden after an image search, forcing the player to perform a text search to proceed.
+    - If `false` (default), all three options are available.
+- Updated `translation.js` with `performTextSearch` key for multi-language support.
+
 ### Project Structure
 ```
 edu_game_project/

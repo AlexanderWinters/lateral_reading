@@ -13,6 +13,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: true,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
             { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0 },
@@ -47,6 +48,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: false,
         searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
         searchResults: [
             { title: "librarytitle1", description: "librarydescription1", isAd: true, reasoningIndex: 2 },
@@ -85,6 +87,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: false,
         searchTerms: ["extrimistalertsearchTerms1", "extrimistalertsearchTerms2", "extrimistalertsearchTerms3", "extrimistalertsearchTerms4"],
         searchResults: [
             { title: "extrimistalerttitle1", description: "extrimistalertdescription1", isAd: true, reasoningIndex: 2 },
@@ -125,6 +128,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: true,
         searchTerms: ["waterpoisoningsearchTerms1", "waterpoisoningsearchTerms2", "waterpoisoningsearchTerms3", "waterpoisoningsearchTerms4"],
         searchResults: [
             { title: "waterpoisoningtitle1", description: "waterpoisoningdescription1", isAd: true, reasoningIndex: 2 },
@@ -164,6 +168,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: true,
+        forceTextSearchAfterImage: true,
         searchTerms: ["fireincidentsearchTerms1", "fireincidentsearchTerms2", "fireincidentsearchTerms3", "fireincidentsearchTerms4"],
         searchResults: [
             { title: "fireincidenttitle1", description: "fireincidentdescription1", isAd: true, reasoningIndex: 2 },
@@ -198,6 +203,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: false,
         searchTerms: ["petssearchTerms1", "petssearchTerms2", "petssearchTerms3", "petssearchTerms4"],
         searchResults: [
             { title: "petstitle1", description: "petsdescription1", isAd: true, reasoningIndex: 2 },
@@ -240,6 +246,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
+        forceTextSearchAfterImage: false,
         searchTerms: ["celebrityDeathSearchTerms1", "celebrityDeathSearchTerms2", "celebrityDeathSearchTerms3", "celebrityDeathSearchTerms4"],
         searchResults: [
             { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", isAd: true, reasoningIndex: 2 },
@@ -275,6 +282,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: true,
+        forceTextSearchAfterImage: true,
         searchTerms: ["weatherAlertsearchTerms1", "weatherAlertsearchTerms2", "weatherAlertsearchTerms3", "weatherAlertsearchTerms4"],
         searchResults: [
             { title: "weatherAlerttitle1", description: "weatherAlertdescription1", isAd: true, reasoningIndex: 2 },
@@ -307,6 +315,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: true,
+        forceTextSearchAfterImage: false,
         searchTerms: ["dogfluencersearchTerms1", "dogfluencersearchTerms2", "dogfluencersearchTerms3", "dogfluencersearchTerms4"],
         searchResults: [
             { title: "dogfluencertitle1", description: "dogfluencerdescription1", isAd: true, reasoningIndex: 2 },
@@ -342,6 +351,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: true,
+        forceTextSearchAfterImage: false,
         searchTerms: ["toxicleaksearchTerms1", "toxicleaksearchTerms2", "toxicleaksearchTerms3", "toxicleaksearchTerms4"],
         searchResults: [
             { title: "toxicleaktitle1", description: "toxicleakdescription1", isAd: true, reasoningIndex: 2 },
@@ -370,6 +380,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: true,
+        forceTextSearchAfterImage: true,
         searchTerms: ["sportspulsesearchTerms1", "sportspulsesearchTerms2", "sportspulsesearchTerms3", "sportspulsesearchTerms4"],
         searchResults: [
             { title: "sportspulsetitle1", description: "sportspulsedescription1", isAd: true, reasoningIndex: 2 },
@@ -402,6 +413,7 @@ const postsData = [
         const publishButton = document.getElementById('publishButton');
         const imageSearchButton = document.getElementById('imageSearchButton');
         const textSearchButton = document.getElementById('textSearchButton');
+        const imageToTextSearchButton = document.getElementById('imageToTextSearchButton');
         const flagButton = document.getElementById('flagButton');
         const tipTrueButton = document.getElementById('tipTrueButton');
         const tipFalseButton = document.getElementById('tipFalseButton');
@@ -577,6 +589,12 @@ function setupEventListeners() {
             });
 
             textSearchButton.addEventListener('click', function() {
+                if (currentPostId) {
+                    showTextSearchOptions();
+                }
+            });
+
+            imageToTextSearchButton.addEventListener('click', function() {
                 if (currentPostId) {
                     showTextSearchOptions();
                 }
@@ -1416,6 +1434,21 @@ function showImageSearchResults() {
 
             // Update top menu
             updateTopMenu('imageSearch');
+
+            // Handle forced text search
+            const tipTrueButton = document.getElementById('tipTrueButton');
+            const tipFalseButton = document.getElementById('tipFalseButton');
+            const imageToTextSearchButton = document.getElementById('imageToTextSearchButton');
+
+            if (post.forceTextSearchAfterImage) {
+                tipTrueButton.style.display = 'none';
+                tipFalseButton.style.display = 'none';
+                imageToTextSearchButton.style.display = 'inline-block';
+            } else {
+                tipTrueButton.style.display = 'inline-block';
+                tipFalseButton.style.display = 'inline-block';
+                imageToTextSearchButton.style.display = 'inline-block';
+            }
         }
     }
 }
