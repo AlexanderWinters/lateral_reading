@@ -2,7 +2,6 @@ function translateKey(key) {
     return languageData[currentLanguage][key] || key;
 }
 
-// Updated posts data structure that works with the existing code
 const postsData = [
     {
         id: 1,
@@ -478,7 +477,6 @@ class MeterSystem {
     }
 }
 
-// Initialize meter system
 const meterSystem = new MeterSystem();
 meterSystem.reset();
 
@@ -530,9 +528,7 @@ function injectCustomStyles() {
     document.head.appendChild(style);
 }
 
-
-        // Initialize the application
-        function init() {
+function init() {
             injectCustomStyles();
 
             // Set up language switching
@@ -558,8 +554,7 @@ function injectCustomStyles() {
             showPage(videoInstructionsPage);
         }
 
-        // Set up event listeners
-        function setupEventListeners() {
+function setupEventListeners() {
             // Home button
             homeButton.addEventListener('click', function() {
                 showPage(videoInstructionsPage);
@@ -598,9 +593,7 @@ function injectCustomStyles() {
 
         }
 
-
-        // Generate posts in sidebar
-        function generatePosts() {
+function generatePosts() {
             sidebarPosts.innerHTML = '';
             
             postsData.forEach(post => {
@@ -678,7 +671,6 @@ function loadPost(postId) {
     }
 }
 
-// Process a post (publish or flag)
 function processPost(status) {
     if (currentPostId) {
         const post = postsData.find(p => p.id === currentPostId);
@@ -946,7 +938,6 @@ function generateDecisionExplanation(post, userDecision, isCorrect, hasPerformed
     };
 }
 
-// Close decision feedback popup
 function closeDecisionPopup() {
     const popup = document.getElementById('decisionPopupOverlay');
     if (popup) {
@@ -996,14 +987,12 @@ function restartGame() {
     window.location.reload();
 }
 
-// Function to go back to home page
 function goHome() {
     showPage(videoInstructionsPage);
     hideTopMenu();
 }
 
-        // Show text search options
-        function showTextSearchOptions() {
+function showTextSearchOptions() {
             if (currentPostId) {
                 const post = postsData.find(p => p.id === currentPostId);
                 
@@ -1032,8 +1021,6 @@ function goHome() {
             }
         }
 
-
-// Show text search results
 function showTextSearchResults() {
     if (currentPostId) {
         const post = postsData.find(p => p.id === currentPostId);
@@ -1255,7 +1242,6 @@ function showSearchResultPopup(result, index) {
     document.body.insertAdjacentHTML('beforeend', popupHTML);
 }
 
-// Generate reasoning for why a result is relevant or not
 function generateRelevanceReasoning(result, index) {
     const currentPost = postsData.find(p => p.id === currentPostId);
 
@@ -1301,7 +1287,6 @@ function generateRelevanceReasoning(result, index) {
     return reasoningOptions[safeIndex];
 }
 
-// Close search result popup
 function closeSearchPopup() {
     const popup = document.getElementById('searchPopupOverlay');
     if (popup) {
@@ -1309,7 +1294,6 @@ function closeSearchPopup() {
     }
 }
 
-// Mark a search result as used for evidence
 function markAsUsed(resultIndex) {
     // Check if evidence limit reached for current story
     if (usedEvidenceCount >= MAX_EVIDENCE_PER_STORY) {
@@ -1394,8 +1378,6 @@ function showEvidenceLimitReached() {
     meterSystem.updateCredibility(3, '(complete research)');
 }
 
-
-        // Show image search results
 function showImageSearchResults() {
     if (currentPostId) {
         const post = postsData.find(p => p.id === currentPostId);
@@ -1438,8 +1420,7 @@ function showImageSearchResults() {
     }
 }
 
-        // Toggle image selection
-        function toggleImageSelection(imageElement) {
+function toggleImageSelection(imageElement) {
             const index = parseInt(imageElement.dataset.index);
             
             if (imageElement.classList.contains('selected')) {
@@ -1451,8 +1432,7 @@ function showImageSearchResults() {
             }
         }
 
-        // Show a specific page
-        function showPage(page) {
+function showPage(page) {
             // Hide all pages
             document.querySelectorAll('.page').forEach(p => {
                 p.classList.remove('active');
@@ -1462,16 +1442,15 @@ function showImageSearchResults() {
             page.classList.add('active');
         }
 
-        // Show top menu
-        function showTopMenu() {
+function showTopMenu() {
             topMenu.style.display = 'block';
-            
+
             const post = postsData.find(p => p.id === currentPostId);
-            
+
             if (post && post.processed) {
                 postActionButtons.style.display = 'none';
                 postStatusMessage.style.display = 'block';
-                
+
                 const statusKey = post.status === 'published' ? 'published' : 'flagged';
                 postStatusMessage.textContent = getLanguageText(statusKey);
                 postStatusMessage.className = `post-status-message ${post.status === 'flagged' ? 'error' : ''}`;
@@ -1479,25 +1458,22 @@ function showImageSearchResults() {
                 postActionButtons.style.display = 'flex';
                 postStatusMessage.style.display = 'none';
             }
-            
+
             backButton.style.display = 'none';
         }
 
-        // Hide top menu
-        function hideTopMenu() {
+function hideTopMenu() {
             topMenu.style.display = 'none';
         }
 
-        // Update top menu based on context
-        function updateTopMenu(context) {
+function updateTopMenu(context) {
             topMenu.style.display = 'block';
             postActionButtons.style.display = 'none';
             postStatusMessage.style.display = 'none';
             backButton.style.display = 'block';
         }
 
-        // Update language
-        function updateLanguage() {
+function updateLanguage() {
             // Update all text elements with data-lang-key attribute
             document.querySelectorAll('[data-lang-key]').forEach(element => {
                 const key = element.getAttribute('data-lang-key');
@@ -1513,13 +1489,11 @@ function showImageSearchResults() {
             generatePosts();
         }
 
-        // Get text in current language
-        function getLanguageText(key) {
+function getLanguageText(key) {
             return languageData[currentLanguage][key] || key;
         }
 
-        // Function to add a new post
-        function addPost(post) {
+function addPost(post) {
             // Generate unique ID
             post.id = Math.max(...postsData.map(p => p.id)) + 1;
             post.unread = true;
@@ -1533,7 +1507,7 @@ function showImageSearchResults() {
             generatePosts();
         }
 
-        function setupCustomSelect() {
+function setupCustomSelect() {
         const customSelect = document.getElementById('languageSelectorCustom');
         const selected = customSelect.querySelector('.selected');
         const options = customSelect.querySelectorAll('.options li');
@@ -1560,7 +1534,6 @@ function showImageSearchResults() {
         });
     }
 
-    setupCustomSelect();
+setupCustomSelect();
 
-    // Initialize the app when document is loaded
-    init();
+init();
