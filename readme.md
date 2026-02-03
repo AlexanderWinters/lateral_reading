@@ -66,7 +66,13 @@ edu_game_project/
 - **Metadata Display**: Location and date information for each result
 - **Visual Verification**: Side-by-side comparison capabilities
 
-### 4. Educational Feedback System
+### 4. Metrics System
+- **Credibility Meter**: Tracks the player's reputation for accuracy. Increases with correct decisions and thorough research, decreases with errors.
+- **Popularity Meter**: Tracks speed and engagement. Balanced to be slightly more rewarding for correct publications but generally remains lower than credibility to emphasize accuracy over viral reach.
+- **Score Protection**: Meters are designed to never drop below zero.
+- **Cap**: Both meters have a maximum value of 200.
+
+### 5. Educational Feedback System
 - **Video Feedback**: Contextual video responses based on user actions
 - **Status Tracking**: Visual indicators for processed posts
 - **Learning Reinforcement**: Immediate feedback on decisions
@@ -176,16 +182,15 @@ The app encourages users to consider five key questions:
 - ✅ Core navigation and post-system
 - ✅ Multi-language support
 - ✅ Basic fact-checking tools
+- ✅ Metrics System (Credibility and Popularity)
 - 🔄 Image selection improvements needed
 - 🔄 Text search enhancement required
-- 🔄 Credibility/popularity meters pending
 
 ### Planned Enhancements
-1. **Metrics System**: Credibility and popularity tracking
-2. **Image Selection Limits**: Maximum selection constraints
-3. **Enhanced Text Search**: Additional information display
-4. **Cryptic Image Clues**: More sophisticated image metadata
-5. **Landing Page Improvements**: Better onboarding experience
+1. **Image Selection Limits**: Maximum selection constraints
+2. **Enhanced Text Search**: Additional information display
+3. **Cryptic Image Clues**: More sophisticated image metadata
+4. **Landing Page Improvements**: Better onboarding experience
 
 ### Browser Compatibility
 

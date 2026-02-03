@@ -444,14 +444,14 @@ class MeterSystem {
     }
 
     updateCredibility(change, reason = '') {
-        this.credibility = Math.min(200, this.credibility + change);
+        this.credibility = Math.min(200, Math.max(0, this.credibility + change));
         localStorage.setItem('credibility', this.credibility.toString());
         this.showChange('credibility', change, reason);
         this.updateDisplay();
     }
 
     updatePopularity(change, reason = '') {
-        this.popularity = Math.min(200, this.popularity + change);
+        this.popularity = Math.min(200, Math.max(0, this.popularity + change));
         localStorage.setItem('popularity', this.popularity.toString());
         this.showChange('popularity', change, reason);
         this.updateDisplay();
@@ -746,12 +746,12 @@ function processPost(status) {
                 if (userDecision) {
                     credibilityChange = 8;
                     credibilityReason = '(correct: published true story)';
-                    popularityChange = 5;
+                    popularityChange = 7;
                     popularityReason = '(shared accurate info)';
                 } else {
                     credibilityChange = 10;
                     credibilityReason = '(correct: flagged false story)';
-                    popularityChange = 2;
+                    popularityChange = 6;
                     popularityReason = '(prevented misinformation)';
                 }
             } else {
@@ -960,19 +960,19 @@ function generateDecisionExplanation(post, userDecision, isCorrect, hasPerformed
         if (userChosePublish) {
             credibilityChange = 8;
             credibilityReason = '(correctly published true story)';
-            popularityChange = 5;
+            popularityChange = 6;
             popularityReason = '(shared accurate information)';
         } else {
             credibilityChange = 10;
             credibilityReason = '(correctly flagged false story)';
-            popularityChange = 2;
+            popularityChange = 5;
             popularityReason = '(prevented misinformation)';
         }
     } else {
         if (userChosePublish) {
             credibilityChange = -8;
             credibilityReason = '(incorrectly published false story)';
-            popularityChange = -5;
+            popularityChange = -4;
             popularityReason = '(spread misinformation)';
         } else {
             credibilityChange = -5;
