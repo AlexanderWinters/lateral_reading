@@ -275,8 +275,8 @@ const postsData = [
     {
         id: 7,
         title: "weatherAlertTitle",
-        thumbnail: "img/storm.png",
-        image: "img/storm.png",
+        thumbnail: "img/storm_intro.jpeg",
+        image: "img/storm_intro.jpeg",
         description: "weatherAlertDescription",
         unread: true,
         processed: false,
@@ -344,8 +344,8 @@ const postsData = [
     {
         id: 10,
         title: "toxicleakTitle",
-        thumbnail: "img/toxic_intro.png",
-        image: "img/toxic_intro.png",
+        thumbnail: "img/gasleak_intro.png",
+        image: "img/gasleak_intro.png",
         description: "toxicleakDescription",
         unread: true,
         processed: false,
@@ -373,8 +373,8 @@ const postsData = [
     {
         id: 11,
         title: "sportspulseTitle",
-        thumbnail: "img/celeb1.png",
-        image: "img/celeb1.png",
+        thumbnail: "img/football_intro.jpeg",
+        image: "img/football_intro.jpeg",
         description: "sportspulseDescription",
         unread: true,
         processed: false,
