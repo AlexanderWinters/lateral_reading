@@ -1086,6 +1086,10 @@ function showTextSearchResults() {
             // Generate search results
             searchResults.innerHTML = '';
 
+            // Add AI Summary
+            const aiSummary = createAISummary(post);
+            searchResults.appendChild(aiSummary);
+
             post.searchResults.forEach((result, index) => {
                 const resultElement = document.createElement('div');
                 resultElement.className = `search-result-item${result.isAd ? ' ad' : ''} clickable`;
@@ -1346,6 +1350,100 @@ function closeSearchPopup() {
     if (popup) {
         popup.remove();
     }
+}
+
+function createAISummary(post) {
+    const aiSummaryContainer = document.createElement('div');
+    aiSummaryContainer.className = 'ai-summary-container';
+
+    const summaryKey = `aiSummary_${post.id}`;
+    const summaryText = getLanguageText(summaryKey);
+
+    aiSummaryContainer.innerHTML = `
+        <div class="ai-summary-header">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L14.85 8.65L22 9.24L16.5 13.97L18.18 21L12 17.27L5.82 21L7.5 13.97L2 9.24L9.15 8.65L12 2Z" fill="currentColor"/>
+            </svg>
+            <h3>${getLanguageText('aiSummaryTitle')}</h3>
+        </div>
+        <div class="ai-summary-content">
+            <p>${summaryText}</p>
+        </div>
+        <div class="ai-summary-links">
+            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink1')}</div>
+            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink2')}</div>
+            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink3')}</div>
+            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink4')}</div>
+        </div>
+        <div class="ai-summary-footer">
+            <div class="ai-summary-warning">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4299 17.3333 20.6601 16L13.7319 4C12.9621 2.66667 11.0379 2.66667 10.2681 4L3.33988 16C2.57006 17.3333 3.53224 19 5.07183 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>${getLanguageText('aiSummaryWarning')}</span>
+            </div>
+            <div class="ai-summary-actions">
+                <button class="evidence-button-ai ${post.usedAISummaryAsEvidence ? 'used' : ''}" onclick="useAISummaryAsEvidence(${post.id})">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21V3M12 3L5 10M12 3L19 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>${getLanguageText('aiSummaryEvidenceButton')}</span>
+                </button>
+            </div>
+            <div class="ai-summary-disclaimer">${getLanguageText('aiSummaryDisclaimer')}</div>
+        </div>
+    `;
+
+    return aiSummaryContainer;
+}
+
+function useAISummaryAsEvidence(postId) {
+    const post = postsData.find(p => p.id === postId);
+    if (post && !post.usedAISummaryAsEvidence) {
+        post.usedAISummaryAsEvidence = true;
+        
+        // Retract points
+        meterSystem.updateCredibility(-5, '(relied on AI summary)');
+        meterSystem.updatePopularity(-3, '(lazy research)');
+
+        // Update UI
+        const button = document.querySelector('.evidence-button-ai');
+        if (button) {
+            button.classList.add('used');
+        }
+
+        // Add as evidence (even if it's bad evidence)
+        usedEvidenceCount++;
+        post.usedEvidenceCount = usedEvidenceCount;
+    }
+}
+
+function showAISummaryCongratulations() {
+    const popupHTML = `
+        <div class="search-popup-overlay" id="searchPopupOverlay">
+            <div class="search-popup">
+                <div class="popup-header">
+                    <h3>${getLanguageText('aiSummaryCongratulationsTitle')}</h3>
+                    <button class="popup-close" onclick="closeSearchPopup()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="popup-content">
+                    <div class="reasoning-content verified">
+                        <p>${getLanguageText('aiSummaryCongratulationsMessage')}</p>
+                    </div>
+                </div>
+                <div class="popup-actions">
+                    <button class="action-btn primary" onclick="closeSearchPopup()">${getLanguageText('continue')}</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
 }
 
 function markAsUsed(resultIndex) {

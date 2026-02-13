@@ -134,6 +134,29 @@ Post View → Fact-Check Tools → Evidence Gathering → Decision → Feedback
 - **Key Format**: CamelCase keys for consistency
 - **Dynamic Loading**: Real-time translation updates
 
+### Solution Summary
+
+The "Search Results" page has been enhanced with a new **AI Overview** feature, mimicking Google's AI-generated summaries. This feature provides a quick summary of the investigation results while also serving as a gameplay mechanic to teach players about the risks of over-reliance on AI.
+
+### Key Changes:
+
+#### 1. UI Enhancements (CSS)
+-   Added `.ai-summary-container` with a distinctive Google-like multi-colored left border.
+-   Styled AI summaries with a light blue gradient background, distinctive typography, and clickable "source" chips.
+-   Added a warning section highlighted in yellow to caution users about relying solely on AI summaries.
+-   Implemented a "Use this as evidence" button with a professional, tool-like appearance.
+
+#### 2. Translation System Updates
+-   Added comprehensive English and Swedish translations for AI summaries for all 11 existing stories in `translation.js`.
+-   Included UI labels for "AI Overview", "Use this as evidence", and educational warnings.
+-   Added a "Congratulations" popup message for when users click on the links within the AI summary.
+
+#### 3. Functional Improvements (JavaScript)
+-   **AI Summary Rendering**: Updated `showTextSearchResults` to automatically generate and prepend the AI summary for the current story.
+-   **Evidence Mechanic**: Implemented `useAISummaryAsEvidence`, which allows players to use the summary as a source. However, doing so **retracts points** (-5 Credibility, -3 Popularity) to reinforce that proper research requires looking at primary sources.
+-   **Interactive Links**: Added `showAISummaryCongratulations`, which triggers a positive feedback popup when a user explores the "sources" linked in the AI summary, encouraging lateral reading.
+-   **State Management**: Added `usedAISummaryAsEvidence` to the `postsData` structure to ensure the penalty is only applied once per post.
+
 ## Learning Objectives
 
 The application implements several key media literacy concepts:
