@@ -1376,12 +1376,6 @@ function createAISummary(post) {
             <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink4')}</div>
         </div>
         <div class="ai-summary-footer">
-            <div class="ai-summary-warning">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4299 17.3333 20.6601 16L13.7319 4C12.9621 2.66667 11.0379 2.66667 10.2681 4L3.33988 16C2.57006 17.3333 3.53224 19 5.07183 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span>${getLanguageText('aiSummaryWarning')}</span>
-            </div>
             <div class="ai-summary-actions">
                 <button class="evidence-button-ai ${post.usedAISummaryAsEvidence ? 'used' : ''}" onclick="useAISummaryAsEvidence(${post.id})">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1415,6 +1409,38 @@ function useAISummaryAsEvidence(postId) {
         // Add as evidence (even if it's bad evidence)
         usedEvidenceCount++;
         post.usedEvidenceCount = usedEvidenceCount;
+
+        // Show popup with warning moved inside
+        const popupHTML = `
+            <div class="search-popup-overlay" id="searchPopupOverlay">
+                <div class="search-popup">
+                    <div class="popup-header">
+                        <h3>${getLanguageText('aiSummaryEvidencePopupTitle')}</h3>
+                        <button class="popup-close" onclick="closeSearchPopup()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="popup-content">
+                        <div class="ai-summary-warning" style="margin-bottom: 20px;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 9V11M12 15H12.01M5.07183 19H18.9282C20.4678 19 21.4299 17.3333 20.6601 16L13.7319 4C12.9621 2.66667 11.0379 2.66667 10.2681 4L3.33988 16C2.57006 17.3333 3.53224 19 5.07183 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>${getLanguageText('aiSummaryWarning')}</span>
+                        </div>
+                        <div class="reasoning-content warning">
+                            <p>${getLanguageText('aiSummaryEvidenceUsedMessage')}</p>
+                        </div>
+                    </div>
+                    <div class="popup-actions">
+                        <button class="action-btn primary" onclick="closeSearchPopup()">${getLanguageText('continue')}</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', popupHTML);
     }
 }
 
