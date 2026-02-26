@@ -32,8 +32,8 @@ const postsData = [
             { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertdate1" },
-            { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertdate2" },
+            { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertdate1", icons: ["icons/firedpt.png"] },
+            { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertdate2", icons: ["icons/companyfirealarm.png"] },
             { src: "updated_images/Street_Fire_Images/Street_Party_Last_Yr.jpeg", location: "burnalertlocation3", date: "burnalertdate3" },
             { src: "updated_images/Street_Fire_Images/Street_Party_2_Yrs_ago.jpeg", location: "burnalertlocation4", date: "burnalertdate4" }
         ]
@@ -1574,12 +1574,25 @@ function showImageSearchResults() {
                 const imageElement = document.createElement('div');
                 imageElement.className = 'image-item';
                 imageElement.dataset.index = index;
-                // <div>${getLanguageText(image.location)}</div>
+                
+                let iconsHtml = '';
+                if (image.icons && Array.isArray(image.icons)) {
+                    iconsHtml = `<div class="image-icons">
+                        ${image.icons.map(icon => `<div class="image-icon"><img src="${icon}" alt="Icon"></div>`).join('')}
+                    </div>`;
+                }
+
                 imageElement.innerHTML = `
-                    <img src="${image.src}" alt="Search result image">
-                    <div class="image-info">
+                    <div class="image-container">
+                        <img src="${image.src}" alt="Search result image">
                     </div>
-                    <div>${getLanguageText(image.date)}</div>
+                    <div class="image-info">
+                        ${iconsHtml}
+                        <div class="image-details">
+                            <div class="image-location">${getLanguageText(image.location)}</div>
+                            <div class="image-date">${getLanguageText(image.date)}</div>
+                        </div>
+                    </div>
                 `;
 
                 imageElement.addEventListener('click', function() {

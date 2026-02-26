@@ -122,7 +122,8 @@ Post View → Fact-Check Tools → Evidence Gathering → Decision → Feedback
         {
             src: "path/to/image",
             location: "translationKey",
-            date: "translationKey"
+            date: "translationKey",
+            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
         }
     ]
 }
@@ -156,6 +157,11 @@ The "Search Results" page has been enhanced with a new **AI Overview** feature, 
 -   **Evidence Mechanic**: Implemented `useAISummaryAsEvidence`, which allows players to use the summary as a source. However, doing so **retracts points** (-5 Credibility, -3 Popularity) to reinforce that proper research requires looking at primary sources.
 -   **Interactive Links**: Added `showAISummaryCongratulations`, which triggers a positive feedback popup when a user explores the "sources" linked in the AI summary, encouraging lateral reading.
 -   **State Management**: Added `usedAISummaryAsEvidence` to the `postsData` structure to ensure the penalty is only applied once per post.
+
+#### 4. Image Search Enhancements
+-   **Descriptions**: Added a `location` field (which was previously hidden) to be displayed as a description under each image.
+-   **Icons**: Added support for an optional `icons` array in `imageResults` objects, allowing `.png` icons to be displayed as badges on top of search result images.
+-   **Enhanced UI**: Improved the layout of image search results with better typography and visual indicators.
 
 ## Learning Objectives
 
