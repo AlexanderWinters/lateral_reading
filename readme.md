@@ -115,7 +115,9 @@ Post View → Fact-Check Tools → Evidence Gathering → Decision → Feedback
         {
             title: "translationKey",
             description: "translationKey", 
-            isAd: boolean
+            isAd: boolean,
+            date: "translationKey", // Optional date translation key
+            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
         }
     ],
     imageResults: [
@@ -162,6 +164,11 @@ The "Search Results" page has been enhanced with a new **AI Overview** feature, 
 -   **Descriptions**: Added a `location` field (which was previously hidden) to be displayed as a description under each image.
 -   **Icons**: Added support for an optional `icons` array in `imageResults` objects, allowing `.png` icons to be displayed as badges on top of search result images.
 -   **Enhanced UI**: Improved the layout of image search results with better typography and visual indicators.
+
+#### 5. Text Search Enhancements
+-   **Date and Icons**: Text search results now support optional `date` and `icons` fields, similar to image search results.
+-   **Inline Layout**: Icons are displayed inline with the title, and the date is shown at the bottom of the result item.
+-   **Consistent Styling**: Applied a consistent visual style for icons and metadata across both text and image search results.
 
 ## Learning Objectives
 

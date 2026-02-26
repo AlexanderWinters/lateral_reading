@@ -16,9 +16,9 @@ const postsData = [
         forceTextSearchAfterImage: true,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
-            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0 },
-            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0 },
-            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4 },
+            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0, date: "burnalertdate1", icons: ["icons/X.png"] },
+            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0, date: "burnalertdate2", icons: ["icons/insta.png"] },
+            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4, date: "burnalertdate3", icons: ["icons/alt news.png"] },
             { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0 },
             { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0 },
             { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false, reasoningIndex: 1 },
@@ -51,10 +51,10 @@ const postsData = [
         forceTextSearchAfterImage: false,
         searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
         searchResults: [
-            { title: "librarytitle1", description: "librarydescription1", isAd: true, reasoningIndex: 2 },
-            { title: "librarytitle2", description: "librarydescription2", isAd: true, reasoningIndex: 2 },
-            { title: "librarytitle3", description: "librarydescription3", isAd: false, reasoningIndex: 4 },
-            { title: "librarytitle4", description: "librarydescription4", isAd: false, reasoningIndex: 3 },
+            { title: "librarytitle1", description: "librarydescription1", isAd: true, reasoningIndex: 2, date: "librarydate1", icons: ["icons/X.png"] },
+            { title: "librarytitle2", description: "librarydescription2", isAd: true, reasoningIndex: 2, date: "librarydate2", icons: ["icons/insta.png"] },
+            { title: "librarytitle3", description: "librarydescription3", isAd: false, reasoningIndex: 4, date: "librarydate3", icons: ["icons/alt news.png"] },
+            { title: "librarytitle4", description: "librarydescription4", isAd: false, reasoningIndex: 3, date: "librarydate4", icons: ["icons/DN eng.png"] },
             { title: "librarytitle5", description: "librarydescription5", isAd: false, reasoningIndex: 4 },
             { title: "librarytitle6", description: "librarydescription6", isAd: false, reasoningIndex: 1 },
             { title: "librarytitle7", description: "librarydescription7", isAd: false, reasoningIndex: 0 },
@@ -1098,9 +1098,25 @@ function showTextSearchResults() {
                     resultElement.dataset.adText = getLanguageText('advertisement');
                 }
 
+                let iconsHtml = '';
+                if (result.icons && Array.isArray(result.icons)) {
+                    iconsHtml = `<div class="search-result-icons">
+                        ${result.icons.map(icon => `<div class="search-result-icon"><img src="${icon}" alt="Icon"></div>`).join('')}
+                    </div>`;
+                }
+
+                let dateHtml = '';
+                if (result.date) {
+                    dateHtml = `<div class="search-result-date">${getLanguageText(result.date)}</div>`;
+                }
+
                 resultElement.innerHTML = `
-                            <h3>${translateKey(result.title)}</h3>
+                            <div class="search-result-header">
+                                ${iconsHtml}
+                                <h3>${translateKey(result.title)}</h3>
+                            </div>
                             <p>${translateKey(result.description)}</p>
+                            ${dateHtml}
                         `;
 
                 // Make results clickable
