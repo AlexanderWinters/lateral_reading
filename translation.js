@@ -208,7 +208,7 @@ const languageData = {
     factCheckingRequired: "Professional journalism requires thorough fact-checking before making publication decisions. Always verify information through multiple sources.",
 
     burnalertTitle: "HOUSES ON FIRE -- authorities COVERING THIS UP!",
-    burnalertDescription: "The images show a burning area in the city. Comments are upset: 'Why is no one reporting this?' 'We deserve to know the truth!'",
+    burnalertDescription: "The fire is spreading, and people are out in the streets without support from firefighters! We must all act now!!",
     burnalertsearchTerms1: "Fire in the city",
     burnalertsearchTerms2: "City fire reports",
     burnalertsearchTerms3: "Authorities hiding fire",
@@ -251,7 +251,7 @@ const languageData = {
     burnalertlocation4: "Original video showing parts cut out for dramatic effect",
     burnalertdate1: "Yesterday",
     burnalertdate2: "Yesterday",
-    burnalertdate3: "Two years ago",
+    burnalertdate3: "Last year",
     burnalertdate4: "Two years ago",
 
     libraryTitle: "Extremist group plans attack on the library!",
@@ -412,8 +412,8 @@ const languageData = {
     waterpoisoninglocation2: "Laboratory test results showing all parameters within normal limits",
     waterpoisoninglocation3: "Stock photo of water testing being conducted",
     waterpoisoninglocation4: "Diagram explaining the seasonal chlorine treatment process",
-    waterpoisoningdate1: "March 15, 2020",
-    waterpoisoningdate2: "Today",
+    waterpoisoningdate1: "2024 Oct 26th",
+    waterpoisoningdate2: "2024 Oct 26th",
     waterpoisoningdate3: "Stock photo",
     waterpoisoningdate4: "Last week",
 

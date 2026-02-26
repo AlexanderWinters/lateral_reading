@@ -6,8 +6,8 @@ const postsData = [
     {
         id: 1,
         title: "burnalertTitle",
-        thumbnail: "img/burn_intro.png",
-        image: "img/burn_intro.png",
+        thumbnail: "updated_images/Street_Fire_Images/Fire_Fake.png",
+        image: "updated_images/Street_Fire_Images/Fire_Fake.png",
         description: "burnalertDescription",
         unread: true,
         processed: false,
@@ -32,17 +32,17 @@ const postsData = [
             { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/burn1.png", location: "burnalertlocation1", date: "burnalertdate1" },
-            { src: "img/burn2.png", location: "burnalertlocation2", date: "burnalertdate2" },
-            { src: "img/burn3.png", location: "burnalertlocation3", date: "burnalertdate3" },
-            { src: "img/burn4.png", location: "burnalertlocation4", date: "burnalertdate4" }
+            { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertdate1" },
+            { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertdate2" },
+            { src: "updated_images/Street_Fire_Images/Street_Party_Last_Yr.jpeg", location: "burnalertlocation3", date: "burnalertdate3" },
+            { src: "updated_images/Street_Fire_Images/Street_Party_2_Yrs_ago.jpeg", location: "burnalertlocation4", date: "burnalertdate4" }
         ]
     },
     {
         id: 2,
         title: "libraryTitle",
-        thumbnail: "img/extrimistalert.png",
-        image: "img/extrimistalert.png",
+        thumbnail: "updated_images/Terror_At_Library_Images/Fake_Threat_1_Dark.png",
+        image: "updated_images/Terror_At_Library_Images/Fake_Threat_1_Dark.png",
         description: "libraryDescription",
         unread: true,
         processed: false,
@@ -71,10 +71,10 @@ const postsData = [
             { title: "librarytitle18", description: "librarydescription18", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/lib1.png", location: "librarylocation1", date: "librarydate1" },
-            { src: "img/lib2.png", location: "librarylocation2", date: "librarydate2" },
-            { src: "img/lib3.png", location: "librarylocation3", date: "librarydate3" },
-            { src: "img/lib4.png", location: "librarylocation4", date: "librarydate4" }
+            { src: "updated_images/Terror_At_Library_Images/Fake_Threat_2_Flash.png", location: "librarylocation1", date: "librarydate1" },
+            { src: "updated_images/Terror_At_Library_Images/Stag_party_2_Flash.png", location: "librarylocation2", date: "librarydate2" },
+            { src: "updated_images/Terror_At_Library_Images/Stag_Party_1_Dark.png", location: "librarylocation3", date: "librarydate3" },
+            { src: "updated_images/Terror_At_Library_Images/Waterguns_2_Flash.png", location: "librarylocation4", date: "librarydate4" }
         ]
     },
     {
@@ -121,8 +121,8 @@ const postsData = [
     {
         id: 4,
         title: "waterpoisoningTitle",
-        thumbnail: "img/waterpoisoning.png",
-        image: "img/waterpoisoning.png",
+        thumbnail: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
+        image: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
         description: "waterpoisoningDescription",
         unread: false,
         processed: false,
@@ -151,10 +151,10 @@ const postsData = [
             { title: "waterpoisoningtitle18", description: "waterpoisoningdescription18", isAd: false, reasoningIndex: 2 }
         ],
         imageResults: [
-            { src: "img/waterpoisoning1.png", location: "waterpoisoninglocation1", date: "waterpoisoningdate1" },
-            { src: "img/waterpoisoning2.png", location: "waterpoisoninglocation2", date: "waterpoisoningdate2" },
-            { src: "img/waterpoisoning3.png", location: "waterpoisoninglocation3", date: "waterpoisoningdate3" },
-            { src: "img/waterpoisoning4.png", location: "waterpoisoninglocation4", date: "waterpoisoningdate4" }
+            { src: "updated_images/bad_water/Fake_Steam_Green.png", location: "waterpoisoninglocation1", date: "waterpoisoningdate1" },
+            { src: "updated_images/bad_water/Fake_Steam_Black.png", location: "waterpoisoninglocation2", date: "waterpoisoningdate2" },
+            { src: "updated_images/bad_water/Bad_Water_Glas_6.jpeg", location: "waterpoisoninglocation3", date: "waterpoisoningdate3" },
+            { src: "updated_images/bad_water/Bad_Water_Glas_5.jpeg", location: "waterpoisoninglocation4", date: "waterpoisoningdate4" }
         ]
     },
     {
