@@ -33,10 +33,10 @@ const postsData = [
             { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1, date: "burnalertdate15", icons: ["icons/dn.png"] }
         ],
         imageResults: [
-            { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertdate1", icons: ["icons/firedpt.png"] },
-            { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertdate2", icons: ["icons/companyfirealarm.png"] },
-            { src: "updated_images/Street_Fire_Images/Street_Party_Last_Yr.jpeg", location: "burnalertlocation3", date: "burnalertdate3" },
-            { src: "updated_images/Street_Fire_Images/Street_Party_2_Yrs_ago.jpeg", location: "burnalertlocation4", date: "burnalertdate4" }
+            { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertimagedate2", icons: ["icons/insta.png"] },
+            { src: "updated_images/Street_Fire_Images/image3.png", location: "burnalertlocation3", date: "burnalertimagedate3", icons: ["icons/dn.png"] },
+            { src: "updated_images/Street_Fire_Images/image4.png", location: "burnalertlocation4", date: "burnalertimagedate3", icons: ["icons/dn.png"] }
         ]
     },
     {
@@ -1631,8 +1631,9 @@ function showImageSearchResults() {
                     <div class="image-info">
                         ${iconsHtml}
                         <div class="image-details">
-                            <div class="image-location">${getLanguageText(image.location)}</div>
                             <div class="image-date">${getLanguageText(image.date)}</div>
+                            <div class="image-location">${getLanguageText(image.location)}</div>
+                            
                         </div>
                     </div>
                 `;

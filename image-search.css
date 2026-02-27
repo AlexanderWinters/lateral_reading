@@ -95,8 +95,6 @@
 }
 
 .image-icon {
-    background: #f0f2f5;
-    border-radius: 1px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -104,7 +102,6 @@
     justify-content: center;
     box-shadow: none;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .image-icon img {

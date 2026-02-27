@@ -245,11 +245,18 @@ const languageData = {
     burnalertdescription14: " ",
     burnalertdescription15: "Comprehensive review concludes all emergency protocols were properly executed",
 
-    burnalertlocation1: "Wide-angle image showing same fire but no one reacting - likely photomontage",
-    burnalertlocation2: "Manipulated image where fire is part of a montage",
-    burnalertlocation3: "Original image from a riot in another city with mountain peaks in background",
-    burnalertlocation4: "Original video showing parts cut out for dramatic effect",
-    burnalertdate1: "Yesterday",
+    burnalertlocation1: "Firelight, live music, and the whole street singing along. One of those nights you don't want to end. #StreetParty #SummerNights #GoodVibes",
+    burnalertlocation2: "Could someone PLEASE just make them shut up?! This is out of control. No one is listening. No one is thinking . Just noise, chaos, and the same nonsense over and over again. I wish they would all burn!!! Enough already. ",
+    burnalertlocation3: "What began as a neighborhood party in a narrow city alley ended in tragedy late Saturday evening when a house caught fire. According to early reports, an electrical malfunction inside one of the homes ignited the blaze just as residents were setting up for the gathering. Flames quickly spread through the upper floors, lighting up the street and forcing partygoers to evacuate.Emergency services responded rapidly and brought the fire under control. The cause is under investigation, but officials indicate the incident appears to have been accidental.",
+    burnalertlocation4: "A large fire is currently engulfing a residential building in a narrow city alley. Flames are spreading rapidly across the upper floors, with thick smoke visible from surrounding\n" +
+        "steels.\n" +
+        "Fire crews are on scene and actively battling the blaze.\n" +
+        "Residents have been evacuated from nearby homes as a precaution.\n" +
+        "Authorities are urging the public to avoid the area while emergency services work to contain the fire. The cause has not yet been confirmed.",
+    burnalertimagedate1: "AndreaAndersson. Yesterday",
+    burnalertimagedate2: "Bert. Yesterday",
+    burnalertimagedate3: "Dovetown News. Two years ago",
+    burnalertimagedate4: "Dovetown News. Two years ago",
     burnalertdate2: "Yesterday",
     burnalertdate3: "Last year",
     burnalertdate4: "Two years ago",
