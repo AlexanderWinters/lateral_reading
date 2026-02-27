@@ -57,26 +57,26 @@ const postsData = [
             { title: "librarytitle2", description: "librarydescription2", isAd: true, reasoningIndex: 2, date: "librarydate2", icons: ["icons/insta.png"] },
             { title: "librarytitle3", description: "librarydescription3", isAd: false, reasoningIndex: 4, date: "librarydate3", icons: ["icons/alt news.png"] },
             { title: "librarytitle4", description: "librarydescription4", isAd: false, reasoningIndex: 3, date: "librarydate4", icons: ["icons/DN eng.png"] },
-            { title: "librarytitle5", description: "librarydescription5", isAd: false, reasoningIndex: 4 },
-            { title: "librarytitle6", description: "librarydescription6", isAd: false, reasoningIndex: 1 },
-            { title: "librarytitle7", description: "librarydescription7", isAd: false, reasoningIndex: 0 },
-            { title: "librarytitle8", description: "librarydescription8", isAd: false, reasoningIndex: 4 },
-            { title: "librarytitle9", description: "librarydescription9", isAd: false, reasoningIndex: 1 },
-            { title: "librarytitle10", description: "librarydescription10", isAd: false, reasoningIndex: 2 },
-            { title: "librarytitle11", description: "librarydescription11", isAd: false, reasoningIndex: 4 },
-            { title: "librarytitle12", description: "librarydescription12", isAd: false, reasoningIndex: 2 },
-            { title: "librarytitle13", description: "librarydescription13", isAd: false, reasoningIndex: 2 },
-            { title: "librarytitle14", description: "librarydescription14", isAd: false, reasoningIndex: 3 },
-            { title: "librarytitle15", description: "librarydescription15", isAd: false, reasoningIndex: 2 },
-            { title: "librarytitle16", description: "librarydescription16", isAd: false, reasoningIndex: 1 },
-            { title: "librarytitle17", description: "librarydescription17", isAd: false, reasoningIndex: 4 },
-            { title: "librarytitle18", description: "librarydescription18", isAd: false, reasoningIndex: 1 }
+            //{ title: "librarytitle5", description: "librarydescription5", isAd: false, reasoningIndex: 4, date: "librarydate5", icons: ["icons/alt news.png"] },
+            { title: "librarytitle6", description: "librarydescription6", isAd: false, reasoningIndex: 1, date: "librarydate6", icons: ["icons/Channel1.png"] },
+            { title: "librarytitle7", description: "librarydescription7", isAd: false, reasoningIndex: 0, date: "librarydate7", icons: ["icons/Channel1.png"] },
+            { title: "librarytitle8", description: "librarydescription8", isAd: false, reasoningIndex: 4, date: "librarydate8", icons: ["icons/alt news.png"] },
+            { title: "librarytitle9", description: "librarydescription9", isAd: false, reasoningIndex: 1, date: "librarydate9", icons: ["icons/Channel9.png"] },
+            { title: "librarytitle10", description: "librarydescription10", isAd: false, reasoningIndex: 2, date: "librarydate10", icons: ["icons/DN eng.png"] },
+            { title: "librarytitle11", description: "librarydescription11", isAd: false, reasoningIndex: 4, date: "librarydate11", icons: ["icons/alt news.png"] },
+            { title: "librarytitle12", description: "librarydescription12", isAd: false, reasoningIndex: 2, date: "librarydate12", icons: ["icons/DN eng.png"] },
+            { title: "librarytitle13", description: "librarydescription13", isAd: false, reasoningIndex: 2, date: "librarydate13", icons: ["icons/Channel1.png"] },
+            { title: "librarytitle14", description: "librarydescription14", isAd: false, reasoningIndex: 3, date: "librarydate14", icons: ["icons/alt news.png"] },
+            { title: "librarytitle15", description: "librarydescription15", isAd: false, reasoningIndex: 2, date: "librarydate15", icons: ["icons/insta.png"] },
+            { title: "librarytitle16", description: "librarydescription16", isAd: false, reasoningIndex: 1, date: "librarydate16", icons: ["icons/Channel1.png"] },
+            { title: "librarytitle17", description: "librarydescription17", isAd: false, reasoningIndex: 4, date: "librarydate17", icons: ["icons/alt news.png"] },
+            { title: "librarytitle18", description: "librarydescription18", isAd: false, reasoningIndex: 1, date: "librarydate18", icons: ["icons/Channel9.png"] }
         ],
         imageResults: [
-            { src: "updated_images/Terror_At_Library_Images/Fake_Threat_2_Flash.png", location: "librarylocation1", date: "librarydate1" },
-            { src: "updated_images/Terror_At_Library_Images/Stag_party_2_Flash.png", location: "librarylocation2", date: "librarydate2" },
-            { src: "updated_images/Terror_At_Library_Images/Stag_Party_1_Dark.png", location: "librarylocation3", date: "librarydate3" },
-            { src: "updated_images/Terror_At_Library_Images/Waterguns_2_Flash.png", location: "librarylocation4", date: "librarydate4" }
+            { src: "updated_images/Terror_At_Library_Images/Fake_Threat_2_Flash.png", location: "librarylocation1", date: "libraryimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/Terror_At_Library_Images/Stag_party_2_Flash.png", location: "librarylocation2", date: "libraryimagedate2", icons: ["icons/X.png"] },
+            { src: "updated_images/Terror_At_Library_Images/Stag_Party_1_Dark.png", location: "librarylocation3", date: "libraryimagedate3", icons: ["icons/X.png"] },
+            { src: "updated_images/Terror_At_Library_Images/Waterguns_2_Flash.png", location: "librarylocation4", date: "libraryimagedate4", icons: ["icons/insta.png"] }
         ]
     },
     {
@@ -1141,8 +1141,8 @@ function showTextSearchResults() {
                                 ${iconsHtml}
                                 <h3>${translateKey(result.title)}</h3>
                             </div>
-                            <p>${translateKey(result.description)}</p>
                             ${dateHtml}
+                            <p>${translateKey(result.description)}</p>
                         `;
 
                 // Make results clickable
