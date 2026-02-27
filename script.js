@@ -16,8 +16,8 @@ const postsData = [
         forceTextSearchAfterImage: true,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
-            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0, date: "burnalertdate1", icons: ["icons/X.png"] },
-            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0, date: "burnalertdate2", icons: ["icons/insta.png"] },
+            { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0, icons: ["icons/companyfirealarm.png"] },
+            { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0, icons: ["icons/companyfireex.png"] },
             { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4, date: "burnalertdate3", icons: ["icons/alt news.png"] },
             { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0 },
             { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0 },
