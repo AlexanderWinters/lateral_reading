@@ -82,8 +82,8 @@ const postsData = [
     {
         id: 3,
         title: "extrimistalertTitle",
-        thumbnail: "img/military_convoy.png",
-        image: "img/military_convoy.png",
+        thumbnail: "updated_images/military/Military_1_Base_1.jpeg",
+        image: "updated_images/military/Military_1_Base_1.jpeg",
         description: "extrimistalertDescription",
         icons: ["icons/X.png"],
         unread: true,
@@ -115,10 +115,10 @@ const postsData = [
             { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: false, reasoningIndex: 4 }
         ],
         imageResults: [
-            { src: "img/military_convoy_day.png", location: "extrimistalertlocation1", date: "extrimistalertdate1" },
-            { src: "img/military_exercise.png", location: "extrimistalertlocation2", date: "extrimistalertdate2" },
-            { src: "img/extrimistalert3.png", location: "extrimistalertlocation3", date: "extrimistalertdate3" },
-            { src: "img/military_coup.png", location: "extrimistalertlocation4", date: "extrimistalertdate4" }
+            { src: "updated_images/military/Military_2.jpeg", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] },
+            { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation3", date: "extrimistimagedate3", icons: ["icons/alt news.png"] },
+            { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] }
         ]
     },
     {
