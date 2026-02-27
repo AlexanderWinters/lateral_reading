@@ -9,6 +9,7 @@ const postsData = [
         thumbnail: "updated_images/Street_Fire_Images/Fire_Fake.png",
         image: "updated_images/Street_Fire_Images/Fire_Fake.png",
         description: "burnalertDescription",
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
@@ -18,18 +19,18 @@ const postsData = [
         searchResults: [
             { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0, icons: ["icons/companyfirealarm.png"] },
             { title: "burnalerttitle2", description: "burnalertdescription2", isAd: true, reasoningIndex: 0, icons: ["icons/companyfireex.png"] },
-            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4, date: "burnalertdate3", icons: ["icons/alt news.png"] },
-            { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0 },
-            { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0 },
-            { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false, reasoningIndex: 1 },
-            { title: "burnalerttitle8", description: "burnalertdescription8", isAd: false, reasoningIndex: 5 },
-            { title: "burnalerttitle9", description: "burnalertdescription9", isAd: false, reasoningIndex: 2 },
-            { title: "burnalerttitle10", description: "burnalertdescription10", isAd: false, reasoningIndex: 2 },
-            { title: "burnalerttitle11", description: "burnalertdescription11", isAd: false, reasoningIndex: 6 },
-            { title: "burnalerttitle12", description: "burnalertdescription12", isAd: false, reasoningIndex: 3 },
-            { title: "burnalerttitle13", description: "burnalertdescription13", isAd: false, reasoningIndex: 2 },
-            { title: "burnalerttitle14", description: "burnalertdescription14", isAd: false, reasoningIndex: 6 },
-            { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1 }
+            { title: "burnalerttitle4", description: "burnalertdescription4", isAd: false, reasoningIndex: 4, date: "burnalertdate4", icons: ["icons/alt news.png"] },
+            { title: "burnalerttitle5", description: "burnalertdescription5", isAd: false, reasoningIndex: 0, date: "burnalertdate5", icons: ["icons/dn.png"] },
+            { title: "burnalerttitle6", description: "burnalertdescription6", isAd: false, reasoningIndex: 0, date: "burnalertdate6", icons: ["icons/firedpt.png"] },
+            { title: "burnalerttitle7", description: "burnalertdescription7", isAd: false, reasoningIndex: 1, date: "burnalertdate7", icons: ["icons/firedpt.png"] },
+            { title: "burnalerttitle8", description: "burnalertdescription8", isAd: false, reasoningIndex: 5, date: "burnalertdate8", icons: ["icons/X.png"] },
+            { title: "burnalerttitle9", description: "burnalertdescription9", isAd: false, reasoningIndex: 2, date: "burnalertdate9", icons: ["icons/dn.png"] },
+            { title: "burnalerttitle10", description: "burnalertdescription10", isAd: false, reasoningIndex: 2, date: "burnalertdate10", icons: ["icons/firedpt.png"] },
+            { title: "burnalerttitle11", description: "burnalertdescription11", isAd: false, reasoningIndex: 6, date: "burnalertdate11", icons: ["icons/alt news.png"] },
+            { title: "burnalerttitle12", description: "burnalertdescription12", isAd: false, reasoningIndex: 3, date: "burnalertdate12", icons: ["icons/Channel9.png"] },
+            { title: "burnalerttitle13", description: "burnalertdescription13", isAd: false, reasoningIndex: 2, date: "burnalertdate13", icons: ["icons/insta.png"] },
+            { title: "burnalerttitle14", description: "burnalertdescription14", isAd: false, reasoningIndex: 6, date: "burnalertdate14", icons: ["icons/alt news.png"] },
+            { title: "burnalerttitle15", description: "burnalertdescription15", isAd: false , reasoningIndex: 1, date: "burnalertdate15", icons: ["icons/dn.png"] }
         ],
         imageResults: [
             { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertdate1", icons: ["icons/firedpt.png"] },
@@ -44,6 +45,7 @@ const postsData = [
         thumbnail: "updated_images/Terror_At_Library_Images/Fake_Threat_1_Dark.png",
         image: "updated_images/Terror_At_Library_Images/Fake_Threat_1_Dark.png",
         description: "libraryDescription",
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
@@ -83,6 +85,7 @@ const postsData = [
         thumbnail: "img/military_convoy.png",
         image: "img/military_convoy.png",
         description: "extrimistalertDescription",
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
@@ -124,6 +127,7 @@ const postsData = [
         thumbnail: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
         image: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
         description: "waterpoisoningDescription",
+        icons: ["icons/insta.png"],
         unread: false,
         processed: false,
         status: null,
@@ -164,6 +168,7 @@ const postsData = [
         thumbnail: "img/fire_intro.png",
         image: "img/fire_intro.png",
         description: "fireincidentDescription",
+        icons: ["icons/firedpt.png"],
         unread: true,
         processed: false,
         status: null,
@@ -199,6 +204,7 @@ const postsData = [
         thumbnail: "img/pets.png",
         image: "img/pets.png",
         description: "petsDescription",
+        icons: ["icons/insta.png"],
         unread: false,
         processed: false,
         status: null,
@@ -242,6 +248,7 @@ const postsData = [
         thumbnail: "img/memorial.png",
         image: "img/memorial.png",
         description: "celebrityDeathDescription",
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
@@ -278,6 +285,7 @@ const postsData = [
         thumbnail: "img/storm_intro.jpeg",
         image: "img/storm_intro.jpeg",
         description: "weatherAlertDescription",
+        icons: ["icons/Channel9.png"],
         unread: true,
         processed: false,
         status: null,
@@ -311,6 +319,7 @@ const postsData = [
         thumbnail: "img/dogfluencer.png",
         image: "img/dogfluencer.png",
         description: "dogfluencerDescription",
+        icons: ["icons/insta.png"],
         unread: false,
         processed: false,
         status: null,
@@ -347,6 +356,7 @@ const postsData = [
         thumbnail: "img/gasleak_intro.png",
         image: "img/gasleak_intro.png",
         description: "toxicleakDescription",
+        icons: ["icons/firedpt.png"],
         unread: true,
         processed: false,
         status: null,
@@ -376,6 +386,7 @@ const postsData = [
         thumbnail: "img/football_intro.jpeg",
         image: "img/football_intro.jpeg",
         description: "sportspulseDescription",
+        icons: ["icons/Channel1.png"],
         unread: true,
         processed: false,
         status: null,
@@ -694,6 +705,21 @@ function loadPost(postId) {
         postImage.src = post.image;
         postTitle.textContent = translateKey(post.title);
         postDescription.textContent = translateKey(post.description);
+
+        // Update post icons
+        const postIconsContainer = document.getElementById('postIcons');
+        postIconsContainer.innerHTML = '';
+        if (post.icons && Array.isArray(post.icons)) {
+            post.icons.forEach(iconPath => {
+                const iconDiv = document.createElement('div');
+                iconDiv.className = 'post-icon';
+                const iconImg = document.createElement('img');
+                iconImg.src = iconPath;
+                iconImg.alt = 'Icon';
+                iconDiv.appendChild(iconImg);
+                postIconsContainer.appendChild(iconDiv);
+            });
+        }
 
         // Show post view
         showPage(postViewPage);
