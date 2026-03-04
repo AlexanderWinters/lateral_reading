@@ -115,7 +115,7 @@ const postsData = [
             { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: false, reasoningIndex: 4 }
         ],
         imageResults: [
-            { src: "updated_images/military/Military_2.jpeg", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
+            { src: "videos/videoplaceholder.mp4", type: "video", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
             { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] },
             { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation3", date: "extrimistimagedate3", icons: ["icons/alt news.png"] },
             { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] }
@@ -1624,9 +1624,21 @@ function showImageSearchResults() {
                     </div>`;
                 }
 
+                let mediaHtml = '';
+                if (image.type === 'video') {
+                    mediaHtml = `
+                        <video src="${image.src}" muted loop playsinline></video>
+                        <div class="video-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    `;
+                } else {
+                    mediaHtml = `<img src="${image.src}" alt="Search result image">`;
+                }
+
                 imageElement.innerHTML = `
                     <div class="image-container">
-                        <img src="${image.src}" alt="Search result image">
+                        ${mediaHtml}
                     </div>
                     <div class="image-info">
                         ${iconsHtml}
@@ -1639,6 +1651,16 @@ function showImageSearchResults() {
                 `;
 
                 imageElement.addEventListener('click', function() {
+                    const video = this.querySelector('video');
+                    if (video) {
+                        if (video.paused) {
+                            video.play();
+                            this.querySelector('.video-overlay').style.display = 'none';
+                        } else {
+                            video.pause();
+                            this.querySelector('.video-overlay').style.display = 'flex';
+                        }
+                    }
                     toggleImageSelection(this);
                 });
 

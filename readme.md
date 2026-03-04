@@ -122,7 +122,8 @@ Post View → Fact-Check Tools → Evidence Gathering → Decision → Feedback
     ],
     imageResults: [
         {
-            src: "path/to/image",
+            src: "path/to/image_or_video",
+            type: "video", // Optional: 'video' for video playback, defaults to image
             location: "translationKey",
             date: "translationKey",
             icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
@@ -160,9 +161,11 @@ The "Search Results" page has been enhanced with a new **AI Overview** feature, 
 -   **Interactive Links**: Added `showAISummaryCongratulations`, which triggers a positive feedback popup when a user explores the "sources" linked in the AI summary, encouraging lateral reading.
 -   **State Management**: Added `usedAISummaryAsEvidence` to the `postsData` structure to ensure the penalty is only applied once per post.
 
-#### 4. Image Search Enhancements
+#### 4. Image Search and Video Enhancements
 -   **Descriptions**: Added a `location` field (which was previously hidden) to be displayed as a description under each image.
 -   **Icons**: Added support for an optional `icons` array in `imageResults` objects, allowing `.png` icons to be displayed as badges on top of search result images.
+-   **Video Playback**: Implemented support for video results. By setting `type: 'video'` in the `imageResults` data, the result will render as a video player instead of a still image.
+-   **Interactive Player**: Videos include a play icon overlay and can be toggled (play/pause) by clicking on the result item.
 -   **Enhanced UI**: Improved the layout of image search results with better typography and visual indicators.
 
 #### 5. Text Search Enhancements
