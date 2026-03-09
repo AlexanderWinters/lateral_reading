@@ -253,30 +253,27 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
-        forceTextSearchAfterImage: false,
+        forceTextSearchAfterImage: true,
         searchTerms: ["celebrityDeathSearchTerms1", "celebrityDeathSearchTerms2", "celebrityDeathSearchTerms3", "celebrityDeathSearchTerms4"],
         searchResults: [
-            { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", isAd: true, reasoningIndex: 2 },
-            { title: "celebrityDeathtitle2", description: "celebrityDeathdescription2", isAd: true, reasoningIndex: 2 },
-            { title: "celebrityDeathtitle3", description: "celebrityDeathdescription3", isAd: false, reasoningIndex: 0 },
-            { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false, reasoningIndex: 2 },
-            { title: "celebrityDeathtitle4", description: "celebrityDeathdescription4", isAd: false, reasoningIndex: 1 },
-            { title: "celebrityDeathtitle5", description: "celebrityDeathdescription5", isAd: false, reasoningIndex: 0 },
-            { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle14", description: "celebrityDeathdescription14", isAd: false, reasoningIndex: 2 },
-            { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", isAd: false, reasoningIndex: 2 },
-            { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", isAd: false, reasoningIndex: 1 },
-            { title: "celebrityDeathtitle13", description: "celebrityDeathdescription13", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle11", description: "celebrityDeathdescription11", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle12", description: "celebrityDeathdescription12", isAd: false, reasoningIndex: 3 },
-            { title: "celebrityDeathtitle15", description: "celebrityDeathdescription15", isAd: false, reasoningIndex: 5 }
+            { title: "celebrityDeathtitle1", description: "celebrityDeathdescription1", date: "celebrityDeathResultDate1", isAd: true, reasoningIndex: 2 },
+            { title: "celebrityDeathtitle2", description: "celebrityDeathdescription2", date: "celebrityDeathResultDate2", isAd: false, reasoningIndex: 2, icons: ["icons/insta.png"] },
+            { title: "celebrityDeathtitle3", description: "celebrityDeathdescription3", date: "celebrityDeathResultDate3", isAd: false, reasoningIndex: 0, icons: ["icons/X.png"] },
+            { title: "celebrityDeathtitle5", description: "celebrityDeathdescription5", date: "celebrityDeathResultDate5", isAd: false, reasoningIndex: 0 },
+            { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", date: "celebrityDeathResultDate8", isAd: false, reasoningIndex: 1 },
+            { title: "celebrityDeathtitle12", description: "celebrityDeathdescription12", date: "celebrityDeathResultDate12", isAd: false, reasoningIndex: 3, icons: ["icons/insta.png"] },
+            { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", date: "celebrityDeathResultDate10", isAd: false, reasoningIndex: 2 },
+            { title: "celebrityDeathtitle4", description: "celebrityDeathdescription4", date: "celebrityDeathResultDate4", isAd: false, reasoningIndex: 1 },
+            { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", date: "celebrityDeathResultDate6", isAd: false, reasoningIndex: 3 },
+            { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", date: "celebrityDeathResultDate7", isAd: false, reasoningIndex: 2 },
+            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", date: "celebrityDeathResultDate9", isAd: false, reasoningIndex: 3, icons: ["icons/X.png"] },
+            { title: "celebrityDeathtitle11", description: "celebrityDeathdescription11", date: "celebrityDeathResultDate11", isAd: false, reasoningIndex: 3 }
         ],
         imageResults: [
-            { src: "img/celeb1.png", location: "celebrityDeathlocation1", date: "celebrityDeathdate1" },
-            { src: "img/celeb2.png", location: "celebrityDeathlocation2", date: "celebrityDeathdate2" },
-            { src: "img/celeb3.png", location: "celebrityDeathlocation3", date: "celebrityDeathdate3" },
-            { src: "img/celeb4.png", location: "celebrityDeathlocation4", date: "celebrityDeathdate4" }
+            { src: "updated_images/actor_dead/actordied6.png", location: "celebrityDeathlocation1", date: "celebrityDeathdate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/actor_dead/actordied2.png", location: "celebrityDeathlocation2", date: "celebrityDeathdate2", icons: ["icons/insta.png"] },
+            { src: "updated_images/actor_dead/actordied.png", location: "celebrityDeathlocation3", date: "celebrityDeathdate3", icons: ["icons/Channel9.png"] },
+            { src: "updated_images/actor_dead/actordied6.png", location: "celebrityDeathlocation4", date: "celebrityDeathdate4", icons: ["icons/Channel1.png"] }
         ]
     },
     {
@@ -383,8 +380,8 @@ const postsData = [
     {
         id: 11,
         title: "sportspulseTitle",
-        thumbnail: "img/football_intro.jpeg",
-        image: "img/football_intro.jpeg",
+        thumbnail: "updated_images/football/Football_fixd_ESCORTED.png",
+        image: "updated_images/football/Football_fixd_ESCORTED.png",
         description: "sportspulseDescription",
         icons: ["icons/Channel1.png"],
         unread: true,
@@ -404,10 +401,10 @@ const postsData = [
             { title: "sportspulsetitle8", description: "sportspulsedescription8", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/celeb1.png", location: "sportspulselocation1", date: "sportspulsedate1" },
-            { src: "img/celeb2.png", location: "sportspulselocation2", date: "sportspulsedate2" },
-            { src: "img/celeb3.png", location: "sportspulselocation3", date: "sportspulsedate3" },
-            { src: "img/celeb4.png", location: "sportspulselocation4", date: "sportspulsedate4" }
+            { src: "updated_images/football/Football_fixed_SHAME_red.png", location: "sportspulselocation1", date: "sportspulsedate1" },
+            { src: "updated_images/football/Footboll_Film_Falsify.mp4", type:"video", location: "sportspulselocation2", date: "sportspulsedate2" },
+            { src: "updated_images/football/Football_Falsify_11_cut_2.png", location: "sportspulselocation3", date: "sportspulsedate3" },
+            { src: "updated_images/football/Football_fixed_.png", location: "sportspulselocation4", date: "sportspulsedate4" }
         ]
     }
 ];
