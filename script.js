@@ -473,6 +473,66 @@ const postsData = [
             { src: "updated_images/heavy_rain/heavy rain 3.png", location: "heavyrainlocation3", date: "heavyraindate_other" },
             { src: "updated_images/heavy_rain/flooding.mp4", type: "video", location: "heavyrainlocation4", date: "heavyraindate_other" }
         ]
+    },
+    {
+        id: 14,
+        title: "monkeyTitle",
+        thumbnail: "updated_images/monkey/Monkey_Sthlm_6.png",
+        image: "updated_images/monkey/Monkey_Sthlm_6.png",
+        description: "monkeyDescription",
+        icons: ["icons/X.png"],
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        forceTextSearchAfterImage: true,
+        searchTerms: ["monkeysearchTerms1", "monkeysearchTerms2", "monkeysearchTerms3", "monkeysearchTerms4"],
+        searchResults: [
+            { title: "monkeytitle1", description: "monkeydescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2 },
+            { title: "monkeytitle2", description: "monkeydescription2", isAd: false, icons: ["icons/Channel1.png"], date: "monkeydate2", reasoningIndex: 2 },
+            { title: "monkeytitle3", description: "monkeydescription3", isAd: false, icons: ["icons/alt news.png"], date: "monkeydate3", reasoningIndex: 2 },
+            { title: "monkeytitle4", description: "monkeydescription4", isAd: false, icons: ["icons/dn.png"], date: "monkeydate4", reasoningIndex: 2 },
+            { title: "monkeytitle5", description: "monkeydescription5", isAd: false, icons: ["icons/dn.png"], date: "monkeydate5", reasoningIndex: 0 },
+            { title: "monkeytitle6", description: "monkeydescription6", isAd: false, icons: ["icons/Channel9.png"], date: "monkeydate6", reasoningIndex: 0 },
+            { title: "monkeytitle7", description: "monkeydescription7", isAd: false, icons: ["icons/alt news.png"], date: "monkeydate7", reasoningIndex: 1 },
+            { title: "monkeytitle8", description: "monkeydescription8", isAd: false, icons: ["icons/firedpt.png"], date: "monkeydate8", reasoningIndex: 0 },
+            { title: "monkeytitle9", description: "monkeydescription9", isAd: false, icons: ["icons/X.png"], date: "monkeydate9", reasoningIndex: 1 }
+        ],
+        imageResults: [
+            { src: "updated_images/monkey/Monkey_Sthlm_5.jpeg", location: "monkeylocation1", date: "monkeyimagedate1" },
+            { src: "updated_images/monkey/Skate_Meme_1_Vest.mp4", type: "video", location: "monkeylocation2", date: "monkeyimagedate2" },
+            { src: "updated_images/monkey/Skate_Meme_1_Ny-City_2.mp4", type: "video", location: "monkeylocation3", date: "monkeyimagedate3" }
+        ]
+    },
+    {
+        id: 15,
+        title: "baddogTitle",
+        thumbnail: "updated_images/bad_dog/Bad_Dog_Artist_Portrait.png",
+        image: "updated_images/bad_dog/Bad_Dog_Artist_Portrait.png",
+        description: "baddogDescription",
+        icons: ["icons/X.png"],
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: false,
+        forceTextSearchAfterImage: true,
+        searchTerms: ["baddogsearchTerms1", "baddogsearchTerms2", "baddogsearchTerms3", "baddogsearchTerms4"],
+        searchResults: [
+            { title: "baddogtitle1", description: "baddogdescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2, date: "baddogdate1" },
+            { title: "baddogtitle2", description: "baddogdescription2", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogdate2" },
+            { title: "baddogtitle3", description: "baddogdescription3", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 2, date: "baddogdate3" },
+            { title: "baddogtitle4", description: "baddogdescription4", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 2, date: "baddogdate4" },
+            { title: "baddogtitle5", description: "baddogdescription5", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 5, date: "baddogdate5" },
+            { title: "baddogtitle6", description: "baddogdescription6", isAd: false, icons: ["icons/alt news.png"], reasoningIndex: 4, date: "baddogdate6" },
+            { title: "baddogtitle7", description: "baddogdescription7", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogdate7" },
+            { title: "baddogtitle8", description: "baddogdescription8", isAd: false, icons: ["icons/firedpt.png"], reasoningIndex: 4, date: "baddogdate8" },
+            { title: "baddogtitle9", description: "baddogdescription9", isAd: false, icons: ["icons/insta.png"], reasoningIndex: 3, date: "baddogdate9" }
+        ],
+        imageResults: [
+            { src: "updated_images/bad_dog/News_Bad-Dog_to_Hospital.mp4", type: "video", location: "baddoglocation1", date: "baddogimagedate1" },
+            { src: "updated_images/actor_dead/actordied.png", location: "baddoglocation2", date: "baddogimagedate2" },
+            { src: "updated_images/bad_dog/Bad_Dog_Film_BASE.png", location: "baddoglocation3", date: "baddogimagedate3" }
+        ]
     }
 ];
 
