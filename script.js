@@ -439,6 +439,40 @@ const postsData = [
             { src: "updated_images/forest_fire/Forest_Fire_Fake_4.png", location: "forestfirelocation3", date: "forestfiredate3" },
             { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation4", date: "forestfiredate4" }
         ]
+    },
+    {
+        id: 13,
+        title: "heavyrainTitle",
+        thumbnail: "updated_images/heavy_rain/rainindovecity.png",
+        image: "updated_images/heavy_rain/rainindovecity.png",
+        description: "heavyrainDescription",
+        icons: ["icons/X.png"],
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: true,
+        forceTextSearchAfterImage: true,
+        searchTerms: ["heavyrainsearchTerms1", "heavyrainsearchTerms2", "heavyrainsearchTerms3", "heavyrainsearchTerms4"],
+        searchResults: [
+            { title: "heavyraintitle1", description: "heavyraindescription1", isAd: true, icons: ["icons/X.png"], reasoningIndex: 2 },
+            { title: "heavyraintitle2", description: "heavyraindescription2", isAd: true, icons: ["icons/X.png"], reasoningIndex: 2 },
+            { title: "heavyraintitle3", description: "heavyraindescription3", isAd: false, icons: ["icons/X.png"], date: "heavyraindate3", reasoningIndex: 2 },
+            { title: "heavyraintitle4", description: "heavyraindescription4", isAd: false, icons: ["icons/firedpt.png"], date: "heavyraindate4", reasoningIndex: 0 },
+            { title: "heavyraintitle5", description: "heavyraindescription5", isAd: false, icons: ["icons/Channel9.png"], date: "heavyraindate5", reasoningIndex: 1 },
+            { title: "heavyraintitle6", description: "heavyraindescription6", isAd: false, icons: ["icons/X.png"], date: "heavyraindate6", reasoningIndex: 2 },
+            { title: "heavyraintitle7", description: "heavyraindescription7", isAd: false, icons: ["icons/X.png"], date: "heavyraindate7", reasoningIndex: 2 },
+            { title: "heavyraintitle8", description: "heavyraindescription8", isAd: false, icons: ["icons/alt news.png"], date: "heavyraindate8", reasoningIndex: 0 },
+            { title: "heavyraintitle9", description: "heavyraindescription9", isAd: false, icons: ["icons/alt news.png"], date: "heavyraindate9", reasoningIndex: 2 },
+            { title: "heavyraintitle10", description: "heavyraindescription10", isAd: false, icons: ["icons/Channel1.png"], date: "heavyraindate10", reasoningIndex: 1 },
+            { title: "heavyraintitle11", description: "heavyraindescription11", isAd: false, icons: ["icons/dn.png"], date: "heavyraindate11", reasoningIndex: 0 },
+            { title: "heavyraintitle12", description: "heavyraindescription12", isAd: false, icons: ["icons/alt news.png"], date: "heavyraindate12", reasoningIndex: 1 }
+        ],
+        imageResults: [
+            { src: "updated_images/heavy_rain/heavy rain 1.png", location: "heavyrainlocation1", date: "heavyraindate_old" },
+            { src: "updated_images/heavy_rain/heavy rain 2.png", location: "heavyrainlocation2", date: "heavyraindate_other" },
+            { src: "updated_images/heavy_rain/heavy rain 3.png", location: "heavyrainlocation3", date: "heavyraindate_other" },
+            { src: "updated_images/heavy_rain/flooding.mp4", type: "video", location: "heavyrainlocation4", date: "heavyraindate_other" }
+        ]
     }
 ];
 
