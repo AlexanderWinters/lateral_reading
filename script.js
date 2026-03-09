@@ -165,8 +165,8 @@ const postsData = [
         // New TRUE story inserted as the fifth item (after water poisoning)
         id: 9,
         title: "fireincidentTitle",
-        thumbnail: "img/fire_intro.png",
-        image: "img/fire_intro.png",
+        thumbnail: "img/fire1.png",
+        image: "img/fire1.png",
         description: "fireincidentDescription",
         icons: ["icons/firedpt.png"],
         unread: true,
@@ -236,10 +236,10 @@ const postsData = [
             { title: "petstitle22", description: "petsdescription22", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/pets1.png", location: "petslocation1", date: "petsdate1" },
-            { src: "img/pets2.png", location: "petslocation2", date: "petsdate2" },
-            { src: "img/pets3.png", location: "petslocation3", date: "petsdate3" },
-            { src: "img/pets4.png", location: "petslocation4", date: "petsdate4" }
+            { src: "updated_images/pets/petillroom.png", location: "petslocation1", date: "petsdate1" },
+            { src: "img/pets.png", location: "petslocation2", date: "petsdate2" },
+            { src: "updated_images/pets/petilllab.png", location: "petslocation3", date: "petsdate3" },
+            { src: "updated_images/pets/petillroom2.png", location: "petslocation4", date: "petsdate4" }
         ]
     },
     {
@@ -273,7 +273,7 @@ const postsData = [
             { src: "updated_images/actor_dead/actordied6.png", location: "celebrityDeathlocation1", date: "celebrityDeathdate1", icons: ["icons/insta.png"] },
             { src: "updated_images/actor_dead/actordied2.png", location: "celebrityDeathlocation2", date: "celebrityDeathdate2", icons: ["icons/insta.png"] },
             { src: "updated_images/actor_dead/actordied.png", location: "celebrityDeathlocation3", date: "celebrityDeathdate3", icons: ["icons/Channel9.png"] },
-            { src: "updated_images/actor_dead/actordied6.png", location: "celebrityDeathlocation4", date: "celebrityDeathdate4", icons: ["icons/Channel1.png"] }
+            { src: "updated_images/actor_dead/actor_crop.png", location: "celebrityDeathlocation4", date: "celebrityDeathdate4", icons: ["icons/Channel1.png"] }
         ]
     },
     {
@@ -304,17 +304,17 @@ const postsData = [
             { title: "weatherAlerttitle12", description: "weatherAlertdescription12", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/storm2.png", location: "weatherAlertlocation1", date: "weatherAlertdate1" },
-            { src: "img/storm1.png", location: "weatherAlertlocation2", date: "weatherAlertdate2" },
-            { src: "img/storm3.png", location: "weatherAlertlocation3", date: "weatherAlertdate3" },
-            { src: "img/storm4.png", location: "weatherAlertlocation4", date: "weatherAlertdate4" }
+            { src: "updated_images/winter_storm/Winter_Storm_1.mp4", type: "video",location: "weatherAlertlocation1", date: "weatherAlertdate1" },
+            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation2", date: "weatherAlertdate2" },
+            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation3", date: "weatherAlertdate3" },
+            { src: "updated_images/winter_storm/Winter_Storm_Coast_2.jpeg", location: "weatherAlertlocation4", date: "weatherAlertdate4" }
         ]
     },
     {
         id: 8,
         title: "dogfluencerTitle",
-        thumbnail: "img/dogfluencer.png",
-        image: "img/dogfluencer.png",
+        thumbnail: "updated_images/dogfluencer/dogfluencer.png",
+        image: "updated_images/dogfluencer/dogfluencer.png",
         description: "dogfluencerDescription",
         icons: ["icons/insta.png"],
         unread: false,
@@ -341,10 +341,10 @@ const postsData = [
             { title: "dogfluencertitle15", description: "dogfluencerdescription15", isAd: false, reasoningIndex: 2 }
         ],
         imageResults: [
-            { src: "img/dogfluencer3.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
-            { src: "img/dogfluencer2.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
-            { src: "img/dogfluencer1.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
-            { src: "img/dogfluencer4.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
+            { src: "updated_images/dogfluencer/dogfluencer.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
+            { src: "updated_images/dogfluencer/dogfluencergraph1.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
+            { src: "updated_images/dogfluencer/dog_crop.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
+            { src: "updated_images/dogfluencer/dogfluencergraph3engage.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
         ]
     },
     {
@@ -371,10 +371,10 @@ const postsData = [
             { title: "toxicleaktitle8", description: "toxicleakdescription8", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/toxic1.png", location: "toxicleaklocation1", date: "toxicleakdate1" },
-            { src: "img/toxic2.png", location: "toxicleaklocation2", date: "toxicleakdate2" },
-            { src: "img/toxic3.png", location: "toxicleaklocation3", date: "toxicleakdate3" },
-            { src: "img/toxic4.png", location: "toxicleaklocation4", date: "toxicleakdate4" }
+            { src: "img/gasleak_intro.png", location: "toxicleaklocation1", date: "toxicleakdate1" },
+            { src: "img/gasleak_intro.png", location: "toxicleaklocation2", date: "toxicleakdate2" },
+            { src: "updated_images/gas_leak/gasleakbest2.png", location: "toxicleaklocation3", date: "toxicleakdate3" },
+            { src: "updated_images/gas_leak/gasleaklocal best.png", location: "toxicleaklocation4", date: "toxicleakdate4" }
         ]
     },
     {
@@ -405,6 +405,39 @@ const postsData = [
             { src: "updated_images/football/Footboll_Film_Falsify.mp4", type:"video", location: "sportspulselocation2", date: "sportspulsedate2" },
             { src: "updated_images/football/Football_Falsify_11_cut_2.png", location: "sportspulselocation3", date: "sportspulsedate3" },
             { src: "updated_images/football/Football_fixed_.png", location: "sportspulselocation4", date: "sportspulsedate4" }
+        ]
+    },
+    {
+        id: 12,
+        title: "forestfireTitle",
+        thumbnail: "updated_images/forest_fire/Forest_Fire_Fake_1.png",
+        image: "updated_images/forest_fire/Forest_Fire_Fake_1.png",
+        description: "forestfireDescription",
+        icons: ["icons/alt news.png"],
+        unread: true,
+        processed: false,
+        status: null,
+        correctAnswer: false,
+        forceTextSearchAfterImage: true,
+        searchTerms: ["forestfiresearchTerms1", "forestfiresearchTerms2", "forestfiresearchTerms3", "forestfiresearchTerms4"],
+        searchResults: [
+            { title: "forestfiretitle1", description: "forestfiredescription1", isAd: true, reasoningIndex: 2 },
+            { title: "forestfiretitle2", description: "forestfiredescription2", isAd: true, reasoningIndex: 2 },
+            { title: "forestfiretitle3", description: "forestfiredescription3", isAd: false, reasoningIndex: 4 },
+            { title: "forestfiretitle4", description: "forestfiredescription4", isAd: false, reasoningIndex: 1 },
+            { title: "forestfiretitle5", description: "forestfiredescription5", isAd: false, reasoningIndex: 4 },
+            { title: "forestfiretitle6", description: "forestfiredescription6", isAd: false, reasoningIndex: 2 },
+            { title: "forestfiretitle7", description: "forestfiredescription7", isAd: false, reasoningIndex: 3 },
+            { title: "forestfiretitle8", description: "forestfiredescription8", isAd: false, reasoningIndex: 3 },
+            { title: "forestfiretitle9", description: "forestfiredescription9", isAd: false, reasoningIndex: 3 },
+            { title: "forestfiretitle10", description: "forestfiredescription10", isAd: false, reasoningIndex: 2 },
+            { title: "forestfiretitle11", description: "forestfiredescription11", isAd: false, reasoningIndex: 2 }
+        ],
+        imageResults: [
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_2.png", location: "forestfirelocation1", date: "forestfiredate1" },
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_3.png", location: "forestfirelocation2", date: "forestfiredate2" },
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_4.png", location: "forestfirelocation3", date: "forestfiredate3" },
+            { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation4", date: "forestfiredate4" }
         ]
     }
 ];
