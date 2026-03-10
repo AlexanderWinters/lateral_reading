@@ -363,12 +363,12 @@ const postsData = [
         searchResults: [
             { title: "toxicleaktitle1", description: "toxicleakdescription1", isAd: true, reasoningIndex: 2 },
             { title: "toxicleaktitle2", description: "toxicleakdescription2", isAd: true, reasoningIndex: 2 },
-            { title: "toxicleaktitle3", description: "toxicleakdescription3", isAd: false, reasoningIndex: 2 },
-            { title: "toxicleaktitle4", description: "toxicleakdescription4", isAd: false, reasoningIndex: 1 },
-            { title: "toxicleaktitle5", description: "toxicleakdescription5", isAd: false, reasoningIndex: 1 },
-            { title: "toxicleaktitle6", description: "toxicleakdescription6", isAd: false, reasoningIndex: 2 },
-            { title: "toxicleaktitle7", description: "toxicleakdescription7", isAd: false, reasoningIndex: 3 },
-            { title: "toxicleaktitle8", description: "toxicleakdescription8", isAd: false, reasoningIndex: 1 }
+            { title: "toxicleaktitle3", description: "toxicleakdescription3", isAd: false, reasoningIndex: 2, date: "toxicleaktextdate3" },
+            { title: "toxicleaktitle4", description: "toxicleakdescription4", isAd: false, reasoningIndex: 1, date: "toxicleakdate4" },
+            { title: "toxicleaktitle5", description: "toxicleakdescription5", isAd: false, reasoningIndex: 1, date: "toxicleakdate5" },
+            { title: "toxicleaktitle6", description: "toxicleakdescription6", isAd: false, reasoningIndex: 2, date: "toxicleakdate6" },
+            { title: "toxicleaktitle7", description: "toxicleakdescription7", isAd: false, reasoningIndex: 3, date: "toxicleakdate7" },
+            { title: "toxicleaktitle8", description: "toxicleakdescription8", isAd: false, reasoningIndex: 1, date: "toxicleakdate8" },
         ],
         imageResults: [
             { src: "img/gasleak_intro.png", location: "toxicleaklocation1", date: "toxicleakdate1", icons: ["icons/safechem.png"] },
