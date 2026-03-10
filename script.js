@@ -434,17 +434,17 @@ const postsData = [
             { title: "forestfiretitle11", description: "forestfiredescription11", isAd: false, reasoningIndex: 2 }
         ],
         imageResults: [
-            { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation1", date: "forestfiredate1" },
-            { src: "updated_images/forest_fire/Forest_Fire_Fake_3.png", location: "forestfirelocation2", date: "forestfiredate2" },
-            { src: "updated_images/forest_fire/Forest_Fire_Fake_4.png", location: "forestfirelocation3", date: "forestfiredate3" },
-            { src: "updated_images/forest_fire/Forest_Fire_Fake_1.png", location: "forestfirelocation4", date: "forestfiredate4" }
+            { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation1", date: "forestfiredate1", icons: ["icons/visitsweden.png"] },
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_3.png", location: "forestfirelocation2", date: "forestfiredate2", icons: ["icons/CityTruthDaily.png"] },
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_4.png", location: "forestfirelocation3", date: "forestfiredate3", icons: ["icons/redligtwatch.png"] },
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_1.png", location: "forestfirelocation4", date: "forestfiredate4", icons: ["icons/patriotcat.png"] }
         ]
     },
     {
         id: 13,
         title: "heavyrainTitle",
-        thumbnail: "updated_images/heavy_rain/rainindovecity.png",
-        image: "updated_images/heavy_rain/rainindovecity.png",
+        thumbnail: "updated_images/heavy_rain/heavy rain 1.png",
+        image: "updated_images/heavy_rain/heavy rain 1.png",
         description: "heavyrainDescription",
         icons: ["icons/X.png"],
         unread: true,
@@ -468,10 +468,10 @@ const postsData = [
             { title: "heavyraintitle12", description: "heavyraindescription12", isAd: false, icons: ["icons/alt news.png"], date: "heavyraindate12", reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/heavy_rain/heavy rain 1.png", location: "heavyrainlocation1", date: "heavyraindate_old" },
-            { src: "updated_images/heavy_rain/heavy rain 2.png", location: "heavyrainlocation2", date: "heavyraindate_other" },
-            { src: "updated_images/heavy_rain/heavy rain 3.png", location: "heavyrainlocation3", date: "heavyraindate_other" },
-            { src: "updated_images/heavy_rain/flooding.mp4", type: "video", location: "heavyrainlocation4", date: "heavyraindate_other" }
+            { src: "updated_images/heavy_rain/heavy rain 1.png", location: "heavyrainlocation1", date: "heavyraindate_1", icons: ["icons/insta.png"] },
+            { src: "updated_images/heavy_rain/heavy rain 4.png", location: "heavyrainlocation2", date: "heavyraindate_2", icons: ["icons/weather service.png"] },
+            { src: "updated_images/heavy_rain/flooding.mp4", type: "video", location: "heavyrainlocation3", date: "heavyraindate_3", icons: ["icons/insta.png"] },
+            { src: "updated_images/heavy_rain/heavy rain 3.png", location: "heavyrainlocation4", date: "heavyraindate_4", icons: ["icons/insta.png"] }
         ]
     },
     {
