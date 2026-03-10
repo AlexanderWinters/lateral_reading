@@ -205,8 +205,8 @@ const languageData = {
     decisionLearningTip_15_correct: "",
     decisionLearningTip_15_incorrect: "In celebrity death cases, look for official statements from authorities or family representatives. Emotional language, 'exclusive' paywalled content, and unverified video footage are often red flags for misinformation.",
 
-    forestfireTitle: "Scenario forest fire",
-    forestfireDescription: "Illegal immigrants spotted in forest outside of the city last night… Authorities investigating. Tip is false. The “newspaper” is altright spreading rumors.",
+    forestfireTitle: "Illegal immigrants spotted in forest outside of the city last night",
+    forestfireDescription: "Authorities investigating.",
     forestfiresearchTerms1: "Forest fire ritual outside Dove City illegal immigrants",
     forestfiresearchTerms2: "Forest fire Dove City",
     forestfiresearchTerms3: "Ritual fires in forest",
@@ -233,14 +233,16 @@ const languageData = {
     forestfiredescription9: "Not illegal immigrants. The image comes from a traditional midsummer dance in Sweden",
     forestfiredescription10: "Strange ritual fires in forest — What are they hiding?",
     forestfiredescription11: "“I heard they’re planning something bigger tonight.”",
-    forestfirelocation1: "Motion detection camera screenshot",
-    forestfirelocation2: "Satellite thermal image",
-    forestfirelocation3: "Local news report photo",
-    forestfirelocation4: "Original source image: Midsummer dance in Sweden",
-    forestfiredate1: "1 hour ago",
-    forestfiredate2: "3 years ago",
-    forestfiredate3: "1 year ago",
-    forestfiredate4: "Just now",
+
+    forestfirelocation1: "Midsummer song at camping in Sweden",
+    forestfirelocation2: "Strange ritual fires in forest — What are they hiding?",
+    forestfirelocation3: "Illegal immigrants filmed summoning fires to destroy country",
+    forestfirelocation4: "Illegal immigrants secretly filmed in forest. Human sacrifice?",
+
+    forestfiredate1: "Visit Sweden. 2 years ago",
+    forestfiredate2: "City Truth Daily. Yesterday",
+    forestfiredate3: "RedAlertWatch. 1 year ago",
+    forestfiredate4: "PatriotSignal. Just now",
 
     // UI - Decision/Research Popups
     researchFirst: "Research First!",

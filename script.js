@@ -410,15 +410,15 @@ const postsData = [
     {
         id: 12,
         title: "forestfireTitle",
-        thumbnail: "updated_images/forest_fire/Forest_Fire_Fake_1.png",
-        image: "updated_images/forest_fire/Forest_Fire_Fake_1.png",
+        thumbnail: "updated_images/forest_fire/Forest_Fire_Fake_2.png",
+        image: "updated_images/forest_fire/Forest_Fire_Fake_2.png",
         description: "forestfireDescription",
         icons: ["icons/alt news.png"],
         unread: true,
         processed: false,
         status: null,
         correctAnswer: false,
-        forceTextSearchAfterImage: true,
+        forceTextSearchAfterImage: false,
         searchTerms: ["forestfiresearchTerms1", "forestfiresearchTerms2", "forestfiresearchTerms3", "forestfiresearchTerms4"],
         searchResults: [
             { title: "forestfiretitle1", description: "forestfiredescription1", isAd: true, reasoningIndex: 2 },
@@ -434,10 +434,10 @@ const postsData = [
             { title: "forestfiretitle11", description: "forestfiredescription11", isAd: false, reasoningIndex: 2 }
         ],
         imageResults: [
-            { src: "updated_images/forest_fire/Forest_Fire_Fake_2.png", location: "forestfirelocation1", date: "forestfiredate1" },
+            { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation1", date: "forestfiredate1" },
             { src: "updated_images/forest_fire/Forest_Fire_Fake_3.png", location: "forestfirelocation2", date: "forestfiredate2" },
             { src: "updated_images/forest_fire/Forest_Fire_Fake_4.png", location: "forestfirelocation3", date: "forestfiredate3" },
-            { src: "updated_images/forest_fire/Camp_Fire_Orig.jpeg", location: "forestfirelocation4", date: "forestfiredate4" }
+            { src: "updated_images/forest_fire/Forest_Fire_Fake_1.png", location: "forestfirelocation4", date: "forestfiredate4" }
         ]
     },
     {
