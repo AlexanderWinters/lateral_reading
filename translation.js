@@ -856,8 +856,8 @@ const languageData = {
     decisionLearningTip_9_incorrect: "For emergencies, look for confirmation from official sources: fire department, police, city channels, and utilities. Urgent but specific, factual language plus corroborating images/maps usually indicates a legitimate public safety alert.",
 
     // Post 10 (Toxic leak) — should be PUBLISHED
-    toxicleakTitle: "Toxic release in the industrial area – but no one wants to talk about it!",
-    toxicleakDescription: "People are feeling dizzy and nauseous near industryroad. An odorless gas is leaking from the factory, but the fire brigade isn’t saying anything. They’re trying to cover it up! Look at the photo – staff in masks outside the area.",
+    toxicleakTitle: "Toxic Release in the industrial area",
+    toxicleakDescription: "InstaMom. Two minutes ago -- An odorless gas is leaking from the factory",
     toxicleaksearchTerms1: "toxic leak industryroad",
     toxicleaksearchTerms2: "fire brigade statement odorless gas",
     toxicleaksearchTerms3: "factory alarm today",
@@ -882,18 +882,18 @@ const languageData = {
     toxicleakdescription8: "5 minutes ago — Measurements are being taken outside the factory. Current data shows no risk to the public.",
 
     // Image search results
-    toxicleaklocation1: "A news photo shows a training exercise at a chemical lab in a neighboring city last week.",
-    toxicleaklocation2: "A broader photo shows fire trucks further away and staff without masks at the same factory today.",
-    toxicleaklocation3: "Factory website press photo from an annual safety drill showing same mask model.",
-    toxicleaklocation4: "Social media video: Fire brigade cordoned off area. 'Technical inspection underway – no danger.'",
-    toxicleakdate1: "Last week",
-    toxicleakdate2: "Today, 12:14",
-    toxicleakdate3: "1 year ago",
-    toxicleakdate4: "Today, 12:14",
+    toxicleaklocation1: "Good chemistry starts with good safety practices.",
+    toxicleaklocation2: "The government is planning to release chemicals...",
+    toxicleaklocation3: "Measurements are being taken outside the factory. Currently, no risk...",
+    toxicleaklocation4: "Coming back from our hike we saw this smoke...",
+    toxicleakdate1: "SafeChem. 2 years ago",
+    toxicleakdate2: "Truth Signal. 1 year ago",
+    toxicleakdate3: "Public Safety Office. 5 minutes ago",
+    toxicleakdate4: "NatureLover. Just now",
 
     // Post 11: SportPulse Direct
     sportspulseTitle: "Star footballer tests positive for drugs – club stays silent!",
-    sportspulseDescription: "Sender: SportPulse Direct\n\nSources say the country’s most famous football player has tested positive in a drug test. The club refuses to comment. Is this being covered up? Fans deserve the truth. See the photo – the player escorted away after the match.",
+    sportspulseDescription: "SportPulse Direct Sources say the country’s most famous football player has tested positive in a drug test. The club refuses to comment. Is this being covered up? Fans deserve the truth. See the photo – the player escorted away after the match.",
     sportspulsesearchTerms1: "star footballer doping investigation",
     sportspulsesearchTerms2: "football association doping test result",
     sportspulsesearchTerms3: "famous player positive drug test",
@@ -914,14 +914,15 @@ const languageData = {
     sportspulsedescription7: "sportsmedicine.org — 2 days ago. Explains procedures and timelines. Background information.",
     sportspulsetitle8: "No final result yet in high-profile doping case",
     sportspulsedescription8: "governmentinfo.sport — 6 minutes ago. Confirms test under review, urges caution. Public authority.",
-    sportspulselocation1: "Original photo – two years ago, different match. Reused image from a minor injury substitution.",
-    sportspulselocation2: "Wide-angle version – same match. Shows multiple players leaving the pitch; nothing unusual.",
-    sportspulselocation3: "Press photo – anti-doping campaign. Standard press material from the football association’s website.",
-    sportspulselocation4: "Social media photo – today. The player signing autographs. Nothing confirms a positive test.",
-    sportspulsedate1: "2 years ago",
-    sportspulsedate2: "2 years ago",
-    sportspulsedate3: "1 year ago",
-    sportspulsedate4: "Today",
+
+    sportspulselocation1: "Escorted off the pitch.",
+    sportspulselocation2: "What a joke!",
+    sportspulselocation3: "Favorite team entering the pitch!",
+    sportspulselocation4: "Is this what sportsmanship looks like today?",
+    sportspulsedate1: "GoBallers! 1 hour ago",
+    sportspulsedate2: "SportLover. 2 days ago",
+    sportspulsedate3: "Carol. 2 days ago",
+    sportspulsedate4: "MadStewe. 30 minutes ago",
 
     // Heavy Rain
     heavyrainTitle: "Heavy Rain Forecast",

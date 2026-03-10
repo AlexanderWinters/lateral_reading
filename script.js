@@ -353,7 +353,7 @@ const postsData = [
         thumbnail: "img/gasleak_intro.png",
         image: "img/gasleak_intro.png",
         description: "toxicleakDescription",
-        icons: ["icons/firedpt.png"],
+        icons: ["icons/insta.png"],
         unread: true,
         processed: false,
         status: null,
@@ -371,10 +371,10 @@ const postsData = [
             { title: "toxicleaktitle8", description: "toxicleakdescription8", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "img/gasleak_intro.png", location: "toxicleaklocation1", date: "toxicleakdate1" },
-            { src: "img/gasleak_intro.png", location: "toxicleaklocation2", date: "toxicleakdate2" },
-            { src: "updated_images/gas_leak/gasleakbest2.png", location: "toxicleaklocation3", date: "toxicleakdate3" },
-            { src: "updated_images/gas_leak/gasleaklocal best.png", location: "toxicleaklocation4", date: "toxicleakdate4" }
+            { src: "img/gasleak_intro.png", location: "toxicleaklocation1", date: "toxicleakdate1", icons: ["icons/safechem.png"] },
+            { src: "img/gasleak_intro.png", location: "toxicleaklocation2", date: "toxicleakdate2", icons: ["icons/patriotcat.png"] },
+            { src: "updated_images/gas_leak/gasleakbest2.png", location: "toxicleaklocation3", date: "toxicleakdate3", icons: ["icons/Public Safety Office .png"] },
+            { src: "updated_images/gas_leak/gasleaklocal best.png", location: "toxicleaklocation4", date: "toxicleakdate4", icons: ["icons/insta.png"] }
         ]
     },
     {
@@ -383,12 +383,12 @@ const postsData = [
         thumbnail: "updated_images/football/Football_fixd_ESCORTED.png",
         image: "updated_images/football/Football_fixd_ESCORTED.png",
         description: "sportspulseDescription",
-        icons: ["icons/Channel1.png"],
+        icons: ["icons/sportpulse.png"],
         unread: true,
         processed: false,
         status: null,
-        correctAnswer: true,
-        forceTextSearchAfterImage: true,
+        correctAnswer: false,
+        forceTextSearchAfterImage: false,
         searchTerms: ["sportspulsesearchTerms1", "sportspulsesearchTerms2", "sportspulsesearchTerms3", "sportspulsesearchTerms4"],
         searchResults: [
             { title: "sportspulsetitle1", description: "sportspulsedescription1", isAd: true, reasoningIndex: 2 },
@@ -401,10 +401,10 @@ const postsData = [
             { title: "sportspulsetitle8", description: "sportspulsedescription8", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/football/Football_fixed_SHAME_red.png", location: "sportspulselocation1", date: "sportspulsedate1" },
-            { src: "updated_images/football/Footboll_Film_Falsify.mp4", type:"video", location: "sportspulselocation2", date: "sportspulsedate2" },
-            { src: "updated_images/football/Football_Falsify_11_cut_2.png", location: "sportspulselocation3", date: "sportspulsedate3" },
-            { src: "updated_images/football/Football_fixed_.png", location: "sportspulselocation4", date: "sportspulsedate4" }
+            { src: "updated_images/football/Football_fixed_SHAME_red.png", location: "sportspulselocation1", date: "sportspulsedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/football/Footboll_Film_Falsify.mp4", type:"video", location: "sportspulselocation2", date: "sportspulsedate2", icons: ["icons/insta.png"] },
+            { src: "updated_images/football/Football_Falsify_11_cut_2.png", location: "sportspulselocation3", date: "sportspulsedate3", icons: ["icons/insta.png"] },
+            { src: "updated_images/football/Football_fixed_.png", location: "sportspulselocation4", date: "sportspulsedate4", icons: ["icons/X.png"] }
         ]
     },
     {
