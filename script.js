@@ -507,10 +507,10 @@ const postsData = [
     {
         id: 15,
         title: "baddogTitle",
-        thumbnail: "updated_images/bad_dog/Bad_Dog_Artist_Portrait.png",
-        image: "updated_images/bad_dog/Bad_Dog_Artist_Portrait.png",
+        thumbnail: "updated_images/bad_dog/Bad_Dog_Film_BASE.png",
+        image: "updated_images/bad_dog/Bad_Dog_Film_BASE.png",
         description: "baddogDescription",
-        icons: ["icons/X.png"],
+        icons: ["icons/celebrity gossip news.png"],
         unread: true,
         processed: false,
         status: null,
@@ -529,9 +529,10 @@ const postsData = [
             { title: "baddogtitle9", description: "baddogdescription9", isAd: false, icons: ["icons/insta.png"], reasoningIndex: 3, date: "baddogdate9" }
         ],
         imageResults: [
-            { src: "updated_images/bad_dog/News_Bad-Dog_to_Hospital.mp4", type: "video", location: "baddoglocation1", date: "baddogimagedate1" },
-            { src: "updated_images/actor_dead/actordied.png", location: "baddoglocation2", date: "baddogimagedate2" },
-            { src: "updated_images/bad_dog/Bad_Dog_Film_BASE.png", location: "baddoglocation3", date: "baddogimagedate3" }
+            { src: "updated_images/bad_dog/News_Bad-Dog_to_Hospital.mp4", type: "video", location: "baddoglocation1", date: "baddogimagedate1", icons: ["icons/GNN logo.png"] },
+            { src: "updated_images/bad_dog/Bad-Dog_Miss-them.mp4", type: "video", location: "baddoglocation2", date: "baddogimagedate2", icons: ["icons/Channel9.png"] },
+            { src: "updated_images/bad_dog/Bad-Dog_Music_Video_5.mp4", type: "video", location: "baddoglocation3", date: "baddogimagedate3", icons: ["icons/X.png"] },
+            { src: "updated_images/bad_dog/Bad-Dog_News_Loved-by-many.mp4", type: "video", location: "baddoglocation4", date: "baddogimagedate4", icons: ["icons/insta.png"] }
         ]
     }
 ];

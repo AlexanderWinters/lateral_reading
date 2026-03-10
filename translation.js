@@ -155,7 +155,7 @@ const languageData = {
 
 
     baddogTitle: "BAD DOG Found Dead?",
-    baddogDescription: "Social media is exploding with rumors that the legendary artist BAD DOG has passed away. Is it true, or just another celebrity hoax?",
+    baddogDescription: "Celebrity Gossip Channel -- BREAKING: The artist known as BAD DOG found dead at home. Family confirms tragic news.",
     baddogsearchTerms1: "BAD DOG death news today",
     baddogsearchTerms2: "BAD DOG artist found dead home",
     baddogsearchTerms3: "BAD DOG emergency services response",
@@ -178,12 +178,17 @@ const languageData = {
     baddogdescription7: "Emergency services respond to Bad Dog residence. Police confirm ambulance visit but state no death has been reported.",
     baddogdescription8: "Authorities urge public not to share unverified celebrity death claims. Statement warns of misinformation spreading online.",
     baddogdescription9: "“Better to burn out than to fade away!?”",
-    baddoglocation1: "Outside Bad Dog's residence - Recent",
-    baddoglocation2: "Hospital entrance - Unverified",
-    baddoglocation3: "Film set - Old footage",
-    baddogimagedate1: "1 hour ago",
-    baddogimagedate2: "3 hours ago",
-    baddogimagedate3: "2 years ago",
+
+    baddoglocation1: "GNN reports Bad Dog was transported earlier...",
+    baddoglocation2: "Fans gather outside the residence as rumors spread online",
+    baddoglocation3: "Better to burn out than to fade away!!??",
+    baddoglocation4: "Tributes pouring in as supporters await confirmation...",
+
+    baddogimagedate1: "GNN. 4 hour ago",
+    baddogimagedate2: "Channel 9. 3 hours ago",
+    baddogimagedate3: "@BadDogStudios. 8 hours ago",
+    baddogimagedate4: "LoveIsAll. 3 hours ago",
+
     baddogdate1: "3 hours ago",
     baddogdate2: "3 hours ago",
     baddogdate3: "1 hour ago",
