@@ -480,7 +480,7 @@ const postsData = [
         thumbnail: "updated_images/monkey/Monkey_Sthlm_6.png",
         image: "updated_images/monkey/Monkey_Sthlm_6.png",
         description: "monkeyDescription",
-        icons: ["icons/X.png"],
+        icons: ["icons/insta.png"],
         unread: true,
         processed: false,
         status: null,
@@ -499,9 +499,10 @@ const postsData = [
             { title: "monkeytitle9", description: "monkeydescription9", isAd: false, icons: ["icons/X.png"], date: "monkeydate9", reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/monkey/Monkey_Sthlm_5.jpeg", location: "monkeylocation1", date: "monkeyimagedate1" },
-            { src: "updated_images/monkey/Skate_Meme_1_Vest.mp4", type: "video", location: "monkeylocation2", date: "monkeyimagedate2" },
-            { src: "updated_images/monkey/Skate_Meme_1_Ny-City_2.mp4", type: "video", location: "monkeylocation3", date: "monkeyimagedate3" }
+            { src: "updated_images/monkey/Skate_Meme_1_Ny-City_2.mp4", type: "video", location: "monkeylocation1", date: "monkeyimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/monkey/Skate_Meme_1_Vest.mp4", type: "video", location: "monkeylocation2", date: "monkeyimagedate2", icons: ["icons/insta.png"] },
+            { src: "updated_images/monkey/Skate_Meme_1_Dancers_2.mp4", type: "video", location: "monkeylocation3", date: "monkeyimagedate3", icons: ["icons/insta.png"] },
+            { src: "updated_images/monkey/Monkey_Sthlm_6.png", location: "monkeylocation4", date: "monkeyimagedate4", icons: ["icons/insta.png"]}
         ]
     },
     {
