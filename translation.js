@@ -632,14 +632,14 @@ const languageData = {
     petsdescription21: "Comprehensive health database analysis spanning multiple years shows consistent trends",
     petsdescription22: "Professional animal health surveillance confirms absence of any disease outbreak",
 
-    petslocation1: "Image of sick dog from documented outbreak in South Korea",
-    petslocation2: "Close-up of rash on cat's skin from a veterinary textbook",
-    petslocation3: "Current statistics from city veterinary clinics showing normal rates",
-    petslocation4: "Infographic comparing seasonal allergies vs. disease symptoms",
-    petsdate1: "June 2021",
-    petsdate2: "Stock medical image",
-    petsdate3: "Updated today",
-    petsdate4: "Created yesterday",
+    petslocation1: "Waiting rooms filled with pet owners as seasonal allergies lead to more veterinary visits this week.",
+    petslocation2: "Local clinics report more cats and dogs with seasonal allergies...",
+    petslocation3: "Testing confirms no new pathogen detected.",
+    petslocation4: "We're in for a routine check -- Local resident",
+    petsdate1: "Channel 1. 2 years ago",
+    petsdate2: "Dove City News. 3 years ago",
+    petsdate3: "Channel 1. 2 hours ago",
+    petsdate4: "Dove City News. today",
 
 // Celebrity Death Hoax Post (Post 6)
     celebrityDeathTitle: "Beloved actor Adrian Vale is dead",
@@ -731,18 +731,18 @@ const languageData = {
     weatherAlertdescription11: "Meteorological consensus shows weather event within normal seasonal range",
     weatherAlertdescription12: "Official forecast maintains advisory-level status with no emergency declarations",
 
-    weatherAlertlocation1: "Current satellite image from National Weather Service",
-    weatherAlertlocation2: "Ground-level photo showing typical storm clouds",
-    weatherAlertlocation3: "Dramatic photo from different storm system last year",
-    weatherAlertlocation4: "News report screenshot with official weather data",
-    weatherAlertdate1: "Updated 1 hour ago",
-    weatherAlertdate2: "Taken this morning",
-    weatherAlertdate3: "September 2023",
-    weatherAlertdate4: "Published today",
+    weatherAlertlocation1: "Updated advisory: Heavy snowfall and strong winds expected tonight.",
+    weatherAlertlocation2: "Taken this morning -- visibility reduced",
+    weatherAlertlocation3: "Severe lightning and heavy snowfall!",
+    weatherAlertlocation4: "MONSTER superstorm forming off the coast!!!",
+    weatherAlertdate1: "National Weather Service. 1 hour ago",
+    weatherAlertdate2: "@CityCommuteLive. Just now",
+    weatherAlertdate3: "WeatherSpot. 2 years ago",
+    weatherAlertdate4: "StormChaserWorld. 2 hours ago",
 
 
     dogfluencerTitle: "EXPOSED: Popular dog influencer caught buying fake followers",
-    dogfluencerDescription: "Investigation reveals @PuppyPrincessLola has purchased over 100K fake followers while partnering with major pet brands. Followers noticed suspicious spikes in follower count overnight.",
+    dogfluencerDescription: "This looks fishy!! Followers skyrocketed overnight, while engagement fell from about 30% to 10% then to almost none.",
 
 
     dogfluencersearchTerms1: "Influencer fake followers",
@@ -785,18 +785,18 @@ const languageData = {
     dogfluencerdescription15: "Economic impact study on how fraud affects legitimate content creators",
 
 
-    dogfluencerlocation1: "Screenshot of follower analytics showing suspicious overnight spike",
-    dogfluencerlocation2: "Data visualization chart from social media monitoring tool",
-    dogfluencerlocation3: "Email correspondence between influencer and follower-buying service",
-    dogfluencerlocation4: "Comparison of engagement rates before and after follower purchase",
+    dogfluencerlocation1: "Living my best paw-some life today!",
+    dogfluencerlocation2: "Overnight, the number of followers spiked for Fluffy Goldie.",
+    dogfluencerlocation3: "following the boring dog?",
+    dogfluencerlocation4: "The drop in engagement rates of Fluffy_Goldie is evidence of foul play.",
 
 
-    dogfluencerdate1: "Captured last week",
-    dogfluencerdate2: "Generated yesterday",
-    dogfluencerdate3: "Leaked 3 days ago",
-    dogfluencerdate4: "Analysis from this month",
+    dogfluencerdate1: "@Fluffy_Goldie. 1 week ago",
+    dogfluencerdate2: "Channel 1. Yesterday",
+    dogfluencerdate3: "doglover. 1 week ago",
+    dogfluencerdate4: "Channel 1. Yesterday",
 
-    // —— New Story 5 in list (True downtown fire incident) — English ——
+    // —— New Story 9 in list (True downtown fire incident)
     fireincidentTitle: "Fire in central downtown district",
     fireincidentDescription: "A large building in the central part of the city is on fire. Emergency services are on site and urge the public to avoid the area while firefighting is underway.",
 
@@ -837,15 +837,15 @@ const languageData = {
     fireincidentdescription14: "Extinguishing hotspots and monitoring continue.",
 
     // Image search — captions and dates
-    fireincidentlocation1: "Photo: Office building fire, city",
-    fireincidentlocation2: "Emergency vehicles at cordoned area",
-    fireincidentlocation3: "Smoke plume seen from main downtown street",
-    fireincidentlocation4: "Firefighters on the roof during overhaul",
+    fireincidentlocation1: "Remember the big warehouse fire near Central Street",
+    fireincidentlocation2: "Major apartment fire downtown -- heavy smoke visible across several blocks",
+    fireincidentlocation3: "Just passed downtown -- fire trucks everywhere.",
+    fireincidentlocation4: "Crews remain on scene at the downtown structure fire. The building has been fully evacuated.",
 
-    fireincidentdate1: "2017",
-    fireincidentdate2: "2017",
-    fireincidentdate3: "20 minutes ago",
-    fireincidentdate4: "20 minutes ago",
+    fireincidentdate1: "UrbanMemory. Two weeks ago",
+    fireincidentdate2: "Channel 1. Two years ago",
+    fireincidentdate3: "Street Walker. 20 minutes ago",
+    fireincidentdate4: "Dove City Fire Department. Just now",
 
     // Decision Explanations — Post 9 (Downtown fire) — should be PUBLISHED
     decisionReasoning_9_correct_publish: "Correct! This is a verified, ongoing building fire. Multiple official sources (fire department, police, utilities) confirm the event, and the post uses factual, non-sensational language appropriate for public safety. Publishing helps inform the public to avoid the area.",

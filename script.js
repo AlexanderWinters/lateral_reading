@@ -115,10 +115,10 @@ const postsData = [
             { title: "extrimistalerttitle20", description: "extrimistalertdescription20", isAd: false, reasoningIndex: 4 }
         ],
         imageResults: [
-            { src: "videos/videoplaceholder.mp4", type: "video", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
-            { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] },
-            { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation3", date: "extrimistimagedate3", icons: ["icons/alt news.png"] },
-            { src: "updated_images/military/Military_1_Base_1.jpeg", location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] }
+            { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/military/Military_Comercial_Complete_Music.mp4",type: "video", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] },
+            { src: "updated_images/military/Military_Comercial_Shrt_No_Music.mp4", type:"video", location: "extrimistalertlocation3", date: "extrimistimagedate3", icons: ["icons/alt news.png"] },
+            { src: "updated_images/military/Military_Comercial_Shrt_Music.mp4", type:"video",location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] }
         ]
     },
     {
@@ -168,12 +168,12 @@ const postsData = [
         thumbnail: "img/fire1.png",
         image: "img/fire1.png",
         description: "fireincidentDescription",
-        icons: ["icons/firedpt.png"],
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
         correctAnswer: true,
-        forceTextSearchAfterImage: true,
+        forceTextSearchAfterImage: false,
         searchTerms: ["fireincidentsearchTerms1", "fireincidentsearchTerms2", "fireincidentsearchTerms3", "fireincidentsearchTerms4"],
         searchResults: [
             { title: "fireincidenttitle1", description: "fireincidentdescription1", isAd: true, reasoningIndex: 2 },
@@ -192,10 +192,10 @@ const postsData = [
             { title: "fireincidenttitle14", description: "fireincidentdescription14", isAd: false, reasoningIndex: 4 }
         ],
         imageResults: [
-            { src: "img/fire1.png", location: "fireincidentlocation1", date: "fireincidentdate1" },
-            { src: "img/fire2.png", location: "fireincidentlocation2", date: "fireincidentdate2" },
-            { src: "img/fire3.png", location: "fireincidentlocation3", date: "fireincidentdate3" },
-            { src: "img/fire4.png", location: "fireincidentlocation4", date: "fireincidentdate4" }
+            { src: "img/fire1.png", location: "fireincidentlocation1", date: "fireincidentdate1", icons: ["icons/insta.png"] },
+            { src: "img/fire2.png", location: "fireincidentlocation2", date: "fireincidentdate2", icons: ["icons/Channel1.png"] },
+            { src: "img/fire3.png", location: "fireincidentlocation3", date: "fireincidentdate3", icons: ["icons/insta.png"] },
+            { src: "img/fire4.png", location: "fireincidentlocation4", date: "fireincidentdate4", icons: ["icons/firedpt.png"] }
         ]
     },
     {
@@ -204,7 +204,7 @@ const postsData = [
         thumbnail: "img/pets.png",
         image: "img/pets.png",
         description: "petsDescription",
-        icons: ["icons/insta.png"],
+        icons: ["icons/X.png"],
         unread: false,
         processed: false,
         status: null,
@@ -236,10 +236,10 @@ const postsData = [
             { title: "petstitle22", description: "petsdescription22", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/pets/petillroom.png", location: "petslocation1", date: "petsdate1" },
-            { src: "img/pets.png", location: "petslocation2", date: "petsdate2" },
-            { src: "updated_images/pets/petilllab.png", location: "petslocation3", date: "petsdate3" },
-            { src: "updated_images/pets/petillroom2.png", location: "petslocation4", date: "petsdate4" }
+            { src: "updated_images/pets/petillroom.png", location: "petslocation1", date: "petsdate1", icons: ["icons/Channel1.png"] },
+            { src: "img/pets.png", location: "petslocation2", date: "petsdate2", icons: ["icons/DN clean1920.png"] },
+            { src: "updated_images/pets/petilllab.png", location: "petslocation3", date: "petsdate3", icons: ["icons/Channel1.png"] },
+            { src: "updated_images/pets/petillroom2.png", location: "petslocation4", date: "petsdate4", icons: ["icons/DN clean1920.png"] }
         ]
     },
     {
@@ -282,7 +282,7 @@ const postsData = [
         thumbnail: "img/storm_intro.jpeg",
         image: "img/storm_intro.jpeg",
         description: "weatherAlertDescription",
-        icons: ["icons/Channel9.png"],
+        icons: ["icons/X.png"],
         unread: true,
         processed: false,
         status: null,
@@ -304,10 +304,10 @@ const postsData = [
             { title: "weatherAlerttitle12", description: "weatherAlertdescription12", isAd: false, reasoningIndex: 1 }
         ],
         imageResults: [
-            { src: "updated_images/winter_storm/Winter_Storm_1.mp4", type: "video",location: "weatherAlertlocation1", date: "weatherAlertdate1" },
-            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation2", date: "weatherAlertdate2" },
-            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation3", date: "weatherAlertdate3" },
-            { src: "updated_images/winter_storm/Winter_Storm_Coast_2.jpeg", location: "weatherAlertlocation4", date: "weatherAlertdate4" }
+            { src: "updated_images/winter_storm/Winter_Storm_1.mp4", type: "video",location: "weatherAlertlocation1", date: "weatherAlertdate1", icons: ["icons/weather service.png"] },
+            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation2", date: "weatherAlertdate2", icons: ["icons/insta.png"] },
+            { src: "updated_images/winter_storm/Winter_Storm_2.mp4", type: "video", location: "weatherAlertlocation3", date: "weatherAlertdate3", icons: ["icons/insta.png"] },
+            { src: "updated_images/winter_storm/Winter_Storm_Coast_2.jpeg", location: "weatherAlertlocation4", date: "weatherAlertdate4", icons: ["icons/insta.png"] }
         ]
     },
     {
@@ -316,7 +316,7 @@ const postsData = [
         thumbnail: "updated_images/dogfluencer/dogfluencer.png",
         image: "updated_images/dogfluencer/dogfluencer.png",
         description: "dogfluencerDescription",
-        icons: ["icons/insta.png"],
+        icons: ["icons/X.png"],
         unread: false,
         processed: false,
         status: null,
@@ -341,10 +341,10 @@ const postsData = [
             { title: "dogfluencertitle15", description: "dogfluencerdescription15", isAd: false, reasoningIndex: 2 }
         ],
         imageResults: [
-            { src: "updated_images/dogfluencer/dogfluencer.png", location: "dogfluencerlocation1", date: "dogfluencerdate1" },
-            { src: "updated_images/dogfluencer/dogfluencergraph1.png", location: "dogfluencerlocation2", date: "dogfluencerdate2" },
-            { src: "updated_images/dogfluencer/dog_crop.png", location: "dogfluencerlocation3", date: "dogfluencerdate3" },
-            { src: "updated_images/dogfluencer/dogfluencergraph3engage.png", location: "dogfluencerlocation4", date: "dogfluencerdate4" }
+            { src: "updated_images/dogfluencer/dogfluencer.png", location: "dogfluencerlocation1", date: "dogfluencerdate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/dogfluencer/dogfluencergraph1.png", location: "dogfluencerlocation2", date: "dogfluencerdate2", icons: ["icons/Channel1.png"] },
+            { src: "updated_images/dogfluencer/dog_crop.png", location: "dogfluencerlocation3", date: "dogfluencerdate3", icons: ["icons/insta.png"] },
+            { src: "updated_images/dogfluencer/dogfluencergraph3engage.png", location: "dogfluencerlocation4", date: "dogfluencerdate4", icons: ["icons/Channel1.png"] }
         ]
     },
     {
