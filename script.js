@@ -514,15 +514,15 @@ const postsData = [
         forceTextSearchAfterImage: true,
         searchTerms: ["baddogsearchTerms1", "baddogsearchTerms2", "baddogsearchTerms3", "baddogsearchTerms4"],
         searchResults: [
-            { title: "baddogtitle1", description: "baddogdescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2, date: "baddogdate1" },
-            { title: "baddogtitle2", description: "baddogdescription2", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogdate2" },
-            { title: "baddogtitle3", description: "baddogdescription3", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 2, date: "baddogdate3" },
-            { title: "baddogtitle4", description: "baddogdescription4", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 2, date: "baddogdate4" },
-            { title: "baddogtitle5", description: "baddogdescription5", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 5, date: "baddogdate5" },
-            { title: "baddogtitle6", description: "baddogdescription6", isAd: false, icons: ["icons/alt news.png"], reasoningIndex: 4, date: "baddogdate6" },
-            { title: "baddogtitle7", description: "baddogdescription7", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogdate7" },
-            { title: "baddogtitle8", description: "baddogdescription8", isAd: false, icons: ["icons/firedpt.png"], reasoningIndex: 4, date: "baddogdate8" },
-            { title: "baddogtitle9", description: "baddogdescription9", isAd: false, icons: ["icons/insta.png"], reasoningIndex: 3, date: "baddogdate9" }
+            { title: "baddogtitle1", description: "baddogdescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2, date: "baddogtextdate1" },
+            { title: "baddogtitle2", description: "baddogdescription2", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogtextdate2" },
+            { title: "baddogtitle3", description: "baddogdescription3", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 2, date: "baddogtextdate3" },
+            { title: "baddogtitle4", description: "baddogdescription4", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 2, date: "baddogtextdate4" },
+            { title: "baddogtitle5", description: "baddogdescription5", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 5, date: "baddogtextdate5" },
+            { title: "baddogtitle6", description: "baddogdescription6", isAd: false, icons: ["icons/alt news.png"], reasoningIndex: 4, date: "baddogtextdate6" },
+            { title: "baddogtitle7", description: "baddogdescription7", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 4, date: "baddogtextdate7" },
+            { title: "baddogtitle8", description: "baddogdescription8", isAd: false, icons: ["icons/firedpt.png"], reasoningIndex: 4, date: "baddogtextdate8" },
+            { title: "baddogtitle9", description: "baddogdescription9", isAd: false, icons: ["icons/insta.png"], reasoningIndex: 3, date: "baddogtextdate9" }
         ],
         imageResults: [
             { src: "updated_images/bad_dog/News_Bad-Dog_to_Hospital.mp4", type: "video", location: "baddoglocation1", date: "baddogimagedate1", icons: ["icons/GNN logo.png"] },
