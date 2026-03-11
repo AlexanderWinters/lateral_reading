@@ -482,15 +482,14 @@ const postsData = [
         forceTextSearchAfterImage: true,
         searchTerms: ["monkeysearchTerms1", "monkeysearchTerms2", "monkeysearchTerms3", "monkeysearchTerms4"],
         searchResults: [
-            { title: "monkeytitle1", description: "monkeydescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2 },
-            { title: "monkeytitle2", description: "monkeydescription2", isAd: false, icons: ["icons/Channel1.png"], date: "monkeydate2", reasoningIndex: 2 },
-            { title: "monkeytitle3", description: "monkeydescription3", isAd: false, icons: ["icons/alt news.png"], date: "monkeydate3", reasoningIndex: 2 },
-            { title: "monkeytitle4", description: "monkeydescription4", isAd: false, icons: ["icons/dn.png"], date: "monkeydate4", reasoningIndex: 2 },
-            { title: "monkeytitle5", description: "monkeydescription5", isAd: false, icons: ["icons/dn.png"], date: "monkeydate5", reasoningIndex: 0 },
-            { title: "monkeytitle6", description: "monkeydescription6", isAd: false, icons: ["icons/Channel9.png"], date: "monkeydate6", reasoningIndex: 0 },
-            { title: "monkeytitle7", description: "monkeydescription7", isAd: false, icons: ["icons/alt news.png"], date: "monkeydate7", reasoningIndex: 1 },
-            { title: "monkeytitle8", description: "monkeydescription8", isAd: false, icons: ["icons/firedpt.png"], date: "monkeydate8", reasoningIndex: 0 },
-            { title: "monkeytitle9", description: "monkeydescription9", isAd: false, icons: ["icons/X.png"], date: "monkeydate9", reasoningIndex: 1 }
+            { title: "monkeytitle1", description: "monkeydescription1", isAd: true, icons: ["icons/alt news.png"], reasoningIndex: 2, date: "monkeytextdate1" },
+            { title: "monkeytitle2", description: "monkeydescription2", isAd: false, icons: ["icons/alt news.png"], reasoningIndex: 2, date: "monkeytextdate2" },
+            { title: "monkeytitle3", description: "monkeydescription3", isAd: false, icons: ["icons/insta.png"], reasoningIndex: 2, date: "monkeytextdate3" },
+            { title: "monkeytitle4", description: "monkeydescription4", isAd: false, icons: ["icons/CityTruthDaily.png"], reasoningIndex: 2, date: "monkeytextdate4" },
+            { title: "monkeytitle5", description: "monkeydescription5", isAd: false, icons: ["icons/dn.png"], reasoningIndex: 0, date: "monkeytextdate5" },
+            { title: "monkeytitle6", description: "monkeydescription6", isAd: false, icons: ["icons/Channel9.png"], reasoningIndex: 0, date: "monkeytextdate6" },
+            { title: "monkeytitle7", description: "monkeydescription7", isAd: false, icons: ["icons/Channel1.png"], reasoningIndex: 1, date: "monkeytextdate7" },
+            { title: "monkeytitle8", description: "monkeydescription8", isAd: false, icons: ["icons/firedpt.png"], reasoningIndex: 0, date: "monkeytextdate8" }
         ],
         imageResults: [
             { src: "updated_images/monkey/Skate_Meme_1_Ny-City_2.mp4", type: "video", location: "monkeylocation1", date: "monkeyimagedate1", icons: ["icons/insta.png"] },
