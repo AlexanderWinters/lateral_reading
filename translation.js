@@ -139,7 +139,7 @@ const languageData = {
     sportpulsetextdate11: "Dove City Sports Authority · 3 hours ago",
 
     // --- STORY: BADDOG ---
-    aiSummary_15: "Reports of the celebrity BAD DOG's death are <span>unverified and likely false</span>. While social media is filled with rumors and emotional posts, official authorities and the Public Safety Office have confirmed that <span>no death announcement has been issued</span>. Emergency services did respond to the residence, but they have explicitly stated that no death was reported. The viral footage and cryptic social media posts are being used to fuel speculation without concrete evidence.",
+    aiSummary_15: "Reports of the celebrity BAD DOG's death are <span>unverified and likely false</span>. While social media is filled with rumors and emotional posts, official authorities and the Public Safety Office have confirmed that <span>no death announcement has been issued</span>. 🔗 Emergency services did respond to the residence, but they have explicitly stated that no death was reported. 🔗 The viral footage and cryptic social media posts are being used to fuel speculation without concrete evidence. 🔗",
     baddogTitle: "BAD DOG Found Dead?",
     baddogDescription: "Celebrity Gossip Channel -- BREAKING: The artist known as BAD DOG found dead at home. Family confirms tragic news.",
     baddogsearchTerms1: "BAD DOG death news today",
@@ -198,7 +198,9 @@ const languageData = {
     decisionLearningTip_15_incorrect: "In celebrity death cases, look for official statements from authorities or family representatives. Emotional language, 'exclusive' paywalled content, and unverified video footage are often red flags for misinformation.",
 
     // --- STORY: BURNALERT ---
-    aiSummary_9: "Claims of a 'major fire downtown' are <span>not supported by evidence</span>. Local fire departments have confirmed no active major fires in the downtown area. The images being shared are <span>old footage</span> from a 2018 fire in a different city.",
+    aiSummary_9: "Major city fire. Many people have been left homeless and there is extensive damage after the fire that affected large parts of the city. 🔗<br><br>" +
+        "If you see smoke or flames, or notice a strong smell of burning where you are, you should always rely on your own observations. 🔗<br><br>" +
+        "In an emergency, call the emergency number.",
     burnalertTitle: "HOUSES ON FIRE -- authorities COVERING THIS UP!",
     burnalertDescription: "Worriedcitizen. just now -- The fire is spreading, and people are out in the streets without support from firefighters! We must all act now!!",
     burnalertsearchTerms1: "Fire in the city",
@@ -267,7 +269,7 @@ const languageData = {
     decisionLearningTip_9_incorrect: "For emergencies, look for confirmation from official sources: fire department, police, city channels, and utilities. Urgent but specific, factual language plus corroborating images/maps usually indicates a legitimate public safety alert.",
 
     // --- STORY: CELEBRITYDEATH ---
-    aiSummary_6: "Reports of Adrian Vale's death have been <span>confirmed as true</span>. While several 'death hoax' debunking sites and rumors claimed he was alive, official statements from <span>Vale Studios</span> and the <span>Dove City Police</span> have confirmed his passing at age 67. Initial reports were mixed due to past hoaxes, but the latest information from verified official sources confirms the tragic news.",
+    aiSummary_6: "Recently deceased actors include the British-American actress Jill Freud (98), the German actor Udo Kier (81), and the legendary Bollywood actor Dharmendra, who has also passed away at the age of 89. 🔗",
     decisionReasoning_6_correct_publish: "Excellent decision! This is a legitimate news story. While celebrity death hoaxes are common, the evidence from official sources like Vale Studios and the Dove City Police confirms the passing of Adrian Vale. It's important to distinguish between recycled hoaxes and verified official statements during such events.",
     decisionReasoning_6_correct_flag: "Excellent decision! This is a legitimate news story. While celebrity death hoaxes are common, the evidence from official sources like Vale Studios and the Dove City Police confirms the passing of Adrian Vale. It's important to distinguish between recycled hoaxes and verified official statements during such events.",
     decisionReasoning_6_incorrect_publish: "This should not happen with current post setup",
@@ -326,7 +328,7 @@ const languageData = {
     celebrityDeathdate4: "Channel 1. 2 years ago",
 
     // --- STORY: DOGFLUENCER ---
-    aiSummary_8: "Influencers with fake followers can buy them to appear more influential. Fake followers are often automated bots or inactive accounts that do not engage in a genuine way.",
+    aiSummary_8: "Influencers with fake followers can buy them to appear more influential. 🔗 Fake followers are often automated bots or inactive accounts that do not engage in a genuine way. 🔗",
     decisionReasoning_8_correct_publish: "Excellent decision! This is a legitimate investigative story about social media fraud that affects consumers and businesses. The evidence includes verifiable data analytics, documented communication, and follows established patterns of influencer fraud that regulatory bodies actively monitor. This type of investigative journalism serves the public interest by exposing deceptive practices in digital marketing.",
     decisionReasoning_8_correct_flag: "Good instincts to investigate thoroughly, but this appears to be a credible investigative report. While social media can contain false accusations, this story presents verifiable evidence including analytics data, communication records, and fits documented patterns of influencer fraud that affect real businesses and consumers.",
     decisionReasoning_8_incorrect_publish: "This should not happen with current post setup",
@@ -392,7 +394,7 @@ const languageData = {
     dogfluencerdate4: "Channel 1. Yesterday",
 
     // --- STORY: EXTRIMISTALERT ---
-    aiSummary_3: "The military vehicles seen in the video are part of a <span>pre-announced routine exercise</span>. The Ministry of Defense published a schedule for 'Operation Shield' two weeks ago. Claims of a 'coup' or 'martial law' are <span>entirely unfounded</span> and misrepresent standard training activities as a national crisis.",
+    aiSummary_3: "The military vehicles seen in the video are part of a <span>pre-announced routine exercise</span>. 🔗 The Ministry of Defense published a schedule for 'Operation Shield' two weeks ago. 🔗 Claims of a 'coup' or 'martial law' are <span>entirely unfounded</span> and misrepresent standard training activities as a national crisis. 🔗",
     decisionReasoning_3_correct_publish: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
     decisionReasoning_3_correct_flag: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
     decisionReasoning_3_incorrect_publish: "This should have been flagged as misleading. The post takes routine military exercises and frames them as threatening 'takeovers.' The sensationalized interpretation misrepresents normal defense training activities.",
@@ -455,7 +457,7 @@ const languageData = {
     extrimistalertdate4: "Yesterday",
 
     // --- STORY: FIREINCIDENT ---
-    aiSummary_1: "This post claiming a major chemical fire and government cover-up appears to be <span>misinformation</span>. Official emergency services in the area have reported no such incident, and the image used has been traced to a 2021 industrial accident in another country. The sensationalist language and lack of specific details are common indicators of <span>false alerts</span> designed to cause panic.",
+    aiSummary_1: "This post claiming a major chemical fire and government cover-up appears to be <span>misinformation</span>. 🔗 Official emergency services in the area have reported no such incident, and the image used has been traced to a 2021 industrial accident in another country. 🔗 The sensationalist language and lack of specific details are common indicators of <span>false alerts</span> designed to cause panic. 🔗",
     decisionReasoning_1_correct_publish: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
     decisionReasoning_1_correct_flag: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
     decisionReasoning_1_incorrect_publish: "This post should have been flagged as false. The sensationalized language, conspiracy claims about authorities 'covering up' information, and emotional manipulation are classic signs of misinformation designed to spread panic rather than provide factual emergency information.",
@@ -514,6 +516,7 @@ const languageData = {
     fireincidentdate4: "Dove City Fire Department. Just now",
 
     // --- STORY: FORESTFIRE ---
+    aiSummary_12: "Human activity is the primary driver of global forest fires, causing over 84% of wildland fires in the U.S. and up to 99% in some regions, often through neglected campfires, debris burning, equipment failure, and arson. Climate change, accelerated by human-caused greenhouse gas emissions, exacerbates these fires by creating warmer, drier conditions that increase fuel loads and prolong fire seasons 🔗",
     forestfireTitle: "Illegal immigrants spotted in forest outside of the city last night",
     forestfireDescription: "Authorities investigating.",
     forestfiresearchTerms1: "Forest fire ritual outside Dove City illegal immigrants",
@@ -575,7 +578,7 @@ const languageData = {
     decisionLearningTip_12_incorrect: "Always perform a reverse image search on sensational photos. Often, images of normal cultural events are taken out of context to support false and inflammatory narratives. Verify the source of the claims, especially if they come from known biased or fringe 'news' outlets.",
 
     // --- STORY: HEAVYRAIN ---
-    aiSummary_13: "Heavy rainfall can increase the risk of urban flooding and flash floods, especially in areas with poor drainage systems, low-lying neighborhoods, or rivers near capacity. Flash floods can develop quickly—sometimes within minutes—even if rainfall appears moderate at first. However, not every heavy rain forecast results in dangerous flooding; risk depends on intensity, duration, local geography, and preparedness measures.",
+    aiSummary_13: "Heavy rainfall can increase the risk of urban flooding and flash floods, especially in areas with poor drainage systems, low-lying neighborhoods, or rivers near capacity. 🔗 Flash floods can develop quickly—sometimes within minutes—even if rainfall appears moderate at first. 🔗 However, not every heavy rain forecast results in dangerous flooding; risk depends on intensity, duration, local geography, and preparedness measures. 🔗",
     decisionReasoning_13_correct_publish: "Correct decision! While the viral images were misleading or from other locations, the official warnings from the National Weather Service and the Public Safety Office confirm a real risk of heavy rain and flash flooding. Publishing a cautious, evidence-based alert helps the public prepare without causing unnecessary panic.",
     decisionReasoning_13_correct_flag: "The tip is partly true as a risk statement, but the viral 'evidence' of flooding is largely false or non-probative. Flagging it as false is semi-correct, but a publication based on the verified warnings would have been more helpful.",
     decisionReasoning_13_incorrect_publish: "This should not happen with current post setup",
@@ -644,7 +647,7 @@ const languageData = {
     heavyraindate12: "1 hour ago",
 
     // --- STORY: LIBRARY ---
-    aiSummary_2: "There have been plans for attacks against libraries, such as a case where a man planned to burn down an upper secondary school library.<br><br>In addition to physical attacks, libraries have also been hit by IT attacks that have paralysed systems and made it impossible to borrow books.",
+    aiSummary_2: "There have been plans for attacks against libraries, such as a case where a man planned to burn down an upper secondary school library. 🔗<br><br>In addition to physical attacks, libraries have also been hit by IT attacks that have paralysed systems and made it impossible to borrow books. 🔗",
     decisionReasoning_2_correct_publish: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
     decisionReasoning_2_correct_flag: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
     decisionReasoning_2_incorrect_publish: "This post should have been flagged. It spreads unverified threats that could cause public panic. Legitimate security threats are handled by official law enforcement channels, not through social media posts with vague claims and dramatic language.",
@@ -721,7 +724,7 @@ const languageData = {
     librarydate18: "Three weeks ago",
 
     // --- STORY: MONKEY ---
-    aiSummary_14: "Reports of escaped monkeys in the city are <span>confirmed as true</span>. While several viral images and videos circulating on social media are digitally manipulated or from unrelated events, local health authorities and animal control have confirmed multiple sightings in the northern district. The animals likely escaped from private transport, and experts have urged residents not to approach them while search efforts are ongoing.",
+    aiSummary_14: "Monkeys in cities are becoming a growing problem, especially in Asia, with large groups of macaques taking over streets, invading homes, and becoming aggressive in their search for food. A lack of tourists and increased access to junk food have made them more intrusive, leading authorities to carry out sterilization programs and capture operations. 🔗",
     decisionReasoning_14_correct_publish: "Great job! You correctly identified that while some social media evidence was misleading or faked, the core event was confirmed by official sources. Publishing this story with verified facts from the Public Safety Office and Channel 9 helps inform the public responsibly.",
     decisionReasoning_14_correct_flag: "While many images were indeed false or AI-generated, the event itself was real. Flagging it as false might miss the opportunity to warn the public about a confirmed animal escape.",
     decisionReasoning_14_incorrect_publish: "This should not happen with current post setup",
@@ -768,7 +771,7 @@ const languageData = {
     monkeyimagedate4: "JULIESS. Just now",
 
     // --- STORY: PETS ---
-    aiSummary_5: "There is currently no new, widespread infection circulating among pets in the country.",
+    aiSummary_5: "Pets can be affected by several different types of pathogens, ranging from viruses and bacteria to parasites and fungi. Some of these diseases are species-specific, while others are so-called zoonoses, meaning they can spread between animals and humans.  🔗",
     decisionReasoning_5_correct_publish: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
     decisionReasoning_5_correct_flag: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
     decisionReasoning_5_incorrect_publish: "This should have been flagged as animal health misinformation. It uses fear tactics and vague claims about pet diseases without credible veterinary sources. Real pet health emergencies are reported through official veterinary channels with specific symptoms, affected areas, and clear prevention guidance - not mysterious 'new infections' with implied cover-ups.",
@@ -835,6 +838,7 @@ const languageData = {
     petsdate4: "Dove City News. today",
 
     // --- STORY: SPORTSPULSE ---
+    aiSummary_11: "High-profile doping cases have occurred in football. Several players have tested positive for nandrolone, an anabolic steroid that can increase muscle mass and endurance. In other cases, players have been found using clenbuterol, a substance that can improve oxygen uptake and fat burning but is banned in competitive sports. In Nordic leagues, cases have also been reported where players tested positive for DMBA (1,3-dimethylbutylamine), a stimulant-like substance that sometimes appears in dietary supplements. 🔗",
     sportspulseTitle: "Star footballer tests positive for drugs – club stays silent!",
     sportspulseDescription: "SportPulse Direct Sources say the country’s most famous football player has tested positive in a drug test. The club refuses to comment. Is this being covered up? Fans deserve the truth. See the photo – the player escorted away after the match.",
     sportspulsesearchTerms1: "star footballer doping investigation",
@@ -873,7 +877,7 @@ const languageData = {
     sportspulsedate4: "MadStewe. 30 minutes ago",
 
     // --- STORY: TOXICLEAK ---
-    aiSummary_10: "A toxic gas leak can be detected by distinct odors, physical symptoms, or environmental changes in the home. Since some gases are odorless and colorless, it is important to be attentive to both your senses and your body.",
+    aiSummary_10: "A toxic gas leak can be detected by distinct odors, physical symptoms, or environmental changes in the home. 🔗 Since some gases are odorless and colorless, it is important to be attentive to both your senses and your body. 🔗",
     toxicleakTitle: "Toxic Release in the industrial area",
     toxicleakDescription: "InstaMom. Two minutes ago -- An odorless gas is leaking from the factory",
     toxicleaksearchTerms1: "toxic leak industryroad",
@@ -918,7 +922,7 @@ const languageData = {
     decisionLearningTip_10_incorrect: "Sometimes the evidence provided in a tip (like an image) is weak or reused, but the underlying event is still real. Always cross-reference with multiple sources, especially official ones, to get the full picture.",
 
     // --- STORY: WATERPOISONING ---
-    aiSummary_4: "The local water may contain toxins from natural sources, industrial discharges, waste management, and the use of firefighting foam or pesticides.\",//\"There is <span>no evidence</span> of widespread water poisoning. Public health authorities and water utility companies have confirmed that water quality remains within safety standards. The anecdotal reports of 'chemical smells' have not been corroborated by official testing or <span>credible independent sources</span>.",
+    aiSummary_4: "The local water may contain toxins from natural sources, industrial discharges, waste management, and the use of firefighting foam or pesticides.\" + 🔗\n        \"There is <span>no evidence</span> of widespread water poisoning. Public health authorities and water utility companies have confirmed that water quality remains within safety standards. 🔗 The anecdotal reports of 'chemical smells' have not been corroborated by official testing or <span>credible independent sources</span>. 🔗",
     decisionReasoning_4_correct_publish: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
     decisionReasoning_4_correct_flag: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
     decisionReasoning_4_incorrect_publish: "This post should have been flagged as health misinformation. It makes alarming claims about water contamination based on anecdotal reports without official verification. Real water safety issues involve immediate official testing, public health warnings, and clear guidance - not mysterious 'chemical smells' with implied cover-ups.",
@@ -990,7 +994,8 @@ const languageData = {
     waterpoisoningdate13: "Dove City Frontline. One year ago",
 
     // --- STORY: WEATHERALERT ---
-    aiSummary_7: "The claim that a new law will allow the government to seize private property without compensation is <span>inaccurate</span>. While a new zoning bill is being discussed, it includes standard compensation clauses and <span>legal protections</span> for property owners. The post misinterprets specific legal language to create fear.",
+    aiSummary_7: "A severe weather warning indicates that the weather may pose a danger to the public and have serious consequences for society. 🔗<br><br>" +
+        "When a warning is issued, you should follow the advice of the authorities and be prepared to adjust your plans to reduce risks. 🔗",
     decisionReasoning_7_correct_publish: "Correct! This appears to be a legitimate weather alert with appropriate urgency. While the language is strong, it's proportionate to a genuine severe weather event. Official meteorological sources would support publishing accurate weather warnings to help public safety.",
     decisionReasoning_7_correct_flag: "Good instincts to be cautious, but this appears to be a legitimate severe weather alert. The language, while urgent, is appropriate for a genuine emergency situation and would be supported by official meteorological sources.",
     decisionReasoning_7_incorrect_publish: "This should not happen with current post setup",
@@ -1049,9 +1054,6 @@ const languageData = {
     weatherAlertdate4: "StormChaserWorld. 2 hours ago",
 
     // --- STORY: WELLSFARGO ---
-    wellsFargoTitle: "Wells Fargo Scandal",
-    wellsFargoDescription: "Wells Fargo fake accounts scandal: What you need to know.",
-    aiSummary_11: "The viral story about a local hero saving a child from a well is <span>fabricated</span>. No such rescue has been reported to local emergency services or hospitals. The story uses a <span>generic emotional template</span> common in engagement-baiting posts.",
     decisionReasoning_11_correct_publish: "Correct decision! Good job! The text evidence confirms the tip is partly true and supported by official sources. This is publishable news and an important update for the public, even though details are still developing. Publish with caution: Report only confirmed facts, clearly state what is still under investigation, cite official sources, and label the story as ongoing.",
     decisionReasoning_11_correct_flag: "While images alone were inconclusive, official sources confirmed an ongoing investigation. Flagging this as false misses verified information — the correct judgment is to publish with caution.",
     decisionReasoning_11_incorrect_publish: "This should not happen with current post setup",
@@ -1373,7 +1375,7 @@ const languageData = {
     youHaveGathered: "You've gathered",
 
     // --- STORY: BADDOG ---
-    aiSummary_15: "Reports of the celebrity BAD DOG's death are <span>unverified and likely false</span>. While social media is filled with rumors and emotional posts, official authorities and the Public Safety Office have confirmed that <span>no death announcement has been issued</span>. Emergency services did respond to the residence, but they have explicitly stated that no death was reported. The viral footage and cryptic social media posts are being used to fuel speculation without concrete evidence.",
+    aiSummary_15: "Reports of the celebrity BAD DOG's death are <span>unverified and likely false</span>. While social media is filled with rumors and emotional posts, official authorities and the Public Safety Office have confirmed that <span>no death announcement has been issued</span>. 🔗 Emergency services did respond to the residence, but they have explicitly stated that no death was reported. 🔗 The viral footage and cryptic social media posts are being used to fuel speculation without concrete evidence. 🔗",
     baddogDescription: "Celebrity Gossip Channel -- BREAKING: The artist known as BAD DOG found dead at home. Family confirms tragic news.",
     baddogTitle: "BAD DOG Found Dead?",
     baddogdate1: "3 hours ago",
@@ -1501,7 +1503,7 @@ const languageData = {
     decisionReasoning_9_incorrect_publish: "This should not happen with current post setup",
 
     // --- STORY: CELEBRITYDEATH ---
-    aiSummary_6: "Reports of Adrian Vale's death have been <span>confirmed as true</span>. While several 'death hoax' debunking sites and rumors claimed he was alive, official statements from <span>Vale Studios</span> and the <span>Dove City Police</span> have confirmed his passing at age 67. Initial reports were mixed due to past hoaxes, but the latest information from verified official sources confirms the tragic news.",
+    aiSummary_6: "Reports of Adrian Vale's death have been <span>confirmed as true</span>. While several 'death hoax' debunking sites and rumors claimed he was alive, official statements from <span>Vale Studios</span> and the <span>Dove City Police</span> have confirmed his passing at age 67. 🔗 Initial reports were mixed due to past hoaxes, but the latest information from verified official sources confirms the tragic news. 🔗",
     celebrityDeathDescription: " ",
     celebrityDeathResultDate1: "City Truth Daily · 6 minutes ago",
     celebrityDeathResultDate10: "Celebrity Gossip · 1 hour ago",
@@ -1560,7 +1562,7 @@ const languageData = {
     decisionReasoning_6_incorrect_publish: "This should not happen with current post setup",
 
     // --- STORY: DOGFLUENCER ---
-    aiSummary_8: "Influencers with fake followers can buy them to appear more influential. Fake followers are often automated bots or inactive accounts that do not engage in a genuine way.",
+    aiSummary_8: "Influencers with fake followers can buy them to appear more influential. 🔗 Fake followers are often automated bots or inactive accounts that do not engage in a genuine way. 🔗",
     decisionLearningTip_8_correct: "",
     decisionLearningTip_8_incorrect: "Distinguish between personal attacks and legitimate investigations. Look for verifiable evidence like data analytics, documented communications, and broader industry context. Real investigative stories about fraud typically include multiple sources of evidence and address issues that affect consumers or the public interest.",
     decisionReasoning_8_correct_flag: "Good instincts to investigate thoroughly, but this appears to be a credible investigative report. While social media can contain false accusations, this story presents verifiable evidence including analytics data, communication records, and fits documented patterns of influencer fraud that affect real businesses and consumers.",
@@ -1626,7 +1628,7 @@ const languageData = {
     dogfluencertitle9: "Data analysis reveals suspicious follower patterns",
 
     // --- STORY: EXTRIMISTALERT ---
-    aiSummary_3: "The military vehicles seen in the video are part of a <span>pre-announced routine exercise</span>. The Ministry of Defense published a schedule for 'Operation Shield' two weeks ago. Claims of a 'coup' or 'martial law' are <span>entirely unfounded</span> and misrepresent standard training activities as a national crisis.",
+    aiSummary_3: "The military vehicles seen in the video are part of a <span>pre-announced routine exercise</span>. 🔗 The Ministry of Defense published a schedule for 'Operation Shield' two weeks ago. 🔗 Claims of a 'coup' or 'martial law' are <span>entirely unfounded</span> and misrepresent standard training activities as a national crisis. 🔗",
     decisionLearningTip_3_correct: "",
     decisionLearningTip_3_incorrect: "Military exercises are routine and publicly announced. Always check official defense department sources before sharing posts that claim normal military activities are threats to civilian government.",
     decisionReasoning_3_correct_flag: "Well done! This post misrepresents routine military exercises as something sinister. The dramatic language about 'coups' and 'martial law' transforms normal defense training into conspiracy theories. Good fact-checking would reveal this is a scheduled exercise, not a threat to democracy.",
@@ -1689,7 +1691,7 @@ const languageData = {
     extrimistalerttitle9: "City Pulse 2025 exercise designed to test emergency response coordination",
 
     // --- STORY: FIREINCIDENT ---
-    aiSummary_1: "This post claiming a major chemical fire and government cover-up appears to be <span>misinformation</span>. Official emergency services in the area have reported no such incident, and the image used has been traced to a 2021 industrial accident in another country. The sensationalist language and lack of specific details are common indicators of <span>false alerts</span> designed to cause panic.",
+    aiSummary_1: "This post claiming a major chemical fire and government cover-up appears to be <span>misinformation</span>. 🔗 Official emergency services in the area have reported no such incident, and the image used has been traced to a 2021 industrial accident in another country. 🔗 The sensationalist language and lack of specific details are common indicators of <span>false alerts</span> designed to cause panic. 🔗",
     decisionLearningTip_1_correct: "",
     decisionLearningTip_1_incorrect: "Look for official sources when dealing with emergency information. Legitimate emergency alerts come through official channels with clear, factual language rather than conspiracy theories about cover-ups.",
     decisionReasoning_1_correct_flag: "Excellent decision! This post contains classic hallmarks of misinformation: sensationalized language ('COVERING THIS UP!'), emotional manipulation, and lack of credible sources. The dramatic presentation and conspiracy-style framing are red flags for false emergency alerts designed to create panic rather than inform.",
@@ -1809,7 +1811,7 @@ const languageData = {
     forestfiretitle9: "Fact Check: Traditional Midsummer Dance Mistaken for Illegal Ritual",
 
     // --- STORY: HEAVYRAIN ---
-    aiSummary_13: "Heavy rainfall can increase the risk of urban flooding and flash floods, especially in areas with poor drainage systems, low-lying neighborhoods, or rivers near capacity. Flash floods can develop quickly—sometimes within minutes—even if rainfall appears moderate at first. However, not every heavy rain forecast results in dangerous flooding; risk depends on intensity, duration, local geography, and preparedness measures.",
+    aiSummary_13: "Heavy rainfall can increase the risk of urban flooding and flash floods, especially in areas with poor drainage systems, low-lying neighborhoods, or rivers near capacity. 🔗 Flash floods can develop quickly—sometimes within minutes—even if rainfall appears moderate at first. 🔗 However, not every heavy rain forecast results in dangerous flooding; risk depends on intensity, duration, local geography, and preparedness measures. 🔗",
     decisionLearningTip_13_correct: "",
     decisionLearningTip_13_incorrect: "Always distinguish between dramatic but unverified visuals and official meteorological data. Even if people share old or irrelevant photos, the underlying weather warning can be very real and important to communicate.",
     decisionReasoning_13_correct_flag: "The tip is partly true as a risk statement, but the viral 'evidence' of flooding is largely false or non-probative. Flagging it as false is semi-correct, but a publication based on the verified warnings would have been more helpful.",
@@ -1878,7 +1880,7 @@ const languageData = {
     heavyraintitle9: "If It Rains, We Dance. Dove City Doesn’t Hide.",
 
     // --- STORY: LIBRARY ---
-    aiSummary_2: "There have been plans for attacks against libraries, such as a case where a man planned to burn down an upper secondary school library.<br><br>In addition to physical attacks, libraries have also been hit by IT attacks that have paralysed systems and made it impossible to borrow books.",
+    aiSummary_2: "There have been plans for attacks against libraries, such as a case where a man planned to burn down an upper secondary school library. 🔗<br><br>In addition to physical attacks, libraries have also been hit by IT attacks that have paralysed systems and made it impossible to borrow books. 🔗",
     decisionLearningTip_2_correct: "",
     decisionLearningTip_2_incorrect: "When encountering posts about security threats, always look for official law enforcement sources and concrete evidence. Vague threats with dramatic language are often designed to spread fear rather than inform.",
     decisionReasoning_2_correct_flag: "Correct choice! This post spreads unsubstantiated fear about terrorist threats without credible evidence. The vague, threatening language combined with calls for immediate action are typical of posts designed to spread anxiety and potentially incite panic or vigilante responses rather than inform about real threats.",
@@ -1955,7 +1957,7 @@ const languageData = {
     librarytitle9: "Community leaders address social media misinformation about local threats",
 
     // --- STORY: MONKEY ---
-    aiSummary_14: "Reports of escaped monkeys in the city are <span>confirmed as true</span>. While several viral images and videos circulating on social media are digitally manipulated or from unrelated events, local health authorities and animal control have confirmed multiple sightings in the northern district. The animals likely escaped from private transport, and experts have urged residents not to approach them while search efforts are ongoing.",
+    aiSummary_14: "Reports of escaped monkeys in the city are <span>confirmed as true</span>. 🔗 While several viral images and videos circulating on social media are digitally manipulated or from unrelated events, local health authorities and animal control have confirmed multiple sightings in the northern district. 🔗 The animals likely escaped from private transport, and experts have urged residents not to approach them while search efforts are ongoing. 🔗",
     decisionLearningTip_14_correct: "",
     decisionLearningTip_14_incorrect: "Always look for named, official sources like the Public Safety Office or established news channels. Even when viral content seems suspicious, there may be a real underlying event that requires public awareness.",
     decisionReasoning_14_correct_flag: "While many images were indeed false or AI-generated, the event itself was real. Flagging it as false might miss the opportunity to warn the public about a confirmed animal escape.",
@@ -2002,7 +2004,7 @@ const languageData = {
     monkeytitle8: "Animal control working with primate specialists",
 
     // --- STORY: PETS ---
-    aiSummary_5: "There is currently no new, widespread infection circulating among pets in the country.",
+    aiSummary_5: "There is currently no new, widespread infection circulating among pets in the country. 🔗",
     decisionLearningTip_5_correct: "",
     decisionLearningTip_5_incorrect: "Verify pet health claims through official veterinary associations and animal health departments. Legitimate disease outbreaks involve specific symptoms, geographic patterns, and official health guidance rather than vague social media warnings with alarming images.",
     decisionReasoning_5_correct_flag: "Great decision! This post spreads false animal health information designed to create unnecessary panic among pet owners. The dramatic language about 'authorities being silent' combined with alarming images creates fear without credible veterinary evidence. Real disease outbreaks among animals involve official veterinary health alerts, specific symptoms, and clear guidance from animal health authorities.",
@@ -2107,7 +2109,7 @@ const languageData = {
     sportspulsetitle9: "Players focus on football, decline to comment",
 
     // --- STORY: TOXICLEAK ---
-    aiSummary_10: "A toxic gas leak can be detected by distinct odors, physical symptoms, or environmental changes in the home. Since some gases are odorless and colorless, it is important to be attentive to both your senses and your body.",
+    aiSummary_10: "A toxic gas leak can be detected by distinct odors, physical symptoms, or environmental changes in the home. 🔗 Since some gases are odorless and colorless, it is important to be attentive to both your senses and your body. 🔗",
     decisionLearningTip_10_correct: "",
     decisionLearningTip_10_incorrect: "Sometimes the evidence provided in a tip (like an image) is weak or reused, but the underlying event is still real. Always cross-reference with multiple sources, especially official ones, to get the full picture.",
     decisionReasoning_10_correct_flag: "While the initial image was misleading, the event itself is actually happening. Official sources confirmed a small leak and investigation. In this case, the tip was partly true and newsworthy.",
@@ -2152,7 +2154,7 @@ const languageData = {
     toxicleaktitle8: "Emergency alarm confirmed – no spread outside the area",
 
     // --- STORY: WATERPOISONING ---
-    aiSummary_4: "The local water may contain toxins from natural sources, industrial discharges, waste management, and the use of firefighting foam or pesticides.",
+    aiSummary_4: "The local water may contain toxins from natural sources, industrial discharges, waste management, and the use of firefighting foam or pesticides. 🔗",
     decisionLearningTip_4_correct: "",
     decisionLearningTip_4_incorrect: "Always verify health claims through official public health agencies. Water quality is heavily regulated and monitored - legitimate contamination events trigger immediate official responses with testing data, not vague social media rumors about chemical odors.",
     decisionReasoning_4_correct_flag: "Excellent fact-checking! This post spreads health misinformation by making alarming claims about water safety without credible evidence. The vague complaints about 'chemical smells' combined with conspiracy implications about official silence are classic signs of health-related disinformation. Real water contamination events involve immediate official responses, testing results, and clear public health guidance.",
@@ -2224,7 +2226,7 @@ const languageData = {
     waterpoisoningtitle9: "Environmental Protection Agency confirms water quality meets federal standards",
 
     // --- STORY: WEATHERALERT ---
-    aiSummary_7: "The claim that a new law will allow the government to seize private property without compensation is <span>inaccurate</span>. While a new zoning bill is being discussed, it includes standard compensation clauses and <span>legal protections</span> for property owners. The post misinterprets specific legal language to create fear.",
+    aiSummary_7: "The claim that a new law will allow the government to seize private property without compensation is <span>inaccurate</span>. 🔗 While a new zoning bill is being discussed, it includes standard compensation clauses and <span>legal protections</span> for property owners. 🔗 The post misinterprets specific legal language to create fear. 🔗",
     decisionLearningTip_7_correct: "",
     decisionLearningTip_7_incorrect: "Distinguish between sensationalized misinformation and legitimate emergency warnings. Check official weather services to verify severe weather alerts - urgent language can be appropriate when public safety is at risk.",
     decisionReasoning_7_correct_flag: "Good instincts to be cautious, but this appears to be a legitimate severe weather alert. The language, while urgent, is appropriate for a genuine emergency situation and would be supported by official meteorological sources.",
@@ -2283,7 +2285,7 @@ const languageData = {
     weatherAlerttitle9: "National Weather Service",
 
     // --- STORY: WELLSFARGO ---
-    aiSummary_11: "The viral story about a local hero saving a child from a well is <span>fabricated</span>. No such rescue has been reported to local emergency services or hospitals. The story uses a <span>generic emotional template</span> common in engagement-baiting posts.",
+    aiSummary_11: "The viral story about a local hero saving a child from a well is <span>fabricated</span>. 🔗 No such rescue has been reported to local emergency services or hospitals. 🔗 The story uses a <span>generic emotional template</span> common in engagement-baiting posts. 🔗",
     decisionLearningTip_11_correct: "",
     decisionLearningTip_11_incorrect: "When a famous person is involved, verified suspicion can be published with caution. Report only confirmed facts, avoid conclusions, cite official sources, and clearly state that the case is under investigation.",
     decisionReasoning_11_correct_flag: "While images alone were inconclusive, official sources confirmed an ongoing investigation. Flagging this as false misses verified information — the correct judgment is to publish with caution.",
@@ -2434,7 +2436,7 @@ const languageData = {
     sportpulsetextdate9: "SportsInsider Blog · 1 timme sedan",
 
     // --- STORY: BADDOG ---
-    aiSummary_15: "Rapporter om kändisen BAD DOGs död är <span>obekräftade och troligen falska</span>. Medan sociala medier är fyllda med rykten och känslosamma inlägg har officiella myndigheter och Public Safety Office bekräftat att <span>ingen dödsförklaring har utfärdats</span>. Räddningstjänsten svarade på ett anrop till bostaden, men de har uttryckligen angett att ingen död har rapporterats. Det virala filmmaterialet och kryptiska inlägg på sociala medier används för att underblåsa spekulationer utan konkreta bevis.",
+    aiSummary_15: "Rapporter om kändisen BAD DOGs död är <span>obekräftade och troligen falska</span>. 🔗 Medan sociala medier är fyllda med rykten och känslosamma inlägg har officiella myndigheter och Public Safety Office bekräftat att <span>ingen dödsförklaring har utfärdats</span>. 🔗 Räddningstjänsten svarade på ett anrop till bostaden, men de har uttryckligen angett att ingen död har rapporterats. 🔗 Det virala filmmaterialet och kryptiska inlägg på sociala medier används för att underblåsa spekulationer utan konkreta bevis. 🔗",
     baddogTitle: "BAD DOG hittad död?",
     baddogDescription: "Sociala medier exploderar av rykten om att den legendariska artisten BAD DOG har gått bort. Är det sant, eller bara ännu en kändisbluff?",
     baddogsearchTerms1: "BAD DOG dödsfall nyheter idag",
@@ -2493,7 +2495,7 @@ const languageData = {
     baddoglocation4: "Hyllningarna strömmar in medan supportrar väntar på bekräftelse...",
 
     // --- STORY: BURNALERT ---
-    aiSummary_9: "Påståenden om en 'stor brand i centrum' <span>stöds inte av bevis</span>. Lokala brandkårer har bekräftat att det inte finns några aktiva stora bränder i centrumområdet. Bilderna som delas är <span>gammalt filmmaterial</span> från en brand 2018 i en annan stad.",
+    aiSummary_9: "Påståenden om en 'stor brand i centrum' <span>stöds inte av bevis</span>. 🔗 Lokala brandkårer har bekräftat att det inte finns några aktiva stora bränder i centrumområdet. 🔗 Bilderna som delas är <span>gammalt filmmaterial</span> från en brand 2018 i en annan stad. 🔗",
     decisionReasoning_9_correct_publish: "Korrekt! Detta är en bekräftad pågående byggnadsbrand. Flera officiella källor (räddningstjänst, polis, elbolag) styrker händelsen och inlägget använder saklig, icke-sensationell information som är lämplig för allmän säkerhet. Publicering hjälper allmänheten att undvika området.",
     decisionReasoning_9_correct_flag: "Bra att vara försiktig, men i detta fall är storyn sann. Officiella meddelanden och bilder från platsen bekräftar händelsen. Brådskande men sakligt språk är rimligt vid en händelse som rör allmän säkerhet.",
     decisionReasoning_9_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
@@ -2563,7 +2565,7 @@ const languageData = {
     burnalertimagedate4: "Dovetown News. Två år sedan",
 
     // --- STORY: CELEBRITYDEATH ---
-    aiSummary_6: "Rapporter om Adrian Vales död har <span>bekräftats som sanna</span>. Medan flera webbplatser som motverkar 'dödsbluffar' och rykten hävdade att han levde, har officiella uttalanden från <span>Vale Studios</span> och <span>polisen i Dove City</span> bekräftat hans bortgång vid 67 års ålder. De första rapporterna var blandade på grund av tidigare bluffar, men den senaste informationen från verifierade officiella källor bekräftar de tragiska nyheterna.",
+    aiSummary_6: "Rapporter om Adrian Vales död har <span>bekräftats som sanna</span>. 🔗 Medan flera webbplatser som motverkar 'dödsbluffar' och rykten hävdade att han levde, har officiella uttalanden från <span>Vale Studios</span> och <span>polisen i Dove City</span> bekräftat hans bortgång vid 67 års ålder. 🔗 De första rapporterna var blandade på grund av tidigare bluffar, men den senaste informationen från verifierade officiella källor bekräftar de tragiska nyheterna. 🔗",
     decisionReasoning_6_correct_publish: "Utmärkt beslut! Detta är en legitim nyhet. Även om dödsbluffar om kändisar är vanliga, bekräftar bevisen från officiella källor som Vale Studios och polisen i Dove City att Adrian Vale har gått bort. Det är viktigt att skilja mellan återanvända bluffar och verifierade officiella uttalanden vid sådana händelser.",
     decisionReasoning_6_correct_flag: "Utmärkt beslut! Detta är en legitim nyhet. Även om dödsbluffar om kändisar är vanliga, bekräftar bevisen från officiella källor som Vale Studios och polisen i Dove City att Adrian Vale har gått bort. Det är viktigt att skilja mellan återanvända bluffar och verifierade officiella uttalanden vid sådana händelser.",
     decisionReasoning_6_incorrect_publish: "Detta bör inte hända med nuvarande inläggsinställningar",
@@ -2622,7 +2624,7 @@ const languageData = {
     celebrityDeathdate4: "Idag",
 
     // --- STORY: DOGFLUENCER ---
-    aiSummary_8: "Videon som påstås visa en 'iscensatt' protest är i själva verket <span>felkontextualiserat filmmaterial</span> från en filminspelning. Oberoende faktagranskare har identifierat platsen och produktionsbolaget som var inblandat. Protestevenemangen som äger rum i staden är <span>verkliga och dokumenterade</span> av flera nyhetsmedier.",
+    aiSummary_8: "Videon som påstås visa en 'iscensatt' protest är i själva verket <span>felkontextualiserat filmmaterial</span> från en filminspelning. 🔗 Oberoende faktagranskare har identifierat platsen och produktionsbolaget som var inblandat. 🔗 Protestevenemangen som äger rum i staden är <span>verkliga och dokumenterade</span> av flera nyhetsmedier. 🔗",
     decisionReasoning_8_correct_publish: "Utmärkt beslut! Detta är en legitim granskande artikel om sociala mediers bluffmetoder som påverkar konsumenter och företag. Bevisen omfattar verifierbar dataanalys, dokumenterad kommunikation och kända mönster av influencer-bedrägeri som myndigheter bevakar. Denna typ av journalistik ligger i allmänhetens intresse.",
     decisionReasoning_8_correct_flag: "Bra att du undersöker noggrant, men detta framstår som en trovärdig granskande artikel. Trots att sociala medier kan innehålla falska anklagelser presenterar denna story verifierbar bevisning – analysdata, korrespondens och mönster som överensstämmer med kända fall.",
     decisionReasoning_8_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
@@ -2688,7 +2690,7 @@ const languageData = {
     dogfluencertextdate9: "Channel 1. igår",
 
     // --- STORY: EXTRIMISTALERT ---
-    aiSummary_3: "De militärfordon som syns i videon är en del av en <span>förannonserad rutinövning</span>. Försvarsministeriet publicerade ett schema för 'Operation Shield' för två veckor sedan. Påståenden om en 'statskupp' eller 'undantagstillstånd' är <span>helt ogrundade</span> och felrepresenterar standardövningar som en nationell kris.",
+    aiSummary_3: "De militärfordon som syns i videon är en del av en <span>förannonserad rutinövning</span>. 🔗 Försvarsministeriet publicerade ett schema för 'Operation Shield' för två veckor sedan. 🔗 Påståenden om en 'statskupp' eller 'undantagstillstånd' är <span>helt ogrundade</span> och felrepresenterar standardövningar som en nationell kris. 🔗",
     decisionReasoning_3_correct_publish: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
     decisionReasoning_3_correct_flag: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
     decisionReasoning_3_incorrect_publish: "Detta borde ha flaggats som vilseledande. Inlägget tar rutinmässiga militärövningar och framställer dem som hotfulla \"övertaganden\". Den sensationslystna tolkningen förvanskar normala försvarsaktiviteter.",
@@ -2751,7 +2753,7 @@ const languageData = {
     extrimistalertdate4: "Igår",
 
     // --- STORY: FIREINCIDENT ---
-    aiSummary_1: "Det här inlägget som påstår en stor kemisk brand och statlig mörkläggning verkar vara <span>felaktig information</span>. Officiella räddningstjänster i området har inte rapporterat någon sådan incident, och bilden som använts har spårats till en industriolycka 2021 i ett annat land. Det sensationella språket och avsaknaden av specifika detaljer är vanliga indikatorer på <span>falska larm</span> utformade för att orsaka panik.",
+    aiSummary_1: "Det här inlägget som påstår en stor kemisk brand och statlig mörkläggning verkar vara <span>felaktig information</span>. 🔗 Officiella räddningstjänster i området har inte rapporterat någon sådan incident, och bilden som använts har spårats till en industriolycka 2021 i ett annat land. 🔗 Det sensationella språket och avsaknaden av specifika detaljer är vanliga indikatorer på <span>falska larm</span> utformade för att orsaka panik. 🔗",
     decisionReasoning_1_correct_publish: "Utmärkt beslut! Inlägget har klassiska kännetecken för desinformation: sensationslyrligt språk (\"DÖLJER DETTA!\"), känslomässig manipulation och brist på trovärdiga källor. Den dramatiska presentationen och konspiratoriska inramningen är varningsflaggor för falska nödlarm avsedda att skapa panik snarare än att informera.",
     decisionReasoning_1_correct_flag: "Utmärkt beslut! Inlägget har klassiska kännetecken för desinformation: sensationslyrligt språk (\"DÖLJER DETTA!\"), känslomässig manipulation och brist på trovärdiga källor. Den dramatiska presentationen och konspiratoriska inramningen är varningsflaggor för falska nödlarm avsedda att skapa panik snarare än att informera.",
     decisionReasoning_1_incorrect_publish: "Detta inlägg borde ha flaggats som falskt. Det sensationslyrliga språket, konspirationspåståenden om att myndigheter \"döljer\" information och känslomässig manipulation är klassiska tecken på desinformation som sprider panik snarare än faktabaserad nödinformation.",
@@ -2814,7 +2816,7 @@ const languageData = {
     fireincidenttextdate9: "CityLiveTrafficCam · 15 minuter sedan",
 
     // --- STORY: FORESTFIRE ---
-    aiSummary_12: "Mänsklig aktivitet är den främsta orsaken till globala skogsbränder och orsakar över 84 % av skogsbränderna i USA och upp till 99 % i vissa regioner, ofta genom försummade lägereldar, eldning av skräp, utrustningsfel och anlagda bränder. Klimatförändringar, påskyndade av människoorsakade växthusgasutsläpp, förvärrar dessa bränder genom att skapa varmare och torrare förhållanden som ökar mängden brännbart material och förlänger brandsäsongerna.",
+    aiSummary_12: "Mänsklig aktivitet är den främsta orsaken till globala skogsbränder och orsakar över 84 % av skogsbränderna i USA och upp till 99 % i vissa regioner, ofta genom försummade lägereldar, eldning av skräp, utrustningsfel och anlagda bränder. 🔗 Klimatförändringar, påskyndade av människoorsakade växthusgasutsläpp, förvärrar dessa bränder genom att skapa varmare och torrare förhållanden som ökar mängden brännbart material och förlänger brandsäsongerna. 🔗",
     forestfireTitle: "Scenario skogsbrand",
     forestfireDescription: "Illegala immigranter siktade i skogen utanför staden i natt... Myndigheterna utreder. Tipset är falskt. \"Tidningen\" är högerextrem och sprider rykten.",
     forestfiresearchTerms1: "Skogsbrand ritual utanför Dove City illegala immigranter",
@@ -2876,7 +2878,7 @@ const languageData = {
     decisionLearningTip_12_incorrect: "Gör alltid en omvänd bildsökning på sensationella foton. Ofta tas bilder från normala kulturella evenemang ur sitt sammanhang för att stödja falska och upphetsande narrativ. Verifiera källan till påståendena, särskilt om de kommer från kända partiska eller extrema 'nyhetskanaler'.",
 
     // --- STORY: HEAVYRAIN ---
-    aiSummary_13: "Kraftiga regn kan öka risken för urbana översvämningar och plötsliga översvämningar, särskilt i områden med dåliga dräneringssystem, låglänta kvarter eller floder nära sin kapacitet. Plötsliga översvämningar kan utvecklas snabbt – ibland inom några minuter – även om regnet först verkar måttligt. Men alla prognoser om kraftigt regn leder inte till farliga översvämningar; risken beror på intensitet, varaktighet, lokal geografi och beredskapsåtgärder.",
+    aiSummary_13: "Kraftiga regn kan öka risken för urbana översvämningar och plötsliga översvämningar, särskilt i områden med dåliga dräneringssystem, låglänta kvarter eller floder nära sin kapacitet. 🔗 Plötsliga översvämningar kan utvecklas snabbt – ibland inom några minuter – även om regnet först verkar måttligt. 🔗 Men alla prognoser om kraftigt regn leder inte till farliga översvämningar; risken beror på intensitet, varaktighet, lokal geografi och beredskapsåtgärder. 🔗",
     heavyrainTitle: "Prognos för kraftigt regn",
     heavyrainDescription: "Dove City kommer att översvämmas i natt!! Kolla in dessa bilder på det stigande vattnet!",
     heavyrainsearchTerms1: "Kraftigt regn Dove City översvämning i natt",
@@ -2947,7 +2949,7 @@ const languageData = {
     heavyraindate_4: "MyCottageIsCozy. 2 timmar sedan",
 
     // --- STORY: LIBRARY ---
-    aiSummary_2: "Det har funnits planer på attacker mot bibliotek, som i ett fall där en man planerade att bränna ner ett gymnasiebibliotek.<br><br>Utöver fysiska attacker har bibliotek även drabbats av IT-attacker som har lamslagit system och gjort det omöjligt att låna böcker.",
+    aiSummary_2: "Det har funnits planer på attacker mot bibliotek, som i ett fall där en man planerade att bränna ner ett gymnasiebibliotek. 🔗<br><br>Utöver fysiska attacker har bibliotek även drabbats av IT-attacker som har lamslagit system och gjort det omöjligt att låna böcker. 🔗",
     decisionReasoning_2_correct_publish: "Korrekt val! Inlägget sprider ogrundad rädsla för terrorhot utan trovärdiga bevis. Det vaga, hotfulla språket i kombination med uppmaningar till omedelbar handling är typiskt för inlägg som vill skapa oro och i värsta fall hetsa till panik eller självtäkt snarare än att informera om verkliga hot.",
     decisionReasoning_2_correct_flag: "Korrekt val! Inlägget sprider ogrundad rädsla för terrorhot utan trovärdiga bevis. Det vaga, hotfulla språket i kombination med uppmaningar till omedelbar handling är typiskt för inlägg som vill skapa oro och i värsta fall hetsa till panik eller självtäkt snarare än att informera om verkliga hot.",
     decisionReasoning_2_incorrect_publish: "Detta inlägg borde ha flaggats. Det sprider overifierade hot som kan skapa allmän panik. Legitim säkerhetsinformation hanteras av myndigheter, inte via sociala medier med vaga påståenden och dramatisk ton.",
@@ -3024,7 +3026,7 @@ const languageData = {
     libraryimagedate4: "LateNightReport 3 dagar sedan.",
 
     // --- STORY: MONKEY ---
-    aiSummary_14: "Rapporter om förrymda apor i staden har <span>bekräftats som sanna</span>. Medan flera virala bilder och videor som cirkulerar på sociala medier är digitalt manipulerade eller från orelaterade händelser, har lokala hälsomyndigheter och djurkontroll bekräftat flera iakttagelser i det norra distriktet. Djuren rymde troligen från en privat transport, och experter har uppmanat invånare att inte närma sig dem medan sökandet pågår.",
+    aiSummary_14: "Rapporter om förrymda apor i staden har <span>bekräftats som sanna</span>. 🔗 Medan flera virala bilder och videor som cirkulerar på sociala medier är digitalt manipulerade eller från orelaterade händelser, har lokala hälsomyndigheter och djurkontroll bekräftat flera iakttagelser i det norra distriktet. 🔗 Djuren rymde troligen från en privat transport, och experter har uppmanat invånare att inte närma sig dem medan sökandet pågår. 🔗",
     monkeyTitle: "Varning för förrymda apor",
     monkeyDescription: "Flera iakttagelser av apor i staden! Rapporter om kaos i trafiken och bostadsområden. Är detta ett statligt program som gått fel?",
     monkeysearchTerms1: "Apor i staden rymt från fångenskap",
@@ -3081,7 +3083,7 @@ const languageData = {
     monkeytextdate8: "Public Safety Office · 1 timme sedan",
 
     // --- STORY: PETS ---
-    aiSummary_5: "Den 'nya husdjursinfektionen' som beskrivs i inlägget har <span>inte erkänts</span> av några stora veterinärorganisationer. De beskrivna symtomen är generiska och kan gälla många vanliga, behandlingsbara tillstånd. Experter menar att detta är en <span>skrämseltaktik</span> som används för att driva engagemang eller marknadsföra obeprövade husdjursprodukter.",
+    aiSummary_5: "Den 'nya husdjursinfektionen' som beskrivs i inlägget har <span>inte erkänts</span> av några stora veterinärorganisationer. 🔗 De beskrivna symtomen är generiska och kan gälla många vanliga, behandlingsbara tillstånd. 🔗 Experter menar att detta är en <span>skrämseltaktik</span> som används för att driva engagemang eller marknadsföra obeprövade husdjursprodukter. 🔗",
     decisionReasoning_5_correct_publish: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
     decisionReasoning_5_correct_flag: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
     decisionReasoning_5_incorrect_publish: "Detta borde ha flaggats som djurhälsodesinformation. Det använder skrämseltaktik och vaga påståenden utan trovärdiga veterinärkällor. Riktiga nödlägen rapporteras via officiella kanaler med specifika symtom, drabbade områden och förebyggande råd – inte mystiska \"nya infektioner\".",
@@ -3186,7 +3188,7 @@ const languageData = {
     sportspulsetitle9: "Spelare fokuserar på fotboll, avböjer att kommentera",
 
     // --- STORY: TOXICLEAK ---
-    aiSummary_10: "Det 'läckta dokumentet' som visar en hemlig skattehöjning är en <span>förfalskning</span>. Myndighetspersoner har påpekat flera inkonsekvenser i dokumentets formatering och terminologi. Ingen sådan skattehöjning <span>övervägs</span> för närvarande.",
+    aiSummary_10: "Det 'läckta dokumentet' som visar en hemlig skattehöjning är en <span>förfalskning</span>. 🔗 Myndighetspersoner har påpekat flera inkonsekvenser i dokumentets formatering och terminologi. 🔗 Ingen sådan skattehöjning <span>övervägs</span> för närvarande. 🔗",
     toxicleakTitle: "Giftutsläpp i industriområdet – men ingen vill prata om det!",
     toxicleakDescription: "Människor känner sig yrsliga och illamående nära Industrivägen. En luktfri gas läcker från fabriken, men brandkåren säger ingenting. De försöker mörka det! Titta på bilden – personal i masker utanför området.",
     toxicleaksearchTerms1: "giftutsläpp industrivägen",
@@ -3231,7 +3233,7 @@ const languageData = {
     toxicleaktextdate4: "kommunen. 10 minuter sedan",
 
     // --- STORY: WATERPOISONING ---
-    aiSummary_4: "Det finns <span>inga bevis</span> för utbredd vattenförgiftning. Folkhälsomyndigheter och vattenverk har bekräftat att vattenkvaliteten ligger inom säkerhetsstandarderna. De anekdotiska rapporterna om 'kemisk lukt' har inte bekräftats av officiella tester eller <span>trovärdiga oberoende källor</span>.",
+    aiSummary_4: "Det finns <span>inga bevis</span> för utbredd vattenförgiftning. 🔗 Folkhälsomyndigheter och vattenverk har bekräftat att vattenkvaliteten ligger inom säkerhetsstandarderna. 🔗 De anekdotiska rapporterna om 'kemisk lukt' har inte bekräftats av officiella tester eller <span>trovärdiga oberoende källor</span>. 🔗",
     decisionReasoning_4_correct_publish: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
     decisionReasoning_4_correct_flag: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
     decisionReasoning_4_incorrect_publish: "Detta inlägg borde ha flaggats som hälsodesinformation. Det larmar om vattenförorening utifrån anekdotiska uppgifter utan officiell verifiering. Riktiga vattenproblem innebär omedelbara tester, varningar och tydliga råd – inte mystiska \"kemiska lukter\" med antydda mörkläggningar.",
@@ -3303,7 +3305,7 @@ const languageData = {
     waterpoisoningimagedate4: "Noga och klok. Igår",
 
     // --- STORY: WEATHERALERT ---
-    aiSummary_7: "Påståendet att en ny lag kommer att tillåta regeringen att beslagta privat egendom utan ersättning är <span>felaktigt</span>. Medan ett nytt lagförslag om zonindelning diskuteras, innehåller det standardklausuler om ersättning och <span>rättsligt skydd</span> för fastighetsägare. Inlägget misstolkas specifikt juridiskt språk för att skapa rädsla.",
+    aiSummary_7: "Påståendet att en ny lag kommer att tillåta regeringen att beslagta privat egendom utan ersättning är <span>felaktigt</span>. 🔗 Medan ett nytt lagförslag om zonindelning diskuteras, innehåller det standardklausuler om ersättning och <span>rättsligt skydd</span> för fastighetsägare. 🔗 Inlägget misstolkas specifikt juridiskt språk för att skapa rädsla. 🔗",
     decisionReasoning_7_correct_publish: "Korrekt! Detta verkar vara en legitim vädervarning med rimlig skärpa i tonen. Språket är starkt men proportionerligt för ett allvarligt oväder. Officiella meteorologiska källor skulle stödja publicering av korrekta varningar för allmän säkerhet.",
     decisionReasoning_7_correct_flag: "Goda instinkter att vara försiktig, men detta verkar vara en legitim vädervarning. Den brådskande tonen är rimlig i en verklig nödsituation och skulle stödjas av officiella källor.",
     decisionReasoning_7_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",

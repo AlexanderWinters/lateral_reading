@@ -1512,7 +1512,10 @@ function createAISummary(post) {
     aiSummaryContainer.className = 'ai-summary-container';
 
     const summaryKey = `aiSummary_${post.id}`;
-    const summaryText = getLanguageText(summaryKey);
+    let summaryText = getLanguageText(summaryKey);
+
+    // Replace chain emoticon with clickable link
+    summaryText = summaryText.replace(/🔗/g, `<span class="ai-summary-link-icon" onclick="showAISummaryCongratulations()">🔗</span>`);
 
     aiSummaryContainer.innerHTML = `
         <div class="ai-summary-header">
@@ -1523,12 +1526,6 @@ function createAISummary(post) {
         </div>
         <div class="ai-summary-content">
             <p>${summaryText}</p>
-        </div>
-        <div class="ai-summary-links">
-            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink1')}</div>
-            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink2')}</div>
-            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink3')}</div>
-            <div class="ai-summary-link" onclick="showAISummaryCongratulations()">${getLanguageText('aiSummaryLink4')}</div>
         </div>
         <div class="ai-summary-footer">
             <div class="ai-summary-actions">

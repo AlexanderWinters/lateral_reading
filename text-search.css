@@ -199,29 +199,21 @@
     border-radius: 4px;
 }
 
-.ai-summary-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.ai-summary-link {
-    font-size: 0.9rem;
-    color: #1a73e8;
-    background-color: white;
-    border: 1px solid #dadce0;
-    padding: 8px 16px;
-    border-radius: 20px;
+.ai-summary-link-icon {
     cursor: pointer;
-    transition: all 0.2s;
-    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 1.1em;
+    vertical-align: middle;
 }
 
-.ai-summary-link:hover {
-    background-color: #f8f9fa;
-    border-color: #1a73e8;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+.ai-summary-link-icon:hover {
+    transform: scale(1.2);
+}
+
+.ai-summary-links {
+    display: none;
 }
 
 .ai-summary-footer {
