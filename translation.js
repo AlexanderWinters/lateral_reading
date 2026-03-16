@@ -2397,7 +2397,7 @@ const languageData = {
     step5: "🎯 Lär dig: Få återkoppling på dina beslut och förbättra dina färdigheter",
     keySkills: "Nyckelfärdigheter du kommer träna:",
     skillsList: "Du kommer att träna lateral läsning, bildverifiering, källutvärdering och kritiskt tänkande",
-    getStarted: "Redo att börja? Klicka på ett oläst inlägg i sidomenyn för att starta din faktagranskningsutbildning! Försök få 10 rätt!",
+    getStarted: "Klicka på ett oläst inlägg i sidofältet för att börja din träning i faktagranskning. För att bli godkänd som journalist måste du klara 10 nyheter korrekt. En nyhetsbyrå lever på att vara korrekt. Ett fel är okej. Två fel betyder game over.",
     noFactCheckingWarning: "Att publicera utan faktagranskning är riskabel journalistik",
     noFactCheckingPenalty: "(publicerad utan verifiering)",
     noFactCheckingPenaltyFlag: "(markerad utan verifiering)",
@@ -2495,7 +2495,9 @@ const languageData = {
     baddoglocation4: "Hyllningarna strömmar in medan supportrar väntar på bekräftelse...",
 
     // --- STORY: BURNALERT ---
-    aiSummary_9: "Påståenden om en 'stor brand i centrum' <span>stöds inte av bevis</span>. 🔗 Lokala brandkårer har bekräftat att det inte finns några aktiva stora bränder i centrumområdet. 🔗 Bilderna som delas är <span>gammalt filmmaterial</span> från en brand 2018 i en annan stad. 🔗",
+    aiSummary_9: "Storbranden i staden. Många hemlösa och stora skador efter branden som drabbade stora delar av staden. 🔗<br><br>" +
+        "Om du ser rök eller flammor, eller känner stark brandlukt där du är, ska du alltid lita på dina egna observationer. 🔗<br><br>" +
+        "Vid akut fara: ring nödnumret.",
     decisionReasoning_9_correct_publish: "Korrekt! Detta är en bekräftad pågående byggnadsbrand. Flera officiella källor (räddningstjänst, polis, elbolag) styrker händelsen och inlägget använder saklig, icke-sensationell information som är lämplig för allmän säkerhet. Publicering hjälper allmänheten att undvika området.",
     decisionReasoning_9_correct_flag: "Bra att vara försiktig, men i detta fall är storyn sann. Officiella meddelanden och bilder från platsen bekräftar händelsen. Brådskande men sakligt språk är rimligt vid en händelse som rör allmän säkerhet.",
     decisionReasoning_9_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
@@ -2565,7 +2567,7 @@ const languageData = {
     burnalertimagedate4: "Dovetown News. Två år sedan",
 
     // --- STORY: CELEBRITYDEATH ---
-    aiSummary_6: "Rapporter om Adrian Vales död har <span>bekräftats som sanna</span>. 🔗 Medan flera webbplatser som motverkar 'dödsbluffar' och rykten hävdade att han levde, har officiella uttalanden från <span>Vale Studios</span> och <span>polisen i Dove City</span> bekräftat hans bortgång vid 67 års ålder. 🔗 De första rapporterna var blandade på grund av tidigare bluffar, men den senaste informationen från verifierade officiella källor bekräftar de tragiska nyheterna. 🔗",
+    aiSummary_6: "Nyligen avlidna skådespelare inkluderar den brittisk-amerikanska skådespelerskan Jill Freud (98), den tyske skådespelaren Udo Kier (81) och den legendariske Bollywood-skådespelaren Dharmendra, som också har gått bort vid 89 års ålder. 🔗",
     decisionReasoning_6_correct_publish: "Utmärkt beslut! Detta är en legitim nyhet. Även om dödsbluffar om kändisar är vanliga, bekräftar bevisen från officiella källor som Vale Studios och polisen i Dove City att Adrian Vale har gått bort. Det är viktigt att skilja mellan återanvända bluffar och verifierade officiella uttalanden vid sådana händelser.",
     decisionReasoning_6_correct_flag: "Utmärkt beslut! Detta är en legitim nyhet. Även om dödsbluffar om kändisar är vanliga, bekräftar bevisen från officiella källor som Vale Studios och polisen i Dove City att Adrian Vale har gått bort. Det är viktigt att skilja mellan återanvända bluffar och verifierade officiella uttalanden vid sådana händelser.",
     decisionReasoning_6_incorrect_publish: "Detta bör inte hända med nuvarande inläggsinställningar",
@@ -2624,7 +2626,8 @@ const languageData = {
     celebrityDeathdate4: "Idag",
 
     // --- STORY: DOGFLUENCER ---
-    aiSummary_8: "Videon som påstås visa en 'iscensatt' protest är i själva verket <span>felkontextualiserat filmmaterial</span> från en filminspelning. 🔗 Oberoende faktagranskare har identifierat platsen och produktionsbolaget som var inblandat. 🔗 Protestevenemangen som äger rum i staden är <span>verkliga och dokumenterade</span> av flera nyhetsmedier. 🔗",
+    aiSummary_8: "Influencers kan köpa falska följare  för att framstå som mer inflytelserika. 🔗<br><br>" +
+        "Falska följare är ofta automatiserade bottar eller inaktiva konton som inte interagerar på ett genuint sätt.",
     decisionReasoning_8_correct_publish: "Utmärkt beslut! Detta är en legitim granskande artikel om sociala mediers bluffmetoder som påverkar konsumenter och företag. Bevisen omfattar verifierbar dataanalys, dokumenterad kommunikation och kända mönster av influencer-bedrägeri som myndigheter bevakar. Denna typ av journalistik ligger i allmänhetens intresse.",
     decisionReasoning_8_correct_flag: "Bra att du undersöker noggrant, men detta framstår som en trovärdig granskande artikel. Trots att sociala medier kan innehålla falska anklagelser presenterar denna story verifierbar bevisning – analysdata, korrespondens och mönster som överensstämmer med kända fall.",
     decisionReasoning_8_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
@@ -2667,14 +2670,14 @@ const languageData = {
     dogfluencerdescription13: "Marknadsförare inför striktare kontroller",
     dogfluencerdescription14: "Vilseledande reklam för snabb tillväxt",
     dogfluencerdescription15: "Studie om ekonomisk påverkan av fejkprofiler",
-    dogfluencerlocation1: "Skärmdump som visar misstänkt topp",
-    dogfluencerlocation2: "Datavisualisering från analysverktyg",
-    dogfluencerlocation3: "E-post mellan influencer och tjänsteleverantör",
-    dogfluencerlocation4: "Jämförelse av engagemang före/efter",
-    dogfluencerdate1: "Fångad förra veckan",
-    dogfluencerdate2: "Genererad igår",
-    dogfluencerdate3: "Läckt för 3 dagar sedan",
-    dogfluencerdate4: "Analys från denna månad",
+    dogfluencerlocation1: "Lever mitt allra bästa tassiga liv i dag!",
+    dogfluencerlocation2: "Över en natt sköt antalet följare för Fluffy Goldie i höjden.",
+    dogfluencerlocation3: "följer du den tråkiga hunden?",
+    dogfluencerlocation4: "Fallet i engagemang för Fluffy_Goldie är ett tecken på fuffens.",
+    dogfluencerdate1: "@Fluffy_Goldie. För 1 vecka sedan",
+    dogfluencerdate2: "Kanal 1. I går",
+    dogfluencerdate3: "doglover. För 1 vecka sedan",
+    dogfluencerdate4: "Kanal 1. I går",
     dogfluencertextdate10: "Channel 9. 8 timmar sedan",
     dogfluencertextdate11: "premiumfollowers.biz. just nu",
     dogfluencertextdate12: " ",
@@ -2690,7 +2693,7 @@ const languageData = {
     dogfluencertextdate9: "Channel 1. igår",
 
     // --- STORY: EXTRIMISTALERT ---
-    aiSummary_3: "De militärfordon som syns i videon är en del av en <span>förannonserad rutinövning</span>. 🔗 Försvarsministeriet publicerade ett schema för 'Operation Shield' för två veckor sedan. 🔗 Påståenden om en 'statskupp' eller 'undantagstillstånd' är <span>helt ogrundade</span> och felrepresenterar standardövningar som en nationell kris. 🔗",
+    aiSummary_3: "Militär syns på gatorna främst under militära övningar. Förekomsten av militär på gatorna kan dock ibland väcka oro bland allmänheten.",
     decisionReasoning_3_correct_publish: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
     decisionReasoning_3_correct_flag: "Bra jobbat! Inlägget misstolkar rutinmässiga militärövningar som något hotfullt. Det dramatiska språket om \"kupp\" och \"undantagstillstånd\" gör normal försvarsträning till konspirationsteorier. Faktakoll visar att detta är en planerad övning, inte ett hot mot demokratin.",
     decisionReasoning_3_incorrect_publish: "Detta borde ha flaggats som vilseledande. Inlägget tar rutinmässiga militärövningar och framställer dem som hotfulla \"övertaganden\". Den sensationslystna tolkningen förvanskar normala försvarsaktiviteter.",
@@ -3026,7 +3029,7 @@ const languageData = {
     libraryimagedate4: "LateNightReport 3 dagar sedan.",
 
     // --- STORY: MONKEY ---
-    aiSummary_14: "Rapporter om förrymda apor i staden har <span>bekräftats som sanna</span>. 🔗 Medan flera virala bilder och videor som cirkulerar på sociala medier är digitalt manipulerade eller från orelaterade händelser, har lokala hälsomyndigheter och djurkontroll bekräftat flera iakttagelser i det norra distriktet. 🔗 Djuren rymde troligen från en privat transport, och experter har uppmanat invånare att inte närma sig dem medan sökandet pågår. 🔗",
+    aiSummary_14: "Apor i städer utgör ett växande problem, särskilt i Asien, där stora flockar av makaker tar över gator, invaderar bostäder och blir aggressiva för att få mat. Turistbrist och ökad tillgång till skräpmat har gjort dem mer närgångna, vilket kräver steriliseringar och infångande.",
     monkeyTitle: "Varning för förrymda apor",
     monkeyDescription: "Flera iakttagelser av apor i staden! Rapporter om kaos i trafiken och bostadsområden. Är detta ett statligt program som gått fel?",
     monkeysearchTerms1: "Apor i staden rymt från fångenskap",
@@ -3083,7 +3086,7 @@ const languageData = {
     monkeytextdate8: "Public Safety Office · 1 timme sedan",
 
     // --- STORY: PETS ---
-    aiSummary_5: "Den 'nya husdjursinfektionen' som beskrivs i inlägget har <span>inte erkänts</span> av några stora veterinärorganisationer. 🔗 De beskrivna symtomen är generiska och kan gälla många vanliga, behandlingsbara tillstånd. 🔗 Experter menar att detta är en <span>skrämseltaktik</span> som används för att driva engagemang eller marknadsföra obeprövade husdjursprodukter. 🔗",
+    aiSummary_5: "Husdjur kan drabbas av flera olika typer av smittämnen, allt från virus och bakterier till parasiter och svampar. Vissa av dessa sjukdomar är artspecifika, medan andra är så kallade zoonoser, vilket innebär att de kan spridas mellan djur och människor. 🔗",
     decisionReasoning_5_correct_publish: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
     decisionReasoning_5_correct_flag: "Bra beslut! Inlägget sprider falsk djurhälsainformation som skapar onödig panik bland djurägare. Dramatisk ton om att \"myndigheterna tiger\" och alarmerande bilder skapar rädsla utan veterinär bevisning. Riktiga utbrott innehåller officiella varningar, specifika symtom och tydliga råd.",
     decisionReasoning_5_incorrect_publish: "Detta borde ha flaggats som djurhälsodesinformation. Det använder skrämseltaktik och vaga påståenden utan trovärdiga veterinärkällor. Riktiga nödlägen rapporteras via officiella kanaler med specifika symtom, drabbade områden och förebyggande råd – inte mystiska \"nya infektioner\".",
@@ -3151,44 +3154,44 @@ const languageData = {
 
     // --- STORY: SPORTSPULSE ---
     sportspulseTitle: "Stjärnfotbollsspelare testad positiv för droger – klubben tiger!",
-    sportspulseDescription: "Avsändare: SportPulse Direct\n\nKällor säger att landets mest kända fotbollsspelare har testat positivt i ett drogtest. Klubbvägrar att kommentera. Mörkläggs detta? Fansen förtjänar sanningen. Se bilden – spelaren förs bort efter matchen.",
+    sportspulseDescription: "Avsändare: SportPulse Direct-källor säger att landets mest kända fotbollsspelare har testat positivt i ett drogtest. Klubbvägrar att kommentera. Mörkläggs detta? Fansen förtjänar sanningen. Se bilden – spelaren förs bort efter matchen.",
     sportspulsesearchTerms1: "stjärnfotbollsspelare dopningsundersökning",
     sportspulsesearchTerms2: "fotbollsförbundet dopningstest resultat",
     sportspulsesearchTerms3: "känd spelare positivt drogtest",
     sportspulsesearchTerms4: "idrottsmedicin dopningsprocedurer",
-    sportspulsetitle1: "CleanSport Supplements™",
-    sportspulsedescription1: "Våra produkter är 100 % lagliga – idrottare testar rent när de använder oss. Marknadsföring, inte bevis.",
-    sportspulsetitle2: "BioClear Detox",
-    sportspulsedescription2: "Rensa kroppen naturligt på 48 timmar. Vilseledande och irrelevant.",
-    sportspulsetitle3: "De gömmer det – stjärnan fast för dopning!",
-    sportspulsedescription3: "fanstruth.net — 30 minuter sedan. Påstår sig ha insiderkunskap, inga källor. Sensationellt och ogrundat.",
-    sportspulsetitle4: "Fotbollsförbundet bekräftar pågående dopningsundersökning",
-    sportspulsedescription4: "footballauthority.org — 12 minuter sedan. Uttalande: 'Ett rutintest har gett ett avvikande resultat. Analys pågår.' Officiell källa.",
-    sportspulsetitle5: "Klubben: Spelaren tillfälligt avstängd i väntan på testgranskning",
-    sportspulsedescription5: "localnewsroom.com — 9 minuter sedan. Bekräftar tillfällig avstängning, inget slutresultat. Trovärdig sportjournalistik.",
-    sportspulsetitle6: "Så här slipper eliten undan drogskandaler",
-    sportspulsedescription6: "exposedsports.com — 1 timme sedan. Opinionsstyrt, anklagande ton. Manipulativt språk.",
-    sportspulsetitle7: "Hur dopningstester fungerar inom professionell fotboll",
-    sportspulsedescription7: "sportsmedicine.org — 2 dagar sedan. Förklarar procedurer och tidslinjer. Bakgrundsinformation.",
-    sportspulsetitle8: "Inget slutresultat ännu i uppmärksammat dopningsfall",
-    sportspulsedescription8: "governmentinfo.sport — 6 minuter sedan. Bekräftar att testet granskas, manar till försiktighet. Offentlig myndighet.",
-    sportspulselocation1: "Originalfoto – två år sedan, annan match. Återanvänd bild från ett byte vid en lättare skada.",
-    sportspulselocation2: "Vidvinkelversion – samma match. Visar flera spelare som lämnar planen; inget ovanligt.",
-    sportspulselocation3: "Pressbild – antidopningskampanj. Standardpressmaterial från fotbollsförbundets hemsida.",
-    sportspulselocation4: "Sociala medier-foto – idag. Spelaren skriver autografer. Inget bekräftar ett positivt test.",
-    sportspulsedate1: "2 år sedan",
-    sportspulsedate2: "2 år sedan",
-    sportspulsedate3: "1 år sedan",
-    sportspulsedate4: "Idag",
+    sportspulsetitle1: "PerformanceEdge Labs™",
+    sportspulsedescription1: "Orolig för dolda ämnen i sporttillskott? Testa dina tillskott för förbjudna ingredienser. Används av professionella idrottare över hela Europa. Snabba resultat. Konfidentiell service.",
+    sportspulsetitle2: "FairPlay Legal Defense",
+    sportspulsedescription2: "Anklagad för dopning? Känn till dina rättigheter. Juridiska experter specialiserade på idrottens integritetsfall. Skydda din karriär och ditt rykte. Gratis första konsultation.",
+    sportspulsetitle3: "Bilder visar kaptenen gå tillsammans med funktionärer",
+    sportspulsedescription3: "Bilder visar kaptenen gå tillsammans med funktionärer efter matchen. Inget formellt uttalande har ännu gjorts.",
+    sportspulsetitle4: "Källor uppger att ett dopningstest efter match genomfördes",
+    sportspulsedescription4: "Källor uppger att ett dopningstest efter match genomfördes. Klubbens talesperson avböjde att klargöra detaljer.",
+    sportspulsetitle5: "Eskort kan vara standardprocedur",
+    sportspulsedescription5: "Användare föreslår att eskorteringen helt enkelt kan vara standardprocedur efter uppmärksammade matcher.",
+    sportspulsetitle6: "Testning är rutin, källa vill inte bekräfta positiva resultat",
+    sportspulsedescription6: "En anonym källa uppger att tester är rutin men vill inte bekräfta om resultaten var positiva.",
+    sportspulsetitle7: "Frånvaro från pressområdet väcker spekulationer",
+    sportspulsedescription7: "Frånvaro från pressområdet väcker spekulationer, även om lagläkaren hänvisade till en medicinsk granskning.",
+    sportspulsetitle8: "Klipp från förra årets podcast sprids brett",
+    sportspulsedescription8: "Ett klipp från förra årets podcast sprids brett.",
+    sportspulselocation1: "Leds bort från planen.",
+    sportspulselocation2: "Vilket skämt!",
+    sportspulselocation3: "Favoritlaget går in på planen!",
+    sportspulselocation4: "Är det så här sportslighet ser ut idag?",
+    sportspulsedate1: "GoBallers! 1 timme sedan",
+    sportspulsedate2: "SportLover. 2 dagar sedan",
+    sportspulsedate3: "Carol. 2 dagar sedan",
+    sportspulsedate4: "MadStewe. 30 minuter sedan",
     sportspulsedescription10: "Kommentator noterar ovanligt kroppsspråk i filmen men betonar att inga officiella resultat finns.",
     sportspulsedescription11: "Uttalande bekräftar att tester efter match är standardpraxis. Inget positivt resultat har meddelats.",
-    sportspulsedescription9: "Spelare avböjer att kommentera och uppger ”vi fokuserar på fotboll”. Ingen bekräftelse på anklagelserna.",
+    sportspulsedescription9: "Spelare avböjer att kommentera och säger att de “fokuserar på fotboll”. Ingen bekräftelse på anklagelserna.",
     sportspulsetitle10: "Ovanligt kroppsspråk i filmen, inga officiella resultat",
     sportspulsetitle11: "Uttalande: Tester efter match är standardpraxis",
     sportspulsetitle9: "Spelare fokuserar på fotboll, avböjer att kommentera",
 
     // --- STORY: TOXICLEAK ---
-    aiSummary_10: "Det 'läckta dokumentet' som visar en hemlig skattehöjning är en <span>förfalskning</span>. 🔗 Myndighetspersoner har påpekat flera inkonsekvenser i dokumentets formatering och terminologi. 🔗 Ingen sådan skattehöjning <span>övervägs</span> för närvarande. 🔗",
+    aiSummary_10: "En läcka av giftig gas kan upptäckas genom tydliga lukter, fysiska symtom eller förändringar i hemmiljön. Eftersom vissa gaser är luktlösa och färglösa är det viktigt att vara uppmärksam både på sina sinnen och på kroppens signaler. 🔗",
     toxicleakTitle: "Giftutsläpp i industriområdet – men ingen vill prata om det!",
     toxicleakDescription: "Människor känner sig yrsliga och illamående nära Industrivägen. En luktfri gas läcker från fabriken, men brandkåren säger ingenting. De försöker mörka det! Titta på bilden – personal i masker utanför området.",
     toxicleaksearchTerms1: "giftutsläpp industrivägen",
@@ -3233,7 +3236,7 @@ const languageData = {
     toxicleaktextdate4: "kommunen. 10 minuter sedan",
 
     // --- STORY: WATERPOISONING ---
-    aiSummary_4: "Det finns <span>inga bevis</span> för utbredd vattenförgiftning. 🔗 Folkhälsomyndigheter och vattenverk har bekräftat att vattenkvaliteten ligger inom säkerhetsstandarderna. 🔗 De anekdotiska rapporterna om 'kemisk lukt' har inte bekräftats av officiella tester eller <span>trovärdiga oberoende källor</span>. 🔗",
+    aiSummary_4: "Det lokala vattnet kan innehålla gifter från naturliga källor, industriella utsläpp, avfallshantering samt från användning av brandsläckningsskum eller bekämpningsmedel. 🔗",
     decisionReasoning_4_correct_publish: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
     decisionReasoning_4_correct_flag: "Utmärkt faktagranskning! Inlägget sprider hälsodesinformation genom alarmerande påståenden om vattensäkerhet utan trovärdiga bevis. Vaga klagomål om \"kemisk lukt\" i kombination med antydningar om tystnad från myndigheter är typiska tecken. Riktiga föroreningsfall innebär omedelbara officiella insatser, testresultat och tydlig vägledning.",
     decisionReasoning_4_incorrect_publish: "Detta inlägg borde ha flaggats som hälsodesinformation. Det larmar om vattenförorening utifrån anekdotiska uppgifter utan officiell verifiering. Riktiga vattenproblem innebär omedelbara tester, varningar och tydliga råd – inte mystiska \"kemiska lukter\" med antydda mörkläggningar.",
@@ -3305,7 +3308,8 @@ const languageData = {
     waterpoisoningimagedate4: "Noga och klok. Igår",
 
     // --- STORY: WEATHERALERT ---
-    aiSummary_7: "Påståendet att en ny lag kommer att tillåta regeringen att beslagta privat egendom utan ersättning är <span>felaktigt</span>. 🔗 Medan ett nytt lagförslag om zonindelning diskuteras, innehåller det standardklausuler om ersättning och <span>rättsligt skydd</span> för fastighetsägare. 🔗 Inlägget misstolkas specifikt juridiskt språk för att skapa rädsla. 🔗",
+    aiSummary_7: "En allvarlig vädervarning indikerar att vädret kan medföra fara för allmänheten och allvarliga konsekvenser för samhället. 🔗<br><br>" +
+        "Vid en varning bör du följa råd från myndigheter och vara beredd på att anpassa dina planer för att minska risker. 🔗",
     decisionReasoning_7_correct_publish: "Korrekt! Detta verkar vara en legitim vädervarning med rimlig skärpa i tonen. Språket är starkt men proportionerligt för ett allvarligt oväder. Officiella meteorologiska källor skulle stödja publicering av korrekta varningar för allmän säkerhet.",
     decisionReasoning_7_correct_flag: "Goda instinkter att vara försiktig, men detta verkar vara en legitim vädervarning. Den brådskande tonen är rimlig i en verklig nödsituation och skulle stödjas av officiella källor.",
     decisionReasoning_7_incorrect_publish: "Detta bör inte inträffa med nuvarande inläggsinställning",
@@ -3363,7 +3367,7 @@ const languageData = {
     weatherAlerttextdate8: "FreeSpeechForum · Just nu",
     weatherAlerttextdate9: "National Weather Service · 1 timme sedan",
 
-    aiSummary_11: "Den virala historien om en lokal hjälte som räddar ett barn ur en brunn är <span>påhittad</span>. Ingen sådan räddning har rapporterats till lokal räddningstjänst eller sjukhus. Berättelsen använder en <span>generisk känslomässig mall</span> som är vanlig i inlägg som syftar till att locka till engagemang.",
+    aiSummary_11: "Historiskt har uppmärksammade dopningsfall förekommit inom fotboll. Flera spelare har testat positivt för nandrolon, en anabol steroid som kan öka muskelmassa och uthållighet. I andra fall har spelare avslöjats med clenbuterol, ett ämne som kan förbättra syreupptagning och fettförbränning men som är förbjudet i tävlingsidrott. I nordiska ligor har även fall rapporterats där spelare testat positivt för DMBA (1,3-dimetylbutylamin), ett stimulantia-liknande ämne som ibland förekommer i kosttillskott.",
     decisionReasoning_11_correct_publish: "Korrekt beslut! Bra jobbat! Bevisen i texten bekräftar att tipset är delvis sant och stöds av officiella källor. Detta är publicerbara nyheter och en viktig uppdatering för allmänheten, även om detaljerna fortfarande utvecklas. Publicera med försiktighet: Rapportera endast bekräftade fakta, ange tydligt vad som fortfarande undersöks, citera officiella källor och markera storyn som pågående.",
     decisionReasoning_11_correct_flag: "Även om bilderna ensamma var otillräckliga, bekräftade officiella källor en pågående undersökning. Att flagga detta som falskt missar verifierad information — rätt bedömning är att publicera med försiktighet.",
     decisionReasoning_11_incorrect_publish: "Detta bör inte hända med nuvarande inläggsinställningar",
