@@ -13,16 +13,6 @@ The Content Review System is an educational web application designed to teach me
 - **Media**: WebM video format, PNG images
 - **Internationalization**: Custom JSON-based translation system
 
-## Features Added
-
-### Image to Text Search Transition
-- Added a "Perform text search" button to the image search results page.
-- This allows players to further investigate a story after doing an image search.
-- Supported by a new flag `forceTextSearchAfterImage` in the `postsData` configuration:
-    - If `true`, a popup informs the player that an image search is insufficient and they should also perform a text search when they try to publish or flag the post from the image results page.
-    - If `false` (default), the player can proceed with either search type.
-- Updated `translation.js` with `performTextSearch`, `imageSearchLackluster`, and `imageSearchLacklusterInstruction` keys for multi-language support.
-
 ### Project Structure
 ```
 edu_game_project/
@@ -30,10 +20,8 @@ edu_game_project/
 ├── script.js               # Core application logic
 ├── style.css               # Application styling
 ├── translation.js          # Internationalization data
-├── notes.txt               # Development notes and learning objectives
 ├── img/                    # Static image assets
 ├── videos/                 # Instructional and feedback videos
-└── .idea/                  # IDE configuration
 ```
 
 
@@ -96,41 +84,6 @@ Post View → Fact-Check Tools → Evidence Gathering → Decision → Feedback
 - **Review State**: Post view with action buttons
 - **Search State**: Text or image search results
 - **Feedback State**: Post-decision feedback
-
-## Data Structure
-
-### Post Data Model
-```javascript
-{
-    id: number,
-    title: "translationKey",
-    thumbnail: "path/to/image",
-    image: "path/to/image", 
-    description: "translationKey",
-    unread: boolean,
-    processed: boolean,
-    status: "published" | "flagged" | null,
-    searchTerms: ["translationKey1", "translationKey2", ...],
-    searchResults: [
-        {
-            title: "translationKey",
-            description: "translationKey", 
-            isAd: boolean,
-            date: "translationKey", // Optional date translation key
-            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
-        }
-    ],
-    imageResults: [
-        {
-            src: "path/to/image_or_video",
-            type: "video", // Optional: 'video' for video playback, defaults to image
-            location: "translationKey",
-            date: "translationKey",
-            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
-        }
-    ]
-}
-```
 
 
 ### Translation System
@@ -195,20 +148,6 @@ The app encourages users to consider five key questions:
 - **Time vs. Accuracy Balance**: Understanding the trade-off between speed and thoroughness
 - **Justification**: Providing rationale for publish/flag decisions
 
-## UI/UX Design
-
-### Layout Structure
-- **Sidebar Navigation**: Post list with status indicators
-- **Main Content Area**: Dynamic content based on current state
-- **Top Menu**: Context-sensitive action buttons
-- **Responsive Design**: Adaptable to different screen sizes
-
-### Visual Feedback System
-- **Unread Indicators**: Visual cues for new content
-- **Status Icons**: Clear indicators for processed posts
-- **Selection States**: Interactive feedback for user selections
-- **Progress Tracking**: Visual representation of completion status
-
 ## Development Notes
 
 ### Creating a story
@@ -217,39 +156,43 @@ The app encourages users to consider five key questions:
 - Add the texts and descriptions in the `translation.js`, and use the tags from there instead of hard-coding text in `script.js`.
 - Add the new images in the `img` folder and follow the naming convention.
 
-### Current Implementation Status
-- ✅ Core navigation and post-system
-- ✅ Multi-language support
-- ✅ Basic fact-checking tools
-- ✅ Metrics System (Credibility and Popularity)
-- 🔄 Image selection improvements needed
-- 🔄 Text search enhancement required
+### Image to Text Search Transition
+- Added a "Perform text search" button to the image search results page.
+- This allows players to further investigate a story after doing an image search.
+- Supported by a new flag `forceTextSearchAfterImage` in the `postsData` configuration:
+  - If `true`, a popup informs the player that an image search is insufficient and they should also perform a text search when they try to publish or flag the post from the image results page.
+  - If `false` (default), the player can proceed with either search type.
+- Updated `translation.js` with `performTextSearch`, `imageSearchLackluster`, and `imageSearchLacklusterInstruction` keys for multi-language support.
 
-### Planned Enhancements
-1. **Image Selection Limits**: Maximum selection constraints
-2. **Enhanced Text Search**: Additional information display
-3. **Cryptic Image Clues**: More sophisticated image metadata
-4. **Landing Page Improvements**: Better onboarding experience
-
-### Browser Compatibility
-
-- **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest versions)
-- **HTML5 Features**: Video playback, semantic elements
-- **CSS3 Features**: Flexbox, CSS Grid, custom properties
-- **JavaScript**: ES6+ features (arrow functions, const/let, template literals)
-
-### Performance Considerations
-
-- **Asset Loading**: Optimized image sizes and formats
-- **JavaScript**: Single-threaded, event-driven architecture
-- **Memory Management**: Efficient DOM manipulation
-- **Video Streaming**: Local video files for consistent playback
-
-
-### Next steps
-- Publishing/scraping should follow the player in the page.
-- add second page/more results in text searches. (it could be fake, but gives easy points) 
-- ~~Fix the text limit. Now is pegged to one story.~~
-- add effects to cred/pop meters. 
-- Curate images.
-- Teenage story: true story; frauds about concerts tickets.
+### Post Data Model
+```javascript
+{
+    id: number,
+    title: "translationKey",
+    thumbnail: "path/to/image",
+    image: "path/to/image", 
+    description: "translationKey",
+    unread: boolean,
+    processed: boolean,
+    status: "published" | "flagged" | null,
+    searchTerms: ["translationKey1", "translationKey2", ...],
+    searchResults: [
+        {
+            title: "translationKey",
+            description: "translationKey", 
+            isAd: boolean,
+            date: "translationKey", // Optional date translation key
+            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
+        }
+    ],
+    imageResults: [
+        {
+            src: "path/to/image_or_video",
+            type: "video", // Optional: 'video' for video playback, defaults to image
+            location: "translationKey",
+            date: "translationKey",
+            icons: ["icons/icon1.png", "icons/icon2.png", ...] // Optional array of paths to icon PNG files
+        }
+    ]
+}
+```
