@@ -643,8 +643,8 @@ localStorage.removeItem('totalProcessed');
 
 let correctDecisions = parseInt(localStorage.getItem('correctDecisions') || '0');
 let totalProcessed = parseInt(localStorage.getItem('totalProcessed') || '0');
-const TOTAL_STORIES = 8;
-const WIN_THRESHOLD = 7;
+const TOTAL_STORIES = 15;
+const WIN_THRESHOLD = 10;
 
 function updateCompletionCounter() {
     const completionValue = document.getElementById('completion-value');
