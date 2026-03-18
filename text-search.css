@@ -330,3 +330,7 @@
 .flag-btn {
     background-color: var(--danger-color);
 }
+
+.search-btn {
+    background-color: var(--accent-color);
+}

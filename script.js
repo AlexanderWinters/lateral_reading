@@ -51,6 +51,7 @@ const postsData = [
         status: null,
         correctAnswer: false,
         forceTextSearchAfterImage: false,
+        forceImageSearchAfterText: false,
         searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
         searchResults: [
             { title: "librarytitle1", description: "librarydescription1", isAd: true, reasoningIndex: 2, date: "librarydate1", icons: ["icons/X.png"] },
@@ -91,6 +92,7 @@ const postsData = [
         status: null,
         correctAnswer: false,
         forceTextSearchAfterImage: false,
+        forceImageSearchAfterText: true,
         searchTerms: ["extrimistalertsearchTerms1", "extrimistalertsearchTerms2", "extrimistalertsearchTerms3", "extrimistalertsearchTerms4"],
         searchResults: [
             { title: "extrimistalerttitle1", description: "extrimistalertdescription1", isAd: true, reasoningIndex: 2, icons: ["icons/urbansafe.png"] },
@@ -125,6 +127,7 @@ const postsData = [
         status: null,
         correctAnswer: false,
         forceTextSearchAfterImage: true,
+        forceImageSearchAfterText: false,
         searchTerms: ["waterpoisoningsearchTerms1", "waterpoisoningsearchTerms2", "waterpoisoningsearchTerms3", "waterpoisoningsearchTerms4"],
         searchResults: [
             { title: "waterpoisoningtitle1", description: "waterpoisoningdescription1", isAd: true, reasoningIndex: 2, date: "waterpoisoningdate1", icons: ["icons/waterfilter.png"] },
@@ -166,6 +169,7 @@ const postsData = [
         status: null,
         correctAnswer: true,
         forceTextSearchAfterImage: false,
+        forceImageSearchAfterText: false,
         searchTerms: ["fireincidentsearchTerms1", "fireincidentsearchTerms2", "fireincidentsearchTerms3", "fireincidentsearchTerms4"],
         searchResults: [
             { title: "fireincidenttitle1", description: "fireincidentdescription1", isAd: true, reasoningIndex: 2, date: "fireincidenttextdate1", icons: ["icons/companyfireex.png"] },
@@ -503,7 +507,8 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
-        forceTextSearchAfterImage: true,
+        forceTextSearchAfterImage: false,
+        forceImageSearchAfterText: true,
         searchTerms: ["baddogsearchTerms1", "baddogsearchTerms2", "baddogsearchTerms3", "baddogsearchTerms4"],
         searchResults: [
             { title: "baddogtitle1", description: "baddogdescription1", isAd: true, reasoningIndex: 2, date: "baddogtextdate1" },
@@ -538,6 +543,7 @@ const postsData = [
         const imageSearchButton = document.getElementById('imageSearchButton');
         const textSearchButton = document.getElementById('textSearchButton');
         const imageToTextSearchButton = document.getElementById('imageToTextSearchButton');
+        const textToImageSearchButton = document.getElementById('textToImageSearchButton');
         const flagButton = document.getElementById('flagButton');
         const tipTrueButton = document.getElementById('tipTrueButton');
         const tipFalseButton = document.getElementById('tipFalseButton');
@@ -744,6 +750,12 @@ function setupEventListeners() {
                 }
             });
 
+            textToImageSearchButton.addEventListener('click', function() {
+                if (currentPostId) {
+                    showImageSearchResults();
+                }
+            });
+
             // Back button
             backButton.addEventListener('click', function() {
                 loadPost(currentPostId);
@@ -869,6 +881,12 @@ function processPost(status) {
                 return;
             }
 
+            // Check if forced image search is required and not performed
+            if (post.forceImageSearchAfterText && !post.performedImageSearch) {
+                showNoResearchPopup('forcedImageSearch');
+                return;
+            }
+
             // Determine if the user's decision is correct
             const userDecision = status === 'published'; // true if published, false if flagged
             const isCorrect = userDecision === post.correctAnswer;
@@ -938,6 +956,10 @@ function showNoResearchPopup(type = 'general') {
         title = getLanguageText('insufficientResearch');
         subtitle = getLanguageText('imageSearchLackluster');
         instruction = getLanguageText('imageSearchLacklusterInstruction');
+    } else if (type === 'forcedImageSearch') {
+        title = getLanguageText('insufficientResearch');
+        subtitle = getLanguageText('textSearchLackluster');
+        instruction = getLanguageText('textSearchLacklusterInstruction');
     }
 
     const popupHTML = `
@@ -1208,6 +1230,9 @@ function showTextSearchOptions() {
                     // Show search options page
                     showPage(textSearchOptionsPage);
                     
+                    // Show image search button if applicable
+                    textToImageSearchButton.style.display = 'inline-block';
+                    
                     // Update top menu
                     updateTopMenu('textSearch');
                 }
@@ -1295,6 +1320,9 @@ function showTextSearchResults() {
             // Show search results page
             showPage(textSearchResultsPage);
 
+            // Show image search button if applicable
+            textToImageSearchButton.style.display = 'inline-block';
+
             // Update top menu
             updateTopMenu('textSearch');
         }
@@ -1359,6 +1387,13 @@ function addActionButtonsToSearchPage() {
                         <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <span data-lang-key="flag">${getLanguageText('flag')}</span>
+                </button>
+                <button class="action-btn search-btn" id="searchToImageSearchButton" onclick="showImageSearchResults()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span data-lang-key="imageSearch">${getLanguageText('imageSearch')}</span>
                 </button>
             </div>
         </div>
