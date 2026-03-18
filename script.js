@@ -543,7 +543,6 @@ const postsData = [
         const imageSearchButton = document.getElementById('imageSearchButton');
         const textSearchButton = document.getElementById('textSearchButton');
         const imageToTextSearchButton = document.getElementById('imageToTextSearchButton');
-        const textToImageSearchButton = document.getElementById('textToImageSearchButton');
         const flagButton = document.getElementById('flagButton');
         const tipTrueButton = document.getElementById('tipTrueButton');
         const tipFalseButton = document.getElementById('tipFalseButton');
@@ -747,12 +746,6 @@ function setupEventListeners() {
             imageToTextSearchButton.addEventListener('click', function() {
                 if (currentPostId) {
                     showTextSearchOptions();
-                }
-            });
-
-            textToImageSearchButton.addEventListener('click', function() {
-                if (currentPostId) {
-                    showImageSearchResults();
                 }
             });
 
@@ -1230,9 +1223,6 @@ function showTextSearchOptions() {
                     // Show search options page
                     showPage(textSearchOptionsPage);
                     
-                    // Show image search button if applicable
-                    textToImageSearchButton.style.display = 'inline-block';
-                    
                     // Update top menu
                     updateTopMenu('textSearch');
                 }
@@ -1319,9 +1309,6 @@ function showTextSearchResults() {
 
             // Show search results page
             showPage(textSearchResultsPage);
-
-            // Show image search button if applicable
-            textToImageSearchButton.style.display = 'inline-block';
 
             // Update top menu
             updateTopMenu('textSearch');
