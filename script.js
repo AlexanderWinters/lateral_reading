@@ -35,8 +35,8 @@ const postsData = [
         imageResults: [
             { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertimagedate1", icons: ["icons/insta.png"] },
             { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertimagedate2", icons: ["icons/insta.png"] },
-            { src: "updated_images/Street_Fire_Images/image3.png", location: "burnalertlocation3", date: "burnalertimagedate3", icons: ["icons/dn.png"] },
-            { src: "updated_images/Street_Fire_Images/image4.png", location: "burnalertlocation4", date: "burnalertimagedate3", icons: ["icons/dn.png"] }
+            { src: "updated_images/Street_Fire_Images/image4.png", location: "burnalertlocation3", date: "burnalertimagedate3", icons: ["icons/dn.png"] },
+            { src: "updated_images/Street_Fire_Images/image3.png", location: "burnalertlocation4", date: "burnalertimagedate3", icons: ["icons/dn.png"] }
         ]
     },
     {
@@ -235,7 +235,7 @@ const postsData = [
         unread: true,
         processed: false,
         status: null,
-        correctAnswer: false,
+        correctAnswer: true,
         forceTextSearchAfterImage: true,
         searchTerms: ["celebrityDeathSearchTerms1", "celebrityDeathSearchTerms2", "celebrityDeathSearchTerms3", "celebrityDeathSearchTerms4"],
         searchResults: [
