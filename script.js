@@ -458,7 +458,7 @@ const postsData = [
         imageResults: [
             { src: "updated_images/heavy_rain/heavy rain 1.png", location: "heavyrainlocation1", date: "heavyraindate_1", icons: ["icons/insta.png"] },
             { src: "updated_images/heavy_rain/heavy rain 4.png", location: "heavyrainlocation2", date: "heavyraindate_2", icons: ["icons/weather service.png"] },
-            { src: "updated_images/heavy_rain/flooding.mp4", type: "video", location: "heavyrainlocation3", date: "heavyraindate_3", icons: ["icons/insta.png"] },
+            { src: "updated_images/heavy_rain/flooding_fixed.mp4", type: "video", location: "heavyrainlocation3", date: "heavyraindate_3", icons: ["icons/insta.png"] },
             { src: "updated_images/heavy_rain/heavy rain 3.png", location: "heavyrainlocation4", date: "heavyraindate_4", icons: ["icons/insta.png"] }
         ]
     },
