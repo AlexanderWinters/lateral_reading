@@ -251,7 +251,7 @@ const postsData = [
             { title: "celebrityDeathtitle6", description: "celebrityDeathdescription6", isAd: false, reasoningIndex: 1, date: "celebrityDeathResultDate6", icons: ["icons/insta.png"] },
             { title: "celebrityDeathtitle7", description: "celebrityDeathdescription7", isAd: false, reasoningIndex: 3, date: "celebrityDeathResultDate7", icons: ["icons/insta.png"] },
             { title: "celebrityDeathtitle8", description: "celebrityDeathdescription8", isAd: false, reasoningIndex: 1, date: "celebrityDeathResultDate8", icons: ["icons/firedpt.png"] },
-            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: true, reasoningIndex: 2, date: "celebrityDeathResultDate9", icons: ["icons/VitalHeart.png"] },
+            { title: "celebrityDeathtitle9", description: "celebrityDeathdescription9", isAd: true, reasoningIndex: 2, date: "celebrityDeathResultDate9", icons: ["icons/vitalheart.png"] },
             { title: "celebrityDeathtitle10", description: "celebrityDeathdescription10", isAd: false, reasoningIndex: 2, date: "celebrityDeathResultDate10", icons: ["icons/insta.png"] },
             { title: "celebrityDeathtitle11", description: "celebrityDeathdescription11", isAd: false, reasoningIndex: 3, date: "celebrityDeathResultDate11", icons: ["icons/X.png"] },
             { title: "celebrityDeathtitle12", description: "celebrityDeathdescription12", isAd: false, reasoningIndex: 3, date: "celebrityDeathResultDate12", icons: ["icons/valestudio.png"] }
