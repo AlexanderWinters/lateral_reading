@@ -141,7 +141,10 @@ const languageData = {
     sportpulsetextdate11: "Dove City Sports Authority · 3 hours ago",
 
     // --- STORY: BADDOG ---
-    aiSummary_15: "Reports of the celebrity BAD DOG's death are <span>unverified and likely false</span>. While social media is filled with rumors and emotional posts, official authorities and the Public Safety Office have confirmed that <span>no death announcement has been issued</span>. 🔗 Emergency services did respond to the residence, but they have explicitly stated that no death was reported. 🔗 The viral footage and cryptic social media posts are being used to fuel speculation without concrete evidence. 🔗",
+    aiSummary_15: "Based on recent news, there was an investigation into the deaths of actor Gene Hackman and his wife, Betsy Arakawa, in Santa Fe, New Mexico. Zinna, one of their dogs (a 12-year-old Australian Kelpie mix), was found dead in a crate in the home, having likely passed away from starvation and dehydration. 🔗<br><br>" +
+        "Initial confusion: Early, incorrect reports suggested a different dog named Bear had died, but Bear and another dog (Nikita) were found alive. 🔗<br><br>" +
+        "Status: The specific dog Zinna is deceased, but the family's other dogs survived. 🔗<br><br>" +
+        "Note: This information refers to the tragic events surrounding actor Gene Hackman's passing in 2025. 🔗",
     baddogTitle: "BAD DOG Found Dead?",
     baddogDescription: "Celebrity Gossip Channel -- BREAKING: The artist known as BAD DOG found dead at home. Family confirms tragic news.",
     baddogsearchTerms1: "BAD DOG death news today",
@@ -2426,7 +2429,10 @@ const languageData = {
 
 
     // --- STORY: BADDOG ---
-    aiSummary_15: "Rapporter om kändisen BAD DOGs död är <span>obekräftade och troligen falska</span>. 🔗 Medan sociala medier är fyllda med rykten och känslosamma inlägg har officiella myndigheter och Public Safety Office bekräftat att <span>ingen dödsförklaring har utfärdats</span>. 🔗 Räddningstjänsten svarade på ett anrop till bostaden, men de har uttryckligen angett att ingen död har rapporterats. 🔗 Det virala filmmaterialet och kryptiska inlägg på sociala medier används för att underblåsa spekulationer utan konkreta bevis. 🔗",
+    aiSummary_15: "Enligt senaste nyheterna utreddes dödsfallen av skådespelaren Gene Hackman och hans fru, Betsy Arakawa, i Santa Fe, New Mexico. Zinna, en av deras hundar (en 12-årig australisk kelpie-blandning), hittades död i en bur i hemmet och hade troligen avlidit av svält och uttorkning. 🔗<br><br>" +
+        "Inledande förvirring: Tidiga, felaktiga rapporter angav att en annan hund vid namn Bear hade dött, men Bear och en annan hund (Nikita) hittades vid liv. 🔗<br><br>" +
+        "Status: Den specifika hunden Zinna är avliden, men familjens övriga hundar överlevde. 🔗<br><br>" +
+        "Notering: Denna information avser de tragiska händelserna kring skådespelaren Gene Hackmans bortgång 2025. 🔗",
     baddogTitle: "BAD DOG hittad död?",
     baddogDescription: "Sociala medier exploderar av rykten om att den legendariska artisten BAD DOG har gått bort. Är det sant, eller bara ännu en kändisbluff?",
     baddogsearchTerms1: "BAD DOG dödsfall nyheter idag",
