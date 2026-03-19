@@ -1759,7 +1759,7 @@ function showImageSearchResults() {
                 let mediaHtml = '';
                 if (image.type === 'video') {
                     mediaHtml = `
-                        <video src="${image.src}" muted loop playsinline></video>
+                        <video src="${image.src}" loop playsinline></video>
                         <div class="video-overlay">
                             <div class="play-icon">▶</div>
                         </div>
