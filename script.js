@@ -329,9 +329,9 @@ const postsData = [
         ],
         imageResults: [
             { src: "updated_images/dogfluencer/dogfluencer.png", location: "dogfluencerlocation1", date: "dogfluencerdate1", icons: ["icons/insta.png"] },
-            { src: "updated_images/dogfluencer/dogfluencergraph1.png", location: "dogfluencerlocation2", date: "dogfluencerdate2", icons: ["icons/Channel1.png"] },
+            { src: "updated_images/dogfluencer/fluffygoldiev3.jpg.png", location: "dogfluencerlocation2", date: "dogfluencerdate2", icons: ["icons/Channel1.png"] },
             { src: "updated_images/dogfluencer/dog_crop.png", location: "dogfluencerlocation3", date: "dogfluencerdate3", icons: ["icons/insta.png"] },
-            { src: "updated_images/dogfluencer/dogfluencergraph3engage.png", location: "dogfluencerlocation4", date: "dogfluencerdate4", icons: ["icons/Channel1.png"] }
+            { src: "updated_images/dogfluencer/fluffygoldieChannel1.png", location: "dogfluencerlocation4", date: "dogfluencerdate4", icons: ["icons/Channel1.png"] }
         ]
     },
     {
@@ -391,7 +391,7 @@ const postsData = [
             { title: "sportspulsetitle11", description: "sportspulsedescription11", isAd: false, reasoningIndex: 1, date: "sportpulsetextdate11", icons: ["icons/goalline.png"] }
         ],
         imageResults: [
-            { src: "updated_images/football/Football_fixed_SHAME_red.png", location: "sportspulselocation1", date: "sportspulsedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/football/walkofshame2.png", location: "sportspulselocation1", date: "sportspulsedate1", icons: ["icons/insta.png"] },
             { src: "updated_images/football/Footboll_Film_Falsify.mp4", type:"video", location: "sportspulselocation2", date: "sportspulsedate2", icons: ["icons/insta.png"] },
             { src: "updated_images/football/Football_Falsify_11_cut_2.png", location: "sportspulselocation3", date: "sportspulsedate3", icons: ["icons/insta.png"] },
             { src: "updated_images/football/Football_fixed_.png", location: "sportspulselocation4", date: "sportspulsedate4", icons: ["icons/X.png"] }
