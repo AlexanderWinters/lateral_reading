@@ -810,6 +810,30 @@ list-style: none;
     background-color: #6c757d;
 }
 
+/* Toast for evidence limit */
+.evidence-limit-toast {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: fadeInOut 3s forwards;
+    pointer-events: none;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 20px); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -20px); }
+}
+
 /* Evidence limit notification */
 .evidence-limit-notification {
     position: fixed;

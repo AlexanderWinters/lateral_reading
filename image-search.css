@@ -47,6 +47,7 @@
 
 .image-item.selected {
     border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-color);
 }
 
 .image-container {

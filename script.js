@@ -14,7 +14,7 @@ const postsData = [
         processed: false,
         status: null,
         correctAnswer: false,
-        forceTextSearchAfterImage: true,
+        forceTextSearchAfterImage: false,
         searchTerms: ["burnalertsearchTerms1", "burnalertsearchTerms2", "burnalertsearchTerms3", "burnalertsearchTerms4"],
         searchResults: [
             { title: "burnalerttitle1", description: "burnalertdescription1", isAd: true, reasoningIndex: 0, icons: ["icons/companyfirealarm.png"] },
@@ -868,6 +868,12 @@ function processPost(status) {
                 return;
             }
 
+            // Requirement: If image search was performed, at least one image must be selected
+            if (performedImageSearch && (!selectedImages || selectedImages.length === 0)) {
+                showNoResearchPopup('noImageSelected');
+                return;
+            }
+
             // Check if forced text search is required and not performed
             if (post.forceTextSearchAfterImage && !post.performedTextSearch) {
                 showNoResearchPopup('forcedTextSearch');
@@ -953,6 +959,10 @@ function showNoResearchPopup(type = 'general') {
         title = getLanguageText('insufficientResearch');
         subtitle = getLanguageText('textSearchLackluster');
         instruction = getLanguageText('textSearchLacklusterInstruction');
+    } else if (type === 'noImageSelected') {
+        title = getLanguageText('noImageSelectedTitle');
+        subtitle = getLanguageText('noImageSelectedSubtitle');
+        instruction = getLanguageText('noImageSelectedInstruction');
     }
 
     const popupHTML = `
@@ -1818,16 +1828,25 @@ function showImageSearchResults() {
 }
 
 function toggleImageSelection(imageElement) {
-            const index = parseInt(imageElement.dataset.index);
-            
-            if (imageElement.classList.contains('selected')) {
-                imageElement.classList.remove('selected');
-                selectedImages = selectedImages.filter(i => i !== index);
-            } else {
-                imageElement.classList.add('selected');
-                selectedImages.push(index);
-            }
+    const index = parseInt(imageElement.dataset.index);
+
+    if (imageElement.classList.contains('selected')) {
+        imageElement.classList.remove('selected');
+        selectedImages = selectedImages.filter(i => i !== index);
+    } else {
+        if (selectedImages.length >= MAX_EVIDENCE_PER_STORY) {
+            // Show a temporary message that limit is reached
+            const message = document.createElement('div');
+            message.className = 'evidence-limit-toast';
+            message.textContent = `${getLanguageText('evidenceLimitReached')} (${MAX_EVIDENCE_PER_STORY})`;
+            document.body.appendChild(message);
+            setTimeout(() => message.remove(), 3000);
+            return;
         }
+        imageElement.classList.add('selected');
+        selectedImages.push(index);
+    }
+}
 
 function showPage(page) {
             // Hide all pages
