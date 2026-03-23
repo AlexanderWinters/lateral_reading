@@ -36,7 +36,7 @@ const postsData = [
             { src: "updated_images/Street_Fire_Images/Orig_Street_Party.jpeg", location: "burnalertlocation1", date: "burnalertimagedate1", icons: ["icons/insta.png"] },
             { src: "updated_images/Street_Fire_Images/Orig_W_AI-Fake_Fire_Added.png", location: "burnalertlocation2", date: "burnalertimagedate2", icons: ["icons/insta.png"] },
             { src: "updated_images/Street_Fire_Images/image4.png", location: "burnalertlocation3", date: "burnalertimagedate3", icons: ["icons/dn.png"] },
-            { src: "updated_images/Street_Fire_Images/image3.png", location: "burnalertlocation4", date: "burnalertimagedate3", icons: ["icons/dn.png"] }
+            { src: "updated_images/Street_Fire_Images/alley fire man.png", location: "burnalertlocation4", date: "burnalertimagedate3", icons: ["icons/dn.png"] }
         ]
     },
     {
@@ -55,7 +55,7 @@ const postsData = [
         searchTerms: ["librarysearchTerms1", "librarysearchTerms2", "librarysearchTerms3", "librarysearchTerms4"],
         searchResults: [
             { title: "librarytitle1", description: "librarydescription1", isAd: true, reasoningIndex: 2, date: "librarydate1", icons: ["icons/X.png"] },
-            { title: "librarytitle2", description: "librarydescription2", isAd: true, reasoningIndex: 2, date: "librarydate2", icons: ["icons/insta.png"] },
+            { title: "librarytitle2", description: "librarydescription2", isAd: true, reasoningIndex: 2, date: "librarydate2", icons: ["icons/securelibrary.png"] },
             { title: "librarytitle3", description: "librarydescription3", isAd: false, reasoningIndex: 4, date: "librarydate3", icons: ["icons/alt news.png"] },
             { title: "librarytitle4", description: "librarydescription4", isAd: false, reasoningIndex: 3, date: "librarydate4", icons: ["icons/DN eng.png"] },
             //{ title: "librarytitle5", description: "librarydescription5", isAd: false, reasoningIndex: 4, date: "librarydate5", icons: ["icons/alt news.png"] },
@@ -118,8 +118,8 @@ const postsData = [
     {
         id: 4,
         title: "waterpoisoningTitle",
-        thumbnail: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
-        image: "updated_images/bad_water/Bad_Water_Glas_4.jpeg",
+        thumbnail: "updated_images/bad_water/badwater_main.png",
+        image: "updated_images/bad_water/badwater_main.png",
         description: "waterpoisoningDescription",
         icons: ["icons/alt news.png"],
         unread: false,
