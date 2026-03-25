@@ -65,6 +65,11 @@ edu_game_project/
 - **Status Tracking**: Visual indicators for processed posts
 - **Learning Reinforcement**: Immediate feedback on decisions
 
+### 6. Win and Fail Conditions
+- **Win Condition**: The player must correctly process 10 stories (out of 15) to win the game. A "Congratulations" popup is displayed upon reaching this threshold.
+- **Fail Condition**: If the player makes 2 mistakes (incorrectly publishing a false story or incorrectly flagging a true one), a "Mission Failed" popup is displayed, emphasizing the importance of accuracy in journalism.
+- **Game Restart**: Both conditions lead to a game restart, which resets all progress and reloads the application.
+
 ## Application Flow
 
 ### 1. Landing Page

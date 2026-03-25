@@ -645,11 +645,14 @@ const MAX_EVIDENCE_PER_STORY = 2; // Maximum evidence items per story
 
 localStorage.removeItem('correctDecisions');
 localStorage.removeItem('totalProcessed');
+localStorage.removeItem('incorrectDecisions');
 
 let correctDecisions = parseInt(localStorage.getItem('correctDecisions') || '0');
+let incorrectDecisions = parseInt(localStorage.getItem('incorrectDecisions') || '0');
 let totalProcessed = parseInt(localStorage.getItem('totalProcessed') || '0');
 const TOTAL_STORIES = 15;
 const WIN_THRESHOLD = 10;
+const FAIL_THRESHOLD = 2;
 
 function updateCompletionCounter() {
     const completionValue = document.getElementById('completion-value');
@@ -934,6 +937,9 @@ function processPost(status) {
             if (isCorrect) {
                 correctDecisions++;
                 localStorage.setItem('correctDecisions', correctDecisions.toString());
+            } else {
+                incorrectDecisions++;
+                localStorage.setItem('incorrectDecisions', incorrectDecisions.toString());
             }
             updateCompletionCounter();
 
@@ -1167,6 +1173,8 @@ function closeDecisionPopupAndCheckWin() {
     closeDecisionPopup();
     if (correctDecisions >= WIN_THRESHOLD) {
         showWinPopup();
+    } else if (incorrectDecisions >= FAIL_THRESHOLD) {
+        showFailPopup();
     } else {
         goHome();
     }
@@ -1177,7 +1185,7 @@ function showWinPopup() {
     <div class="decision-popup-overlay" id="winPopupOverlay">
         <div class="decision-popup">
             <div class="popup-header">
-                <h3>Congratulations! You've Won!</h3>
+                <h3>${getLanguageText('winTitle')}</h3>
             </div>
             <div class="popup-content" style="text-align: center;">
                 <div class="decision-icon">
@@ -1185,12 +1193,39 @@ function showWinPopup() {
                         <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.056 14.28l-3.23-3.23 1.414-1.414 1.816 1.817 4.242-4.243 1.414 1.414-5.656 5.656z" fill="currentColor"/>
                     </svg>
                 </div>
-                <h4 style="margin-top: 1rem;">You have a sharp eye for the truth!</h4>
-                <p>You correctly handled ${WIN_THRESHOLD} out of ${TOTAL_STORIES} stories and have proven yourself as a reliable source of information.</p>
-                <p>Great job fighting misinformation!</p>
+                <h4 style="margin-top: 1rem;">${getLanguageText('winSubtitle')}</h4>
+                <p>${getLanguageText('winDescription').replace('${WIN_THRESHOLD}', WIN_THRESHOLD).replace('${TOTAL_STORIES}', TOTAL_STORIES)}</p>
+                <p>${getLanguageText('winConclusion')}</p>
             </div>
             <div class="popup-actions">
-                <button class="action-btn primary" onclick="restartGame()">Play Again</button>
+                <button class="action-btn primary" onclick="restartGame()">${getLanguageText('playAgain')}</button>
+            </div>
+        </div>
+    </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', popupHTML);
+}
+
+function showFailPopup() {
+    const popupHTML = `
+    <div class="decision-popup-overlay" id="failPopupOverlay">
+        <div class="decision-popup">
+            <div class="popup-header">
+                <h3>${getLanguageText('failTitle')}</h3>
+            </div>
+            <div class="popup-content" style="text-align: center;">
+                <div class="decision-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--error-color, #f44336);">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M15 9L9 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 9L15 15" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h4 style="margin-top: 1rem;">${getLanguageText('failSubtitle')}</h4>
+                <p>${getLanguageText('failDescription')}</p>
+            </div>
+            <div class="popup-actions">
+                <button class="action-btn primary" onclick="restartGame()">${getLanguageText('playAgain')}</button>
             </div>
         </div>
     </div>
@@ -1201,6 +1236,7 @@ function showWinPopup() {
 function restartGame() {
     meterSystem.reset();
     localStorage.removeItem('correctDecisions');
+    localStorage.removeItem('incorrectDecisions');
     localStorage.removeItem('totalProcessed');
     window.location.reload();
 }
