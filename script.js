@@ -1926,20 +1926,20 @@ function updateTopMenu(context) {
         }
 
 function updateLanguage() {
-            // Update all text elements with data-lang-key attribute
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (languageData[currentLanguage][key]) {
-                    element.textContent = languageData[currentLanguage][key];
-                }
-            });
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = currentLanguage;
-            
-            // Refresh posts to update status messages
-            generatePosts();
+    // Update all text elements with data-lang-key attribute
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        if (languageData[currentLanguage][key]) {
+            element.textContent = languageData[currentLanguage][key];
         }
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = currentLanguage;
+    
+    // Refresh posts to update status messages
+    generatePosts();
+}
 
 function getLanguageText(key) {
             return languageData[currentLanguage][key] || key;
