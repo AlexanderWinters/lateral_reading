@@ -109,10 +109,10 @@ const postsData = [
             { title: "extrimistalerttitle12", description: "extrimistalertdescription12", isAd: false, reasoningIndex: 2, date: "extrimistalertdate12", icons: ["icons/insta.png"] }
         ],
         imageResults: [
-            { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
-            { src: "updated_images/military/Military_Comercial_Complete_Music.mp4",type: "video", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] },
             { src: "updated_images/military/Military_Comercial_Shrt_No_Music.mp4", type:"video", location: "extrimistalertlocation3", date: "extrimistimagedate3", icons: ["icons/alt news.png"] },
-            { src: "updated_images/military/Military_Comercial_Shrt_Music.mp4", type:"video",location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] }
+            { src: "updated_images/military/Military_Comercial_Shrt_Music.mp4", type:"video",location: "extrimistalertlocation4", date: "extrimistimagedate4", icons: ["icons/insta.png"] },
+            { src: "updated_images/military/Military_Redbull.jpeg", location: "extrimistalertlocation1", date: "extrimistimagedate1", icons: ["icons/insta.png"] },
+            { src: "updated_images/military/Military_Comercial_Complete_Music.mp4",type: "video", location: "extrimistalertlocation2", date: "extrimistimagedate2", icons: ["icons/Channel1.png"] }
         ]
     },
     {
