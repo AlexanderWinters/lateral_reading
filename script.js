@@ -1832,6 +1832,14 @@ function showImageSearchResults() {
                     const video = this.querySelector('video');
                     if (video) {
                         if (video.paused) {
+                            // Pause all other videos in the grid
+                            imageGrid.querySelectorAll('video').forEach(v => {
+                                if (v !== video) {
+                                    v.pause();
+                                    const overlay = v.closest('.image-container').querySelector('.video-overlay');
+                                    if (overlay) overlay.style.display = 'flex';
+                                }
+                            });
                             video.play();
                             this.querySelector('.video-overlay').style.display = 'none';
                         } else {
@@ -1885,6 +1893,17 @@ function toggleImageSelection(imageElement) {
 }
 
 function showPage(page) {
+            // Pause all videos when switching pages
+            document.querySelectorAll('video').forEach(video => {
+                video.pause();
+                // If it's a search result video, show the overlay
+                const container = video.closest('.image-container');
+                if (container) {
+                    const overlay = container.querySelector('.video-overlay');
+                    if (overlay) overlay.style.display = 'flex';
+                }
+            });
+
             // Hide all pages
             document.querySelectorAll('.page').forEach(p => {
                 p.classList.remove('active');
